@@ -1,5 +1,5 @@
 backend/api/venv
-backend/api/.vscode
+.vscode/
 backend/api/migrations
 __pycache__/
-
+node_modules/

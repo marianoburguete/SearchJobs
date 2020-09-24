@@ -30,7 +30,7 @@ def decode_token(token):
     except jwt.ExpiredSignatureError:
         return "Expired token. Please login to get a new token"
     except jwt.InvalidTokenError:
-        return "Invalid token. Please register or login"
+        raise Unauthorized('prueba')
 
 def validateToken(req, user_role):
     auth_header = req.headers.get('Authorization')
