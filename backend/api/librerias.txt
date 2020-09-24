@@ -1,0 +1,15 @@
+flask 
+flask_restful
+flask_sqlalchemy
+flask_migrate 
+flask_marshmallow
+marshmallow-sqlalchemy 
+flask-bcrypt 
+PyJWT 
+psycopg2
+
+
+
+en la carpeta venv/Scripts/activate.bat hay variables adheridas
+
+crear base en postgres de nombre project

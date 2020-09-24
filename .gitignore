@@ -1,0 +1,5 @@
+backend/api/venv
+backend/api/.vscode
+backend/api/migrations
+__pycache__/
+
