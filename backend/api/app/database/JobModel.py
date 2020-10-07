@@ -17,6 +17,7 @@ class Job(db.Model, BaseModelMixin):
     applications = db.relationship(
         'Application', backref='job', lazy=False, cascade='all, delete-orphan')
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
+    interviews = db.relationship('Interview', backref='job', lazy=False, cascade='all, delete-orphan')
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 

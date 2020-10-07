@@ -1,11 +1,13 @@
 from flask import Flask, jsonify
 from flask_restful import Api
+from flask_cors import CORS
 
 from app.common.error_handling import ObjectNotFound, AppErrorBaseClass, Forbidden, Unauthorized, BadRequest
 from app.database.db import db
 from app.resources.usersResources import users_bp
 from app.resources.authResources import auth_bp
 from app.resources.jobsResources import jobs_bp
+from app.resources.interviewsResources import interviews_bp
 from .ext import ma, migrate
 
 #MODELOS PARA REGISTRARLOS EN LA BASE
@@ -22,7 +24,9 @@ from app.database.RatingModel import Rating
 
 def create_app(settings_module):
     app = Flask(__name__)
+    CORS(app)
     app.config.from_object(settings_module)
+
 
     # Inicializa las extensiones
     db.init_app(app)
@@ -39,6 +43,7 @@ def create_app(settings_module):
     app.register_blueprint(users_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(jobs_bp)
+    app.register_blueprint(interviews_bp)
 
     # Registra manejadores de errores personalizados
     register_error_handlers(app)

@@ -10,5 +10,5 @@ class Application(db.Model, BaseModelMixin):
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    def __init__(self):
-        self.created_at = datetime.utcnow
+    def __init__(self, user_id):
+        self.user_id = user_id

@@ -6,7 +6,7 @@ from app.common.Schemas.CurriculumSchema import CurriculumSchema
 from app.common.Schemas.ApplicationSchema import ApplicationSchema
 from app.common.Schemas.RatingSchema import RatingSchema
 from app.common.Schemas.NotificationSchema import NotificationSchema
-from app.common.Schemas.MessageSchema import MessageSchema
+from app.common.Schemas.InterviewSchema import InterviewSchema
 
 class UserSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
@@ -21,4 +21,4 @@ class UserSchema(ma.Schema):
     applications = fields.Nested('ApplicationSchema', many=True)
     ratings = fields.Nested('RatingSchema', many=True)
     notifications = fields.Nested('NotificationSchema', many=True)
-    messages = fields.Nested('MessageSchema', many=True)
+    interviews = fields.Nested('InterviewSchema', many=True)

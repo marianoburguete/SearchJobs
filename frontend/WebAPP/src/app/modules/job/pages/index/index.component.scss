@@ -1,0 +1,26 @@
+// .list-group-item-action{
+//     z-index: 1;
+//     position: absolute;
+// }
+.list-group-item-action:hover{
+    cursor: pointer;
+}
+
+.searchFilters {
+    border-right: coral;
+    border-right-width: 0.2rem;
+    border-right-style: solid;
+}
+
+.filterHeader {
+    font-size: 2rem;
+}
+
+.job-card {
+    border: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: brown;
+    padding: 1rem;
+    margin-bottom: 0.3rem;
+}

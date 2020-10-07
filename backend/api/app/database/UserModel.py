@@ -17,6 +17,7 @@ class User(db.Model, BaseModelMixin):
     notifications = db.relationship('Notification', backref='user', lazy=False, cascade='all, delete-orphan')
     ratings = db.relationship('Rating', backref='user', lazy=False)
     #messages = db.relationship('Message', backref='user', lazy=False, cascade='all, delete-orphan')
+    interviews = db.relationship('Interview', backref='user', lazy=False, cascade='all, delete-orphan')
 
     #para estadisticas
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
