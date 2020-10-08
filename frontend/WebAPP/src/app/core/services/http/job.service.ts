@@ -29,11 +29,11 @@ export class JobService {
 
   application(job_id) {
     let data = {'job_id': job_id}
-    return this.httpClient.post(this.prefix + '/application', data, {headers: this.authService.getheaders().headers});
+    return this.httpClient.post(environment.URLAPI + 'application', data, {headers: this.authService.getheaders().headers});
   }
 
   applicationExists(job_id) {
     let params = new HttpParams().set('job_id', job_id);
-    return this.httpClient.get(this.prefix + '/application', {params: params, headers: this.authService.getheaders().headers});
+    return this.httpClient.get(environment.URLAPI + 'application', {params: params, headers: this.authService.getheaders().headers});
   }
 }

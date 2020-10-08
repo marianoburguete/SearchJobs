@@ -40,43 +40,11 @@ class JobsSearchR(Resource):
         pagResult = Job.get_pag(data)
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
-class JobApplicationR(Resource):
-    def get(self):
-        user_id = validateToken(request, ['cliente', 'funcionario'])
-        data = request.args
-        j = Job.get_by_id(data['job_id'])
-        if j is not None:
-            result = True
-            a = [a for a in j.applications if a.user_id == user_id]
-            if a is None or a == []:
-                result = False
-            res = {
-                'msg': 'Ok.',
-                'results': result
-                }
-            return make_response(jsonify(res), 200)
-        raise ObjectNotFound('No existe un trabajo para el Id dado.')
 
-    def post(self):
-        user_id = validateToken(request, 'cliente')
-        data = request.get_json()
-        j = Job.get_by_id(data['job_id'])
-        if j is not None:
-            a = [a for a in j.applications if a.user_id == user_id]
-            if a is None or a == []:
-                j.applications.append(Application(user_id))
-                j.save()
-                res = {
-                'msg': 'Postulacion creada.'
-                }
-                return make_response(jsonify(res), 201)
-            raise BadRequest('El usuario ya se postulo para este trabajo.')
-        raise ObjectNotFound('No existe un trabajo para el Id dado.')
 
         
 api.add_resource(JobR, '/api/jobs/<int:id>')
 api.add_resource(JobsSearchR, '/api/jobs/search')
-api.add_resource(JobApplicationR, '/api/jobs/application')
 
 
 # ADMIN ENDPOINTS
