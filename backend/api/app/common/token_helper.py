@@ -8,7 +8,7 @@ from ..common.error_handling import Forbidden, Unauthorized
 def generate_token(user_id, user_role):
     try:
         payload = {
-            'exp': datetime.utcnow() + timedelta(hours=24),
+            'exp': datetime.utcnow() + timedelta(hours=5000),
             'iat': datetime.utcnow(),
             'sub': user_id,
             'role': user_role
@@ -28,9 +28,9 @@ def decode_token(token):
         payload = jwt.decode(token, "supersecretkey")
         return payload
     except jwt.ExpiredSignatureError:
-        return "Expired token. Please login to get a new token"
+        raise Unauthorized('Token expirado. Vuelva a loguearse para obtener un nuevo token valido.')
     except jwt.InvalidTokenError:
-        raise Unauthorized('prueba')
+        raise Unauthorized('Token invalido. Vuelva a loguearse para obtener un nuevo token valido.')
 
 def validateToken(req, user_role):
     auth_header = req.headers.get('Authorization')

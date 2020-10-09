@@ -5,13 +5,13 @@ from datetime import datetime
 class Message(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     status = db.Column(db.String, nullable=False, default='unread')
-    title = db.Column(db.String)
-    question = db.Column(db.String)
-    answer = db.Column(db.String)
-    user_question_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user_answer_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    text = db.Column(db.String)
+    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    to_interview = db.Column(db.Integer, db.ForeignKey('interview.id'), nullable=False)
     
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    read_at = db.Column(db.DateTime)
 
-    def __init__(self):
-        self.created_at = datetime.utcnow
+    def __init__(self, created_by, text):
+        self.created_by = created_by
+        self.text = text

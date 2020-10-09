@@ -41,18 +41,40 @@ class SignInResource(Resource):
         if user is not None and user.password_is_valid(user_dict['password']):
             access_token = generate_token(user.id, user.role)
             if access_token:
-                #se rompe con el datetime, 
-                #tengo que buscar como solucionarlo
-                #user.last_login = datetime.utcnow
+                user.last_login = datetime.utcnow()
                 user.save()
                 res = {
                     'msg': 'You logged in successfully',
-                    'access_token': access_token.decode()
+                    'userSession': {
+                        'access_token': access_token.decode(),
+                        'id': user.id,
+                        'email': user.email,
+                        'role': user.role
+                    }
                 }    
-                return make_response(jsonify(res))
+                return make_response(jsonify(res), 200)
+        else:
+            res = {
+                    'msg': 'Credenciales invalidas'
+                }    
+            return make_response(jsonify(res), 401)
+
+class EmailResource(Resource):
+    def post(self):
+        email = False
+        data = request.get_json()
+        user = User.get_by_email(data['email'])
+        if user is not None:
+            email = True
+        res = {
+            'email': email
+        }
+        return make_response(jsonify(res), 200)
 
 
 api.add_resource(SignUpResource, '/api/auth/signup/',
                  endpoint='signup_resource')
 api.add_resource(SignInResource, '/api/auth/signin/',
                  endpoint='signin_resource')
+api.add_resource(EmailResource, '/api/auth/email/',
+                 endpoint='email_resource')

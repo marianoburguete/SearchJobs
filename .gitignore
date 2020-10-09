@@ -3,3 +3,4 @@ backend/api/venv
 backend/api/migrations
 __pycache__/
 node_modules/
+items.json
