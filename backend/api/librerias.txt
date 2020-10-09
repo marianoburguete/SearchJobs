@@ -13,3 +13,6 @@ psycopg2
 en la carpeta venv/Scripts/activate.bat hay variables adheridas
 
 crear base en postgres de nombre project
+
+
+pip instal -U flask-cors

@@ -1,0 +1,148 @@
+<div class="container flex-grow min-vh-100 d-flex justify-content-center">
+  <div class=" my-auto">
+    <div class="row d-flex justify-content-center py-3">
+      <img src="https://via.placeholder.com/150" alt="" srcset="">
+    </div>
+    <div class="row d-flex justify-content-center pb-2">
+      <p class="display-4 loginText">Registrate</p>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()" class="prueba">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Email"
+          aria-describedby="emailHelp"
+          formControlName="email"
+          [ngClass]="{
+            'is-invalid':
+              !registerLoginControl.email.valid &&
+              registerLoginControl.email.touched
+          }"
+        />
+        <small id="emailHelp" class="text-muted"
+          >Escribe tu dirección de email</small
+        >
+        <div
+          *ngIf="
+            registerLoginControl.email.errors?.required &&
+            registerLoginControl.email.touched
+          "
+          class="invalid-feedback"
+        >
+          Campo requerido
+        </div>
+        <div
+          *ngIf="
+            registerLoginControl.email.errors?.email &&
+            registerLoginControl.email.touched
+          "
+          class="invalid-feedback"
+        >
+          El email no tiene formato correcto
+        </div>
+        <div
+          *ngIf="
+            registerLoginControl.email.errors?.emailNotAvailable &&
+            registerLoginControl.email.touched
+          "
+          class="invalid-feedback"
+        >
+          El email ya esta registrado en el sistema
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control"
+          placeholder="Contraseña"
+          aria-describedby="passwordHelp"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid':
+              !registerLoginControl.password.valid &&
+              registerLoginControl.password.touched
+          }"
+        />
+        <small id="passwordHelp" class="text-muted"
+          >Escribe tu contraseña</small
+        >
+        <div
+          *ngIf="
+            registerLoginControl.password.errors?.required &&
+            registerLoginControl.password.touched
+          "
+          class="invalid-feedback"
+        >
+          Campo requerido
+        </div>
+        <div
+          *ngIf="
+            registerLoginControl.password.errors?.invalidPassword &&
+            registerLoginControl.password.touched
+          "
+          class="invalid-feedback"
+        >
+          <ul>
+            <li>Minimo 8 caracteres</li>
+            <li>Minimo 1 minuscula</li>
+            <li>Minimo 1 numero</li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="passwordConfirm">Confirmar contraseña</label>
+        <input
+          type="password"
+          name="passwordConfirm"
+          id="passwordConfirm"
+          class="form-control"
+          placeholder="Contraseña"
+          aria-describedby="passwordConfirmHelp"
+          formControlName="passwordConfirm"
+          [ngClass]="{
+            'is-invalid':
+              !registerLoginControl.passwordConfirm.valid &&
+              registerLoginControl.passwordConfirm.touched
+          }"
+        />
+        <small id="passwordHelp" class="text-muted"
+          >Vuelve a escribir la constraña</small
+        >
+        <div
+          *ngIf="
+            registerLoginControl.passwordConfirm.errors?.required &&
+            registerLoginControl.passwordConfirm.touched
+          "
+          class="invalid-feedback"
+        >
+          Campo requerido
+        </div>
+        <div
+          *ngIf="
+            registerLoginControl.passwordConfirm.errors?.passwordMismatch &&
+            registerLoginControl.passwordConfirm.touched
+          "
+          class="invalid-feedback"
+        >
+          Las contraseñas no coinciden
+        </div>
+      </div>
+      <span class="d-flex justify-content-center py-2">
+        <button type="submit" class="btn btn-primary">Registrarse</button>      </span>
+      <span class="d-flex justify-content-center py-3 mb-4">
+        <small>
+          ¿Ya tienes cuenta?
+          <a [routerLink]="['/login']">Accede</a>
+          .
+        </small>
+      </span>
+    </form>
+  </div>
+</div>
