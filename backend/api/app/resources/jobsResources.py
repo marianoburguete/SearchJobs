@@ -103,7 +103,8 @@ class JobsCompuTrabajoRA(Resource):
             j.description = job['description']
             j.save()
             for requirement in job['requirements']:
-                j.requirements.append(Requirement(requirement))
+                r = requirement.split(':')
+                j.requirements.append(Requirement(r[0], r[1]))
             j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
