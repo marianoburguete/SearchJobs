@@ -7,4 +7,4 @@ class Requirement(db.Model, BaseModelMixin):
     job_id = db.Column(db.Integer, db.ForeignKey('job.id'), nullable=False)
 
     def __init__(self, info):
-        self.info = infos
+        self.info = info
