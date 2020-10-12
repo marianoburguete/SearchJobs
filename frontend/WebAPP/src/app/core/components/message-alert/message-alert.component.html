@@ -1,0 +1,10 @@
+<div class="alert alert-primary" role="alert" *ngIf="show == true">
+    <div class="row">
+        <div class="col-11">
+            {{msg}}
+        </div>
+        <div class="col-1 d-flex justify-content-center">
+            <span class="material-icons close-alert" (click)="dismissAlert()">clear</span>
+        </div>
+    </div>
+</div>
