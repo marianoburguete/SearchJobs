@@ -5,6 +5,8 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
 def extract(raw_string, start_marker, end_marker):
+    if not raw_string.index(start_marker):
+        return 'VACIO'
     start = raw_string.index(start_marker) + len(start_marker)
     end = raw_string.index(end_marker, start)
     return raw_string[start:end]
@@ -28,17 +30,18 @@ class WorkanaSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        #extract(fields, 'Categoría <strong>', '</strong>') EJEMPLO PARA EXTRAER TAGS DEL RESUME
         fields = response.xpath('//p[@class="resume"]').get()
         it = WOItem()
         it['url'] = response.request.url
         it['title'] = response.xpath('normalize-space(//*[@id="productName"]/h1/text())').get()
-        it['workday'] = extract(fields, 'Disponibilidad requerida <strong>', '</strong>')
-        it['roles'] = extract(fields, 'Roles necesarios <strong>', '</strong>')
-        it['salary'] = response.xpath(
-            'normalize-space(//*[@id="app"]/div/div[2]/section/section[1]/div/section/article[1]/div[1]/div[2]/h4/text())').get()
-        it['description'] = response.xpath(
-            'normalize-space(//*[@id="app"]/div/div[2]/section/section[1]/div/section/article[1]/div[2]/text())').get()
+        workday = extract(fields, 'Disponibilidad requerida <strong>', '</strong>')
+        if workday != 'VACIO':
+            it['workday'] = workday
+        roles = extract(fields, 'Roles necesarios <strong>', '</strong>')
+        if roles != 'VACIO':
+            it['roles'] = roles
+        it['salary'] = response.xpath('normalize-space(//h4[@class="budget text-success text-right"]/text())').get()
+        it['description'] = response.xpath('normalize-space(//*[@id="app"]/div/div[2]/section/section/div/section/article/div/text())').get()
         it['requirements'] = " ".join(response.xpath('normalize-space(//p[@class="skills"])').getall())
         it['company_name'] = response.xpath('normalize-space(//*[@id="app"]/div/div[2]/section/section[1]/div/aside/article[3]/div[1]/a/span/text())').get()
         yield it
