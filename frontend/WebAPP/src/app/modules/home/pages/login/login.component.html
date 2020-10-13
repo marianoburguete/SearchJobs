@@ -1,4 +1,4 @@
-<app-message-alert [show]="alert.show" [msg]="alert.msg"></app-message-alert>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
 <div class="container flex-grow min-vh-100 d-flex justify-content-center">
   <div class=" my-auto">
     <div class="row d-flex justify-content-center py-3">

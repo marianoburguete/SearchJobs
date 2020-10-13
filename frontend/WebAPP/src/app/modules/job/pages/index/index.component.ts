@@ -17,6 +17,9 @@ export class IndexComponent implements OnInit {
   searchForm: FormGroup;
   filterQuery: string = null;
   workdayFilter = '';
+  salaryFilter: string;
+  locationFilter: string = null;
+  remoteFilter: boolean = null;
   pageNumber = 1;
   nextPageNumber = null;
   previousPageNumber = null;
@@ -38,9 +41,25 @@ export class IndexComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       this.searchForm.setValue({ search: params.get('search') });
       if (params.get('jornada') != null) {
-        this.workdayFilter = params.get('jornada').replace(' ', '+');
+        this.workdayFilter = params.get('jornada');
       } else {
         this.workdayFilter = 'Cualquiera';
+      }
+      if (params.get('salarioMin') != null) {
+        this.salaryFilter = params.get('salarioMin');
+      } else {
+        this.salaryFilter = null;
+      }
+      if (params.get('remote') != null) {
+        if (params.get('remote') === 'true') {
+          this.remoteFilter = true;
+        } else {
+          if (params.get('location') != null) {
+            this.locationFilter = params.get('location');
+          }
+        }
+      } else {
+        this.remoteFilter = false;
       }
       if (params.get('page') != null) {
         this.pageNumber = Number(params.get('page'));
@@ -54,25 +73,35 @@ export class IndexComponent implements OnInit {
 
   searchSubmit() {
     this.spinnerService.callSpinner();
-    let data: searchJobDto = {
+    let data: searchJobDto;
+    data = {
       page: this.pageNumber,
       per_page: 10,
       search: this.searchForm.controls['search'].value,
-      workday:
-        this.workdayFilter != 'Cualquiera'
-          ? this.workdayFilter.replace('+', ' ')
-          : null,
+      workday: this.workdayFilter != 'Cualquiera' ? this.workdayFilter : null,
+      minSalary: this.salaryFilter,
+      location:
+        this.remoteFilter === false
+          ? this.locationFilter != null
+            ? this.locationFilter
+            : null
+          : 'remote',
     };
-    this._jobService.search(data).subscribe((res) => {
-      this.lastResponse = res;
-      this.jobsRecomendationList = [];
-      this.makeQueryStrings(res);
-    },
-    err => {
-      console.log(err.body.msg);
-    }).add(() => {
-      this.spinnerService.stopSpinner();
-    });
+    this._jobService
+      .search(data)
+      .subscribe(
+        (res) => {
+          this.lastResponse = res;
+          this.jobsRecomendationList = [];
+          this.makeQueryStrings(res);
+        },
+        (err) => {
+          console.log(err.body.msg);
+        }
+      )
+      .add(() => {
+        this.spinnerService.stopSpinner();
+      });
   }
 
   makeQueryStrings(res) {
@@ -102,5 +131,11 @@ export class IndexComponent implements OnInit {
   setSearchText(event: Event) {
     let txt: string = (event.target as Element).textContent;
     this.searchForm.setValue({ search: txt });
+  }
+
+  createdAt(d) {
+    let da: any = new Date(d);
+    let now: any = new Date();
+    return Math.floor((now - da) / (1000 * 60 * 60 * 24));
   }
 }

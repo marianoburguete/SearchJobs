@@ -1,7 +1,7 @@
 from app.database.db import db, BaseModelMixin
 from datetime import datetime
 from ..common.error_handling import ObjectNotFound
-
+from sqlalchemy import func
 
 class Job(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,8 +10,8 @@ class Job(db.Model, BaseModelMixin):
     location = db.Column(db.String)
     workday = db.Column(db.String)
     contract_type = db.Column(db.String)
-    salary = db.Column(db.String)
-    salary_max = db.Column(db.String)
+    salary = db.Column(db.Integer)
+    salary_max = db.Column(db.Integer)
     description = db.Column(db.String)
     requirements = db.relationship(
         'Requirement', backref='job', lazy=False, cascade='all, delete-orphan')
@@ -33,11 +33,20 @@ class Job(db.Model, BaseModelMixin):
         filtro = cls.query
 
         if 'search' in data and data['search'] is not None:
-            filtro = filtro.filter(db.or_(Job.title.contains(data['search']),
-                                          Job.description.contains(data['search'])))
+            filtro = filtro.filter(db.or_(Job.title.contains(data['search'].strip()),
+                                          Job.description.contains(data['search'].strip())))
 
         if 'workday' in data and data['workday'] is not None:
             filtro = filtro.filter(Job.workday == data['workday'])
+
+        if 'minSalary' in data and data['minSalary'] is not None:
+            filtro = filtro.filter(Job.salary > int(data['minSalary']))
+        
+        if 'location' in data and data['location'] is not None:
+            if data['location'] == 'remote':
+                filtro = filtro.filter(Job.location == data['location'])
+            else:
+                filtro = filtro.filter(func.lower(Job.location).contains(data['location'].strip().lower()))
 
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(data['page'], data['per_page'], False, 40)

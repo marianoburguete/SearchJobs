@@ -6,5 +6,6 @@ class Requirement(db.Model, BaseModelMixin):
     value = db.Column(db.String)
     job_id = db.Column(db.Integer, db.ForeignKey('job.id'), nullable=False)
 
-    def __init__(self, info):
-        self.info = infos
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value

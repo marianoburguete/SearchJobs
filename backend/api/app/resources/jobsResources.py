@@ -38,6 +38,7 @@ class JobsSearchR(Resource):
         if data is None:
             raise BadRequest('No se encontraron los filtros.')
         pagResult = Job.get_pag(data)
+        
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
 
@@ -49,20 +50,42 @@ api.add_resource(JobsSearchR, '/api/jobs/search')
 
 # ADMIN ENDPOINTS
 
-class JobsRA(Resource):
+
+class JobsCompuTrabajoRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
         data = request.get_json()
         for job in data:
             j = Job(job['url'], job['title'])
-            j.location = job['location']
-            j.workday = job['workday']
-            j.contract_type = job['contract_type']
-            j.salary = job['salary']
+            if job['workday'] == 'Desde Casa':
+                j.location = 'remote'
+                j.workday = 'notspecified'
+            else:
+                j.location = job['location']
+                if job['workday'] == 'Tiempo Completo':
+                    j.workday = 'fulltime'
+                elif job['workday'] == 'Medio Tiempo':
+                    j.workday = 'parttime'
+                else:
+                    j.workday = 'notspecified'
+            if job['contract_type'] == 'Contrato por tiempo indefinido':
+                j.contract_type = 'undefined'
+            elif job['contract_type'] == 'Contrato por tiempo determinado':
+                j.contract_type = 'defined'
+            else:
+                j.contract_type = 'other'
+            if job['salary'] == 'A convenir':
+                j.salary = None
+                j.salary_max = None
+            else:
+                s = int(job['salary'].split()[1].replace(',00', '').replace('.',''))
+                j.salary = s
+                j.salary_max = s
             j.description = job['description']
             j.save()
             for requirement in job['requirements']:
-                j.requirements.append(Requirement(requirement))
+                r = requirement.split(':')
+                j.requirements.append(Requirement(r[0], r[1]))
             j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
@@ -70,6 +93,7 @@ class JobsRA(Resource):
                 c.save()
             else:
                 c = Company(job['company_name'])
+                c.logo = job['company_logo']
                 c.jobs.append(j)
                 c.save()
             
@@ -141,4 +165,5 @@ class JobRA(Resource):
 
 api.add_resource(JobsRA, '/api/jobs/a')
 api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
+api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')

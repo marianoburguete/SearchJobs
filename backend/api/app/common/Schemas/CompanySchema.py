@@ -9,5 +9,6 @@ class CompanySchema(ma.Schema):
     id = fields.Integer(dump_only=True)
     name = fields.String()
     info = fields.String()
+    logo = fields.String()
     jobs = fields.Nested('JobSchema', many=True)
     ratings = fields.Nested('RatingSchema', many=True)
