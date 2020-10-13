@@ -84,7 +84,11 @@ class JobsMipleoRA(Resource):
             j.location = job['location']
             if job['workday'] == 'Tiempo Completo':
                 j.workday = 'FullTime'
-            elif job['workday'] == 'Medio Tiempo' or 'Por Horas' or 'Tiempo parcial':
+            elif job['workday'] == 'Medio Tiempo':
+                j.workday = 'ParTime'
+            elif job['workday'] == 'Por Horas':
+                j.workday = 'ParTime'
+            elif job['workday'] == 'Tiempo parcial':
                 j.workday = 'ParTime'
             elif job['workday'] == 'A convenir':
                 j.workday = 'NotSpecified'
