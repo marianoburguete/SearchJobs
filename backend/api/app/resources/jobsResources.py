@@ -109,10 +109,11 @@ class JobsMipleoRA(Resource):
                 j.salary_max = s
             j.description = job['description']
             j.save()
-            for requirement in job['requirements']:
-                r = requirement.split(':')
-                j.requirements.append(Requirement(r[0], r[1]))
-            j.save()
+            if job['requirements'] is not None:
+                for requirement in job['requirements']:
+                    r = requirement.split(':')
+                    j.requirements.append(Requirement(r[0], r[1]))
+                j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
                 c.jobs.append(j)
@@ -139,4 +140,5 @@ class JobRA(Resource):
 
 
 api.add_resource(JobsRA, '/api/jobs/a')
+api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
