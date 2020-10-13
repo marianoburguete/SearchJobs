@@ -163,7 +163,7 @@ class JobRA(Resource):
 
 
 
-api.add_resource(JobsRA, '/api/jobs/a')
+
 api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
 api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
