@@ -1,7 +1,7 @@
 <div class="container py-4">
-  <form [formGroup]="searchForm" (ngSubmit)="searchSubmit()">
+  <form [formGroup]="searchForm">
     <div class="row">
-      <div class="col-lg-10 col-md-12">
+      <div class="col-lg-10 col-md-10">
         <input
           type="text"
           name="search"
@@ -14,8 +14,16 @@
           style="width: 100%"
         />
       </div>
-      <div class="col-2">
-        <button type="submit" class="btn btn-primary" style="width: 100%">
+      <div class="col-md-2">
+        <button
+          [routerLink]="['/trabajo']"
+          [queryParams]="{
+            search: searchForm.controls['search'].value,
+            page: 1
+          }"
+          class="btn btn-primary"
+          style="width: 100%"
+        >
           Buscar
         </button>
       </div>
@@ -38,7 +46,7 @@
 </div>
 <div class="container-fluid min-vh-100 mb-2">
   <div class="row">
-    <div class="col-3 searchFilters">
+    <div class="col-md-2 searchFilters">
       <span class="filterHeader">Filtros</span>
       <div class="form-group pt-3">
         <label for="workday">Jornada</label>
@@ -49,25 +57,64 @@
           [(ngModel)]="workdayFilter"
         >
           <option value="Cualquiera">Cualquiera</option>
-          <option value="Tiempo+Completo">Tiempo completo</option>
-          <option value="Medio+Tiempo">Medio tiempo</option>
-          <option value="Desde+Casa">Remoto</option>
-          <option value="Por+Horas">Por horas</option>
-          <option value="Beca/Prácticas">Beca/Prácticas</option>
+          <option value="fulltime">Tiempo completo</option>
+          <option value="parttime">Medio tiempo</option>
         </select>
       </div>
-    </div>
-    <div class="col-9">
-      <div
-        class="job-card"
-        *ngFor="let job of lastResponse.results"
-        style="background-color: whitesmoke"
-      >
-        <a [routerLink]="['detalles']" [queryParams]="{id: job.id}">{{ job.title }}</a>
-        <br />
-        {{ job.location }}
+      <div class="form-group pt-3">
+        <label for="salary">Salario</label>
+        <input type="number" class="form-control" placeholder="Minimo" [(ngModel)]="salaryFilter">
       </div>
-      <nav aria-label="...">
+      <div class="form-group pt-3">
+        <label for="remote">Remoto</label>
+        <input name="remote" type="checkbox" [(ngModel)]="remoteFilter" class="ml-2">
+        <br>
+        <br>
+        <label for="location">Ubicación</label>
+        <input type="text" name="location" [(ngModel)]="locationFilter" class="ml-2 form-control" placeholder="Localidad">
+      </div>
+      <button
+        [routerLink]="['/trabajo']"
+        [queryParams]="{
+          search: searchForm.controls['search'].value,
+          page: 1,
+          jornada: workdayFilter,
+          salarioMin: salaryFilter,
+          remote: remoteFilter
+        }"
+        class="btn btn-secondary mt-4"
+      >
+        Aplicar
+      </button>
+    </div>
+    <div class="col-md-10">
+      <div class="job-card" *ngFor="let job of lastResponse.results">
+        <div class="row">
+          <div class="col-md-2">
+            <img
+              src="{{ job.company.logo | imageReplacement }}"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-10">
+            <div class="row ml-1 mt-1">
+              <a [routerLink]="['detalles']" [queryParams]="{ id: job.id }">{{
+                job.title
+              }}</a>
+            </div>
+            <div class="row ml-1 py-2">
+              <span>{{ job.company.name }}</span>
+            </div>
+            <div class="row ml-1 pb-2">
+              <span>{{ job.location | remoteString }}</span>
+            </div>
+            <div class="row ml-1 pt-2">
+              <span>{{ job.created_at | dayOrDays }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="..." class="d-flex justify-content-center">
         <ul class="pagination">
           <li class="page-item">
             <a

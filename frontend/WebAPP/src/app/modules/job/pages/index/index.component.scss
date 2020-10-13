@@ -7,9 +7,9 @@
 }
 
 .searchFilters {
-    border-right: coral;
-    border-right-width: 0.2rem;
-    border-right-style: solid;
+    // border-right: coral;
+    // border-right-width: 0.2rem;
+    // border-right-style: solid;
 }
 
 .filterHeader {
@@ -17,10 +17,17 @@
 }
 
 .job-card {
+    a {
+        color: rgb(141, 141, 141);
+        font-size: 1.5rem;
+    }
+    span {
+        font-size: 1rem;
+    }
     border: 0.1rem;
     border-style: solid;
     border-radius: 0.2rem;
-    border-color: brown;
+    border-color: rgb(182, 182, 182);
     padding: 1rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.7rem;
 }

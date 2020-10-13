@@ -16,3 +16,4 @@ class CTItem(scrapy.Item):
     description = scrapy.Field()
     requirements = scrapy.Field()
     company_name = scrapy.Field()
+    company_logo = scrapy.Field()

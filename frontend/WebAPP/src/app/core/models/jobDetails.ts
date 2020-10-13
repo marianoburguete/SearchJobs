@@ -6,6 +6,7 @@ export interface JobDetails {
     contract_type?: string,
     salary?: string,
     description?: string,
-    company_id?: string,
-    requirements?: any
+    company?: any,
+    requirements?: any,
+    created_at?: any
 }

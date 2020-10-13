@@ -4,6 +4,7 @@ class Company(db.Model, BaseModelMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     info = db.Column(db.String)
+    logo = db.Column(db.String)
     jobs = db.relationship('Job', backref='company', lazy=False, cascade='all, delete-orphan')
     ratings = db.relationship('Rating', backref='company', lazy=False)
     
