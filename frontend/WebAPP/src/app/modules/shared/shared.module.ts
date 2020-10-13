@@ -17,13 +17,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MessageAlertComponent } from '../../core/components/message-alert/message-alert.component';
 
+
+
 @NgModule({
   declarations: [
     MessageAlertComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [
     MatButtonModule,

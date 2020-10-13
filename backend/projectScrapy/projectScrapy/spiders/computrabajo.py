@@ -44,4 +44,5 @@ class ComputrabajoSpider(CrawlSpider):
                 requirements.append(li)
         it['requirements'] = requirements.copy()
         it['company_name'] = response.xpath('//*[@id="MainContainer"]/article/section[1]/div[1]/div/h2/text()').get()
+        it['company_logo'] = response.xpath('//div[@class="cm-3 detalle_logoempresa"]/img/@src').get()
         yield it

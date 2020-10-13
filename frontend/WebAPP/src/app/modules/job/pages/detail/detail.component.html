@@ -1,56 +1,57 @@
-<app-message-alert [show]="alert.show" [msg]="alert.msg"></app-message-alert>
-<div class="container-fluid min-vh-100">
-    <div class="row my-2">
-        <div class="col-md-12 text-center">
-            <span class="display-4">{{jobDetails.title}}</span>
-        </div>
-    </div>
-    <div class="row mx-1 my-4">
-        <div class="col-md-8">
-            <span class="display-4" style="font-size: 2rem;">Descripción</span>
-            <p class="my-2">{{jobDetails.description}}</p>
-        </div>
-        <div class="col-md-4">
-            <div class="general-info-box px-1">
-                <div class="row my-4">
-                    <div class="col-md-12">
-                        <span>Localidad: {{jobDetails.location}}</span>
-                    </div>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row mt-5">
+        <div class="col-md-9">
+            <div class="row border border-dark">
+                <div class="col-md-3">
+                    <img src="{{jobDetails.company.logo}}" class="img-fluid">
                 </div>
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <span>Jornada: {{jobDetails.workday}}</span>
-                    </div>
+                <div class="col-md-9">
+                    <span class="jobName">{{jobDetails.title}}</span>
+                    <br>
+                    <span class="pubDate">{{jobDetails.created_at | dayOrDays}}</span>
+                    <br>
+                    <span class="desc">{{jobDetails.description}}</span>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <span>Contrato: {{jobDetails.contract_type}}</span>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <span>Salario: {{jobDetails.salary}}</span>
-                    </div>
-                </div>
-                <div class="row mb-4" *ngFor="let r of jobDetails.requirements">
-                    <div class="col-md-12">
-                        <span>{{r.info}}</span>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-primary" (click)="application()">Postularse</button>
+            </div>
+            <div class="row border border-dark mt-3">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>Requisitos</span>
                         </div>
-                    </ng-container>
-                    <ng-template #elseTemplate>
-                        <ng-container *ngIf="userApplication; else elseTemplate2">
-                            Ya te postulaste.
-                        </ng-container>
-                        <ng-template #elseTemplate2>
-                            Inicia sesion para postularte!
-                        </ng-template>
-                    </ng-template>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li *ngFor="let item of jobDetails.requirements">
+                                    {{item.key}}: {{item.value}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 border border-dark">
+            <div class="row">
+                <div class="col-12">
+                    {{jobDetails.workday}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{jobDetails.salary}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{jobDetails.location}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{jobDetails.contract_type}}
                 </div>
             </div>
         </div>

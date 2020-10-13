@@ -1,0 +1,58 @@
+<app-message-alert [show]="alert.show" [msg]="alert.msg"></app-message-alert>
+<div class="container-fluid min-vh-100">
+    <div class="row my-2">
+        <div class="col-md-12 text-center">
+            <span class="display-4">{{jobDetails.title}}</span>
+        </div>
+    </div>
+    <div class="row mx-1 my-4">
+        <div class="col-md-8">
+            <span class="display-4" style="font-size: 2rem;">Descripción</span>
+            <p class="my-2">{{jobDetails.description}}</p>
+        </div>
+        <div class="col-md-4">
+            <div class="general-info-box px-1">
+                <div class="row my-4">
+                    <div class="col-md-12">
+                        <span>Localidad: {{jobDetails.location}}</span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <span>Jornada: {{jobDetails.workday}}</span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <span>Contrato: {{jobDetails.contract_type}}</span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <span>Salario: {{jobDetails.salary}}</span>
+                    </div>
+                </div>
+                <div class="row mb-4" *ngFor="let r of jobDetails.requirements">
+                    <div class="col-md-12">
+                        <span>{{r.info}}</span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary" (click)="application()">Postularse</button>
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <ng-container *ngIf="userApplication; else elseTemplate2">
+                            Ya te postulaste.
+                        </ng-container>
+                        <ng-template #elseTemplate2>
+                            Inicia sesion para postularte!
+                        </ng-template>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

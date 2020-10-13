@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptorService } from './core/services/interceptors/spinner-interceptor.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
