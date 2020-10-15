@@ -1,9 +1,3105 @@
 [
-{"url": "https://www.workana.com/job/experto-a-en-marketing-digital-facebook-ads-diseno-web-diseno-grafico-redaccion-de-textos?ref=projects_1", "title": "Experto/a en Marketing Digital (Facebook Ads, Diseño Web, Redacción de textos)", "workday": "Según se necesite", "salary": "USD 100 - 250", "description": null, "requirements": "Marketing Online Social Media Marketing Publicidad en Google, ... Email marketing Facebook Ads Estrategia de Marketing", "company_name": "B. D. R."},
-{"url": "https://www.workana.com/job/busco-generador-de-leads-en-la-industria-financiera?ref=projects_1", "title": "Busco Generador de Leads en la industria financiera", "workday": "Tiempo completo", "salary": "Menos de USD 10 / hora", "description": null, "requirements": "Investigación de Mercado Microsoft Excel Estadística Marketing Asistente de administr...", "company_name": ""},
-{"url": "https://www.workana.com/job/generar-registros-2?ref=projects_1", "title": "Generar Registros", "workday": "Según se necesite", "salary": "Abierto", "description": null, "requirements": "", "company_name": "J. A."},
-{"url": "https://www.workana.com/job/atencion-por-chat-1-hora-diaria?ref=projects_1", "title": "Atención por chat 1 hora diaria", "workday": "A tiempo parcial", "salary": "Menos de USD 10 / hora", "description": null, "requirements": "CRM Skype Servicio al Cliente", "company_name": "J. F."},
-{"url": "https://www.workana.com/job/pequena-base-de-datos-externa-que-asiste-a-la-base-de-datos-principal?ref=projects_1", "title": "Pequeña base de datos externa que asiste a la base de datos principal", "workday": "Según se necesite", "salary": "Menos de USD 50", "description": null, "requirements": "MySQL Microsoft Access", "company_name": "L."},
-{"url": "https://www.workana.com/job/experto-en-publicidad-de-facebook-y-funnels-de-ventas?ref=projects_1", "title": "Experto/a en Marketing Digital (Facebook Ads, Diseño Web, Diseño Gráfico)", "workday": "Según se necesite", "salary": "USD 100 - 250", "description": null, "requirements": "WordPress Publicidad en Google, ... Facebook Ads Redacción Estrategia de Marketing Email marketing Facebook Diseño Gráfico Marketing Online", "company_name": "B. D. R."},
-{"url": "https://www.workana.com/job/necesito-hoy-fix-flutter-ios-fcm?ref=projects_1", "title": "Necesito Hoy - bug fix: Flutter + Ios + Fcm", "workday": "Según se necesite", "salary": "USD 50 - 100", "description": null, "requirements": "iPhone Firebase Flutter iOS Dart", "company_name": "Jvagliat S."},
+    {
+        "url": "https://www.workana.com/job/aplicacion-de-servicios-de-salud-cercanos-a-tu-ubicacion-actual?ref=projects_3",
+        "title": "Aplicación de servicios de salud cercanos a tu ubicación actual",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Necesito desarrollar una app para todos los dispositivos, ya sea IOS y Android sobre servicios de salud que se encuentren cerca de tu ubicación actual. Cuento con las definiciones de contenido y de todo el proyecto. Necesitaria una app simple, elegante e intuitiva para cualquier persona.",
+        "requirements": "Android API HTML iOS iPhone JavaScript Responsive Web Design",
+        "company_name": "M. F."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-marca-y-packaging-de-vinos-urbanos?ref=projects_3",
+        "title": "Creación De Marca Y Packaging De Vinos Urbanos",
+        "salary": "USD 500 - 1.000",
+        "description": "Desarrollo de marca, logo y etiquetas, para la primera bodega urbana del país.",
+        "requirements": "Identidad de marca cor... Diseño Gráfico Adobe Illustrator Packaging Branding Marketing Marcas Diseño de Logo",
+        "company_name": "B. U."
+    },
+    {
+        "url": "https://www.workana.com/job/locutor-o-locutora-para-generar-2-pistas-de-audio-de-30-segundos-cada-una?ref=projects_7",
+        "title": "Locutor O Locutora Para Generar 2 Pistas De Audio De 30 Segundos Cada Una",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Estoy desarrollando una serie de videos publicitarios para testeos de marketing, cada uno de ellos de 30 segundos de duracion. Dos de ellos quedaron sin el audio, y es un proyecto que debemos presentar en forma urgente, por lo que necesitamos a un locutor o locutora que rapidamente grabe esas 2 pistas de audio, cada una de ellas de 30 segundos de duracion. Nosotros las integraremos a los videos correspondientes.",
+        "requirements": "Edición de vídeo Edición de audio",
+        "company_name": "D. F. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/continuacion-de-plataforma-de-e-learning-desarrollada-en-un-60?ref=projects_7",
+        "title": "Continuación de Plataforma de E-learning desarrollada en un 60%",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 250 - 500",
+        "description": "TITULO",
+        "requirements": "PostgresSQL Laravel React.js JavaScript MySQL PHP",
+        "company_name": "Y. C."
+    },
+    {
+        "url": "https://www.workana.com/job/es-un-courrier-ya-empece-la-programacion-y-diseno-necesito-que-me-lo-terminen?ref=projects_7",
+        "title": "Es Un Courrier, Ya Empece La Programacion Y Diseño, Necesito Que Me Lo Terminen.",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito, Terminar la programacion de la pagina web, YA integre el worldpress y casi todos los plugin que necesito, si mal lo recuerdo, me puede faltar uno o quizas 2.",
+        "requirements": "CSS HTML Responsive Web Design WordPress",
+        "company_name": "C. F."
+    },
+    {
+        "url": "https://www.workana.com/job/happybox-web?ref=projects_7",
+        "title": "Happybox Web",
+        "salary": "USD 50 - 100",
+        "description": "Ya empece la pagina a programarla yo, pero no tengo tiempo para terminarla ya que, se me presento otro proyecto. Me gustaria terminarla con Uds. Si les interesa y llegamos a un precio final.",
+        "requirements": "HTML PHP WordPress",
+        "company_name": "C. F."
+    },
+    {
+        "url": "https://www.workana.com/job/comunity-manager-con-manejo-profesional-de-canva?ref=projects_7",
+        "title": "Comunity manager con manejo profesional de Canva",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Necesito a una persona para que maneje varias cuentas de clientes, generando contenido, publicándolo y generando interacción mediante historias con encuestas y demás.",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Escritura Creativa Marketing Online Canva Instagram",
+        "company_name": "J. F."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-crear-un-web-desde-cero-vendo-filamentos-de-impresora-3d-e-impresoras-3d?ref=projects_7",
+        "title": "Necesito crear un web desde cero, vendo filamentos de impresora 3d e impresoras 3d",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito un sitio web donde pude exponer mis 2 grandes productos filamentos de impresión 3d y impresoras 3d y repuestos de impresoras 3de",
+        "requirements": "CSS HTML Responsive Web Design API",
+        "company_name": "T. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseminar-articulos-ya-escritos-en-la-web?ref=projects_7",
+        "title": "Diseminar articulos ya escritos en la web",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Se necesita propagar y diseminar digitalmente 100 artículos sobre temáticas de branding, estrategia, marketing y emprendedurismo.",
+        "requirements": "Link Building SEO Facebook Social Networking WordPress Blogs Marketing Online Marketing Estrategia de Marketing Social Media Marketing",
+        "company_name": "A. P."
+    },
+    {
+        "url": "https://www.workana.com/job/bot-whatsapp-y-o-telegram?ref=projects_12",
+        "title": "Bot Whatsapp (y/o Telegram)",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "( Por favor leer hasta el final antes de contactarnos )",
+        "requirements": "Chatbot",
+        "company_name": "Jvagliat S."
+    },
+    {
+        "url": "https://www.workana.com/job/analisis-de-requermientos-y-pm-para-continuar-con-el-desarrollo-de-una-solucion-de-software?ref=projects_15",
+        "title": "Analisis de requermientos y Pm para continuar con el desarrollo de una solucion de software",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Analisis de requermientos para continuar con el desarrllo de una solucion de software, ",
+        "requirements": "Android iPhone Responsive Web Design API HTML JavaScript MySQL PHP",
+        "company_name": "R. N."
+    },
+    {
+        "url": "https://www.workana.com/job/posicionamiento-en-buscadores-y-landing-page?ref=projects_15",
+        "title": "Posicionamiento en buscadores y landing page",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Nuestra empresa está dedicada a la arquitectura y construcción de centros de salud. Buscamos posicionarnos fuertemente en buscadores (google). Disponemos de pagina ",
+        "requirements": "Link Building Escritura de artículos SEO WordPress Marketing Online",
+        "company_name": "N. M."
+    },
+    {
+        "url": "https://www.workana.com/job/imagen-corporativa-para-empresa-de-desarrollo-web-y-apps?ref=projects_15",
+        "title": "Imagen corporativa para empresa de desarrollo (web y apps)",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito realizar la imagen corporativa de una empresa de desarrollo que esta por comenzar, la idea es darle a la empresa un estilo moderno, minimalista, pero a la vez que de la sensación de juventud y movimiento.",
+        "requirements": "Identidad de marca cor... Diseño Gráfico Adobe Illustrator Animación Ilustración",
+        "company_name": "Christian A. E. G."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-banners-para-instagram-facebook-y-imagenes-png?ref=projects_15",
+        "title": "Diseño de banners para instagram facebook y imagenes png",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Descripción:",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Marketing Online",
+        "company_name": "I. B."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-una-app-sencilla-basada-en-el-contenido-de-la-web-https-www-cotrans-com-uy?ref=projects_15",
+        "title": "Necesito una app sencilla, basada en el contenido de la web https:www.cotrans.com.uy",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Necesito una app sencilla, basada en el contenido de la web ",
+        "requirements": "Android iPhone Responsive Web Design JavaScript",
+        "company_name": "E. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-hoja-de-presupuestos-y-rediseno-del-logo?ref=projects_15",
+        "title": "Diseño de hoja de presupuestos y rediseño del logo",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Diseñar la hoja template corporativa para la presentación de presupuestos a los clientes. Incluye selección del tipo de letra, diseño de la hoja, inclusión de los logos, sugerencias, rediseño del logo de la empresa. Se adjunta archivo de lo que se tiene actualmente",
+        "requirements": "Diseño Gráfico Ilustración",
+        "company_name": "M. B."
+    },
+    {
+        "url": "https://www.workana.com/job/libro-infantil-7?ref=projects_18",
+        "title": "Libro infantil",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Busco a alguien que pueda armar el formato de un libro (con una historia ya escrita) con ilustraciones ",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Ilustración",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-reel?ref=projects_15",
+        "title": "Crear Reel",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Se requiere profesion gráfico para crear un Reel, presentando una familia de Apps mobile.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Edición Animación",
+        "company_name": "Jvagliat S."
+    },
+    {
+        "url": "https://www.workana.com/job/marklu-publicidad?ref=projects_22",
+        "title": "Marklu Publicidad",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 3.000",
+        "description": "La idea seria desarrollar algo de interes al público algo que llame mucho la atención para tener un logro en menos de una semana",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "L. F."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrolo-ecommerce-xl-multitienda?ref=projects_22",
+        "title": "Desarrolo Ecommerce Xl multitienda",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Características del Sitio web a desarrollar para portal de e-commerce",
+        "requirements": "Magento PHP WordPress",
+        "company_name": "S. R."
+    },
+    {
+        "url": "https://www.workana.com/job/app-de-tienda-woocommerce?ref=projects_22",
+        "title": "App de tienda woocommerce",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "La idea es crear una app de la tienda woocomerece , compre un plugin que no lo supe configurar el cual te genera la tienda pero es para un nivel avanzado en conocimiento.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/imagenes-para-redes-sociales-333?ref=projects_22",
+        "title": "Imagenes para redes sociales",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito realizar 30 imagenes para instegram y faceebok para que Uruguayos visiten Uruguay. ",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/sitio-de-e-commerce-con-registro-de-usuarios?ref=projects_22",
+        "title": "Sitio de e-commerce con registro de usuarios",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Dejamos un archivo adjunto en donde detalla el sitio web. Algo que no está allí es que debe de contar con un espacio para banners horizontales como destaque de algunos productos, ofertas, etc. También otros lugares en el sitio para banners más chicos.",
+        "requirements": "HTML WordPress Responsive Web Design MySQL",
+        "company_name": "N. C."
+    },
+    {
+        "url": "https://www.workana.com/job/videojuegos-android?ref=projects_22",
+        "title": "Videojuegos android",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Mi idea consiste en crear un videojuego entretenido apto para todo publico. Paresido a mario broos desde ya agradeseria toda la alluda posible",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "N. A."
+    },
+    {
+        "url": "https://www.workana.com/job/aumentar-visitas?ref=projects_22",
+        "title": "Aumentar visitas",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito saber cual es la manera mas natural para poder incrementar las visitas a mi pagina web, que herramientas puedo utilizar?, que debo tener en cuenta para potenciar mi web de forma natural.",
+        "requirements": "Link Building Escritura de artículos SEO WordPress Marketing Online",
+        "company_name": "D. C."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-intro-para-podscast?ref=projects_20",
+        "title": "Crear intro para podscast",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito la creación de una intro para podscast, de no más ",
+        "requirements": "Identidad de marca cor... Marketing Online",
+        "company_name": "M. R."
+    },
+    {
+        "url": "https://www.workana.com/job/traduccion-ingles-a-espanol-llamadas-telefonicas-conversacion?ref=projects_20",
+        "title": "Traducción Ingles a Español llamadas telefónicas (Conversación)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Realizar llamadas a diferentes lugares con el fin de obtener informacion.",
+        "requirements": "Transcripción Traducción al Inglés Traducción al Español Asistente Virtual",
+        "company_name": "G."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-de-apps-para-sitio-web-de-ecommerce-estilo-market-place?ref=projects_20",
+        "title": "Desarrollo de Apps para Sitio Web de Ecommerce (estilo market place)",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 3.000",
+        "description": "Un sitio de eccomerce que actualmente está online y 100% activo y 100% responsivo se busca hacer una aplicación para que los clientes puedan comprar directamente desde la APP.",
+        "requirements": "Android iPhone Responsive Web Design iOS PHP",
+        "company_name": "A. M."
+    },
+    {
+        "url": "https://www.workana.com/job/folleto-para-recuperar-a-mi-perro-perdido?ref=projects_20",
+        "title": "Folleto para recuperar a mi perro perdido",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Quiero crear un folleto para encontrar a mi perro perdido.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M. R."
+    },
+    {
+        "url": "https://www.workana.com/job/locutor-a-grabar-mensaje-telefonico?ref=projects_20",
+        "title": "Locutor/a grabar mensaje telefónico",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Locutor/a que grabe mensaje para teléfono.  Según el texto que le brindemos debe de grabar un excelente mensaje para el recibimiento de los clientes cuando llaman a nuestro teléfono.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Escritura de artículos Edición de vídeo",
+        "company_name": "A."
+    },
+    {
+        "url": "https://www.workana.com/job/comunidad-420?ref=projects_20",
+        "title": "Comunidad 420",
+        "workday": "Según se necesite",
+        "roles": "Programador, Gerente de proyecto",
+        "salary": "USD 250 - 500",
+        "description": "Crear una app movil, con el el fin de establecer una comunidad apuntando al sector consumidor de marihuana. ",
+        "requirements": "JavaScript MySQL PHP API",
+        "company_name": "F. C."
+    },
+    {
+        "url": "https://www.workana.com/job/edicion-profesional-y-rapida?ref=projects_20",
+        "title": "Edición profesional y rápida",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Los videos solicitados en este sitio serán editados por una pequeña empresa de editores jóvenes y experimentados los cuales se centran en llamar la atención de espectadores con diversas técnicas de edición y emplazamientos específicos para lograr resultados altamente confortables y excepcionales para el cliente que solicite los servicios.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Diseño Gráfico Ilustración Adobe Illustrator Adobe Photoshop Producción de Video Locutor Marketing Online",
+        "company_name": "B. S."
+    },
+    {
+        "url": "https://www.workana.com/job/sitio-web-en-wpress-estudio-juridico?ref=projects_17",
+        "title": "Sitio web en Wpress estudio juridico",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Maquetación de un sitio web responsivo para estudio jurídico, una homepage, historia, equipo y servicios, seccion de noticias y galería en dos idiomas.",
+        "requirements": "HTML WordPress Responsive Web Design CSS JavaScript MySQL PHP",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/realidad-aumentada-48?ref=projects_17",
+        "title": "Realidad Aumentada",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Se realizara la animación de una figura humana y se deberá ver en realidad aumentada en una plaza. Es un humano y deberá ser lo más realista posible.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Animación Coreldraw Ilustración Producción de Video Realidad Aumentada",
+        "company_name": "H. G."
+    },
+    {
+        "url": "https://www.workana.com/job/redaccion-de-notas-de-prensa-y-newsletters-en-espanol-e-ingles?ref=projects_17",
+        "title": "Redacción de notas de prensa y newsletters en español e ingles",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Buscamos redactores freelance para redacción de notas de prensa, newsletters y contenido para blog para  empresa líder en tecnología de iluminación LED y Smart Cities. ",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa Blogs Redacción",
+        "company_name": "M. M."
+    },
+    {
+        "url": "https://www.workana.com/job/renovacion-de-logo-de-empresa?ref=projects_17",
+        "title": "Renovacion de logo de empresa",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Tengo una empresa de cortes y grabado laser, impresiones sobre rigidos y bordados, ya tengo diseñado un logo que adjunto pero quiero algo parecido nuevo mas moderno y vistoso tratando de mantener el formato",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Facebook 3d Animación Coreldraw Identidad de marca cor... Adobe Photoshop Marketing Online",
+        "company_name": "R. P."
+    },
+    {
+        "url": "https://www.workana.com/job/sitio-en-webflow?ref=projects_17",
+        "title": "Sitio en Webflow",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Necesito a alguien que haya hecho sitios web en Webflow para implementar un sitio que ya está diseñado.",
+        "requirements": "HTML5 CSS HTML JavaScript Responsive Web Design",
+        "company_name": "R."
+    },
+    {
+        "url": "https://www.workana.com/job/busco-freelance-para-que-me-ayude-a-crear-una-empresa-de-todo-es-el-primer-trabajo-de-la-empresa-y-buenos-precios?ref=projects_17",
+        "title": "Busco Freelance Para Que Me Ayude A Crear Una Empresa De Todo Es El Primer Trabajo De La Empresa Y Buenos Precios",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 50 - 100",
+        "description": "El trabajo es poner audio sin copy a imagen sin copy  preciso 12 videos para el primer mes y 24 videos para el segundo mes y 38 videos para el tercer mes y asi sucesivamente muchas gracias el nombre de la empresa o lema  el cielo es el limite .",
+        "requirements": "Link Building Escritura de artículos SEO YouTube Adobe After Effects Edición de audio Adobe Premiere Edición de vídeo",
+        "company_name": "R."
+    },
+    {
+        "url": "https://www.workana.com/job/r-l-accesorios?ref=projects_21",
+        "title": "R&L Accesorios",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Venta de joyas, accesorios para mujeres, delicados. Cadenas, caravanas, aros. Son joyas delicadas.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-carteleria-publicitaria-para-panaderia?ref=projects_21",
+        "title": "Diseño de cartelería publicitaria para panaderia",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito mejorar el diseño de logo de la panadería y crear banners y carteles para el interior y el exterior de la panadería, también un diseño para plotear una camioneta , desarrollar un catálogo de productos..",
+        "requirements": "",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/fotografa-o-con-conocimiento-en-colorimetria-de-fotos?ref=projects_21",
+        "title": "Fotógrafa/o con conocimiento en Colorimetría de fotos",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "El trabajo consiste en cambiar la colorimetría.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Ilustración",
+        "company_name": "A."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollador-sr-nodejs-aws-graphql-serverless-microservicios?ref=projects_21",
+        "title": "Desarrollador Sr Nodejs -Aws- Graphql -Serverless- microservicios-",
+        "workday": "Según se necesite",
+        "roles": "Programador, Analista funcional, Gerente de proyecto",
+        "salary": "USD 250 - 500",
+        "description": "Desarrollador Sr NodeJs -AWS- GraphQL -Serverless- microservicios-",
+        "requirements": "Amazon Web Services API Node.js JIRA",
+        "company_name": "G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/necesitaria-algo-como-esto-https-socgansansalvador-com?ref=projects_17",
+        "title": "Necesitaria Algo Como Esto https:socgansansalvador.com/",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola estaria necesitando crear una pagina con este diseño ",
+        "requirements": "HTML WordPress Responsive Web Design Diseño Gráfico Diseño Web",
+        "company_name": "J. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-video-para-album-musical-1?ref=projects_21",
+        "title": "Crear Video Para Album Musical",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se aceptan sugerencias, es un album de musica urbana y la idea es hacerle un video a cada cancion y al album en su conjunto. Puede tener la letra de la cancion o no, se aceptan sugerencias. No buscamos algo complicado pero si simple e innovador",
+        "requirements": "YouTube Edición Adobe After Effects Animación Adobe Premiere Edición de vídeo",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/webapp-wap-para-ingreso-de-incidentes-de-reparaciones-y-seguimiento?ref=projects_21",
+        "title": "Webapp (Wap) para ingreso de Incidentes de Reparaciones y Seguimiento",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Descripción:",
+        "requirements": "Android iPhone Responsive Web Design Ionic Framework Diseño de App Móvil Firebase",
+        "company_name": "M. R."
+    },
+    {
+        "url": "https://www.workana.com/job/real-slot?ref=projects_21",
+        "title": "Real Slot",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Quiero crear una app, en la que hallan juegos de slot, con cuentas personales para emprendedores, los cuales pueden crear cuentas a clientes, estos clientes al obtener su cuenta gratuitamente ya quedan disponibles para pedir a los emprendedores la carga de puntos a cambio de dinero real, los puntos son para jugar los juegos de slot, sin límite de puntuación, el emprendedor será el que pague los premios que obtienen los clientes al jugar, el manejo de los juegos tien que generar una ganancia del 20% para los clientes y el 80% para la aplicación, tal cual es el funcionamiento de las máquinas reales de slots que todos conocemos.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "F. R. M."
+    },
+    {
+        "url": "https://www.workana.com/job/forestacion?ref=projects_19",
+        "title": "Forestación",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Rehacer logos de marca con tipografía simple. Tengo 4 logos de la misma marca, precisaría que se re dibujen en buena calidad.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "J."
+    },
+    {
+        "url": "https://www.workana.com/job/ilustraciones-de-personajes-para-marca?ref=projects_19",
+        "title": "Ilustraciones de personajes para marca",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito la creacion de dos personajes para marca de tecnologia, un hombre y una mujer, tengo imagenes de referencia. La necesito en varias posiciones, supongo 20 minimo de cada una. Presupuesto $20-24 mil pesos uruguayos",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "P. N."
+    },
+    {
+        "url": "https://www.workana.com/job/nicolas-di-leo?ref=projects_19",
+        "title": "Nicolas Di Leo",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Estamos buscando desarrolladores con conocimientos en php, ionic 5 , laravel. nuestra intención es armar un equipo de desarrollo que trabaje de forma local en montevideo uruguay",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "N. D. L."
+    },
+    {
+        "url": "https://www.workana.com/job/codigo-que-cargue-video-y-luego-genere-un-autoclick?ref=projects_19",
+        "title": "Codigo Que Cargue Video Y Luego Genere Un Autoclick",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Menos de USD 50",
+        "description": "Codigo web para que un sitio cargue un video y a los segundos le haga un autoclick.",
+        "requirements": "JavaScript MySQL PHP CSS HTML HTML5 Responsive Web Design",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-video-para-album-musical?ref=projects_19",
+        "title": "Crear Video Para Album Musical",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se aceptan sugerencias, es un album de musica urbana y la idea es hacerle un video a cada cancion y al album en su conjunto. Puede tener la letra de la cancion o no, se aceptan sugerencias. No buscamos algo complicado pero si simple e innovador",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo YouTube Edición Animación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/codigo-html-javascript-para-reproduccion-de-video-en-un-navegador-web?ref=projects_19",
+        "title": "Codigo Html - Javascript para reproduccion de video en un navegador web",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "Buscamos un profesional con conocimiento de programacion web para desarrollar un codigo que se adapte a nuestras necesidades. Necesitamos reproducir un video en nuestra pagina de YouTube, vimos que hay opciones en html y java para su realizacion.",
+        "requirements": "JavaScript MySQL PHP Android API CSS HTML HTML5 Responsive Web Design Diseño Web",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-de-app-para-manejo-de-datos?ref=projects_19",
+        "title": "Desarrollo de app para manejo de datos",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Se trata del desarrollo de una app móvil y web que tomara datos de un dispositivo fisicio en tiempo real, el usuario puede visualizar, modificar o guardar esos datos para volver a trabajar sobre los mismos",
+        "requirements": "Android iPhone Responsive Web Design API HTML iOS JavaScript MySQL PHP",
+        "company_name": "G."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-chatbot-manychat?ref=projects_18",
+        "title": "Crear chatbot Manychat",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola buenas! busco persona que pueda desarrollar chatbot de Manychat para separar suscriptores, enviar secuencias y poder enviar mensajes masivos. Actualmente tenemos manychat pro, pero no tenemos secuencias creadas ni menú. Seria casi desde cero armar todo, mejor porque así no te perderías en lo que haces.",
+        "requirements": "Facebook Marketing Online Marketing",
+        "company_name": "D. S."
+    },
+    {
+        "url": "https://www.workana.com/job/filmacion-y-edicion-de-videos-e-imagenes?ref=projects_18",
+        "title": "Filmacion y edición de videos e imágenes.",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Somos una empresa de Depilación Láser, comenzamos éste año. Estamos buscando un diseñador que se ocupe de los videos e imágenes para las publicidades.",
+        "requirements": "Facebook Edición Diseño Gráfico Edición de vídeo Instagram",
+        "company_name": "D. R."
+    },
+    {
+        "url": "https://www.workana.com/job/reparar-actualizaciones-de-la-web-desarollar-plantillas?ref=projects_18",
+        "title": "Reparar actualizaciones de la web, desarollar plantillas",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Corregir problemas con el menu de mi pagina y crear nuevas plantillas de presentacion, asi como la intalacion de plugin entre otras cosas",
+        "requirements": "HTML PHP WordPress",
+        "company_name": "R. G."
+    },
+    {
+        "url": "https://www.workana.com/job/liga-de-futbol-7?ref=projects_18",
+        "title": "Liga de Fútbol 7",
+        "salary": "USD 50 - 100",
+        "description": "Hola! Mi nombre es Joel. Hace 5 años organizo torneos de fútbol 7 en Uruguay. ",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/vendedor-para-vender-un-servicio-a-empresas-b2b?ref=projects_18",
+        "title": "Vendedor Para Vender Un Servicio A Empresas (B2b)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesitamos un equipo de ventas que pueda cumplir con los objetivos semanal y mensual. Necesitamos vendedores que tengan experiencia de al menos 2 años y previamente hayan podido vender servicios intangible a nivel nacional o internacional. Se valora mucho la experiencia de Marketing Digital y ventas de High Ticket.",
+        "requirements": "Publicidad Marketing de afiliados Ventas",
+        "company_name": "Group S."
+    },
+    {
+        "url": "https://www.workana.com/job/editar-imagen-4?ref=projects_16",
+        "title": "Editar imagen",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola, busco que me edites una imagen sacando los 3 libros por separado y editando su texto... Quiero que remplaces el \"crecer\" por \"aumentar\" elimines la pagina web \"",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Adobe Photoshop Marketing Online",
+        "company_name": "R. L."
+    },
+    {
+        "url": "https://www.workana.com/job/script-para-abrir-ventanas-web-en-modalidad-popunder?ref=projects_18",
+        "title": "Script para abrir ventanas web en modalidad popunder",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "Desarrollo de script para poder abrir ventanas emergentes en html en modalidad Popunder (detras de la ventana). Buscamos rapido desarrollo.",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/portal-trabajo?ref=projects_16",
+        "title": "Portal trabajo",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Panel de control de usuario en web ya realizada sobre plataforma de trabajo",
+        "requirements": "HTML PHP WordPress Responsive Web Design",
+        "company_name": "J. P. P."
+    },
+    {
+        "url": "https://www.workana.com/job/pestanas-1?ref=projects_16",
+        "title": "Pestañas",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Pestañas pelo a pelo, delicadas, rosado y negro con la letra M en grande y imagen de ojos con pestañas resaltadas que se vean y que abajo diga mis pestañas así delicado",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/campana-de-promocion-de-sitio-web-portal-de-noticias?ref=projects_16",
+        "title": "Campaña de promocion de sitio web, portal de noticias",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Tenemos que expandir el radio de visitas a la pagina y suscriptores a los contenidos, así como los seguidores en nuestras distintas plataformas virtuales: Twitter, Instagram y Facebook.",
+        "requirements": "Facebook AdWords de Google Marketing Online Escritura Creativa Diseño Gráfico Marketing",
+        "company_name": "H. P. D. A."
+    },
+    {
+        "url": "https://www.workana.com/job/tienda-online-218?ref=projects_16",
+        "title": "Tienda online",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador",
+        "salary": "Menos de USD 50",
+        "description": "Hola, quiero hacer una tienda online que las personas puedan publicar sus productos casas de todo y venderlos sin yo tener que estar pendiente de ellos  tipo mercado libre que puedan dejar reseñas, comentarios el envio lo tienen que hacerlo afuera de la pagina",
+        "requirements": "JavaScript MySQL PHP API CSS HTML HTML5 WordPress Responsive Web Design",
+        "company_name": "F. R."
+    },
+    {
+        "url": "https://www.workana.com/job/mercado-libre-6?ref=projects_14",
+        "title": "Mercado Libre",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hay un vendedor en mercado libre que esta en uruguay y agrentina se llama ,traetulibro quisiera saber para hacer lo smimo como subir todo a mercado libre",
+        "requirements": "Link Building Escritura de artículos SEO Marketing Online",
+        "company_name": "A. L."
+    },
+    {
+        "url": "https://www.workana.com/job/community-manager-rubro-tech-1?ref=projects_16",
+        "title": "Community Manager Rubro Tech",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se busca community manager para administrar cuentas del rubro de la tecnología. Las tareas incluirán:",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing",
+        "company_name": "Dango D."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-web-1390?ref=projects_14",
+        "title": "Diseño Web",
+        "salary": "Menos de USD 50",
+        "description": "Diseñar web para tienda de sneakers, se tendra que subir fotos y descripciones tambien aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/edicion-de-comerciales-de-television-de-productos-varios?ref=projects_14",
+        "title": "Edición de comerciales de televisión de productos varios (solo para Uruguay)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Estamos buscando editores de vídeo para comerciales de televisión de los productos de la empresa Teleshopping. Los comerciales ya vienen producidos. El trabajo consiste en editarlos a modo de adaptarlos a la oferta publicitaria que ofrece la empresa, agregarles texto, número de teléfono, placa con precio, etc.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Edición de audio",
+        "company_name": "T. U."
+    },
+    {
+        "url": "https://www.workana.com/job/conectar-pagina-web-wix-al-sistema-de-facturacion-y-stock-de-la-empresa?ref=projects_14",
+        "title": "Conectar página web Wix al sistema de facturación y stock de la empresa",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 50 - 100",
+        "description": "Necesito conectar una página web diseñada en WIX al sistema de facturación y stock que tiene esta empresa de tal manera que pueda actualizarse de forma automática la tienda online.",
+        "requirements": "JavaScript MySQL PHP HTML5 Wix",
+        "company_name": "L. F."
+    },
+    {
+        "url": "https://www.workana.com/job/plugin-woocommerce-11?ref=projects_16",
+        "title": "Plugin Woocommerce",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "Menos de USD 50",
+        "description": "Adaptación o creación de plugin de personalización de productos para WooCommerce. La página del producto debe verse como ",
+        "requirements": "PHP WordPress JavaScript WooCommerce",
+        "company_name": "F. B."
+    },
+    {
+        "url": "https://www.workana.com/job/nombre-logo-y-tarjetas-de-presentacion-de-tarjetas-pintura-de-casas?ref=projects_14",
+        "title": "Nombre ,logo y tarjetas de presentación de tarjetas . Pintura de casas",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito un nombre para empresa y logo para empresa de pintura interior exterior .Tarjetas personales con las tareas que se realizan",
+        "requirements": "Escritura de artículos Redacción Investigación",
+        "company_name": "X."
+    },
+    {
+        "url": "https://www.workana.com/job/registro-de-marca-en-argentina?ref=projects_14",
+        "title": "Registro de marca en Argentina",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesitamos registrar una marca en el INPI y contestar oposiciones/descargos.",
+        "requirements": "",
+        "company_name": "N. M."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-app-web-de-ventas-online-de-terceros?ref=projects_13",
+        "title": "Diseño de app web de ventas online de terceros.",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Necesito un programador que puede diseñar app facilmente, primero necesito varios prototipos para probar creedibilidad de lo que puede llegar a ser la app. Aspiración a persona pro activa que pueda ser iniciador desde 0 en la empresa.",
+        "requirements": "Android API HTML iOS iPhone JavaScript MySQL PHP Responsive Web Design",
+        "company_name": "L. P."
+    },
+    {
+        "url": "https://www.workana.com/job/recuperacion-de-cuenta-de-instagram?ref=projects_14",
+        "title": "Recuperacion de cuenta de instagram",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Alquile una cuenta de instagram a una persona, despues de un tiempo esa persona cambio todos los datos y perdi la cuenta, me gustaria saber si alguien la puede recuperar y el costo",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "B. A. G."
+    },
+    {
+        "url": "https://www.workana.com/job/redaccion-seo-para-sitio-web?ref=projects_13",
+        "title": "Redacción Seo para sitio web",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito redactar una landingpage para un servicio que ofrezco de ecommmerce, trata de un sistema de gestion de inventario y venta que se conecta con el inventario de Mercado Libre",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa SEO",
+        "company_name": "G. V."
+    },
+    {
+        "url": "https://www.workana.com/job/actualizar-pagina-web-ya-existente?ref=projects_13",
+        "title": "Crear Pagina Web",
+        "workday": "A tiempo parcial",
+        "salary": "USD 100 - 250",
+        "description": "Se busca hacer una pagina web.",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "F. Y."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-todo-los-relacionado-a-redes?ref=projects_13",
+        "title": "Crear todo los relacionado a redes",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Queremos crear todo el canal de marketing digital de la empresa y eliminar lo que esta dando mala imagen de la. Empresa.",
+        "requirements": "Facebook Diseño Gráfico Publicidad Social Media Marketing Publicidad en Google, ... Publicaciones para red...",
+        "company_name": "N. D. L."
+    },
+    {
+        "url": "https://www.workana.com/job/contratacion-por-hora-para-desarrollos-en-odoo?ref=projects_13",
+        "title": "Contratación por hora para desarrollos en odoo",
+        "salary": "Más de USD 3.000",
+        "description": "Desarrollo de módulos en odoo. Conocimientos de python. Trabajará conectado por zoom compartiendo pantalla.",
+        "requirements": "Magento PHP WordPress",
+        "company_name": "N. D. L."
+    },
+    {
+        "url": "https://www.workana.com/job/puesta-a-punto-de-pagina-web-en-worpress-para-gestion-de-compras?ref=projects_13",
+        "title": "Puesta a punto de pagina web en worpress para gestion de compras",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "Lo que se busca es hacer el enlace entre una web hecha en wordpress (Pagina interna de gestion de compras) y un e-comerce con Woocomerce.",
+        "requirements": "JavaScript MySQL PHP WordPress",
+        "company_name": "H. R."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-de-una-app-android-ios-integrada-a-una-tienda-prestashop-y-con-redes-sociales?ref=projects_10",
+        "title": "Desarrollo de una App Android/Ios integrada a una tienda Prestashop y con redes sociales",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Estamos comenzando un nuevo emprendimiento, por un tenemos un sitio web con una tienda prestashop, por otra parte tenemos el servicio de Community Manager para manegar las redes sociales, y queres incorporarle una aplicacion mobil, con las maximas funcionalidades posibles, en este aspecto queremos escuchar propuestas y ver algun ejemplo que hayan desarrollado. Un acceso a la tienda, que ya tiene integracion con Mercado Pagos para poder comprar en linea, registrarse como cliente, que sea bien rapido con nombre y celular, para recibir ofertas, un software administrativo que permita ver a todos los clientes registrados, una opcion de registro mas amplia con los enlaces de sus redes sociales,  el historial de compras, y cualquier otra funcionalidad que nos propongan.",
+        "requirements": "Android iPhone MySQL Responsive Web Design",
+        "company_name": "D. F. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/al-toque-5?ref=projects_10",
+        "title": "Al Toque",
+        "salary": "Menos de USD 50",
+        "description": "Tengo desarrollado en Drupal 8 una aplicación de comida, necesito hacer unos retoques de funcionamiento y agregar otras funciones. Espero que me puedas ayudar, capacidad de trabajo. Espero Respuesta",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "M. N. C."
+    },
+    {
+        "url": "https://www.workana.com/job/sitio-web-que-tenga-plantillas-y-que-se-pueda-configurar-facilmente?ref=projects_13",
+        "title": "Sitio web que tenga plantillas y que se pueda configurar facilmente",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador, Diseñar una landing page",
+        "salary": "USD 100 - 250",
+        "description": "Necesito freelancer que me haga un sitio web donde un usuario cree su sitio web a traves de plantillas pre determinadas de facil edicion que pueda cambiar e incluir imagenes y textos facilmente ,una vez creado dicha pagina web se pueda incluir en wordpress o en algun sitio de alojamiento, una vez creada se compre la misma y se registre el usuario si esta contento con la creacion",
+        "requirements": "Facebook Marketing Online Marketing PHP Escritura de artículos Escritura Creativa Diseño Gráfico Adobe Illustrator Adobe Photoshop AdWords de Google JavaScript MySQL",
+        "company_name": "M. B."
+    },
+    {
+        "url": "https://www.workana.com/job/redaccion-de-50-arituclos-con-criterios-de-seo?ref=projects_10",
+        "title": "Redaccion de 50 arituclos con criterios de Seo",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Se necesita la creacion y redaccion de 50 artículos de interes general, en idioma español de aproximadamente 300-500 palabras cada uno, sobre estas temáticas en general:",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa WordPress Blogs Redacción Creatividad y Talento SEO",
+        "company_name": "A. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-una-pagina-para-web-para-una-clinica-odontologica?ref=projects_10",
+        "title": "Diseño de una pagina para web para una Clínica Odontologica.",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito desarrollar una pagina web simple, que sea vistosa pero intuitiva, disponibilidad de empezar no seria inmediata, ya que estoy comunicándome con un fotógrafo para tener imágenes actuales para la pagina , y ademas me estoy comunicando con el diseñador web anterior con el cual no estoy conforme para que me acceso al dns.",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "A."
+    },
+    {
+        "url": "https://www.workana.com/job/crecimiento-de-foro?ref=projects_10",
+        "title": "Crecimiento de foro",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Foro de SEO busca experto para trabajar en el crecimiento del foro.",
+        "requirements": "Link Building Escritura de artículos SEO Marketing Online Publicaciones para red...",
+        "company_name": "R. C."
+    },
+    {
+        "url": "https://www.workana.com/job/casa-de-inversiones-para-decentraland?ref=projects_10",
+        "title": "Casa de Inversiones para Decentraland",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Hola:",
+        "requirements": "API CSS",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/create-a-marketing-video-1?ref=projects_10",
+        "title": "Create a marketing video",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "I need a video to show up my product. It'll be a vectorial animation video along with explicative text and a background music. I've the script which is in spanish.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Edición Animación Edición de audio Diseño Gráfico Vectorworks",
+        "company_name": "L. I."
+    },
+    {
+        "url": "https://www.workana.com/job/web-para-realizacion-de-inventarios?ref=projects_11",
+        "title": "Web para realizacion de inventarios",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "El proyecto consta de una aplicación web con dos paginas: ",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/disenos-para-corte-y-grabado-laser?ref=projects_11",
+        "title": "Diseños para corte y grabado laser",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola, tenemos maquinaria láser con la que hacemos diferentes proyectos tanto a nivel individual como empresarial. Hacemos objetos personalizados. Tenemos una diseñadora en nuestro equipo pero necesitaríamos ocasionalmente otro diseñador/a para algunos proyectos.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "B. A."
+    },
+    {
+        "url": "https://www.workana.com/job/publicidad-en-facebook-google-y-amazon?ref=projects_11",
+        "title": "Publicidad en Facebook, Google y Amazon",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Se necesita profesional que planifique diseñe e implemente campañas de publicidad en las plataformas Facebook, Google y Amazon",
+        "requirements": "Facebook AdWords de Google Marketing Online Marketing",
+        "company_name": "O. M."
+    },
+    {
+        "url": "https://www.workana.com/job/formulario-pdf-editable?ref=projects_12",
+        "title": "Formulario Pdf editable",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Buenos días,",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/exportar-conversaciones-de-whatsapp-web-y-analizar-horas-de-conversaciones?ref=projects_11",
+        "title": "Exportar conversaciones de Whatsapp web y analizar horas de conversaciones",
+        "workday": "A tiempo parcial",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Qué tal!",
+        "requirements": "HTML5 MySQL PHP Java JavaScript Python C",
+        "company_name": "D. R."
+    },
+    {
+        "url": "https://www.workana.com/job/pagina-web-de-un-escritor?ref=projects_12",
+        "title": "Pagina web de un escritor",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "se  trata de un escritor multifacetico por lo que la pagina tendrá que tener secciones para ensayos, libros, entrevistas, videos, discursos etc",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": ""
+    },
+    {
+        "url": "https://www.workana.com/job/python-django-desarrollador-full-time-contrato-a-1-ano-opcion-2?ref=projects_12",
+        "title": "Python + Django | Desarrollador full time - contrato a 1 año, opción 2.",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Necesitamos contratar hasta 10 desarrolladores expertos en Python con experiencia en Django para incorporarse como freelance en un contrato full time de 35 horas semanales por una duración de hasta 1 año.",
+        "requirements": "API Django Python",
+        "company_name": "S. M."
+    },
+    {
+        "url": "https://www.workana.com/job/android-kotlin-desarrollador-full-time-contrato-a-1-ano-opcion-2?ref=projects_12",
+        "title": "Android + Kotlin | Desarrollador full time - contrato a 1 año, opción 2.",
+        "workday": "Tiempo completo",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Necesitamos 10 desarrolladores expertos en Android + Kotlin para incorporarse como freelance en un contrato full time de 35 horas semanales a 1 año.",
+        "requirements": "API Android Diseño de App Móvil",
+        "company_name": "S. M."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-para-una-marca-de-ropa-destinada-a-los-jovenes?ref=projects_11",
+        "title": "Diseño de logo para una marca de ropa destinada a los jovenes",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito desarrollar un logo para una marca de ropa destinada a jovenes, con una identidad enfocada en el surf y en la naturaleza. El nombre de la misma significa atardecer en Hawaiano (Kauka'i).",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Diseño de Logo",
+        "company_name": "I. I."
+    },
+    {
+        "url": "https://www.workana.com/job/rediseno-de-pagina-web-82?ref=projects_12",
+        "title": "Rediseño de página web",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "En base a un trabajo completo de branding completo, rediseñar una página web para ajustarla al branding y \"recrearla\" orientada a la estratégica de marketing. Fundamental que este orientada a SEO.",
+        "requirements": "HTML WordPress Responsive Web Design CSS JavaScript",
+        "company_name": "E. C."
+    },
+    {
+        "url": "https://www.workana.com/job/app-ios-de-resultados-deportivos-a-partir-de-scraping?ref=projects_11",
+        "title": "App ios de resultados deportivos a partir de scraping",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito app para ios de resultados deportivos. Esta deberá mostrar los próximos partidos, los resultados en tiempo real y las estadísticas. Los datos a mostrar deben ser tomados por scraping de una página de un tercero.",
+        "requirements": "HTML5 HTML iOS",
+        "company_name": "G."
+    },
+    {
+        "url": "https://www.workana.com/job/ios-swift-desarrollador-full-time-contrato-a-1-ano-opcion-2?ref=projects_12",
+        "title": "Ios + Swift | Desarrollador full time - contrato a 1 año, opción 2.",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Necesitamos 10 desarrolladores expertos en iOS + Swift para incorporarse como freelance en un contrato full time de 35 horas semanales a 1 año.",
+        "requirements": "iOS Swift Diseño de App Móvil",
+        "company_name": "S. M."
+    },
+    {
+        "url": "https://www.workana.com/job/red-social-101?ref=projects_9",
+        "title": "Red social",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador, Gerente de proyecto, Otro",
+        "salary": "USD 250 - 500",
+        "description": "Hola estoy buscando a alguien que me ayude a crear una red social estoy trabajando en ella hace hace algún tiempo pero no sé cómo crear una aplicación estaría buscando alguien que me pueda ayudar a crearla",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "A. C. R."
+    },
+    {
+        "url": "https://www.workana.com/job/pagina-web-para-liga-amateur?ref=projects_9",
+        "title": "Página web para liga amateur",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "Más de USD 3.000",
+        "description": "Mi idea es hacer una  página similar a ",
+        "requirements": "JavaScript MySQL Python Ruby Responsive Web Design React.js",
+        "company_name": "I. F."
+    },
+    {
+        "url": "https://www.workana.com/job/remodelacion-retail-y-actualizacion-local-comercial-venta-de-electrodomesticos?ref=projects_9",
+        "title": "Remodelacion retail y actualizacion local comercial venta de electrodomesticos",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "buenas , me gustaria me puedan armar un diseño 3d o renders con imagenes lo mas reales posibles de como se podria transformar el local que tengo  hay que hacer actualizacion desde la fachada , iluminacion mobiliario y exhibidores para mercaderias de electrodomesticos  tiene que ser en español los concursantes  no cuento con mucho presupuesto  pero con ingenio y buenas ideas lo podremos lograr",
+        "requirements": "Modelado 3D 3ds Max AutoCAD 3d 3D Rendering",
+        "company_name": "P."
+    },
+    {
+        "url": "https://www.workana.com/job/edicion-y-retoque-digital-de-fotografias?ref=projects_9",
+        "title": "Edición y Retoque digital de fotografías",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Trabajamos con un importante volumen de fotografías de productos para ecommerce, las cuales muchas veces (por la naturaleza de los productos) deben ser retocadas para disimular imperfecciones de los mismos, como arrugas en prendas de vestir, brillos o manchas o rayones en joyas, etc.",
+        "requirements": "Diseño Gráfico Adobe Photoshop Fotografía Retoque Fotográfico",
+        "company_name": "V."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-pagina-web-amateur?ref=projects_9",
+        "title": "Diseño de página web amateur",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito desarrollar mock ups de la página web que quiero realizar pero aún no tengo definido bien como sería. En cuanto a contenido, sería similar a ",
+        "requirements": "HTML Responsive Web Design CSS Diseño Gráfico Diseño Web",
+        "company_name": "I. F."
+    },
+    {
+        "url": "https://www.workana.com/job/redes-sociales-de-productos-cosmeticos?ref=projects_9",
+        "title": "Redes sociales de productos cosméticos",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito un diseñador gráfico y community manager que lleve a cabo las redes sociales de diferentes marcas de cosméticos (maquillaje, cremas, bálsamos labiales, jabones y champo en seco) que nuestra empresa comercializa en Uruguay. ",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Adobe Illustrator Marketing Online Instagram Instagram Ads",
+        "company_name": "F. M."
+    },
+    {
+        "url": "https://www.workana.com/job/busco-persona-para-hacerle-la-voz-a-un-video?ref=projects_5",
+        "title": "Busco persona para hacerle la voz a un video.",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Yo ya tengo el video hecho. Necesito que me envien la voz para colocarla yo en el video. La voz tiene que ser neutra (como las que doblan las películas en español en la TV).",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo",
+        "company_name": "A. M."
+    },
+    {
+        "url": "https://www.workana.com/job/video-dinamico-para-presentar-productos?ref=projects_5",
+        "title": "Video Dinámico para presentar productos",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito realizar un video dinámico y colorido para niños y padres con hijos pequeños, para presentar 7 imágenes de productos reales (botella de agua, cartuchera, mochila para el colegio, mochila para zapatos de futbol, lonchera para la comida, etc). ",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Animación Diseño Gráfico",
+        "company_name": "W. D. J."
+    },
+    {
+        "url": "https://www.workana.com/job/marcelo-13?ref=projects_5",
+        "title": "Marcelo",
+        "salary": "Menos de USD 50",
+        "description": "Pagina web subir productos y que sea una pagina facil de manejar ",
+        "requirements": "Identidad de marca cor... Diseño Gráfico Adobe Illustrator",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-generar-un-disno-para-una-pagina-web-que-ya-esta-subida-de-venta-de-productis-online?ref=projects_5",
+        "title": "Necesito generar un disño para una pagina web que ya esta subida de venta de productis online",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Todo lo que se necesita para el coronavirus vendemos todos los productos para casas hoteles restaurantes ese es nuestro publico.",
+        "requirements": "Link Building Escritura de artículos SEO Facebook WordPress Marketing Online",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/compra-de-antiguedades?ref=projects_5",
+        "title": "Compra,de,antiguedades",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador",
+        "salary": "USD 50 - 100",
+        "description": "pagina,de,compra,y,venta,de,muebles,adornos,objetos,coleccionables,cuadros,arte,medallas,bijouterie,juguetes,antiguos,libros,discos,de,vinilo",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "L. S."
+    },
+    {
+        "url": "https://www.workana.com/job/libro-epub-2?ref=projects_5",
+        "title": "Libro Epub",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesitaría pasar un libro inicialmente en formato pdf a formato digital epub (o formato digital estandar). El libro consta de 56 páginas y unas pocas ilustraciones.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "L. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-tarjeta-personal-10?ref=projects_5",
+        "title": "Diseno de tarjeta personal",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola! Necesito crear una tarjeta personal para una empresa de envases plásticos. Los colores son gris  y naranja, el logo lo tengo. El plazo de entrega es esta semana.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "N. M."
+    },
+    {
+        "url": "https://www.workana.com/job/interface-para-mensajeria-via-whatsapp?ref=projects_8",
+        "title": "Interface para mensajeria via whatsapp",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se solicita desarrollar en visual basic net, un modulo que permita el envio de mensjaes hacia un numero de celular, via whatsapp.",
+        "requirements": "C",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/editor-de-videos-para-organizacion-de-esports?ref=projects_8",
+        "title": "Editor de Videos para Organización de Esports",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Decent Esports (@decentlatam en todas las redes sociales)",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/linea-grafica-organizacion-de-esports?ref=projects_8",
+        "title": "Linea Grafica - Organización de Esports",
+        "workday": "A tiempo parcial",
+        "salary": "USD 50 - 100",
+        "description": "Decent Esports (@decentlatam en todas las redes sociales)",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/realizar-modificacion-en-sistema-php-vue?ref=projects_8",
+        "title": "Realizar modificacion en sistema php + vue",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 50 - 100",
+        "description": "Se tiene una web en php + vue + mysql, se requiere lo siguiente:",
+        "requirements": "JavaScript MySQL PHP Vue.js",
+        "company_name": "E. P."
+    },
+    {
+        "url": "https://www.workana.com/job/publicaciones-para-productos-de-e-commerce?ref=projects_8",
+        "title": "Publicaciones para productos de E-commerce",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesitamos desarrollar piezas ilustrativas para productos comercializados en market place local. Recolectar imágenes del mismo (de diferentes Market places internacionales) unificarlas y desarrollar placas explicativas con atributos, especificaciones, etc.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Ilustración",
+        "company_name": "L."
+    },
+    {
+        "url": "https://www.workana.com/job/logo-para-sitio-web-de-artesanos?ref=projects_8",
+        "title": "Logo para sitio web de artesanos.",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Precisamos diseño de logo e imagen de marca. ",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Identidad de marca cor... Adobe Photoshop",
+        "company_name": "P. M."
+    },
+    {
+        "url": "https://www.workana.com/job/se-busca-disenador-grafico-y-ui-ux?ref=projects_8",
+        "title": "Se busca Diseñador gráfico y Ui/Ux",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Somos un estudio de diseño pequeño que está creciendo y estamos buscando personas que se encarguen de diseñar lo que son páginas webs desde adobe XD y también que puedan realizar trabajos de identidad corporativa.",
+        "requirements": "Diseño Gráfico Interfaz de usuario User Experience Design Diseño Web",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/experto-en-google-ads-y-facebook-ads?ref=projects_2",
+        "title": "Experto En Google Ads Y Facebook Ads",
+        "workday": "A tiempo parcial",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Hola, busco un experto en Facebook Ads y Google Ads para obtener captacion de pacientes para una clinica dental. Envíame tu propuesta con tus honorarios EXCLUYENTE  y con tus trabajos realizados en este sentido, la prioridad son los resultados, se agradece mandar algo puntual y no un currículum, no me interesa la formación que tengas, me interesa los resultados que hayas generado a otras personas en este tipo de campañas y los que puedas darme a mi. Gracias.",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "A."
+    },
+    {
+        "url": "https://www.workana.com/job/programa-android-que-envie-mensajes-de-whatsapp-solo-sin-interaccion-del-usuario?ref=projects_2",
+        "title": "Programa Android que envié mensajes de Whatsapp solo, sin interacción del usuario.",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Necesito que la aplicación haga todo, que no se necesite la interacción de un usuario.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "F. Y."
+    },
+    {
+        "url": "https://www.workana.com/job/aplicacion-mobile-react-native-expo-firebase-android-ios?ref=projects_2",
+        "title": "Aplicación Mobile React Native/Expo, Firebase, Android & Ios",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "El proyecto consiste en mantener una aplicación en desarrollo, así como también comenzar una segunda fase de desarrollo, que incluirá la adición de nuevas pantallas, ajustes de diseños, y principalmente la inclusión de métodos de pago para subscripciones y push notifications.",
+        "requirements": "Android iPhone Node.js Responsive Web Design React.js Firebase React Native",
+        "company_name": "P. D."
+    },
+    {
+        "url": "https://www.workana.com/job/4-ilustraciones-para-landing-de-un-sitio-web?ref=projects_2",
+        "title": "4 ilustraciones para landing de un sitio web",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Estoy desarrollando un sitio web para un cliente y me solicito 4 ilustraciones para su página de inicio. Alguien podría ayudarme?",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Adobe Photoshop",
+        "company_name": "J. F."
+    },
+    {
+        "url": "https://www.workana.com/job/experto-en-servidores-amazon-aws?ref=projects_2",
+        "title": "Experto En Servidores Amazon Aws",
+        "workday": "A tiempo parcial",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Tenemos un sistema dentro de un servidor amazon AWS y necesitamos un experto gestor de este servidor.",
+        "requirements": "HTML5 MySQL PHP Amazon Web Services Web Services",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-hoy-fix-flutter-ios-fcm?ref=projects_2",
+        "title": "Necesito Hoy - bug fix: Flutter + Ios + Fcm",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se cuenta con una App Flutter en la que las notificaciones de FCM dejaron de llegar cuando está en segundo plano o terminada. ",
+        "requirements": "iPhone Firebase Flutter iOS Dart",
+        "company_name": "Jvagliat S."
+    },
+    {
+        "url": "https://www.workana.com/job/gestion-redes-sociales-15?ref=projects_4",
+        "title": "Gestion Redes Sociales",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Requiero ayuda para dar a conocer mi emprendimiento en redes sociales",
+        "requirements": "Link Building Escritura de artículos SEO Social Networking WordPress Marketing Online",
+        "company_name": "L. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-web-para-rentadora-de-objetos?ref=projects_4",
+        "title": "Diseño web para rentadora de objetos",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "Abierto",
+        "description": "Necesito desarrollar una tienda online donde cada usuario pueda alquilar los objetos y a la vez pueda reservarlos por los días que va a usar. El mismo procedimiento que airbnb pero con objetos.",
+        "requirements": "Magento PHP WordPress",
+        "company_name": "P. D."
+    },
+    {
+        "url": "https://www.workana.com/job/experto-en-la-plataforma-de-comercio-electronico-ecwid-de-www-ecwid-com?ref=projects_4",
+        "title": "Experto en la plataforma de comercio electronico Ecwid de www.ecwid.com",
+        "workday": "A tiempo parcial",
+        "roles": "Diseñador, Programador",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Estamos desarrollando un proyecto nuevo y precisamos un programador experto en la plataforma de comercio electronico ecwid, de ",
+        "requirements": "PHP WordPress MySQL WooCommerce",
+        "company_name": "D. F. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/juego-slots-que-pueda-cambiar-imagenes?ref=projects_4",
+        "title": "Juego slots que pueda cambiar imagenes",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Solicito programador que pueda realizar juego slots para usar tanto en horizontal como en vertical, con porcentaje programable de pago, lineas de juego, configuracion de moneda, etc. Para poder utilizar en el armado de maquinas tragamonedas",
+        "requirements": "C Java Diseño Gráfico",
+        "company_name": "A. A."
+    },
+    {
+        "url": "https://www.workana.com/job/tareas-relacionadas-con-diseno-web?ref=projects_4",
+        "title": "Tareas Relacionadas Con Diseño Web",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Necesito que se realicen diferentes tareas de diseño web, algunas con informes (capturas de pantalla, breves explicaciones) en .pdf.",
+        "requirements": "CSS HTML Responsive Web Design",
+        "company_name": "D. R."
+    },
+    {
+        "url": "https://www.workana.com/job/generar-registros-2?ref=projects_2",
+        "title": "Generar Registros",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Buenas necesito generar registros a una web la cual paga por cada registro valido. El total por registro es de 2USD de los cuales 1USD va al freelancer.",
+        "requirements": "",
+        "company_name": "J. A."
+    },
+    {
+        "url": "https://www.workana.com/job/la-escolar?ref=projects_4",
+        "title": "La Escolar",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Una papelería educativa, haciendo referencia a instituciones públicas para brindarles a los alumnos y profesores un excelente servicio",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Animación Marketing Online",
+        "company_name": "M. R. C."
+    },
+    {
+        "url": "https://www.workana.com/job/tienda-virtual-286?ref=projects_6",
+        "title": "Tienda virtual",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito una tienda virtual sencilla, para la venta de productos varios. Necesito un freelance responsable y que me oriente por que no entiendo del tema.",
+        "requirements": "HTML PHP WordPress",
+        "company_name": "A. D. L."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrolladores-senior-swift-para-financieras-y-pagos-p2p?ref=projects_6",
+        "title": "Desarrolladores Senior Swift para financieras y pagos P2p",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Desarrolladores Senior Swift para financieras y pagos p2p utilizando las últimas tecnologías disponibles en el mercado. Mínimo 5 años de experiencia",
+        "requirements": "Android iOS iPhone Scrum Responsive Web Design Swift",
+        "company_name": "G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-campanas-y-anuncios-en-googe-ads-y-facebook-ads?ref=projects_1",
+        "title": "Creación de campañas y anuncios en Googe Ads y Facebook Ads",
+        "workday": "Tiempo completo",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Somos una pequeña Agencia de Marketing buscando para sumar a nuestro equipo un profesional certificado para Google Ads y Facebook Ads.",
+        "requirements": "Facebook AdWords de Google Marketing Online Escritura Creativa",
+        "company_name": "M. M."
+    },
+    {
+        "url": "https://www.workana.com/job/revision-y-ajuste-seo-para-blog-de-marketing-digital?ref=projects_1",
+        "title": "Revisión y Ajuste Seo para Blog de Marketing Digital",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Nos encontramos en la búsqueda de un especialista en seo, que nos brinde un feedback sobre nuestra situación actual de seo y que luego de eso realice los ajuste necesarios para que el sitio quede listo para estar bien posicionado en internet.",
+        "requirements": "Link Building Escritura de artículos SEO WordPress Blogs",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/busco-un-diseno-de-logo-para-barberia?ref=projects_6",
+        "title": "Busco un diseño de logo para barberia",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Estoy buscando un diseñador para un logo nombre de una barbería . Que es un emprendimiento nuevo. Tengo una idea del nombre que va a llevar pero Nose me gustaría que algún profesional me pueda ayudar",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Facebook Identidad de marca cor... Adobe Photoshop Marketing Online",
+        "company_name": "G. F."
+    },
+    {
+        "url": "https://www.workana.com/job/fitlifeuy-1?ref=projects_6",
+        "title": "Fitlifeuy",
+        "salary": "Menos de USD 50",
+        "description": "Necesito desarrollar una app para Android e IOS, que ni bien entrar a la app aparezca un mapa, como lo hace Uber. Mi proyecto consiste en servicios de salud. Estoy necesitando una app beta.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "M. F."
+    },
+    {
+        "url": "https://www.workana.com/job/fitlifeuy?ref=projects_6",
+        "title": "Fitlifeuy",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito desarrollar una app en principio solo para Android, que ni bien al entrar a la app, te aparezca un mapa con los servicios que ofrecere. Quedamos atentos a sus respuestas.",
+        "requirements": "Android API HTML5 iPhone JavaScript Responsive Web Design Diseño de App Móvil React Native",
+        "company_name": "M. F."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-ecommerce-7?ref=projects_1",
+        "title": "Creación de Ecommerce",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "USD 500 - 1.000",
+        "description": "Estoy necesitando crear un ecommerce para un negocio que vende varios tipos de productos (libros, papelería y juguetería). ",
+        "requirements": "Magento PHP WordPress HTML HTML5",
+        "company_name": "N. V."
+    },
+    {
+        "url": "https://www.workana.com/job/alquiler-de-libros?ref=projects_1",
+        "title": "Alquiler de libros",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "El proyecto consiste en brindar el servicio de alquiler de libros. Tanto para personas particulares, bibliotecas o librerías, que puedan publicar sus libros y exista un catálogo de opciones diversas donde los lectores puedan elegir la opcion que mas le guste.",
+        "requirements": "Android iPhone Diseño Gráfico Programación Web Responsive Web Design",
+        "company_name": "G. N."
+    },
+    {
+        "url": "https://www.workana.com/job/fitlifeuy-2?ref=projects_6",
+        "title": "Fitlifeuy",
+        "salary": "Menos de USD 50",
+        "description": "Necesito desarrollar una app para Android e IOS, que ni bien entrar aparezca un mapa con los servicios que quiero agregar, como lo hace Uber, que los sacaré en principio de Google con sus reputaciónes, horarios y teléfonos. En principio necesito una pequeña beta. Saludos! Gracias",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "M. F."
+    },
+    {
+        "url": "https://www.workana.com/job/redactar-textos-para-email-marketing?ref=projects_1",
+        "title": "Redactar textos para email marketing",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Buenas noches ,estoy buscando persona que sea capaz de crear 7 mails persuasivos y bien redactados para realizar email marketing sobre dieta cetogenica - pérdida de peso - etc, sería llevar al lead durante esa secuencia de mails generando interés y apertura de los mismos y luego en los mails 5-6-7 intentar cerrar la venta del producto el cual es un plan keto en español super completo.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa Blogs Redacción",
+        "company_name": "F. S."
+    },
+    {
+        "url": "https://www.workana.com/job/servicios-diseno-grafico?ref=projects_1",
+        "title": "Servicios Diseño Grafico",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Estamos buscando una agencia  especializada en diseño grafico para que nos ayude cada vez que tenemos que diseñar algo. Habitualmente necesitamos diseñar:",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Redacción Ilustración Marketing Online",
+        "company_name": "P. G."
+    },
+    {
+        "url": "https://www.workana.com/job/disenador-grafico-photoshop-excel-busqueda-de-imagenes?ref=projects_1",
+        "title": "Diseñador Grafico, Photoshop, Excel, busqueda de imagenes",
+        "workday": "Tiempo completo",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Somos un e-commerce de venta online en diferentes plataformas de productos multi rubro.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Microsoft Excel",
+        "company_name": "E. C."
+    },
+    {
+        "url": "https://www.workana.com/job/configurar-un-sistema-alpr-para-detectar-placas-matriculas-de-vehiculos?ref=projects_3",
+        "title": "Configurar un sistema Alpr para detectar placas/matriculas de vehiculos",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Configurar un sistema alpr en una vm para tomar video de una camara ip y guardar los datos en una db.",
+        "requirements": "API Oracle DBA Google Cloud Platform",
+        "company_name": "M. B."
+    },
+    {
+        "url": "https://www.workana.com/job/postales-cantadas?ref=projects_3",
+        "title": "Postales Cantadas",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito realizar una cerie de postales cantadas.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M. D. C. P."
+    },
+    {
+        "url": "https://www.workana.com/job/el-rey-del-aire-acondicionado?ref=projects_3",
+        "title": "El Rey Del Aire Acondicionado",
+        "workday": "Según se necesite",
+        "salary": "Abierto",
+        "description": "Nesesito crear un Logo para empresa de reparación y mantenimiento de aire acondicionado",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "F. C."
+    },
+    {
+        "url": "https://www.workana.com/job/asistencia-tecnica-a-distancia-para-usuarios-de-ordenadores?ref=projects_3",
+        "title": "Asistencia técnica a distancia para usuarios de ordenadores",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "En este momento en que la importancia de los sistemas operativos para PC está siendo relegada para darle mayor lugar a los navegadores, se vuelve posible hacer funcionar ordenadores con fallos de sistema y también sin disco rígido (o ssd). Esto para muchos usuarios es una simplificación en el manejo de su equipo que les ahorra tiempo y energías. Si eres técnico y te interesa dar este servicio puedes incorporarte a un equipo en crecimiento.",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "H. C."
+    },
+    {
+        "url": "https://www.workana.com/job/gestion-redes-sociales-16?ref=projects_4",
+        "title": "Gestion Redes Sociales",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Requiero ayuda para dar a conocer mi emprendimiento orientado al área de servicios.",
+        "requirements": "Link Building Escritura de artículos SEO Facebook WordPress Edición de textos Marketing Online Estrategia de Marketing",
+        "company_name": "L. P."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-web-para-pagina-de-liga-de-futbol-amateur?ref=projects_9",
+        "title": "Diseño Web para página de liga de futbol amateur",
+        "salary": "USD 100 - 250",
+        "description": "Quisiera realizar una web similar a ",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "I. F."
+    },
+    {
+        "url": "https://www.workana.com/job/se-necesita-un-disenador-de-campanas-publicitarias-para-facebook-e-instagram?ref=projects_3",
+        "title": "Se necesita un diseñador de campañas publicitarias para Facebook e Instagram!",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Tenemos oportunidades laborales para ti! ",
+        "requirements": "Facebook AdWords de Google Marketing Online Diseño Gráfico Adobe Photoshop",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/caja-para-botella-de-vino?ref=projects_6",
+        "title": "Caja para botella de vino",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Estamos buscando un diseñador que nos elabore una caja de color negro para colocar una botella de vino, en la misma llevaría el logo de nuestra empresa y una frase (\"Un vino hace de una buena comida una sinfonía\"). Las medidas de las botellas son de 31,5 cm de largo y 8,5 cm de ancho. ",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/zafrales?ref=projects_11",
+        "title": "Zafrales",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 500 - 1.000",
+        "description": "Buscamos un desarrollador semi senior con experiencia en PHP y Angular5 para plataforma interna. También realizamos interacciones con otros servicios por medio de APIs. Es un trabajo de 6 a 8 horas diarias de lunes a viernes.",
+        "requirements": "JavaScript MySQL PHP API Angular 9",
+        "company_name": "S. S. D."
+    },
+    {
+        "url": "https://www.workana.com/job/dragonvirney?ref=projects_23",
+        "title": "Dragonvirney",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "un dragon negro con detalles morados y ojos rojos con el nombre Virney mc implementado en el con gif siendo preciso el logo de un servidor",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Animación Adobe Photoshop",
+        "company_name": "I."
+    },
+    {
+        "url": "https://www.workana.com/job/email-marketing-copywriting-facebook-y-google-ads?ref=projects_23",
+        "title": "Email marketing, Copywriting, Facebook y google ads",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Estoy buscando un copywriter, para Ayudarme a escalar mi Academia digital, Es una academia enfocada en la salud y el bienestar integral, Inteligencia emocional. ",
+        "requirements": "Marketing Online MailChimp Marketing Facebook Escritura de artículos Edición de textos Escritura Creativa Diseño Gráfico AdWords de Google SEO",
+        "company_name": "G. G."
+    },
+    {
+        "url": "https://www.workana.com/job/escribir-una-serie-de-3-libros-cortos-pero-practicos-sobre-ventas-en-whatsapp-facebook-e-instagram?ref=projects_23",
+        "title": "Escribir una serie de 3 libros cortos pero practicos sobre Ventas en Whatsapp, Facebook e Instagram",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito un redactor que me escriba una serie de libros, donde explique formas de vender mejor productos principalmente fisicos usando las redes sociales, para eso quiero un libro no muy largo pero practico y actualizado sobre como vender usando whatsapp, otro como vender usando facebook y otro como vender usando Instagram. La idea es que la Serie se llame \"se un líder de ventas\" y el nombre de cada libro sería: \"se un líder de ventas con whatsapp\" - \"se un líder de ventas con facebook\" - \"se un líder de ventas con instagram\" mas o menos por ahi va la idea.",
+        "requirements": "Escritura de artículos Redacción Investigación Facebook Edición de textos Marketing Directo",
+        "company_name": "W. D. S."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-de-back-end-para-web-de-prestamos-peer-to-peer?ref=projects_27",
+        "title": "Desarrollo de Back End para web de préstamos peer to peer",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Back End para plataforma web de prestamos peer to peer.",
+        "requirements": "JavaScript MySQL PHP API HTML Python",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/ventas-en-redes?ref=projects_23",
+        "title": "Ventas en Redes",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Marketing Online",
+        "company_name": "E. R."
+    },
+    {
+        "url": "https://www.workana.com/job/buscador-de-datos-judiciales?ref=projects_29",
+        "title": "Buscador de datos judiciales",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "La idea es crear una app que tenga los registros judiciales de cada persona de argentina . Un buscador que con el nombre completo y/o dni te diga los juicios que está involucrado",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "E. R."
+    },
+    {
+        "url": "https://www.workana.com/job/bolsas-de-residuos?ref=projects_28",
+        "title": "Bolsas de residuos",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Distribuyo bolsas de residuos a comercios, para que las vendan al por menor, también bolsas para verdulerias y carnicerias, a excelente precio y buena calidad",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "S. F."
+    },
+    {
+        "url": "https://www.workana.com/job/plataforma-de-cursos-8?ref=projects_28",
+        "title": "Plataforma de cursos",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Más de USD 3.000",
+        "description": "Objetivo: ",
+        "requirements": "JavaScript .NET C# HTML HTML5 SQL Server Programación Web AngularJS Responsive Web Design Vue.js",
+        "company_name": "I. M. R."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-pasteleria-2?ref=projects_28",
+        "title": "Diseño de logo pasteleria",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "El diseño  del logo debe contener ademas del nombre del local que ya lo tengo también debe contener elementos vinculados a jardín, cultura, pastelería, París",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Identidad de marca cor...",
+        "company_name": "N. C."
+    },
+    {
+        "url": "https://www.workana.com/job/articulos-para-varias-webs?ref=projects_28",
+        "title": "Artículos para varias webs",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola a todos. Somos un pequeño grupo de empresarios que se ha juntado para superar esta crisis. En nuestro intento por salir a flote estamos mejorando nuestras webs con contenido.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa WordPress Blogs Redacción SEO",
+        "company_name": "A. -. A. S."
+    },
+    {
+        "url": "https://www.workana.com/job/fotofiesta?ref=projects_28",
+        "title": "Fotofiesta",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "El proyecto sería una app que funcione en tiempo real en las fiestas que se realizen en diferentes partes del mapa donde te ubiques, podiendo compartir fotos, chats datos de la cantidad de personas en el lugar etc.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "D. O."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-app-movil-18?ref=projects_28",
+        "title": "Desarrollo app movil",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Hola quiero desarrollar una app móvil para android y ios que tome datos de una base de datos ya existente. ",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/aplicacion-movil-donde-los-clientes-se-agenden-para-la-barberia?ref=projects_32",
+        "title": "Aplicacion movil donde los clientes se agenden para la barberia",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Es una agenda donde los clientes se pueden agendar a traves de ella con dia y hora disponibles ya sea para cortes de pelo como de barba. Que tenga la ubicacion y disponibilidad de cada barberia nuestra.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "J. D. A."
+    },
+    {
+        "url": "https://www.workana.com/job/contenidos-para-redes-sociales-y-community-manager?ref=projects_36",
+        "title": "Contenidos para Redes sociales y Community Manager",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Busco a un Freelancer o Empresa que tenga experiencia en Community Manager con foco en ECommerce para generar posteos semanales y reportar semanalmente las interacciones de la comunidad.",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Marketing Online Marketing Community Management",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/redactor-de-contenidos-con-experiencia-en-finanzas-idealmente-que-haya-trabajado-en-forex?ref=projects_36",
+        "title": "Redactor de Contenidos con experiencia en finanzas, idealmente que haya trabajado en Forex.",
+        "workday": "A tiempo parcial",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Estoy desarrollando una red de sitios de la temática para la cual necesito una o mas personas que me puedan ayudar a agregar contenidos bajo distinatias temáticas en la industria Forex. ",
+        "requirements": "Redacción SEO Escritura - Finanzas Redacción Periodística Análisis Financiero",
+        "company_name": "C. G."
+    },
+    {
+        "url": "https://www.workana.com/job/maquetacion-texto-e-imagenes-para-publicar-en-amazon?ref=projects_36",
+        "title": "Maquetación texto e imágenes para publicar en Amazon",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesitamos publicar en Amazon un libro con bastante texto pero con MUCHAS imágenes (que pesan bastante). ",
+        "requirements": "HTML Responsive Web Design Amazon Web Services Android HTML5 Diseño Gráfico Diseño Web",
+        "company_name": "C."
+    },
+    {
+        "url": "https://www.workana.com/job/te-consideras-muy-bueno-utilizando-premiere-te-gustaria-crear-contenido-para-las-redes-sociales-sos-organizado-a-te-gustaria-tra?ref=projects_36",
+        "title": "Te consideras muy bueno utilizando Premiere? Te gustaría crear contenido para las redes sociales? Sos organizado/a? Te gustaría trabajar creando el contenido de un influencer? Este puesto puede ser para ti.",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 40 / hora",
+        "description": "Nuestro proyecto existe para ayudar a las personas a tener éxito en el area de la salud. Todo esto a través de alimentación consciente y cambios de hábitos para mejorar la calidad de vida. ",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Facebook YouTube Edición",
+        "company_name": "A. C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-para-instituto-de-ingles-personalizado-y-muy-cercano-a-los-alumnos?ref=projects_36",
+        "title": "Diseño para instituto de inglés personalizado y muy cercano a los alumnos",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "La idea es poder realizar dos diseños: ",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "G. C."
+    },
+    {
+        "url": "https://www.workana.com/job/editar-videos-para-instagram-y-facebook?ref=projects_37",
+        "title": "Editar videos para Instagram y Facebook",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Quiero de videos q yo filme para crear contenido de valor para impulsar a las redes sociales poder subir a YouTube, Facebook y Instagram. Q me lis editen con algún marco con título o descripción simple . ",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Facebook YouTube",
+        "company_name": "S. S."
+    },
+    {
+        "url": "https://www.workana.com/job/publicitar-en-redes-sociales?ref=projects_37",
+        "title": "Publicitar en redes sociales",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Campaña para vender infoproductos y promocionar a través de redes sociales , Instagram y Facebook . Saber manejo de estas redes a nivel profesional para vender infoproductos .",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "G. C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-para-redes-sociales-50?ref=projects_38",
+        "title": "Diseño para redes sociales",
+        "salary": "Menos de USD 50",
+        "description": "Necesito armar diseños atractivos para publicar en redes sociales  y promocionar un hostal que se ubica en Mexico, algo atractivo para atraer clientes de america y europa",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "A. F."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-banner-para-sitio-web-2?ref=projects_38",
+        "title": "Diseño de banner para sitio web",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "El trabajo solicitado es el siguiente:",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "D."
+    },
+    {
+        "url": "https://www.workana.com/job/correccion-y-mejora-de-redaccion-para-pagina-web?ref=projects_38",
+        "title": "Corrección y mejora de redacción para pagina web",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Estoy necesitando mejorar la redacción de mi pagina web para lograr aumentar conversiónes.  Actualmente tiene algunos errores ortograficos y quisiera poder hacer que sea una lectura mucho mas agile.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/aplicacion-movil-para-android-y-ios-2?ref=projects_38",
+        "title": "Aplicación móvil para android y Ios.",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "La idea es hacer una aplicacion para moviles enfocada en empleos, para empezar necesitamos hacer una copia de instagram en cuanto a funcionamiento, luego poco a poco se cargaran mejoras para esa app, poder generar tanto para android como para IOS, es necesario una base de datos mysql, integración de medio de pagos.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "H. B. Q."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-app-para-android-y-iphone-de-beneficios?ref=projects_38",
+        "title": "Creacion de app para android y iphone de beneficios.",
+        "workday": "Según se necesite",
+        "roles": "Programador, Diseñador",
+        "salary": "USD 100 - 250",
+        "description": "Buscamos diseñador/a para creacion de app que ofrezca",
+        "requirements": "JavaScript MySQL PHP Android iOS",
+        "company_name": "E. U. M."
+    },
+    {
+        "url": "https://www.workana.com/job/logo-y-banner-de-twich?ref=projects_38",
+        "title": "Logo y banner de twich",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito un banner y una imagen de perfil para un canal de twich (plataforma de directos), seria algo bastante sencillo, con un pago a negociar",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "M. M."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-de-app-movil-1421?ref=projects_37",
+        "title": "Programación de app móvil",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 3.000",
+        "description": "Crear una pestaña para Facebook la cual traerá un nuevo uso para usuarios como una nueva experiencia mezclándolo con GPS y Google Maps",
+        "requirements": "Android iPhone Responsive Web Design Facebook iOS",
+        "company_name": "F. A. G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/disenos-para-facebook-e-instegram-para-promocionar-un-hostal-en-mexic?ref=projects_38",
+        "title": "Diseños para Facebook e Instegram para promocionar un Hostal en Mexic",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Realizar diseños atractivos para publicar promociones y hacer conocer un Hostal en Mexico..",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "A. F."
+    },
+    {
+        "url": "https://www.workana.com/job/turismo-49?ref=projects_39",
+        "title": "Turismo",
+        "salary": "USD 100 - 250",
+        "description": "Necesito integrar pagos visa para web de turismo en una web hecha con wix.",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "V."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-para-redes-sociales-47?ref=projects_39",
+        "title": "Diseño para redes sociales",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Desarrollar feeds para redes sociales para vender productos",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/vidaler?ref=projects_39",
+        "title": "Vidaler",
+        "salary": "USD 100 - 250",
+        "description": "Hola Christian, estoy programando un ERP para una empresa familar, lo estoy haciendo con Laravel, Bootstrap y MySQL. Lo que necesito es una mano con el front-end, jQuery en especial. Bueno si estas interesado porfa comunicate.",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "P. S."
+    },
+    {
+        "url": "https://www.workana.com/job/monedero-mobil?ref=projects_39",
+        "title": "Monedero mobil",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Billetera móvil  queremos ser intermediarios para depositar dinero de varias plataformas a Wester unión eso es en resumen desde ya muchas gracias",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "V. A."
+    },
+    {
+        "url": "https://www.workana.com/job/horas-de-desarrollo-en-react-next-js?ref=projects_39",
+        "title": "Horas de desarrollo en React + Next.js",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Necesitamos un desarrollador frontend experimentado para culminar un proyecto desarrollado en React + ",
+        "requirements": "JavaScript CSS HTML Programación Web React.js Amazon Web Services",
+        "company_name": "D."
+    },
+    {
+        "url": "https://www.workana.com/job/logo-para-empresa-de-reparacion-de-electrodomesticos?ref=projects_39",
+        "title": "Logo para empresa de reparación de electrodomésticos",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito diseñar un logotipo para hoy, con el nombre de la empresa “FastServiceUy”, ",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Facebook Animación Identidad de marca cor...",
+        "company_name": "C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-y-vinil-peluqueria?ref=projects_39",
+        "title": "Diseño de logo y vinil, Peluqueria",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Realizar un logo, vinil y volantes de una peluquería, también se puede ver la cartelera, tengo un boceto de la ide del logo y el vinil",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "J. V."
+    },
+    {
+        "url": "https://www.workana.com/job/yoreciclo?ref=projects_37",
+        "title": "Yoreciclo",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Necesito crear app desde cero que me permita:",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "F. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-logo-taller-mecanico?ref=projects_37",
+        "title": "Diseño logo taller mecanico",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Busco un logo para taller mecanico y de chapa y pintura también diseñar tarjetas personales. Que contenga el contorno de un auto.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "F. D. A."
+    },
+    {
+        "url": "https://www.workana.com/job/autoservicio-para-maquinas-expendedoras-activado-por-codigo-barras-o-qr?ref=projects_37",
+        "title": "Autoservicio para maquinas expendedoras activado por código barras o Qr",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "En lugar de usar fichas o monedas, por ejemplo para obtener un café de una máquina, se propone que  el cliente active la máquina, enfrentando un código impreso en un papel o en la pantalla de su móvil, al lector (Cámara o láser) y con ello active el servicio. El detalle importante, es que no hay conexión de tipo alguno entre el generador de código y el lector, por tanto el sistema deberá permitir UN SÓLO uso del código, quedando este código utilizado inoperante.  La idea es que en el receptor, se coloque una base de datos con todos los códigos conocidos (Ej.",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "N. V."
+    },
+    {
+        "url": "https://www.workana.com/job/agregar-angular-universal-server-side-rendering-ssr?ref=projects_37",
+        "title": "Agregar Angular universal -Server-side Rendering (Ssr)",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "Agregar Angular universal -Server-side Rendering (SSR) a un desarrollo existente (angular 8)",
+        "requirements": "Programación Web AngularJS SEO",
+        "company_name": "G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/campanas-publicidad-online-y-crear-un-chatbot?ref=projects_36",
+        "title": "Campañas publicidad online y crear un chatbot",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola quiero crear un chatbot en el Facebook Messenger de mi página, así como una campaña regular de Clicks en el Website.",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": ""
+    },
+    {
+        "url": "https://www.workana.com/job/apollo-y-diseno-de-la-pagina-web-de-mi-empresa?ref=projects_36",
+        "title": "Apollo y diseño de la pagina web de mi empresa",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Necesito sincronizar mi sitio web con google drive y mejorar el diseño del mismo, asi como incorporar programacion para acceder mediante mapas etc.",
+        "requirements": "HTML PHP WordPress Android Responsive Web Design",
+        "company_name": "R. G."
+    },
+    {
+        "url": "https://www.workana.com/job/facebook-171?ref=projects_31",
+        "title": "Facebook",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Conseguir interacción y ventas para facebook , web e instragram.",
+        "requirements": "Facebook AdWords de Google Marketing Online WordPress Diseño Gráfico Marketing",
+        "company_name": ""
+    },
+    {
+        "url": "https://www.workana.com/job/jugando-con-grandeza-y-pasion?ref=projects_31",
+        "title": "Jugando con Grandeza y Pasión",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Esto es una empresa que su meta es transforma y apasionar a personas adictas y depresivas a sacacar su máximo potencial. Edificando interiormente libertad y grandeza, para hacer lo que les apasiona y vivir una vida plena una vida de diamante",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "J."
+    },
+    {
+        "url": "https://www.workana.com/job/app-para-taslados?ref=projects_31",
+        "title": "App para taslados",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Buscamos desarrollar un app para contratar fletes, traslados o cadeteria. ",
+        "requirements": "Android iPhone Responsive Web Design iOS",
+        "company_name": "S. S."
+    },
+    {
+        "url": "https://www.workana.com/job/app-para-video-consulta-medica?ref=projects_31",
+        "title": "App para Video Consulta médica",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito una APP para Video consulta médica. La idea es que contenga las siguientes opciones:",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "J. F."
+    },
+    {
+        "url": "https://www.workana.com/job/app-movil-juego-de-cartas?ref=projects_31",
+        "title": "App movil juego de cartas",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Crear una app movil (android + ios), juego de cartas multijugador con microfono en ON-OFF, el juego es el truco, dónde dos personas interactúan online jugando",
+        "requirements": "Android iOS",
+        "company_name": "G."
+    },
+    {
+        "url": "https://www.workana.com/job/disenar-un-logo-y-una-pagina-donde-subir-articulos-estilo-catalogo?ref=projects_31",
+        "title": "Diseñar un logo y una página donde subir artículos estilo catalogo",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Trabajo con importadores y la ideas es revender mediante un catálogo online e impreso. Poder modificar fácilmente una foto y una descripción poner un precio. El catálogo debe poder ser visto por todas las redes y poder ser impreso para entregarlo en domicilios.",
+        "requirements": "",
+        "company_name": "E. P."
+    },
+    {
+        "url": "https://www.workana.com/job/easybuy?ref=projects_35",
+        "title": "Easybuy",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola, ",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing AdWords de Google Publicidad en Google, ...",
+        "company_name": "J. A."
+    },
+    {
+        "url": "https://www.workana.com/job/angeles-2?ref=projects_35",
+        "title": "Ángeles",
+        "salary": "Menos de USD 50",
+        "description": "Hola.",
+        "requirements": "Marketing Online MailChimp Marketing",
+        "company_name": "Á. G."
+    },
+    {
+        "url": "https://www.workana.com/job/ventas-soporte-de-atencion-al-cliente-y-reclamos?ref=projects_35",
+        "title": "Ventas,soporte de atencion al cliente y reclamos.",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "La ide grafica es la post venta de productos y brindar soporte de atencion al cliente,procesar y resolucion de reclamos trabahando en conjunto  con el Freelancer.",
+        "requirements": "Facebook Edición de textos Escritura Creativa",
+        "company_name": "A. S. G. Z."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-modulo-para-prestashop-1?ref=projects_35",
+        "title": "Creación de modulo para prestashop",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 50 - 100",
+        "description": "Tengo una tienda en prestashop y uno de los proveedores me proporciona una API para conectarme via WebServices SOAP. ",
+        "requirements": "JavaScript MySQL PHP API",
+        "company_name": "E. P."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-para-apps-y-moviles?ref=projects_35",
+        "title": "Programación para apps y moviles",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Quiero una app tipo Glovo que busque documentos y las personas que te contratan vean tu seguimientos con  interfaz, ya qué hay un hueco de Mercado que está precisando gente tengo amigos que estarían dispuesto a trabajar conmigo",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "V. S."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-sitio-web-1465?ref=projects_34",
+        "title": "Diseño de Sitio Web",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Somos una joven empresa de venta de muebles y artículos de decoración en Uruguay. Estamos buscando un diseñador y programador web para lanzar nuestra plataforma de e-commerce. Lo que buscamos de nuestra página es un lugar donde encontrar todos nuestros artículos categorizados con precios y especificaciones para que sirva como catálogo y venta.",
+        "requirements": "HTML WordPress Responsive Web Design API CSS HTML5 JavaScript Animación Tiendas virtuales (eco... Diseño Web",
+        "company_name": "W."
+    },
+    {
+        "url": "https://www.workana.com/job/retoque-de-plantilla-ya-existente-y-carga-de-algunas-paginas-con-contenido?ref=projects_34",
+        "title": "Retoque de plantilla ya existente y carga de algunas páginas con contenido",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Es una plantilla gratuita la cual tengo y se cargó contenido para este emprendimiento pero está desactualizada y hay que cambiar algo del contenido y colgar páginas nuevas. Es para una consultora en comercialización y marketing por lo que no hay galerías de fotos ni productos. Son servicios.",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "A."
+    },
+    {
+        "url": "https://www.workana.com/job/sanomercado?ref=projects_34",
+        "title": "Sanomercado",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Deseo crear contenido basicamente videos relacionados con la alimentacion conciente la comida ecologica y cuidado de la salud.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Facebook WordPress Edición Edición de audio Diseño Gráfico",
+        "company_name": "C. P."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollador-swift?ref=projects_34",
+        "title": "Desarrollador Swift",
+        "salary": "USD 250 - 500",
+        "description": "Desarrollador Swift para tareas de desarrollo en iPhone",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "G. P."
+    },
+    {
+        "url": "https://www.workana.com/job/pagina-de-rifas?ref=projects_34",
+        "title": "Pagina De Rifas",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador",
+        "salary": "Menos de USD 50",
+        "description": "Necesito un programador web que sea capas de diseñar una web en la que los usuarios puedan comprar participaciones para luego poder ganar un premio",
+        "requirements": "JavaScript MySQL PHP Android API CSS HTML HTML5 Responsive Web Design",
+        "company_name": "E. V."
+    },
+    {
+        "url": "https://www.workana.com/job/mantenimiento-de-sitio-en-wordpress-4?ref=projects_35",
+        "title": "Mantenimiento de Sitio en Wordpress",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Busco alguien para hacer unos pequeños cambios de contenido a un sitio de Wordpress hecho con Divi. Son cambios de textos e imágenes",
+        "requirements": "HTML PHP WordPress",
+        "company_name": "M. J."
+    },
+    {
+        "url": "https://www.workana.com/job/campana-para-marca?ref=projects_32",
+        "title": "Campaña para marca",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Estamos en busca de un creativo para campaña de bebida alcoholica. Idea de campaña y sus bajadas a videos para redes sociales y artes para redes sociales e imprenta.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/suinocult?ref=projects_32",
+        "title": "Suinocult",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Que todas lás personas que utilisen la aplicacion puedanutilizar todas las ventanas que se le otorgen como utilitarias para la utilizacion de formulas ,control de cerdas,control de nacimiento de lechones ,planillas de control de nacimientos.,Evolucion .,control de cerdas ,control de raciones,anuncís de marcado y informacion,yotros",
+        "requirements": "iPhone Responsive Web Design",
+        "company_name": "A. F."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-tarjeta-personal-firma-de-mail-y-pie-para-cotizaciones?ref=projects_32",
+        "title": "Diseño de logo, tarjeta personal, firma de mail y pie para cotizaciones",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "El diseño del logo es en base a letras, como por ejemplo: SV Herrería & Acero inoxidable. Es para alguien que recién comienza y quiere tener algo prolijo para mostrar",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Adobe Photoshop",
+        "company_name": "N. C."
+    },
+    {
+        "url": "https://www.workana.com/job/pieza-animada-para-lanzamiento-de-benficios?ref=projects_32",
+        "title": "Pieza animada para lanzamiento de benficios",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Busco desarrollar una breve idea de animación para stories de IG para generar expectativa y anunciar.",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Adobe After Effects Animación Adobe Photoshop Estrategia de Marketing",
+        "company_name": "A. P."
+    },
+    {
+        "url": "https://www.workana.com/job/respuestos-ya?ref=projects_32",
+        "title": "Respuestos ya",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Mi idea es crear una app creativa y nueva que creo yo no existe y podría ser una buena idea, una aplicación para el rubro de los talleres mecánicos, que sea una lista tipo catálogo solo elegir lo que precisa en el momento y que al entrar a la app desde la comodidad de tu taller encargar los repuestos que precisas y por medio de delivery estilo \"uber eats\" le lleguen de inmediato los repuestos al taller sin necesidad de salir a hacer largas filas de esperas de ir a buscar los repuestos y no tener donde estacionar tu auto y pagar parking. Al cliente le resultará mucho más cómodo y más económico comprarlo por nuestra app sin necesidad de estresarse por el tráfico de la ciudad.",
+        "requirements": "Android iPhone Responsive Web Design Facebook Marketing Online Diseño Web",
+        "company_name": "F. S. M."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-empresa-nombre-y-logo?ref=projects_32",
+        "title": "Diseño de empresa nombre y logo",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito crear un nombre para una empresa constructora que se dedica a licitaciones públicas con el estado de uruguay y para los entes públicos",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Identidad de marca cor... Ilustración",
+        "company_name": "G. R."
+    },
+    {
+        "url": "https://www.workana.com/job/10-articulos-en-portugues?ref=projects_30",
+        "title": "10 artículos en portugues",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Escribir 10 artículos de 1.500 palabras en portugues para un sitio en brasil. ",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa Blogs Redacción",
+        "company_name": "E. M."
+    },
+    {
+        "url": "https://www.workana.com/job/odontologia-13?ref=projects_30",
+        "title": "Odontologia",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Estoy escribiendo un libro sobre gestión de clínicas odontologías, pero estoy teniendo problemas con la redacción. Necesito ayuda para la revisión y edición. gracias",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa Redacción",
+        "company_name": "V."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-del-sitio-en-wordpress?ref=projects_30",
+        "title": "Desarrollo del sitio en Wordpress",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Tengo un sitio Web para mi empresa, que lo inicié yo. Lo hice utilizando el Elementor para Wordpress.",
+        "requirements": "HTML PHP WordPress Responsive Web Design",
+        "company_name": "G. S."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-pagina-web-para-estudio-de-abogados?ref=projects_30",
+        "title": "Diseño de pagina web para estudio de abogados",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Necesito el diseño de una pagina web para un estudio de abogados que está comenzando. La idea es un diseño sencillo donde con 4 o 5 pestañas con el siguiente contenido: Nuestra Firma; Equipo; Clientes; Novedades.",
+        "requirements": "HTML WordPress Responsive Web Design JavaScript",
+        "company_name": "D. M."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-un-videojuego-similar-a-flappy-bird-pero-con-distintos-personajes-y-extras-leer-descripcion?ref=projects_30",
+        "title": "Crear Un Videojuego Similar A Flappy Bird Pero Con Distintos Personajes Y Extras (Leer Descripcion)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesitamos la creación de una aplicacion o juego con un personaje diferente, con un historial de puntaje mundial, con un sistema que te aparezca publicidad cada tantas jugadas o inicios de partida y una pequeña tienda que te cobre si queres retirar publicidad y si queres agregarle un extra a tu personaje",
+        "requirements": "Android iPhone Responsive Web Design iOS",
+        "company_name": "C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-agenda-3?ref=projects_33",
+        "title": "Diseño de agenda",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Diseñar agenda con imágenes relacionadas con jóvenes,  para la planificación detallada de festejos de cumpleaños y eventos especiales",
+        "requirements": "Diseño Gráfico Ilustración",
+        "company_name": "L. A."
+    },
+    {
+        "url": "https://www.workana.com/job/administrador-de-redes-sociales-21?ref=projects_33",
+        "title": "Administrador de redes sociales",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 10 / hora",
+        "description": "subir y organizar el contenido para una cuenta de instagram , por día sera envido el material para subir y organizar  también buscar estrategias para captación de nuevos lead",
+        "requirements": "AdWords de Google Escritura Creativa Diseño Gráfico Marketing",
+        "company_name": "D. H. M."
+    },
+    {
+        "url": "https://www.workana.com/job/pizza-vip?ref=projects_33",
+        "title": "Pizza vip",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "PIZZA VIP , delivery   de comidas rapidas y un lugar para jovenes con barras de bebida",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Facebook",
+        "company_name": "S. G. R. B."
+    },
+    {
+        "url": "https://www.workana.com/job/google-tag-manager-y-google-data-studio?ref=projects_33",
+        "title": "Google Tag Manager y Google Data Studio",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Armar el Google Tag Manager con todas las redes sociales y después armar un google Data Studio. ",
+        "requirements": "Facebook AdWords de Google Marketing Online Google Web Toolkit WordPress Google Analytics Publicidad en Google, ...",
+        "company_name": "A. R."
+    },
+    {
+        "url": "https://www.workana.com/job/implementacion-en-angular-material-de-la-relacion-de-entidades-persona-cuenta-hijo?ref=projects_33",
+        "title": "Implementación en Angular Material de una pagina web",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Menos de USD 50",
+        "description": "La pagina permite ver/ingresar/editar/borrar Personas. Las personas tienen atributos: Id, Nombre, Apellido, Direccion. Asi mismo las personas estan relacionadas con Vehiculos  y Casas, Ambos tienen atributos: Id, Nombre, Valor.",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "S. D."
+    },
+    {
+        "url": "https://www.workana.com/job/marketing-de-servicios-de-it?ref=projects_29",
+        "title": "Márketing de servicios de desarrollo de software",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesitamos especialista en Marketing con experiencia en servicios de software (comprobable).",
+        "requirements": "Marketing Online Marketing",
+        "company_name": "Jvagliat S."
+    },
+    {
+        "url": "https://www.workana.com/job/modelador-revit?ref=projects_29",
+        "title": "Modelador Revit",
+        "workday": "Tiempo completo",
+        "salary": "USD 20 - 30 / hora",
+        "description": "Necesito modeladores de Revit de Arquitectura, Estructura y MEP para un edificio de 27 pisos. ",
+        "requirements": "Modelado 3D AutoCAD Arquitectura Autodesk Revit",
+        "company_name": "M. J. D. T."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-de-app-movil-1470?ref=projects_28",
+        "title": "Programacion de App Movil",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito una app para realizar livestreaming. ",
+        "requirements": "",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/buscador-de-proveedores-por-categoria-que-permite-ver-fichas-individuales?ref=projects_29",
+        "title": "Buscador de proveedores por categoría que permite ver fichas individuales.",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Desarrollar un sitio Web para el rubro decoración de interiores, que permita encontrar la propuesta de proveedores que publican en esta Web.  El proceso de búsqueda inicia por categoría de productos y despliega las fichas de los proveedores que han publicado en esa categoría. Por ser un rubro sobre estética, en las fichas se deben cargar varias imágenes de buena calidad, descargar catálogos e incluir Links a los sitios de los proveedores.",
+        "requirements": "WordPress",
+        "company_name": "J. G."
+    },
+    {
+        "url": "https://www.workana.com/job/apps-y-pagina-web-para-votacion?ref=projects_27",
+        "title": "Apps y pagina web para votacion",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Hola, necesito un desarrollador para una compleja app y pagina web bastante completa para mas datos tiene que ser directamente gracias",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "C. G."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-y-diseno-moodle?ref=projects_27",
+        "title": "Programación y diseño Moodle",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Personalización de Campus en Moodle, ya tengo uno pero  necesito actualizarlo. ",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "A. L. L. M."
+    },
+    {
+        "url": "https://www.workana.com/job/error-al-editar-codigo-necesito-repararlo?ref=projects_27",
+        "title": "Error Al Editar Codigo Necesito Repararlo",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Menos de USD 50",
+        "description": "AYUDA Intente borrar el boton añadir a la cesta en booster theme (SHOPIFY) ( desde el codigo) y borre el de vender jaja puedo hacer otra tienda y copiar todo de esta pero me gustaria poder insertarlo nuevamente tengo los codigos de lo que borre y capturas de lo que hice busco solucion rapida comunicarse conmigo",
+        "requirements": "Magento PHP CSS HTML HTML5 JavaScript MySQL",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-modificaciones-en-una-aplicacion-andoid?ref=projects_27",
+        "title": "Necesito Modificaciones en una aplicacion Andoid",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Quiero comprar esta aplicacion ",
+        "requirements": "Android Responsive Web Design API JavaScript",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/venta-por-redes-sociales-1?ref=projects_24",
+        "title": "Venta por redes sociales",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Busco jovenes de 18 a 33 años para desarrollar redes de consumidores y distribuidores de complementos nutircionales naturales",
+        "requirements": "Facebook Marketing Online",
+        "company_name": "L. P."
+    },
+    {
+        "url": "https://www.workana.com/job/app-movil-compras-online?ref=projects_27",
+        "title": "App movil compras online",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito un presupuesto  para una app de pedidos para supermercados. Básicamente El catálogo de productos con precios, agregar al carrito, costo total de pedido, filtro x categorias, enviar mi ubicacion para entrega del pedido. No entiendo mucho de esto, no se q más necesito para el funcionamiento de una app asi, No se si requiere algun lugar de almacenamiento de archivos externo o algo más.",
+        "requirements": "Android iPhone",
+        "company_name": "P. M."
+    },
+    {
+        "url": "https://www.workana.com/job/tarea-sencilla-de-lectura-de-articulo-con-videograbacion?ref=projects_24",
+        "title": "Tarea Sencilla De Lectura De Articulos grabando a camara.",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se buscan personas que puedan grabarse a si mismas leyendo artículos con fines educativos. Los videos son de 10 minutos aproximadamente leyendo los artículos. Se puede grabar con celular o con camara.",
+        "requirements": "Asistente de administr... Microsoft Excel Asistente Virtual Facebook Producción de Video Marketing Ventas Servicio al Cliente Data Entry Transcripción",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/caratulas-para-youtube-y-webs-de-artistas?ref=projects_24",
+        "title": "Caratulas para Youtube y webs de artistas",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola a todos estamos ayudando a una grupo de artistas que se estan dando a concoer con publicidad y mejorando su canal de youtube. Lo que queremos hacer son caratulas para diferentes videos, que sean atractivas y que inciten al click. Como ejemplo tenemos este tema ",
+        "requirements": "Diseño Gráfico Ilustración YouTube Marketing Online",
+        "company_name": "A. -. A. S."
+    },
+    {
+        "url": "https://www.workana.com/job/edicion-de-fotos-para-facebook-webs-y-anuncios?ref=projects_24",
+        "title": "Edición de fotos para facebook, webs y anuncios",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Buscamos freelancer que tenga conocimiento en edicion de fotografia con buen gusto para redes sociales y webs. Tiene que tener buen manejo de programas de edicion ejemplo de adobe.",
+        "requirements": "Investigación Facebook Fotografía Digital Fotografía Adobe Photoshop Slideshow de Fotos Retoque Fotográfico",
+        "company_name": "A. -. A. S."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-un-logo-para-marca?ref=projects_26",
+        "title": "Crear un logo para marca",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 50",
+        "description": "Diseñar un logo para una marca de galletas.",
+        "requirements": "Diseño Gráfico Diseño de Logo",
+        "company_name": "J."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-banner-y-perfil-para-canal-de-youtube?ref=projects_26",
+        "title": "Diseño banner y perfil para canal de Youtube",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Estaría en busca de un diseñador que pudiera ayudarme en el sector gráfico de un emprendimiento reciente, (canal de Youtube).",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Animación Adobe Photoshop",
+        "company_name": "G. G."
+    },
+    {
+        "url": "https://www.workana.com/job/app-para-android-61?ref=projects_26",
+        "title": "App para android",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "El desafió es terminar una app que otro programador realizo por la mitad y debe ser finalizado. Ademas de este proyecto busco una persona responsable y profesional para continuar trabajando en diferentes proyectos que tenemos en mi empresa como ser la app para ios, actualización de pagina web, etc.",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "S. S."
+    },
+    {
+        "url": "https://www.workana.com/job/4-horas-de-contenido-visual-de-videos-de-mas-de-10-minutos-requisitos-descriptos?ref=projects_24",
+        "title": "4 horas de contenido visual de videos de mas de 10 minutos. Requisitos descriptos.",
+        "salary": "Menos de USD 50",
+        "description": "Requisitos ",
+        "requirements": "Escritura de artículos Redacción Investigación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/actualizar-y-trabajar-con-la-plataforma-kajabi?ref=projects_25",
+        "title": "Actualizar y trabajar con la plataforma Kajabi",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Diseñar una landing page",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Entender y conocer la plataforma Kajabi para sacar el máximo de beneficios de sus herramientas ",
+        "requirements": "PHP Android HTML Responsive Web Design",
+        "company_name": "D. H. M."
+    },
+    {
+        "url": "https://www.workana.com/job/editor-de-videos-de-10-minutos?ref=projects_25",
+        "title": "Editor de videos de 10 minutos.",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "El trabajo consiste en confeccionar videos de 10 minutos en base a artículos o guiones que nosotros te proporcionaremos.",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo YouTube Animación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/produccion-mezcla-de-un-tema-musical-genero-urbano?ref=projects_25",
+        "title": "Produccion & Mezcla de un tema musical (genero urbano)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se le proporciona al productor voces crudas y base para hacer la mezcla y post produccion.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Ilustración Música Diseño de sonido",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/integracion-de-mercado-pago-con-codeigniter?ref=projects_26",
+        "title": "Integración de Mercado Pago con Codeigniter",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Menos de USD 50",
+        "description": "Soy dueño de un marketplace y necesito integrar Mercado Pago a mi tienda multivendedor hecha en Codeigniter. Esta tienda ya tiene la pasarela de pago de PayPal.",
+        "requirements": "PHP API",
+        "company_name": "M. F."
+    },
+    {
+        "url": "https://www.workana.com/job/campanas-para-publicidad-online-879?ref=projects_25",
+        "title": "Campañas para publicidad online",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Promocionar productos a través de redes sociales, emitir opiniones sobre dichos productos, recomendar y realizar tareas de persuasión",
+        "requirements": "Facebook AdWords de Google Marketing Online Escritura de artículos",
+        "company_name": "L. G."
+    },
+    {
+        "url": "https://www.workana.com/job/6-horas-de-contenido-lectura-y-grabarse-entregado-en-bloques-de-10-minutos-y-pocos-segundos?ref=projects_25",
+        "title": "6 horas de contenido lectura y grabarse entregado en bloques de 10 minutos y pocos segundos",
+        "salary": "Menos de USD 50",
+        "description": "Hola seria 1 hora de grabacion al dia como mínimo y deberias entregarlo en bloques de 6 videos de 10 minutos ( y algunos segundos) cada uno. De lunes a viernes. No se necesita ningun tipo de recorte ni nada especial, solo usted leyendo un articulo (no debe memorizarlo solo leerlo) es para tutoriales con fines educativos e informativos.",
+        "requirements": "Escritura de artículos Redacción Investigación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/catalogo-102?ref=projects_25",
+        "title": "Catalogo",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Mi proyecto es la venta de accesorios femeninos, accesorios exclusivos hechos con materiales naturales, quiero un catalogo digital interactivo.",
+        "requirements": "",
+        "company_name": "F. M."
+    },
+    {
+        "url": "https://www.workana.com/job/1-hora-de-lectura-de-articulos-grabandose-a-camaraa?ref=projects_25",
+        "title": "1 hora de lectura de articulos grabandose a camaraa.",
+        "salary": "Menos de USD 50",
+        "description": "Tendra que leer articulos en ingles educativos grabandose a camara con buena presentacion en idioma ingles.",
+        "requirements": "Escritura de artículos Redacción Investigación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/sticker?ref=projects_26",
+        "title": "Sticker",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesito profesionales para creación de un logo y stickers para una pizzerí",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "N."
+    },
+    {
+        "url": "https://www.workana.com/job/identidad-grafica-para-un-evento?ref=projects_26",
+        "title": "Identidad grafica para un evento",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "America Business Forum es un foro de líderes que se hace cada año.",
+        "requirements": "Identidad de marca cor... Diseño Gráfico Adobe Illustrator",
+        "company_name": "I. G."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-woocomerce-para-informatica?ref=projects_23",
+        "title": "Diseño de Woocomerce para informatica",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador",
+        "salary": "USD 50 - 100",
+        "description": "Necesito que en mi sitio de woocomerce, se publiquen automaticamente productos con su respectiva foto y descripcion y precio, tomandolos desde la pagina de venta de mi proveedor de productos.",
+        "requirements": "WordPress API CSS",
+        "company_name": "L."
+    },
+    {
+        "url": "https://www.workana.com/job/hacer-gameplays-de-juegos-trabajo-ideal-para-gamers?ref=projects_24",
+        "title": "Hacer Gameplays De Juegos (Trabajo Ideal Para Gamers)",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Sos gamer y jugas varias horas a juegos en el dia?",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Desarrollo de video ju... Programación de video ... Edición Animación",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-web-para-aplicacion-de-factura-electronica?ref=projects_27",
+        "title": "Diseño web para Producto determinado",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se necesita un sitio web donde se promocione servicios de factura electrónica, se deberá realizar el diseño y generar el contenido que sea breve . Ya contamos con los servidores para el alojamiento y demás, solo sería el diseño del sitio y redactar un buen contenido.",
+        "requirements": "HTML WordPress Responsive Web Design HTML5 PHP",
+        "company_name": "M. G."
+    },
+    {
+        "url": "https://www.workana.com/job/texto-para-pagina-web-1?ref=projects_29",
+        "title": "Texto para página web",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito texto para mejorar la página de inicio, sobre nosotros, servicios y página de contacto. Tiene que ser texto para atraer clientes, no es para artículos de un blog.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa Redacción Marketing Online SEO",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/local-tipo-cafe-confiteria?ref=projects_29",
+        "title": "Local Tipo Café - Confitería",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Generar modelos 3D a partir de planos de autocad. Local pequeño de venta de repostería y atención al publica. Mesas con sillas, mostrador y ambientación en general.",
+        "requirements": "",
+        "company_name": "M. M."
+    },
+    {
+        "url": "https://www.workana.com/job/retoques-web-shopify?ref=projects_33",
+        "title": "Retoques Web Shopify",
+        "salary": "USD 100 - 250",
+        "description": "Buenas tardes Danny, ",
+        "requirements": "HTML WordPress Responsive Web Design",
+        "company_name": "R. B. G."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-sitio-web-1500?ref=projects_29",
+        "title": "Diseño de sitio web",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Estamos en la búsqueda de un diseño de sitio web para empresa ubicada en Uruguay. Tiene que ser un sitio web desde cero, con Hosting y dominio, presencia en redes sociales como Facebook e Instagram.",
+        "requirements": "HTML WordPress Responsive Web Design HTML5 PHP",
+        "company_name": "E."
+    },
+    {
+        "url": "https://www.workana.com/job/automatizar-procesos-2?ref=projects_30",
+        "title": "Automatizar procesos",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola ¿cómo están?",
+        "requirements": "HTML5 MySQL PHP API JavaScript WordPress",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/logo-sistema-virtual-de-compras?ref=projects_23",
+        "title": "Logo - Sistema Virtual de compras",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Necesitamos un logo que identifique una empresa: \"V-Shop\" - la cual hace referencia a un sistema de compras a través de realidad virtual - Compras en un supermercado virtual, con la interacción entre el cliente y el entorno.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Coreldraw Adobe Photoshop",
+        "company_name": "D. R."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollar-un-video-animado-sobre-mi-producto-para-pagar-publicidad-en-instagram?ref=projects_31",
+        "title": "Desarrollar un video animado sobre mi producto para pagar publicidad en instagram",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Me gustaria desarrollar un video animado sobre mi producto para pagar publicidad en instagram y atraer mas publico en el campo relacionado a casa inteligente",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "M. C."
+    },
+    {
+        "url": "https://www.workana.com/job/locucion-femenina-en-ingles?ref=projects_26",
+        "title": "Locución femenina en ingles y catalan",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se necesita traducir al inglés y catalán un guión de 418 palabras y grabar la locución de los mismo.",
+        "requirements": "Voice Over Locutor Traducción al Inglés",
+        "company_name": "Ana S."
+    },
+    {
+        "url": "https://www.workana.com/job/script-para-leer-base-de-datos?ref=projects_33",
+        "title": "Script para leer base de datos",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Preciso un script que introduzca una secuencia de números en un formulario y capture los resultados de la búsqueda de cada uno de esos números, a modo de crear un listado. Más detalles al concretar.",
+        "requirements": "HTML5 MySQL PHP API HTML JavaScript Responsive Web Design",
+        "company_name": "J. M."
+    },
+    {
+        "url": "https://www.workana.com/job/ayuda-con-vue-project-al-deployar?ref=projects_30",
+        "title": "Ayuda con Vue project al deployar",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Menos de USD 50",
+        "description": "Buenas ,  ",
+        "requirements": "Node.js React.js Vue.js JavaScript Linux Ubuntu",
+        "company_name": "B. A."
+    },
+    {
+        "url": "https://www.workana.com/job/join-sports-teams?ref=projects_34",
+        "title": "Join sports teams",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito desarrollar una aplicaion parecida a Tinder pero que se encargue de unir dos equipos distintos que quieran realizar la misma actividad deportiva en un mismo lugar y a la misma hora. ",
+        "requirements": "Android iPhone Responsive Web Design API iOS JavaScript",
+        "company_name": "N. R."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-y-post-para-redes?ref=projects_34",
+        "title": "Diseño de logo y post para redes",
+        "salary": "USD 50 - 100",
+        "description": "Necesito un diseñador grafico para crear un logo y posts para redes que se vean profesionales. Me gustaria contactarme con la persona que esté interesada y comentarle de que se trata mas en detalle",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "M. P."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-app-57?ref=projects_40",
+        "title": "Creacion de app",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "alquiler de contenedores duchas baños donde el cliente pueda llenar contrato pagar mandar ubicación",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/compilacion-de-fuentes-y-generacion-de-ejecutables-del-un-proyecto-de-ecommerce?ref=projects_40",
+        "title": "Compilación de fuentes y generación de ejecutables del un proyecto de Ecommerce",
+        "workday": "Según se necesite",
+        "roles": "Programador, Otro",
+        "salary": "USD 500 - 1.000",
+        "description": "Proyecto Web y Móvil. Son 5 módulos, 2 Web + 3 móvil.",
+        "requirements": "JavaScript Node.js AngularJS MongoDB Ionic Framework",
+        "company_name": "P. M."
+    },
+    {
+        "url": "https://www.workana.com/job/venta-de-servicio-de-hosting?ref=projects_40",
+        "title": "Venta de servicio de hosting",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Hola ¿como estan? Estoy en la busqueda de poder conseguir vendedores de servicios de hosting y dominios a pymes. ",
+        "requirements": "Skype Marketing Ventas Cartas de Ventas Administración de Proy...",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-para-un-grupo-de-baile?ref=projects_40",
+        "title": "Diseño de logo para un grupo de baile",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "somos un grupo de dance cover en tributo a pristin",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "T."
+    },
+    {
+        "url": "https://www.workana.com/job/post-para-instagram-39?ref=projects_40",
+        "title": "Post para instagram",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "informacion de valor sobre marketing digital, negocios online y frases motivacionales,,en modo de infografias e imagenes de grandes personalidades del marketing y los negocios online",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop",
+        "company_name": "A. T."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-de-app-universal?ref=projects_40",
+        "title": "Programación de app universal",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "App free universal. En base a utilizar el maps de Google que los usuarios puedan marcar puntos y otros usuarios ver los puntos marcados. Básicamente eso.",
+        "requirements": "C Java Python",
+        "company_name": "D. M."
+    },
+    {
+        "url": "https://www.workana.com/job/lua-executor?ref=projects_40",
+        "title": "Lua Executor",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Necesito desarrollar un Lua Executor para un juego llamado FiveM. Tiene que ser con Bypass, es decir que se necesite un usuario y contraseña para poder utilizarlo.",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-app-para-celular-1?ref=projects_45",
+        "title": "Diseño de App para celular",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Me gustaría crear una App para ayudar a la gente a encontrar trabajo",
+        "requirements": "HTML WordPress Responsive Web Design Android API CSS Facebook HTML5 iOS iPhone",
+        "company_name": "A. S. A."
+    },
+    {
+        "url": "https://www.workana.com/job/los-jhonson?ref=projects_50",
+        "title": "Los jhonson",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Una historia de romance sobre una familia que esta por ser destruida por una persona...",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "L. R."
+    },
+    {
+        "url": "https://www.workana.com/job/disenador-para-web-responsive-pwa-1?ref=projects_50",
+        "title": "Diseñador para web responsive,Pwa",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Diseñador para  web responsive,PWA",
+        "requirements": "CSS HTML WordPress Responsive Web Design Diseño de App Móvil Diseño Web",
+        "company_name": "G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-pagina-web-201?ref=projects_49",
+        "title": "Diseño pagina web",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Diseño de pagina web para un estudio contable .",
+        "requirements": "Diseño Gráfico Social Media Marketing Social Networking",
+        "company_name": "J. C."
+    },
+    {
+        "url": "https://www.workana.com/job/elegant-woman?ref=projects_49",
+        "title": "Elegant Woman",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Elegant Woman es una empresa de alquiler de vestidos y accesorios la cual se encuentra en una etapa de crecimiento profesional",
+        "requirements": "Android iPhone Responsive Web Design Facebook",
+        "company_name": "J. D."
+    },
+    {
+        "url": "https://www.workana.com/job/programador-sr-angular-8?ref=projects_49",
+        "title": "Programador Sr. Angular 8",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Necesitamos un programador Angular senior para integrarse a un proyecto que tiene una Api como backend.",
+        "requirements": "AngularJS",
+        "company_name": "G. C."
+    },
+    {
+        "url": "https://www.workana.com/job/fomulario-de-reserva-y-contacto-en-php?ref=projects_41",
+        "title": "Fomulario de reserva y contacto en php",
+        "workday": "Según se necesite",
+        "roles": "Programador, Analista funcional",
+        "salary": "USD 50 - 100",
+        "description": "En este momento tengo un sitio corriendo que tiene algunos problemas en el envio de email desde los formularios de reservas y contacto escrito en php, lo que busco es quien pueda debugearlo arreglarlo o cambiarlo. Gracias",
+        "requirements": "JavaScript PHP",
+        "company_name": "F. C."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-pagina-web-207?ref=projects_44",
+        "title": "Diseño página web",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 500 - 1.000",
+        "description": "Diseñar web en wordpress que tenga un blog, un sector de servicios y cómo contactarse",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": "L. G."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-pagina-web-208?ref=projects_44",
+        "title": "Diseño página web",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "Más de USD 40 / hora",
+        "description": "Realizar una webpress para una marca personal de consultoría. No tengo hosting. Necesito home, servicios, blogs, contacto, fotos",
+        "requirements": "JavaScript MySQL PHP",
+        "company_name": ""
+    },
+    {
+        "url": "https://www.workana.com/job/logo-militar?ref=projects_44",
+        "title": "Logo militar",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Basado en ALpha industries. ",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/manejo-de-redes-21?ref=projects_44",
+        "title": "Manejo de redes",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Tengo una peluquería.",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Edición de textos Escritura Creativa",
+        "company_name": "E. V."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-4894?ref=projects_44",
+        "title": "Diseño de logo",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola somos una empresa cuyo nombre es BECRAFT, nos dedicamos a la venta de insumos para la elaboración de cerveza artesanal y ofrecemos el servicio de enlatado para nuestros clientes, servicio que junto con la calidad de nuestros insumos son nuestro diferencial. Nuestro slogan es \"tecnología para tu cerveza\" y me gustaría transmitir con el logo la sensacion de estar llevando lo artesanal de la elaboración de cerveza hacia algo mas controlable gracias a la tecnología. Creo que la figura de la lata o algo relacionado a la lata puede ser interesante ya que uno de nuestros diferenciales sera el servicio de enlatar.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Identidad de marca cor...",
+        "company_name": "F. M."
+    },
+    {
+        "url": "https://www.workana.com/job/busco-dibujante-tecnico-freelance?ref=projects_44",
+        "title": "Busco Dibujante Técnico freelance",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Se busca dibujante técnico freelance para la creación y el asesoramiento de un logo de una nueva marca de repuestos de autos.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "A. D."
+    },
+    {
+        "url": "https://www.workana.com/job/planeta-sano?ref=projects_43",
+        "title": "Planeta sano",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "La idea es tener una versión \"mascota\" del planeta tierra. En donde segun los tratos que le des este enferma o expande su longevidad. Por ejemplo, si construyes fabricas continuamente sobre el este enfermara y se mostrara necesitado de un actuar distinto.",
+        "requirements": "Android iPhone Responsive Web Design Facebook iOS",
+        "company_name": "S. C."
+    },
+    {
+        "url": "https://www.workana.com/job/me-cancelaron-ya-2-cuentas-publicitarias-necesitaria-resolverlo?ref=projects_43",
+        "title": "Me cancelaron ya 2 cuentas publicitarias, necesitaría resolverlo.",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Estoy haciendo campañas de publicidad en Facebook Ads y ya van 2 cuentas que me cancelan. Necesito solucionar este problema para poder seguir anunciando.",
+        "requirements": "Facebook AdWords de Google Marketing Online",
+        "company_name": "E. P. (."
+    },
+    {
+        "url": "https://www.workana.com/job/empresas-que-quieren-captar-profesionales-en-tiempo-real?ref=projects_43",
+        "title": "Empresas que quieren captar profesionales en tiempo real",
+        "workday": "Según se necesite",
+        "salary": "USD 1.000 - 3.000",
+        "description": "Sería por ejemplo hospitales que requieren médico para cubrir guardias de emergencia o cti.",
+        "requirements": "Android iPhone Responsive Web Design API CSS Facebook HTML HTML5 iOS JavaScript",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/se-requiere-administrador-de-google-ads?ref=projects_42",
+        "title": "Se requiere Administrador de Google Ads",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Hola!",
+        "requirements": "AdWords de Google Marketing Online",
+        "company_name": "D. S."
+    },
+    {
+        "url": "https://www.workana.com/job/programador-react-native-ios-android?ref=projects_42",
+        "title": "Programador React Native (Ios & Android)",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 40 / hora",
+        "description": "Buscamos programador con experiencia en React Native para el deploy de un app que ya esta hecha funcionando en Android y es necesario subirla a la tienda de IOS. Se requiere experiencia en proceso de publicacion en tienda de IOS. Trabajo al menos por 2 meses, con una carga horaria de hasta 40 horas semanales segun acuerdo establecido.",
+        "requirements": "Android iPhone API iOS React Native",
+        "company_name": "L. T."
+    },
+    {
+        "url": "https://www.workana.com/job/programador-react-native-app-para-android-y-ios?ref=projects_42",
+        "title": "Programador React Native (App para Android y Ios)",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 40 / hora",
+        "description": "Programador React Native con experiencia en el proceso de deploy de aplicacion en tienda de IOS. Tenemos un APP en Android (desarrollada con React Native) y estamos buscando una persona para sumar al equipo que participe del proceso de lanzar esta app en IOS. También debemos de desarrollar nuevos modulos en el app actual.",
+        "requirements": "Android iPhone API React Native",
+        "company_name": ""
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-creativo-de-logo-para-agencia-de-comunicacion-y-publicidad?ref=projects_42",
+        "title": "Diseño Creativo de Logo para Agencia de Comunicación y Publicidad",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito desarrollar el logo de este emprendimiento que si bien ya está funcionando con más de 5 clientes, todavía no tiene una imagen institucional. La idea de manejarlo a través de ésta plataforma es generar vínculos con los diseñadores, que se puedan sostener para futuros trabajos de manera más permanente.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Identidad de marca cor...",
+        "company_name": "F."
+    },
+    {
+        "url": "https://www.workana.com/job/necesito-desarrolador-para-aplicacion-de-trading-automatico-para-software-ninjatrader-7-y-para-metatrader-4?ref=projects_46",
+        "title": "Necesito desarrolador para aplicacion de trading automatico para software Ninjatrader 7 y para Metatrader 4",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Estoy buscando programador para metatrader 4 que me genere en ea (expert advisor) segun unos criterios y un indicador, para metatrader 4",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "P. R."
+    },
+    {
+        "url": "https://www.workana.com/job/productos-promocionales-y-catalogo-allimentos?ref=projects_46",
+        "title": "Productos Promocionales Y Catalogo Allimentos",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Presentaciones con propuestas comerciales para productos promocionales",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Identidad de marca cor...",
+        "company_name": "M. R."
+    },
+    {
+        "url": "https://www.workana.com/job/marca-y-tienda-de-indumentaria?ref=projects_46",
+        "title": "Marca y tienda de indumentaria",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 3.000",
+        "description": "Necesito un diseñador/a de moda para crear colecciones para una nueva marca de indumentaria, accesorios y zapatos.  Quien desee postularse tendra que tener en cuenta que en un principio se trabajara en conjunto hasta lograr establecer los parametros que la marca desea alcanzar y hacia donde apunta la misma aunque tambien se respetara el asesoramiento de dicho diseñador.",
+        "requirements": "",
+        "company_name": "L."
+    },
+    {
+        "url": "https://www.workana.com/job/cambios-y-soporte-wordpress?ref=projects_46",
+        "title": "Cambios y Soporte Wordpress",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola Nicolas! Espero estes bien. Recientemente contratamos a alguien para rehacer todo nuestro sitio web en Wordpress. Nuestra idea de hacer esto, es para que sea facil de editar, subir y cambiar cosas del sitio sin necesidad de depender 100% de alguien técnico.",
+        "requirements": "C",
+        "company_name": "P. H."
+    },
+    {
+        "url": "https://www.workana.com/job/videos-cortos-para-instagram-y-facebook?ref=projects_41",
+        "title": "Videos cortos para instagram y Facebook",
+        "workday": "A tiempo parcial",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Se trata de realizar videos cortos de 15 seg. Para Instagram y no más de 60 segundos para Facebook, con el objetivo de promocionar un producto gratis con el objetivo de obtener el contacto del prospecto a fin de venderle a posterior productos o servicios digitales",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo Facebook Edición Edición de audio",
+        "company_name": "P."
+    },
+    {
+        "url": "https://www.workana.com/job/redaccion-de-textos-comerciales-empresa-de-fuegos-artificiales?ref=projects_46",
+        "title": "Redaccion de textos comerciales, empresa de Fuegos Artificiales",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Empresa dedicada a la comercialización de fuegos artificiales, así como también a la producción de shows pirotécnicos y shows de efectos especiales.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa",
+        "company_name": "G. B."
+    },
+    {
+        "url": "https://www.workana.com/job/disenos-para-esmalte-permanente-de-unas?ref=projects_41",
+        "title": "Diseños para esmalte permanente de uñas",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Lo necesito ahora para hacer mis tarjetas de presentación ya q es un nuevo negocio q mi esposa estás conociendo en estos momentos",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "A. R."
+    },
+    {
+        "url": "https://www.workana.com/job/propagacion-de-un-contenido-para-captar-adherentes?ref=projects_41",
+        "title": "Propagación de un contenido para captar adherentes",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Bueno el proyecto se basa en que se pueda dar con alguien que conozca claramente las redes virtuales...",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Social Networking Escritura de artículos Publicidad en Google, ...",
+        "company_name": "R."
+    },
+    {
+        "url": "https://www.workana.com/job/google-web-designer-2?ref=projects_41",
+        "title": "Google web designer",
+        "salary": "Menos de USD 50",
+        "description": "Necesito hacer 3 banner con google web designer paso todos los datos que tienen que contener.",
+        "requirements": "HTML5 MySQL PHP",
+        "company_name": "V."
+    },
+    {
+        "url": "https://www.workana.com/job/web-ecommerce-7?ref=projects_41",
+        "title": "Web ecommerce",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador, Gerente de proyecto, Analista funcional",
+        "salary": "USD 500 - 1.000",
+        "description": "Esta es nuestra actual web: ",
+        "requirements": "",
+        "company_name": "D. R."
+    },
+    {
+        "url": "https://www.workana.com/job/redaccion-correccion-de-estilo?ref=projects_49",
+        "title": "Redacción, corrección de estilo",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Trabajos de redacción, normas icontec, apa, trabajo sobre investigación social, corrección de estilo y comprensión didáctica de textos teóricos.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa",
+        "company_name": "A. R."
+    },
+    {
+        "url": "https://www.workana.com/job/proyecto-para-trabajo-intermediario-en-nueva-agencia-digital-de-marketing?ref=projects_49",
+        "title": "Proyecto para trabajo intermediario en nueva agencia digital de Marketing.",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Hola que tal a todos un gusto mi nombre es Agustin, estamos publicando este proyecto en busca de diferentes freelancer con diferentes cualidades y actividades.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop Facebook HTML WordPress Adobe After Effects Animación Coreldraw Identidad de marca cor...",
+        "company_name": "A. M."
+    },
+    {
+        "url": "https://www.workana.com/job/disenador-grafico-para-soporte-en-diseno?ref=projects_48",
+        "title": "Diseñador gráfico para soporte en diseño.",
+        "salary": "Menos de USD 10 / hora",
+        "description": "Somos una agencia de marketing que está buscando un diseñador gráfico que se dedique a realizar piezas gráficas del día a día de la agencia. ",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe InDesign Adobe Photoshop Diseño de Presentaciones Imágen Corporative Imágenes para redes so... Diseño de Logo",
+        "company_name": "E. B."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-formularios-de-plannes-semanal?ref=projects_48",
+        "title": "Diseño de formularios de plannes semanal",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Tengo un documento en word de unas 10 carillas de texto y fotos de recetas, con planificación de una dieta semanal. Necesito darle formato y diseño para generar un PDF. No tengo diseño predefinido por lo que acepto sugerencias de colores y estilos.",
+        "requirements": "Diseño Gráfico",
+        "company_name": "A. U."
+    },
+    {
+        "url": "https://www.workana.com/job/refresh-para-etiquetas-de-vinos?ref=projects_48",
+        "title": "Refresh para etiquetas de vinos",
+        "salary": "USD 50 - 100",
+        "description": "Junto con el diseño de un nuevo logo y un manual de marca, el siguiente paso sería re diseñar una línea de etiquetas de vino. En primer lugar necesitaríamos un manual de marca que atrape para luego ir por las etiquetas, en este paso la creatividad debe volar. La idea es que se destaque del etiquetado tradicional.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator Marketing Imágen Corporative Diseño de Logo",
+        "company_name": "T. F. F."
+    },
+    {
+        "url": "https://www.workana.com/job/fasty-repartos?ref=projects_48",
+        "title": "Fasty repartos",
+        "salary": "USD 250 - 500",
+        "description": "Hola soy Juanjo, de Maldonado Uruguay, mi idea es crear una app de repartos ágiles, ya que en unos meses comienza la alta temporada turística en esta zona y los restaurantes se saturan con los pedidos y llegan tarde al cliene. Mi idea con la creación de la aplicación es tercerizar los repartos de los negocios gastronómicos. La aplicación sería algo asi:",
+        "requirements": "Android iPhone Responsive Web Design",
+        "company_name": "J. J. P."
+    },
+    {
+        "url": "https://www.workana.com/job/asistentes-en-linea-con-conocimientos-en-diferentes-areas?ref=projects_50",
+        "title": "Asistentes en línea con conocimientos en diferentes áreas",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Reclutamos personal para desempeñar proyectos en diversas áreas.",
+        "requirements": "Información Financiera Recursos Humanos Management",
+        "company_name": "T. G."
+    },
+    {
+        "url": "https://www.workana.com/job/buscamos-una-bibliotecologa-para-organizacion-catalogacion-de-archivos-digitales?ref=projects_50",
+        "title": "Buscamos una bibliotecóloga para organización/catalogación de archivos digitales.",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Se brindará acceso a un CRM donde existen decenas de tareas y archivos que se deben organizar y descargar en un orden lógico y accesible a cualquiera que desee encontrar la información según criterios cruzados",
+        "requirements": "Asistente de administr... Microsoft Excel Data Entry Tareas de Oficina Asistente Virtual Inglés",
+        "company_name": "S. M."
+    },
+    {
+        "url": "https://www.workana.com/job/posicionamiento-instagram?ref=projects_48",
+        "title": "Posicionamiento Instagram",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesito una persona que ponga a valer una cuenta de Instagram y aumente la cantidad de seguidores, el objetivo final es conseguir pacientes para consulta y dar a conocer a la profesional. Ella se encargaría de realizar el contenido, la persona contratada solo se encargaría del diseño de las publicaciones y mantener la cuenta muy activa.",
+        "requirements": "Marketing Online Marketing Social Networking",
+        "company_name": "G. N."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-banner-para-cumpleanos?ref=projects_48",
+        "title": "Diseño banner para cumpleaños",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Hola, necesito diseñar un banner de 2 metros por 2 metros con motivo de granja ( granero si es en color rosa y blanco mejor, vaca, caballo, oveja, cerdo, gallinas, animales de granja) tiene que tener un estilo muy delicado y femenino ya que es para una niña de 2 años. ",
+        "requirements": "Diseño Gráfico",
+        "company_name": "A. D. A."
+    },
+    {
+        "url": "https://www.workana.com/job/software-a-medida-para-inmobiliaria?ref=projects_47",
+        "title": "Software a medida para inmobiliaria",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 250 - 500",
+        "description": "Una inmobiliaria desea un script para gestionar el registro de sus propiedades, clientes y empleados. Esta inmobiliaria maneja solo propiedades en alquiler. La organización estructural de su carpeta principal será a partir de la creación de las carpetas Usuarios y Sistemas.",
+        "requirements": "Batch",
+        "company_name": "P."
+    },
+    {
+        "url": "https://www.workana.com/job/analista-comercial-en-business-intelligence?ref=projects_48",
+        "title": "Analista Comercial en Business Intelligence",
+        "workday": "Según se necesite",
+        "salary": "USD 500 - 1.000",
+        "description": "Orientamos la búsqueda a estudiantes avanzados o recién recibido de las carreras de Economía, Administración de empresas o Licenciatura en Marketing.",
+        "requirements": "HTML5 MySQL Python Microsoft Excel Big Data Power BI",
+        "company_name": "G. A."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-logo-473?ref=projects_47",
+        "title": "Diseño logo",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Logo intitucional para uso en membretes y remeras.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "P."
+    },
+    {
+        "url": "https://www.workana.com/job/desarrollo-de-app-124?ref=projects_47",
+        "title": "Desarrollo de app",
+        "salary": "USD 100 - 250",
+        "description": "Necesitamos desarrollar un app del estilo de uber pero para otro sector ",
+        "requirements": "Android iPhone Responsive Web Design Diseño de App Móvil",
+        "company_name": "M. A."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-sitio-web-50?ref=projects_47",
+        "title": "Creación de sitio web",
+        "salary": "USD 50 - 100",
+        "description": "Estamos intersado de crear un sitio web del estilo de uber los interesados consultar y le brindamos más informacion de que se trataría el proyecto",
+        "requirements": "JavaScript MySQL PHP Programación Web",
+        "company_name": "M. A."
+    },
+    {
+        "url": "https://www.workana.com/job/programacion-de-app-104?ref=projects_47",
+        "title": "Programacion de App",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Queremos crear una aplicacion que funcione como tinder para las mascotas. Donde por proximidad se pueda seleccionar, buscar, ver fotos, videos, descripcion del animal y dueños. ",
+        "requirements": "Android iPhone iOS",
+        "company_name": "M. P. M."
+    },
+    {
+        "url": "https://www.workana.com/job/community-management-230?ref=projects_45",
+        "title": "Community Management",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Soy Diseñadora Gráfica e Ilustradora independiente y estoy buscando un/a community management que pueda mantener mis redes sociales actualizadas.  Tengo Facebook e Instagram pero me olvido de subir mis trabajos a cualquiera de las dos redes. El contenido gráfico para subir lo diseñaría yo, pero necesito que alguien me ordene la información para saber que contenido crear y me actualice la página al menos una vez por semana.",
+        "requirements": "Facebook Diseño Gráfico Social Media Marketing Escritura Creativa",
+        "company_name": "P. P."
+    },
+    {
+        "url": "https://www.workana.com/job/traduccion-de-documentos-26?ref=projects_45",
+        "title": "Traducción de documentos",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Traducción de licencia de conducir y certificado del español al inglés son en total 4 documentos, dos certificados y dos licencias. Tiene que ser traductor certificado",
+        "requirements": "Transcripción Traducción al Inglés",
+        "company_name": "A. H."
+    },
+    {
+        "url": "https://www.workana.com/job/creacion-de-marca-en-instagram-y-armado-de-imagenes-para-nueva-empresa-de-adm-de-propiedades-airbnb?ref=projects_45",
+        "title": "Creación de marca en Instagram y armado de imágenes para nueva empresa de adm de propiedades (Airbnb)",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Hola! Te cuento lo que estoy necesitando, quiero crear una marca en Instagram y Web, la cual sería para Ofrecer los servicios en administración de propiedades y coanfitrion en airbnb.",
+        "requirements": "Diseño Gráfico Adobe Illustrator Adobe Photoshop HTML Identidad de marca cor...",
+        "company_name": "N."
+    },
+    {
+        "url": "https://www.workana.com/job/vendedoras-telefonicas-televentas?ref=projects_49",
+        "title": "Vendedoras telefónicas Televentas",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Somos una empresa de venta en línea para Uruguay.",
+        "requirements": "Skype Marketing Ventas",
+        "company_name": "F. P."
+    },
+    {
+        "url": "https://www.workana.com/job/teleasistencia-movil?ref=projects_41",
+        "title": "Teleasistencia móvil",
+        "workday": "Según se necesite",
+        "salary": "Más de USD 3.000",
+        "description": "Cotizar el desarrollo de la app a partir de especificaciones / Arquitectura y funcionalidad",
+        "requirements": "Android iPhone Responsive Web Design API HTML5 iOS JavaScript",
+        "company_name": "E. A. A. G."
+    },
+    {
+        "url": "https://www.workana.com/job/programador-con-experiencia-desarrollando-sobre-wordpress-para-integracion-de-sistema-con-woocommerce?ref=projects_46",
+        "title": "Programador con experiencia desarrollando sobre Wordpress para integración de Sistema con Woocommerce",
+        "workday": "Según se necesite",
+        "salary": "USD 250 - 500",
+        "description": "Buscamos programador que pueda desarrollar módulos de integración entre WooCommerce y un sistema de gestión propio. ",
+        "requirements": "HTML PHP WordPress API",
+        "company_name": "P."
+    },
+    {
+        "url": "https://www.workana.com/job/beauty-point?ref=projects_42",
+        "title": "Beauty Point",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Empresa dedicada a la belleza  de la mujer, cejas, pestañas, depilación",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "V."
+    },
+    {
+        "url": "https://www.workana.com/job/natural-mystic?ref=projects_42",
+        "title": "Natural Mystic",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Crear un logo para mi empresa, teniendo en cuenta que es una tienda de productos naturales es un emprendimiento que esta comenzando.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "G."
+    },
+    {
+        "url": "https://www.workana.com/job/infosur?ref=projects_45",
+        "title": "Infosur",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Soporte informatico",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "F. C."
+    },
+    {
+        "url": "https://www.workana.com/job/crear-video-55?ref=projects_43",
+        "title": "Crear video.",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "musica triste rosas corazones rotos humo petalos rojos letras",
+        "requirements": "Adobe After Effects Adobe Premiere Edición de vídeo",
+        "company_name": "J. R."
+    },
+    {
+        "url": "https://www.workana.com/job/arreglos-en-mi-web-por-wix-edicion-de-ebook?ref=projects_43",
+        "title": "Arreglos en mi web por wix + edición de ebook",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "Buenas ne principio me gustaría hacer un e-book y luego hacer unas ediciones en mi página web (wix) como página de ventas y algunos arreglos mas. Nada muy complejo, desde ya muchas gracias.",
+        "requirements": "Escritura de artículos Edición de textos Escritura Creativa",
+        "company_name": "C. M."
+    },
+    {
+        "url": "https://www.workana.com/job/escribir-articulos-o-realizar-copias?ref=projects_50",
+        "title": "Escribir artículos o realizar copias",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Realizar copias  de libros, artículos, realizar trabajos de campo sobre artículos o propuestas.",
+        "requirements": "Edición de textos Escritura Creativa",
+        "company_name": "G. M. B. L."
+    },
+    {
+        "url": "https://www.workana.com/job/copia-de-desarrollador-angular-senior?ref=projects_50",
+        "title": "Desarrollador Angular Senior",
+        "workday": "Según se necesite",
+        "roles": "Programador",
+        "salary": "USD 100 - 250",
+        "description": "Desarrollador Angular Senior",
+        "requirements": "API CSS JavaScript MySQL PHP AngularJS Responsive Web Design",
+        "company_name": "G. M."
+    },
+    {
+        "url": "https://www.workana.com/job/love-on-the-road?ref=projects_45",
+        "title": "Love On The Road",
+        "workday": "Según se necesite",
+        "salary": "USD 50 - 100",
+        "description": "La ropa va a hacer de Verano,Invierno y Primavera",
+        "requirements": "",
+        "company_name": "M."
+    },
+    {
+        "url": "https://www.workana.com/job/archicad-1?ref=projects_47",
+        "title": "Archicad",
+        "salary": "USD 50 - 100",
+        "description": "Se trata de la realizacion de un plano de un apartamento en archicad. Esto consiste en puesta de muros,aberturas, pilares, vigas, losa y cerramiento. Los planos y planillas estan hechas en autocad.",
+        "requirements": "Arquitectura AutoCAD Ingeniería Civil",
+        "company_name": "F. F."
+    },
+    {
+        "url": "https://www.workana.com/job/disenar-un-guardado-de-datos?ref=projects_42",
+        "title": "Diseñar un guardado de datos",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesitamos una persona que programe en java lo necesitamos para crear una aplicación con sistema de guardado en una base de dato la aplicación es para crear un sistema de alquiler",
+        "requirements": "C Java Python",
+        "company_name": "J."
+    },
+    {
+        "url": "https://www.workana.com/job/sanosinharina?ref=projects_49",
+        "title": "Sanosinharina",
+        "workday": "Según se necesite",
+        "salary": "USD 100 - 250",
+        "description": "Se requiere un logotipo que tenga estas referencias: necesita que cuente con trigos que hable sobre la celiaquia hoy en dia. todo eso se necesita para gastronomia",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "R. R."
+    },
+    {
+        "url": "https://www.workana.com/job/proyecto-ejb-jpa-jsf?ref=projects_50",
+        "title": "Proyecto Ejb+Jpa+Jsf",
+        "workday": "Según se necesite",
+        "roles": "Diseñador, Programador, Analista funcional",
+        "salary": "USD 500 - 1.000",
+        "description": "Se trata de una aplicacion web, orientada al area de la tecnologia y la logistica",
+        "requirements": "AJAX API HTML Programación Web",
+        "company_name": "J."
+    },
+    {
+        "url": "https://www.workana.com/job/busco-editor-de-fotos-sesiones-sensuales?ref=projects_45",
+        "title": "Busco editor de fotos (sesiones sensuales)",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "El trabajo es simple. Seria realizar el retoque final en los archivos seleccionados por el cliente.",
+        "requirements": "Adobe Photoshop",
+        "company_name": "M. A. D."
+    },
+    {
+        "url": "https://www.workana.com/job/diseno-de-logo-para-empresa-38?ref=projects_44",
+        "title": "Diseño de logo para empresa",
+        "workday": "Según se necesite",
+        "salary": "Menos de USD 50",
+        "description": "Necesitamos hacer un logo para nuestra empresa, tenemos un boceto pero nuestra idea es tener una opinión de algún diseñador especializado en el tema.",
+        "requirements": "Diseño Gráfico Ilustración Adobe Illustrator",
+        "company_name": "A. T."
+    }
 ]
