@@ -12,6 +12,8 @@ export class MessageAlertComponent implements OnInit {
   
   @Input()
   msg: string;
+  @Input()
+  errorCode: string;
 
   constructor() { }
 

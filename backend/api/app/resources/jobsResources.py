@@ -1,7 +1,7 @@
 from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
 
-from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema
+from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema, JobsByTitleSchema
 from ..database.JobModel import Job
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
@@ -111,7 +111,15 @@ class JobRA(Resource):
             return make_response(jsonify(res), 200)  
         raise ObjectNotFound('No existe un trabajo para el Id dado.')
 
-
+class JobsSearchByTitleRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        j = Job.search_by_title(request.get_json()['title'])
+        res = {
+            'jobs': JobsByTitleSchema().dump(j, many=True)
+        }
+        return make_response(jsonify(res), 200)
 
 api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
+api.add_resource(JobsSearchByTitleRA, '/api/jobs/a/searchbytitle')

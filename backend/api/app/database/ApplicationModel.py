@@ -17,12 +17,15 @@ class Application(db.Model, BaseModelMixin):
     def get_pag(cls, data):
         filtro = cls.query
 
-        # if 'search' in data and data['search'] is not None:
-        #     filtro = filtro.filter(db.or_(Job.title.contains(data['search']),
-        #                                   Job.description.contains(data['search'])))
+        filtro = filtro.filter(cls.status == data['status'])
+        
+        if 'user' in data:
+            filtro = filtro.filter(cls.user_id == data['user'])
+        
+        if 'job' in data:
+            filtro = filtro.filter(cls.job_id == data['job'])
 
-        # if 'workday' in data and data['workday'] is not None:
-        #     filtro = filtro.filter(Job.workday == data['workday'])
+        filtro = filtro.order_by(cls.created_at.desc())
 
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)

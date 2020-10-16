@@ -1,0 +1,8 @@
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+></app-message-alert>
+<div class="container min-vh-100">
+    <a [routerLink]="['entrevistas', 3]">Detalle entrevista</a>
+</div>

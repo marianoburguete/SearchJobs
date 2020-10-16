@@ -11,9 +11,10 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { RemoteLocationPipe } from '../../core/pipes/remote-location-pipe';
 import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
 import { ImageReplacementPipe } from '../../core/pipes/image-replacement-pipe';
+import { SalaryFormatPipe, WorkdayFormatPipe, LocalizationFormatPipe, ContractFormatPipe } from '../../core/pipes/requirements-format-pipe';
 
 @NgModule({
-  declarations: [IndexComponent, DetailComponent, RemoteLocationPipe, DayOrDaysPipe, ImageReplacementPipe],
+  declarations: [IndexComponent, DetailComponent, RemoteLocationPipe, DayOrDaysPipe, ImageReplacementPipe, SalaryFormatPipe, WorkdayFormatPipe, LocalizationFormatPipe, ContractFormatPipe],
   imports: [
     CommonModule,
     JobRoutingModule,

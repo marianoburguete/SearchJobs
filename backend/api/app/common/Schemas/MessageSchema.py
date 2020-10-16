@@ -9,7 +9,7 @@ class MessageSchema(ma.Schema):
     status = fields.String()
     text = fields.String()
     created_by = fields.Integer()
-    #to_interview = fields.Integer()
+    to_interview = fields.Integer()
 
     created_at = fields.DateTime()
     read_at = fields.DateTime()

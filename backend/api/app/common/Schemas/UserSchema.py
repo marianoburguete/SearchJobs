@@ -22,3 +22,14 @@ class UserSchema(ma.Schema):
     ratings = fields.Nested('RatingSchema', many=True)
     notifications = fields.Nested('NotificationSchema', many=True)
     interviews = fields.Nested('InterviewSchema', many=True)
+
+class UserByEmailSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
+    email = fields.String()
+
+
+
+# Input
+
+class UserSearchSchema(ma.Schema):
+    email = fields.String(required=True)

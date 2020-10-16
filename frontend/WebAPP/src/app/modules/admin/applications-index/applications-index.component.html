@@ -1,2 +1,107 @@
-<p>applications-index works!</p>
-
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+></app-message-alert>
+<div class="container-fluid min-vh-100">
+  <div class="row mb-3">
+    <div class="col-12">
+      <p class="display-4 text-center">Postulaciones</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <app-list-users-modal (userIdEvent)="setUserFilter($event)"></app-list-users-modal>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form form-control disabled" value="{{userEmail}}" disabled>
+        </div>
+        <div class="col-md-1 dismissApplication" *ngIf="userFilter != null" (click)="userFilter = null; userEmail = null">
+          <span class="material-icons">
+            clear
+          </span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <app-list-jobs-modal (jobIdEvent)="setJobFilter($event)"></app-list-jobs-modal>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form form-control disabled" value="{{jobTitle}}" disabled>
+        </div>
+        <div class="col-md-1 dismissApplication" *ngIf="jobFilter != null" (click)="jobFilter = null; jobTitle = null">
+          <span class="material-icons">
+            clear
+          </span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="form-inline">
+            <label for="staus">Estado</label>
+            <select class="form-control ml-2" name="status" [(ngModel)]="statusFilter">
+              <option value="created">Activas</option>
+              <option value="finished">Resueltas</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col-12">
+          <button type="button" class="btn btn-secondary" (click)="filter()">Aplicar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 table-responsive">
+      <div class="row">
+        <table class="table">
+          <thead>
+            <th scope="col">Fecha</th>
+            <th scope="col">Postulante</th>
+            <th scope="col">Trabajo</th>
+            <th scope="col">Entrevista</th>
+            <th scope="col">Descartar</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of applicationsList">
+              <td>{{ item.created_at | date}}</td>
+              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
+              <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
+              <td>
+                <a [routerLink]="['/admin/entrevistas/crear']" [queryParams]="{user: item.user.id, job: item.job.id}"><span class="material-icons" style="color: green"> add </span></a>
+              </td>
+              <td>
+                <a class="dismissApplication" (click)="dismissApplication(item.id)"><span class="material-icons" style="color: red"> clear </span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <nav aria-label="..." class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="previousPage != null">
+                <a class="page-link" (click)="previousPageLink()">
+                  Anterior
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link">
+                  {{currentPage}}
+                </a>
+              </li>
+              <li class="page-item" *ngIf="nextPage != null">
+                <a class="page-link" (click)="nextPageLink()">
+                  Siguiente
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

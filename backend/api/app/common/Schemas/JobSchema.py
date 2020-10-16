@@ -46,3 +46,7 @@ class JobSearchCompanyInfoSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
     name = fields.String()
     logo = fields.String()
+
+class JobsByTitleSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
+    title = fields.String()

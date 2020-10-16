@@ -44,7 +44,7 @@
     </div>
   </form>
 </div>
-<div class="container-fluid min-vh-100 mb-2">
+<div class="container min-vh-100 mb-2">
   <div class="row">
     <div class="col-md-2 searchFilters">
       <span class="filterHeader">Filtros</span>
@@ -82,7 +82,7 @@
           salarioMin: salaryFilter,
           remote: remoteFilter
         }"
-        class="btn btn-secondary mt-4"
+        class="btn btn-secondary mt-4 text-center"
       >
         Aplicar
       </button>
@@ -123,7 +123,8 @@
               [queryParams]="{
                 page: 1,
                 search: searchForm.controls['search'].value,
-                jornada: workdayFilter
+                jornada: workdayFilter,
+                remote: remoteFilter
               }"
               >Primera</a
             >
@@ -135,7 +136,8 @@
               [queryParams]="{
                 page: previousPageNumber,
                 search: searchForm.controls['search'].value,
-                jornada: workdayFilter
+                jornada: workdayFilter,
+                remote: remoteFilter
               }"
               >Anterior</a
             >
@@ -153,7 +155,8 @@
               [queryParams]="{
                 page: nextPageNumber,
                 search: searchForm.controls['search'].value,
-                jornada: workdayFilter
+                jornada: workdayFilter,
+                remote: remoteFilter
               }"
               >Siguiente</a
             >
@@ -165,7 +168,8 @@
               [queryParams]="{
                 page: lastPageNumber,
                 search: searchForm.controls['search'].value,
-                jornada: workdayFilter
+                jornada: workdayFilter,
+                remote: remoteFilter
               }"
               >Ultima</a
             >

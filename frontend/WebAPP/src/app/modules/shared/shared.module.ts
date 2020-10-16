@@ -16,16 +16,25 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MessageAlertComponent } from '../../core/components/message-alert/message-alert.component';
+import { ListUsersModalComponent } from '../../core/components/list-users-modal/list-users-modal.component';
+import { RouterModule } from '@angular/router';
+import { ListJobsModalComponent } from '../../core/components/list-jobs-modal/list-jobs-modal.component';
+import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/interview-pipe';
 
 
 
 @NgModule({
   declarations: [
-    MessageAlertComponent
+    MessageAlertComponent,
+    ListUsersModalComponent,
+    ListJobsModalComponent,
+    MessageStatusPipe,
+    InterviewStatusPipe
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +48,11 @@ import { MessageAlertComponent } from '../../core/components/message-alert/messa
     MatFormFieldModule,
     MatSelectModule,
     NgxSpinnerModule,
-    MessageAlertComponent
+    MessageAlertComponent,
+    ListUsersModalComponent,
+    ListJobsModalComponent,
+    MessageStatusPipe,
+    InterviewStatusPipe
   ]
 })
 export class SharedModule { }

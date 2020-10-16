@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IndexComponent } from './pages/index/index.component';
+import { InterviewDetailComponent } from './pages/interview-detail/interview-detail.component';
 
-import { UserComponent } from './user.component';
-
-const routes: Routes = [{ path: '', component: UserComponent }];
+const routes: Routes = [
+  { path: '', component: IndexComponent },
+  { path: 'entrevistas/:id', component: InterviewDetailComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}

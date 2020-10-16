@@ -52,3 +52,8 @@ class Job(db.Model, BaseModelMixin):
             return filtro.paginate(data['page'], data['per_page'], False, 40)
         else:
             return filtro.paginate(1, 10, False)
+    
+    @classmethod
+    def search_by_title(cls, title):
+        filtro = cls.query.filter(Job.title.contains(title))
+        return filtro.paginate(1, 5, False).items
