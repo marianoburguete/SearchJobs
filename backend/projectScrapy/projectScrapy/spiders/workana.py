@@ -38,11 +38,18 @@ class WorkanaSpider(CrawlSpider):
         workday = extract(fields, 'Disponibilidad requerida <strong>', '</strong>')
         if workday != 'VACIO':
             it['workday'] = workday
+        for li in response.xpath('//p[@class="h4"]/text()').getall():
+            if 'Fecha de entrega:' in li:
+                contract_type = li.replace('\n','')
+                it['contract_type'] = contract_type.strip()
         roles = extract(fields, 'Roles necesarios <strong>', '</strong>')
         if roles != 'VACIO':
             it['roles'] = roles
         it['salary'] = response.xpath('normalize-space(//h4[@class="budget text-success text-right"]/text())').get()
         it['description'] = response.xpath('//*[@id="app"]/div/div[2]/section/section[1]/div/section/article[1]/div[2]/text()[1]').get()
-        it['requirements'] = " ".join(response.xpath('normalize-space(//p[@class="skills"])').getall())
+        requirements = []
+        for li in response.xpath('//a[@class="skill label label-info"]/text()').getall():
+            requirements.append(li)
+        it['requirements'] = requirements.copy()
         it['company_name'] = response.xpath('normalize-space(//*[@id="app"]/div/div[2]/section/section[1]/div/aside/article[3]/div[1]/a/span/text())').get()
         yield it

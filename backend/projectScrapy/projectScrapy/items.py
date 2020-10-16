@@ -22,6 +22,7 @@ class WOItem(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
     workday = scrapy.Field()
+    contract_type = scrapy.Field()
     roles = scrapy.Field()
     salary = scrapy.Field()
     description = scrapy.Field()
