@@ -99,6 +99,34 @@ class JobsCompuTrabajoRA(Resource):
             
         return "Ok", 201
 
+class JobsWorkanaRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        data = request.get_json()
+        for job in data:
+            j = Job(job['url'], job['title'])
+            j.location = 'remote'
+            if job['workday'] == 'Según se necesite':
+                j.workday = 'notspecified'
+            else:
+                j.workday = job['workday']
+            # contract_type (me falta), salary
+            j.description = job['description']
+            r = job['requirements'].split(' ')
+            j.requirements.append(Requirement(r[0], r[0])) # Mismo key y value
+            j.save()
+            # Esto no se si va asi, usa el id la otra forma xD
+            c = Company.get_by_name(job['company_name'])
+            if c is not None:
+                c.jobs.append(j)
+                c.save()
+            else:
+                c = Company(job['company_name'])
+                c.jobs.append(j)
+                c.save()
+        return "Ok", 201
+
+
 class JobRA(Resource):
     def get(self, id):
         user_id = validateToken(request, 'funcionario')
@@ -123,3 +151,4 @@ class JobsSearchByTitleRA(Resource):
 api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
 api.add_resource(JobsSearchByTitleRA, '/api/jobs/a/searchbytitle')
+api.add_resource(JobsWorkanaRA, '/api/jobs/a/workana')
