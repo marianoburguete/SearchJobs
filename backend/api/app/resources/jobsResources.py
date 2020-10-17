@@ -99,6 +99,56 @@ class JobsCompuTrabajoRA(Resource):
             
         return "Ok", 201
 
+class JobsMipleoRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        data = request.get_json()
+        for job in data:
+            j = Job(job['url'], job['title'])
+            j.location = job['location']
+            if job['workday'] == 'Tiempo Completo':
+                j.workday = 'FullTime'
+            elif job['workday'] == 'Medio Tiempo':
+                j.workday = 'ParTime'
+            elif job['workday'] == 'Por Horas':
+                j.workday = 'ParTime'
+            elif job['workday'] == 'Tiempo parcial':
+                j.workday = 'ParTime'
+            elif job['workday'] == 'A convenir':
+                j.workday = 'NotSpecified'
+            if job['contract_type'] == 'Contrato por tiempo indefinido':
+                j.contract_type = 'undefined'
+            elif job['contract_type'] == 'Contrato por tiempo determinado':
+                j.contract_type = 'defined'
+            elif job['contract_type'] == 'Contrato a Plazo Indeterminado':
+                j.contract_type = 'undefined'
+            else:
+                j.contract_type = 'other'
+            if job['salary'] == 'A convenir':
+                j.salary = None
+                j.salary_max = None
+            else:
+                s = job['salary'].split()[1].replace(',00', '').replace('.','')
+                j.salary = s
+                j.salary_max = s
+            j.description = job['description']
+            j.save()
+            if job['requirements'] is not None:
+                for requirement in job['requirements']:
+                    r = requirement.split(':')
+                    j.requirements.append(Requirement(r[0], r[1]))
+                j.save()
+            c = Company.get_by_name(job['company_name'])
+            if c is not None:
+                c.jobs.append(j)
+                c.save()
+            else:
+                c = Company(job['company_name'])
+                c.jobs.append(j)
+                c.save()
+            
+        return "Ok"
+
 class JobsWorkanaRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
@@ -152,3 +202,4 @@ api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
 api.add_resource(JobsSearchByTitleRA, '/api/jobs/a/searchbytitle')
 api.add_resource(JobsWorkanaRA, '/api/jobs/a/workana')
+api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
