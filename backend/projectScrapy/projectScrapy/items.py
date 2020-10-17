@@ -17,3 +17,15 @@ class CTItem(scrapy.Item):
     requirements = scrapy.Field()
     company_name = scrapy.Field()
     company_logo = scrapy.Field()
+
+class MTItem(scrapy.Item):
+    url = scrapy.Field()
+    title = scrapy.Field()
+    location = scrapy.Field()
+    workday = scrapy.Field()    
+    contract_type = scrapy.Field()
+    salary = scrapy.Field()
+    description = scrapy.Field()
+    requirements = scrapy.Field()
+    company_name = scrapy.Field()
+    company_logo = scrapy.Field()

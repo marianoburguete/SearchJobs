@@ -22,9 +22,9 @@ class MipleoSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        if self.items_count > 20:
-            raise CloseSpider('items exceeded')
-        self.items_count += 1
+        # if self.items_count > 20:
+        #     raise CloseSpider('items exceeded')
+        # self.items_count += 1
         it = MTItem()
         it['url'] = response.request.url
         it['title'] = response.xpath('normalize-space(//h1/text())').get()
