@@ -156,16 +156,30 @@ class JobsWorkanaRA(Resource):
         for job in data:
             j = Job(job['url'], job['title'])
             j.location = 'remote'
-            if job['workday'] == 'Según se necesite':
-                j.workday = 'notspecified'
+            if job['workday'] == 'Tiempo completo': 
+                j.workday = 'FullTime'
+            elif job['workday'] == 'A tiempo parcial':
+                j.workday = 'PartTime'
             else:
-                j.workday = job['workday']
-            # contract_type (me falta), salary
+                j.workday = 'notspecified'
+            if job['contract_type'] == 'Fecha de entrega: No definido':
+                j.contract_type = 'defined'
+            else: 
+                j.contract_type = 'undefined'
+            s = job['salary'].replace('.','')
+            if 'Menos de' in job['salary']:
+                j.salary_max = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
+            elif 'Más de' in job['salary']:
+                j.salary = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
+            else:
+                j.salary = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
+                j.salary_max = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][1]
             j.description = job['description']
-            r = job['requirements'].split(' ')
-            j.requirements.append(Requirement(r[0], r[0])) # Mismo key y value
             j.save()
-            # Esto no se si va asi, usa el id la otra forma xD
+            if job['requirements'] is not None:
+                for requirement in job['requirements']:
+                    j.requirements.append(Requirement(r, r))
+                j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
                 c.jobs.append(j)
@@ -174,6 +188,7 @@ class JobsWorkanaRA(Resource):
                 c = Company(job['company_name'])
                 c.jobs.append(j)
                 c.save()
+
         return "Ok", 201
 
 
