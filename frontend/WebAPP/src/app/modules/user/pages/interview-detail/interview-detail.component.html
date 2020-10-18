@@ -1,0 +1,55 @@
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row d-flex justify-content-center pb-2">
+        <p class="display-4">Entrevista #{{interview.id}}</p>
+    </div>
+    <div class="row">
+        <div class="col-md-7 table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Trabajo</th>
+                        <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: interview.job.id}">{{interview.job.title}}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Estado</th>
+                        <td>
+                            {{interview.status | interviewStatusPipe}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Fecha</th>
+                        <td>
+                            {{interview.date_interview | date:"short"}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5 messages-box">
+            <div class="messages">
+                <div class="row" *ngFor="let m of interview.messages">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{messageWho(m.created_by)}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{m.created_at | date:"short"}} - {{m.status | messageStatusPipe}}</h6>
+                          <p class="card-text">{{m.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row write-message-box mt-4">
+                <div class="col-11">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="newMessage"></textarea>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <span class="material-icons" style="color: skyblue;" (click)="addMessage()">
+                        send
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

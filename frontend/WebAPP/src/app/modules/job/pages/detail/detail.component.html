@@ -36,23 +36,38 @@
         <div class="col-md-3 border border-dark">
             <div class="row">
                 <div class="col-12">
-                    {{jobDetails.workday}}
+                    Jornada : {{jobDetails.workday | workdayFormatPipe}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    {{jobDetails.salary}}
+                    Salario : {{jobDetails.salary | salaryFormatPipe}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    {{jobDetails.location}}
+                    Ubicación : {{jobDetails.location | localizationFormatPipe}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    {{jobDetails.contract_type}}
+                    Contrato : {{jobDetails.contract_type | contractFormatPipe}}
                 </div>
+            </div>
+            <div class="row mt-4 d-flex justify-content-center">
+                <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" (click)="application()">Postularse</button>
+                    </div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <ng-container *ngIf="userApplication; else elseTemplate2">
+                        Ya te postulaste.
+                    </ng-container>
+                    <ng-template #elseTemplate2>
+                        Inicia sesion para postularte!
+                    </ng-template>
+                </ng-template>
             </div>
         </div>
     </div>

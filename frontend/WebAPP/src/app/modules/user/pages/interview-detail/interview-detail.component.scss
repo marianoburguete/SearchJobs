@@ -1,0 +1,9 @@
+.messages-box {
+    .material-icons:hover {
+      cursor: pointer;
+    }
+    .messages {
+      overflow-y: scroll;
+      height: 50vh;
+    }
+  }

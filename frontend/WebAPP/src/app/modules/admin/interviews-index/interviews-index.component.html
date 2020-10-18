@@ -1,0 +1,116 @@
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+></app-message-alert>
+<div class="container-fluid min-vh-100">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <p class="display-4 text-center">Entrevistas</p>
+      <br>
+      <p class="text-center"><a [routerLink]="['/admin/entrevistas/crear']">Crear una nueva entrevista</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <app-list-users-modal (userIdEvent)="setUserFilter($event)"></app-list-users-modal>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form form-control disabled" value="{{userEmail}}" disabled>
+        </div>
+        <div class="col-md-1 dismissApplication" *ngIf="userFilter != null" (click)="userFilter = null; userEmail = null">
+          <span class="material-icons">
+            clear
+          </span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <app-list-jobs-modal (jobIdEvent)="setJobFilter($event)"></app-list-jobs-modal>
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form form-control disabled" value="{{jobTitle}}" disabled>
+        </div>
+        <div class="col-md-1 dismissApplication" *ngIf="jobFilter != null" (click)="jobFilter = null; jobTitle = null">
+          <span class="material-icons">
+            clear
+          </span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="form-inline">
+            <label for="staus">Estado</label>
+            <select class="form-control ml-2" name="status" [(ngModel)]="statusFilter">
+              <option value="created">En negociación</option>
+              <option value="confirmed">Fijadas</option>
+              <option value="finished">Resueltas</option>
+              <option value="cancelled">Cancelada</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="unreadMessages" id="unreadMessages"  [(ngModel)]="messagesStatusFilter" (click)="lala()"> Mensajes sin leer
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col-12">
+          <button type="button" class="btn btn-secondary" (click)="filter()">Aplicar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 table-responsive">
+      <div class="row">
+        <table class="table">
+          <thead>
+            <th scope="col">Fecha</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Trabajo</th>
+            <th scope="col">Ver</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of interviewsList">
+              <td>{{ item.created_at | date}}</td>
+              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
+              <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
+              <td>
+                <a [routerLink]="['/admin/entrevistas', item.id]"><span class="material-icons" style="color: green"> remove_red_eye </span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <nav aria-label="..." class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="previousPage != null">
+                <a class="page-link" (click)="previousPageLink()">
+                  Anterior
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link">
+                  {{currentPage}}
+                </a>
+              </li>
+              <li class="page-item" *ngIf="nextPage != null">
+                <a class="page-link" (click)="nextPageLink()">
+                  Siguiente
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

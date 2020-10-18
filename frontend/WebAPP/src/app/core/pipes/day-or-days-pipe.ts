@@ -11,9 +11,9 @@ export class DayOrDaysPipe implements PipeTransform {
       return 'Hoy';
     }
     if (value == '1') {
-        return 'Hace' + value + ' día';
+        return 'Hace ' + value + ' día';
     } else {
-        return 'Hace' + value +  ' días';
+        return 'Hace ' + value +  ' días';
     }
   }
 }

@@ -3,7 +3,8 @@ from flask_restful import Api, Resource
 from marshmallow import ValidationError
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema
-from ..common.Schemas.InterviewSchema import InterviewSchema, InterviewGetUserSchema, InterviewPutSchema
+from ..common.Schemas.InterviewSchema import InterviewSchema, InterviewGetUserSchema, InterviewPutSchema, InterviewGetAllSchema, InterviewGetAllResponseSchema
+from ..common.Schemas.MessageSchema import MessageSchema
 from ..database.JobModel import Job
 from ..database.UserModel import User
 from ..database.InterviewModel import Interview
@@ -33,11 +34,13 @@ class IdInterviewR(Resource):
         user_id = validateToken(request, 'cliente')
         i = Interview.get_by_id(id)
         if i is not None:
-            res = {
-            'msg': 'Ok.',
-            'results': interview_get_user_schema.dump(i)
-            }
-            return make_response(jsonify(res), 200)
+            if i.to_user == user_id:
+                res = {
+                'msg': 'Ok.',
+                'results': interview_get_user_schema.dump(i)
+                }
+                return make_response(jsonify(res), 200)
+            raise Forbidden('No tienes permisos para acceder a esta entrevista.')
         raise ObjectNotFound('No existe la entrevista para el Id dado.')
 
 class MessagesR(Resource):
@@ -50,7 +53,8 @@ class MessagesR(Resource):
                 i.messages.append(Message(user_id, request.get_json()['text']))
                 i.save()
                 res = {
-                    'msg': 'Ok'
+                    'msg': 'Ok',
+                    'results': MessageSchema().dump(i.messages, many=True)
                 }
                 return make_response(jsonify(res), 201)
             raise Forbidden('No tienes permisos para realizar esta accion.')
@@ -61,6 +65,13 @@ api.add_resource(IdInterviewR, '/api/interviews/<int:id>')
 api.add_resource(MessagesR, '/api/interviews/<int:id>/message')
 
 # ADMIN ENDPOINTS
+
+class InterviewsGetAllRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        data = InterviewGetAllSchema().load(request.get_json())
+        pagResult = Interview.get_pag(data)
+        return makePagResponse(pagResult, InterviewGetAllResponseSchema())
 
 class InterviewsRA(Resource):
     def post(self):
@@ -73,9 +84,11 @@ class InterviewsRA(Resource):
                 i = Interview.get_by_user_and_job(u,j)
                 if i is None:
                     i = Interview(user_id, u.id, j.id)
+                    i.messages.append(Message(user_id, data['text']))
                     i.save()
                     res = {
-                    'msg': 'Entrevista creada.'
+                    'msg': 'Entrevista creada.',
+                    'result': InterviewSchema().dump(i)
                     }
                     return make_response(jsonify(res), 201)
                 raise BadRequest('Ya existe una entrevista creada para ese usuario en ese trabajo.')
@@ -87,6 +100,11 @@ class InterviewRA(Resource):
         user_id = validateToken(request, 'funcionario')
         i = Interview.get_by_id(id)
         if i is not None:
+            u = i.user
+            for m in i.messages:
+                if m.created_by == u.id:
+                    m.status = 'readed'
+            i.save()
             res = {
             'msg': 'Ok.',
             'results': interview_schema.dump(i)
@@ -118,5 +136,6 @@ class InterviewRA(Resource):
         raise ObjectNotFound('No existe la entrevista para el Id dado.')
 
 
+api.add_resource(InterviewsGetAllRA, '/api/interviews/a/getall')
 api.add_resource(InterviewsRA, '/api/interviews/a')
 api.add_resource(InterviewRA, '/api/interviews/a/<int:id>')

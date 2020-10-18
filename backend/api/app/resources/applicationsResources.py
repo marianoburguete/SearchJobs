@@ -2,7 +2,7 @@ from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema
-from ..common.Schemas.ApplicationSchema import ApplicationSchema
+from ..common.Schemas.ApplicationSchema import ApplicationSchema, ApplicationListSchema, ApplicationSearchParametersSchema
 from ..database.JobModel import Job
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
@@ -63,14 +63,23 @@ api.add_resource(ApplicationR, '/api/application')
 
 
 class ApplicationsRA(Resource):
-    def get(self):
+    def post(self):
         user_id = validateToken(request, 'funcionario')
-        data = {
-            'page': request.args['page'],
-            'per_page': request.args['per_page']
-        }
+        data = ApplicationSearchParametersSchema().load(request.get_json())
         pagResult = Application.get_pag(data)
-        return makePagResponse(pagResult, ApplicationSchema())
+        return makePagResponse(pagResult, ApplicationListSchema())
+
+class ApplicationsDismissRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        a = Application.get_by_id(request.get_json()['id'])
+        a.status = 'finished'
+        a.save()
+        res = {
+        'msg': 'Postulacion rechazada.'
+        }
+        return make_response(jsonify(res), 200)
 
 
 api.add_resource(ApplicationsRA, '/api/applications/a')
+api.add_resource(ApplicationsDismissRA, '/api/applications/a/dismiss')

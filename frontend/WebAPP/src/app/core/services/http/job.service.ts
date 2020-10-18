@@ -7,7 +7,6 @@ import {
 } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { searchJobDto } from '../../models/searchJobDto';
-import { query } from '@angular/animations';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -35,5 +34,9 @@ export class JobService {
   applicationExists(job_id) {
     let params = new HttpParams().set('job_id', job_id);
     return this.httpClient.get(environment.URLAPI + 'application', {params: params, headers: this.authService.getheaders().headers});
+  }
+
+  searchJobByTitle(data) {
+    return this.httpClient.post(this.prefix + '/a/searchbytitle', data, {headers: this.authService.getheaders().headers});
   }
 }

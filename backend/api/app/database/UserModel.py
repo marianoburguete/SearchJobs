@@ -33,3 +33,8 @@ class User(db.Model, BaseModelMixin):
     @classmethod
     def get_by_email(cls, email):
         return cls.query.filter(User.email==email).first()
+    
+    @classmethod
+    def search_by_email(cls, email):
+        filtro = cls.query.filter(User.email.contains(email))
+        return filtro.paginate(1, 5, False).items

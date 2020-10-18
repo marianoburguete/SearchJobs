@@ -1,0 +1,43 @@
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row d-flex justify-content-center pb-2">
+        <p class="display-4 loginText">Crear entrevista</p>
+    </div>
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col-1">
+            <app-list-users-modal (userIdEvent)="setUserFilter($event)"></app-list-users-modal>
+        </div>
+        <div class="col-5">
+            <input type="text" class="form-control disabled" disabled [(ngModel)]="userEmail">
+        </div>
+        <div class="col-1" *ngIf="userFilter != null">
+            <a target="_blank" [routerLink]="['/admin/usuario', userFilter]"><span class="material-icons" style="color: green"> remove_red_eye </span></a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col-1">
+            <app-list-jobs-modal (jobIdEvent)="setJobFilter($event)"></app-list-jobs-modal>
+        </div>
+        <div class="col-5">
+            <input type="text" class="form-control disabled" disabled [(ngModel)]="jobTitle">
+        </div>
+        <div class="col-1" *ngIf="jobFilter != null">
+            <a target="_blank" [routerLink]="['/trabajo/detalles']" [queryParams]="{id: jobFilter}"><span class="material-icons" style="color: green"> remove_red_eye </span></a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col-1">
+            Mensaje
+        </div>
+        <div class="col-5">
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="firstMessage"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <button class="btn btn-primary" (click)="newInterview()">Crear entrevista</button>
+        </div>
+    </div>
+</div>
