@@ -1,1 +1,33 @@
-<p>notifications works!</p>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row d-flex justify-content-center pb-2">
+        <p class="display-4">Notificaciones</p>
+    </div>
+    <div class="row d-flex justify-content-center" *ngFor="let n of notificationsList">
+        <div class="col-md-8 border border-primary my-2 py-1 notification-card">
+            <div class="row">
+                <div class="col-8">
+                    <span class="title">
+                        {{n.title}}
+                    </span>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    {{n.created_at | dayOrDays}}
+                </div>
+            </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-12">
+                    {{n.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-12 text-center loadNotifications" *ngIf="pageFilter <= totalPagesFilter" (click)="getAll()">
+            <span class="material-icons">
+                add
+            </span>
+        </div>
+    </div>
+</div>
