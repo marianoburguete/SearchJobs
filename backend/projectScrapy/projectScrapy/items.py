@@ -29,6 +29,7 @@ class WOItem(scrapy.Item):
     description = scrapy.Field()
     requirements = scrapy.Field()
     company_name = scrapy.Field()
+    category = scrapy.Field()
     
 class MTItem(scrapy.Item):
     url = scrapy.Field()

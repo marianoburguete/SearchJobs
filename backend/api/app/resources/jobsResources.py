@@ -176,6 +176,7 @@ class JobsWorkanaRA(Resource):
                 j.salary = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
                 j.salary_max = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][1]
             j.description = job['description']
+            j.category = job['category']
             j.save()
             if job['requirements'] is not None:
                 for requirement in job['requirements']:

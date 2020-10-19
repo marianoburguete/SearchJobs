@@ -52,4 +52,5 @@ class WorkanaSpider(CrawlSpider):
             requirements.append(li)
         it['requirements'] = requirements.copy()
         it['company_name'] = response.xpath('normalize-space(//*[@id="app"]/div/div[2]/section/section[1]/div/aside/article[3]/div[1]/a/span/text())').get()
+        it['category'] = response.xpath('//ol/li[3]/a/span/text()').get()
         yield it
