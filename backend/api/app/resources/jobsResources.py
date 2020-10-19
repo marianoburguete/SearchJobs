@@ -12,6 +12,7 @@ from ..common.token_helper import validateToken
 from ..common.pagination_helper import makePagResponse
 
 import json
+import re
 
 jobs_bp = Blueprint('jobs_bp', __name__)
 
@@ -164,22 +165,24 @@ class JobsWorkanaRA(Resource):
             else:
                 j.workday = 'notspecified'
             if job['contract_type'] == 'Fecha de entrega: No definido':
-                j.contract_type = 'defined'
-            else: 
                 j.contract_type = 'undefined'
+            else: 
+                j.contract_type = 'defined'
             s = job['salary'].replace('.','')
+            salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
             if 'Menos de' in job['salary']:
-                j.salary_max = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
+                j.salary_max = salaryArray[0]
             elif 'Más de' in job['salary']:
-                j.salary = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
+                j.salary = salaryArray[0]
             else:
-                j.salary = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][0]
-                j.salary_max = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)][1]
+                j.salary = salaryArray[0]
+                j.salary_max = salaryArray[1]
             j.description = job['description']
+            j.category = job['category']
             j.save()
             if job['requirements'] is not None:
                 for requirement in job['requirements']:
-                    j.requirements.append(Requirement(r, r))
+                    j.requirements.append(Requirement(requirement, requirement))
                 j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
