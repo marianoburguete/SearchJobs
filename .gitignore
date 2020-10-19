@@ -4,3 +4,5 @@ backend/api/migrations
 __pycache__/
 node_modules/
 items.json
+backend/projectScrapy/items.json
+backend/projectScrapy/items.json

@@ -82,11 +82,12 @@ class JobsCompuTrabajoRA(Resource):
                 j.salary = s
                 j.salary_max = s
             j.description = job['description']
-            j.save()
+            j.category = job['category']
+            #j.save()
             for requirement in job['requirements']:
                 r = requirement.split(':')
                 j.requirements.append(Requirement(r[0], r[1]))
-            j.save()
+            #j.save()
             c = Company.get_by_name(job['company_name'])
             if c is not None:
                 c.jobs.append(j)
