@@ -12,6 +12,7 @@ from ..database.MessageModel import Message
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
+from ..database.NotificationModel import Notification
 
 from ..common.error_handling import ObjectNotFound, BadRequest, Forbidden
 from ..common.token_helper import validateToken
@@ -52,6 +53,9 @@ class MessagesR(Resource):
             if u.role == 'funcionario' or user_id == i.to_user:
                 i.messages.append(Message(user_id, request.get_json()['text']))
                 i.save()
+                if u.role == 'funcionario':
+                    n = Notification(i.to_user, 'Nuevo mensaje', 'Tienes un nuevo mensaje en la entrevisa para el trabajo ' + i.job.title)
+                    n.save()
                 res = {
                     'msg': 'Ok',
                     'results': MessageSchema().dump(i.messages, many=True)
@@ -86,6 +90,8 @@ class InterviewsRA(Resource):
                     i = Interview(user_id, u.id, j.id)
                     i.messages.append(Message(user_id, data['text']))
                     i.save()
+                    n = Notification(u.id, 'Solicitud de entrevista', 'Tienes una nueva solicitud de entrevista para el trabajo ' + j.title)
+                    n.save()
                     res = {
                     'msg': 'Entrevista creada.',
                     'result': InterviewSchema().dump(i)

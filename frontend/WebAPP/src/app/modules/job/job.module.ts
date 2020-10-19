@@ -14,7 +14,7 @@ import { ImageReplacementPipe } from '../../core/pipes/image-replacement-pipe';
 import { SalaryFormatPipe, WorkdayFormatPipe, LocalizationFormatPipe, ContractFormatPipe } from '../../core/pipes/requirements-format-pipe';
 
 @NgModule({
-  declarations: [IndexComponent, DetailComponent, RemoteLocationPipe, DayOrDaysPipe, ImageReplacementPipe, SalaryFormatPipe, WorkdayFormatPipe, LocalizationFormatPipe, ContractFormatPipe],
+  declarations: [IndexComponent, DetailComponent, RemoteLocationPipe, ImageReplacementPipe, SalaryFormatPipe, WorkdayFormatPipe, LocalizationFormatPipe, ContractFormatPipe],
   imports: [
     CommonModule,
     JobRoutingModule,
