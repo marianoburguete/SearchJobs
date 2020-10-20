@@ -22,6 +22,8 @@ from app.database.ApplicationModel import Application
 from app.database.MessageModel import Message
 from app.database.NotificationModel import Notification
 from app.database.RatingModel import Rating
+from app.database.CategoryModel import Category
+from app.database.SubcategoryModel import Subcategory
 
 def create_app(settings_module):
     app = Flask(__name__)

@@ -20,7 +20,7 @@ class Job(db.Model, BaseModelMixin):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
     interviews = db.relationship('Interview', backref='job', lazy=False, cascade='all, delete-orphan')
 
-    category = db.Column(db.String)
+    subcategory_id = db.Column(db.Integer, db.ForeignKey('subcategory.id'))
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
