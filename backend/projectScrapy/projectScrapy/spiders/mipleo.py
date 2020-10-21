@@ -53,4 +53,5 @@ class MipleoSpider(CrawlSpider):
                 requirements.append(response.xpath('normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Educación Mínima:")])').get())           
         it['requirements'] = requirements.copy()
         it['company_name'] = response.xpath('//*[@id="content"]/div[4]/div[1]/span/text()').get()
+        it['category'] = response.xpath('normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[2]/b/text())').get()
         yield it
