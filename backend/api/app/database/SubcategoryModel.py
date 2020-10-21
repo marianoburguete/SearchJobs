@@ -8,8 +8,11 @@ class Subcategory(db.Model, BaseModelMixin):
 
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
 
-
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __init__(self, name):
         self.name = name
+
+    @classmethod
+    def getByName(cls, name):
+        return cls.query.filter(cls.name == name).first()
