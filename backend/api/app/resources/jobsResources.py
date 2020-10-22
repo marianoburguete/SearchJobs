@@ -6,6 +6,8 @@ from ..database.JobModel import Job
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
+from ..database.CategoryModel import Category
+from ..database.SubcategoryModel import Subcategory
 
 from ..common.error_handling import ObjectNotFound, BadRequest
 from ..common.token_helper import validateToken
@@ -83,12 +85,65 @@ class JobsCompuTrabajoRA(Resource):
                 j.salary = s
                 j.salary_max = s
             j.description = job['description']
-            j.category = job['category']
-            #j.save()
+
+            category = ''
+
+            if job['category'] == 'Informática / Telecomunicaciones':
+                category = 'programacion/tecnologia'
+            elif job['category'] == 'Diseño / Artes gráficas':
+                category = 'diseño/multimedia'
+            # la categoria de abajo la tiene mariano solo
+            # elif job['category'] == '':
+            #     category = 'redaccion/traduccion'
+            elif job['category'] == 'Mercadotécnia / Publicidad / Comunicación':
+                category = 'marketing'
+            elif job['category'] == 'Contabilidad / Finanzas' or job['category'] == 'Administración / Oficina':
+                category = 'administracion/finanzas'
+            elif job['category'] == 'Legal / Asesoría':
+                category = 'legal'
+            elif job['category'] == 'Ingeniería':
+                category = 'ingenieria/arquitectura'
+            elif job['category'] == 'Producción / Operarios / Manufactura' or job['category'] == 'Mantenimiento y Reparaciones Técnicas':
+                category = 'produccion/operarios'
+            elif job['category'] == 'Recursos Humanos':
+                category = 'recursosHumanos'
+            elif job['category'] == 'Hostelería / Turismo':
+                category = 'hosteleria/turismo'
+            elif job['category'] == 'Ventas' or job['category'] == 'CallCenter / Telemercadeo' or job['category'] == 'Atención a clientes':
+                category = 'ventas'
+            elif job['category'] == 'Compras / Comercio Exterior':
+                category = 'compras/comercioExterior'
+            elif job['category'] == 'Servicios Generales, Aseo y Seguridad ':
+                category = 'serviciosGenerales'
+            elif job['category'] == 'Medicina / Salud':
+                category = 'medicina/salud'
+            elif job['category'] == 'Almacén / Logística / Transporte':
+                category = 'almacenamiento/logistica'
+            elif job['category'] == 'Construccion y obra':
+                category = 'construccion/obras'
+            # No tengo ninguno con educacion, asi que no se como es la etiqueta
+            # elif job['category'] == '':
+            #     category = 'educacion'
+            elif job['category'] == 'Investigación y Calidad':
+                category = 'investigacion/calidad'
+            else:
+                category = 'otros'
+            
+            cat = Category.getByName(category)
+            if cat is None:
+                cat = Category(category)
+                cat.save()
+                subCategory = Subcategory('general' + category)
+                cat.subcategories.append(subCategory)
+                cat.save()
+
+            # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
+            j.subcategory_id = Subcategory.getByName('general' + category).id
+
             for requirement in job['requirements']:
                 r = requirement.split(':')
                 j.requirements.append(Requirement(r[0], r[1]))
-            #j.save()
+
             c = Company.get_by_name(job['company_name'])
             if c is not None:
                 c.jobs.append(j)
@@ -98,7 +153,7 @@ class JobsCompuTrabajoRA(Resource):
                 c.logo = job['company_logo']
                 c.jobs.append(j)
                 c.save()
-            
+
         return "Ok", 201
 
 class JobsMipleoRA(Resource):
