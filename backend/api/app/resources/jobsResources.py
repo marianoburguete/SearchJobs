@@ -190,6 +190,58 @@ class JobsMipleoRA(Resource):
                 j.salary_max = s
             j.description = job['description']
             j.save()
+
+            category = ''
+
+            if job['category'] == 'Informática / Telecomunicaciones':
+                category = 'programacion/tecnologia'
+            elif job['category'] == 'Diseño / Decoración / Artes Gráficas':
+                category = 'diseño/multimedia'
+            # la categoria de abajo la tiene mariano solo
+            # elif job['category'] == '':
+            #     category = 'redaccion/traduccion'
+            elif job['category'] == 'Marketing / Publicidad / Producción Audiovisual':
+                category = 'marketing'
+            elif job['category'] == 'Administración / Contabilidad / Finanzas':
+                category = 'administracion/finanzas'
+            elif job['category'] == 'Legal / Asesoría':
+                category = 'legal'
+            elif job['category'] == 'Arquitectura / Ingenierías':
+                category = 'ingenieria/arquitectura'
+            elif job['category'] == 'Producción / Mantenimiento / Operaciones':
+                category = 'produccion/operarios'
+            elif job['category'] == 'Recursos Humanos / Relaciones Públicas':
+                category = 'recursosHumanos'
+            elif job['category'] == 'Hotelería / Turismo':
+                category = 'hosteleria/turismo'
+            elif job['category'] == 'Comercial / Ventas / Atención al Cliente':
+                category = 'ventas'
+            elif job['category'] == 'Compras / Comercio Exterior':
+                category = 'compras/comercioExterior'
+            elif job['category'] == 'Medicina / Salud':
+                category = 'medicina/salud'
+            elif job['category'] == 'Almacenamiento / Logística / Distribución':
+                category = 'almacenamiento/logistica'
+            elif job['category'] == 'Construcción / Obras / Edificaciones':
+                category = 'construccion/obras'
+            elif job['category'] == 'Docencia / Educación':
+                 category = 'educacion'
+            elif job['category'] == 'Investigación y Calidad':
+                category = 'investigacion/calidad'
+            else:
+                category = 'otros'
+            
+            cat = Category.getByName(category)
+            if cat is None:
+                cat = Category(category)
+                cat.save()
+                subCategory = Subcategory('general' + category)
+                cat.subcategories.append(subCategory)
+                cat.save()
+
+            # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
+            j.subcategory_id = Subcategory.getByName('general' + category).id
+
             if job['requirements'] is not None:
                 for requirement in job['requirements']:
                     r = requirement.split(':')
@@ -203,7 +255,7 @@ class JobsMipleoRA(Resource):
                 c = Company(job['company_name'])
                 c.jobs.append(j)
                 c.save()
-            
+
         return "Ok", 201
 
 class JobsWorkanaRA(Resource):
