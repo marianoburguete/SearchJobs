@@ -149,7 +149,7 @@ class JobsMipleoRA(Resource):
                 c.jobs.append(j)
                 c.save()
             
-        return "Ok"
+        return "Ok", 201
 
 class JobsWorkanaRA(Resource):
     def post(self):
