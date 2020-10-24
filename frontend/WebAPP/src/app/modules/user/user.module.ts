@@ -8,6 +8,7 @@ import { CurriculumComponent } from './pages/curriculum/curriculum.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SharedModule } from '../shared/shared.module';
 import { MessageStatusPipe } from '../../core/pipes/interview-pipe';
+import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
 
 
 @NgModule({

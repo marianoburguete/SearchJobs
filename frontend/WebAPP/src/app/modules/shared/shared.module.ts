@@ -20,6 +20,7 @@ import { ListUsersModalComponent } from '../../core/components/list-users-modal/
 import { RouterModule } from '@angular/router';
 import { ListJobsModalComponent } from '../../core/components/list-jobs-modal/list-jobs-modal.component';
 import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/interview-pipe';
+import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
 
 
 
@@ -29,7 +30,8 @@ import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/intervi
     ListUsersModalComponent,
     ListJobsModalComponent,
     MessageStatusPipe,
-    InterviewStatusPipe
+    InterviewStatusPipe,
+    DayOrDaysPipe
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/intervi
     ListUsersModalComponent,
     ListJobsModalComponent,
     MessageStatusPipe,
-    InterviewStatusPipe
+    InterviewStatusPipe,
+    DayOrDaysPipe
   ]
 })
 export class SharedModule { }

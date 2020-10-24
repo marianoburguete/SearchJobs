@@ -34,6 +34,7 @@ class WOItem(scrapy.Item):
 class MTItem(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
+    category = scrapy.Field()
     location = scrapy.Field()
     workday = scrapy.Field()    
     contract_type = scrapy.Field()
@@ -42,3 +43,4 @@ class MTItem(scrapy.Item):
     requirements = scrapy.Field()
     company_name = scrapy.Field()
     company_logo = scrapy.Field()
+    
