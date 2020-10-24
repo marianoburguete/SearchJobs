@@ -233,7 +233,37 @@ class JobsWorkanaRA(Resource):
                 j.salary = salaryArray[0]
                 j.salary_max = salaryArray[1]
             j.description = job['description']
-            j.category = job['category']
+            
+            category = ''
+            if job['category'] == 'Programación y Tecnología' or job['category'] == 'Programación Web' or job['category'] == 'Diseño Web' or job['category'] == 'Tiendas virtuales (ecommerce)' or job['category'] == 'Wordpress' or job['category'] == 'Programación de Apps. Android, iOS y otros' or job['category'] == 'Data Science' or job['category'] == 'Aplicaciones de escritorio':
+                category = 'programacion/tecnologia'
+            elif job['category'] == 'Diseño y Multimedia' or job['category'] == 'Diseño de Logo' or job['category'] == 'Diseño Web' or job['category'] == 'Banners' or job['category'] == 'Ilustraciones' or job['category'] == 'Crear o editar video' or job['category'] == 'Infografías' or job['category'] == 'Imágenes para redes sociales' or job['category'] == 'Diseño de App Móvil' or job['category'] == 'Imagen Corporativa' or job['category'] == 'Modelos 3D' or job['category'] == 'Landing Page' or job['category'] == 'Diseño de moda':
+                category = 'diseño/multimedia'
+            elif job['category'] == 'Redacción y Traducción' or job['category'] == 'Redacción de artículos' or job['category'] == 'Redacción para sitios web' or job['category'] == 'Revisión de textos' or job['category'] == 'Publicaciones para redes sociales' or job['category'] == 'Traducción' or job['category'] == 'Subtitulado':
+                category = 'redaccion/traduccion'
+            elif job['category'] == 'Marketing Digital y Ventas' or job['category'] == 'SEO' or job['category'] == 'Community Management' or job['category'] == 'Publicidad en Google, Facebook' or job['category'] == 'Email marketing' or job['category'] == 'Data analytics' or job['category'] == 'Televentas' or job['category'] == 'Comercial / Vendedor':
+                category = 'marketing'
+            elif job['category'] == 'Soporte Administrativo' or job['category'] == 'Asistente virtual' or job['category'] == 'Atención al cliente' or job['category'] == 'Data entry' or job['category'] == 'Investigación de mercado' or job['category'] == 'Televentas':
+                category = 'ventas'
+            elif job['category'] == 'Legal':
+                category = 'legal'
+            elif job['category'] == 'Finanzas y Negocios' or job['category'] == 'Revelamiento de datos' or job['category'] == 'Trabajar con un CRM' or job['category'] == 'Gestionar proyectos' or job['category'] == 'Hacer reclutamiento' or job['category'] == 'Planeamiento estratégico' or job['category'] == 'Tareas de Contabilidad':
+                category = 'administracion/finanzas'
+            elif job['category'] == 'Ingeniería y Arquitectura' or job['category'] == 'Diseño industrial' or job['category'] == 'Dibujos de CAD' or job['category'] == 'Modelador en 3D' or job['category'] == 'Diseño de interiores':
+                category = 'ingenieria/arquitectura'
+            else:
+                category = 'otros'
+            cat = Category.getByName(category)
+            if cat is None:
+                cat = Category(category)
+                cat.save()
+                subCategory = Subcategory('general' + category)
+                cat.subcategories.append(subCategory)
+                cat.save()
+
+            # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
+            j.subcategory_id = Subcategory.getByName('general' + category).id
+
             j.save()
             if job['requirements'] is not None:
                 for requirement in job['requirements']:
