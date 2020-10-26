@@ -1,1 +1,60 @@
-<p>index works!</p>
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+></app-message-alert>
+<div class="container-fluid min-vh-100">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <p class="display-4 text-center">Empresas</p>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 table-responsive">
+      <div class="row">
+        <table class="table">
+          <thead>
+            <th scope="col">Fecha</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Trabajo</th>
+            <th scope="col">Ver</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of companiesList">
+              <td>{{ item.created_at | date}}</td>
+              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
+              <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
+              <td>
+                <a [routerLink]="['/admin/empresas', item.id]"><span class="material-icons" style="color: green"> remove_red_eye </span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <nav aria-label="..." class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="previousPage != null">
+                <a class="page-link" (click)="previousPageLink()">
+                  Anterior
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link">
+                  {{currentPage}}
+                </a>
+              </li>
+              <li class="page-item" *ngIf="nextPage != null">
+                <a class="page-link" (click)="nextPageLink()">
+                  Siguiente
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
