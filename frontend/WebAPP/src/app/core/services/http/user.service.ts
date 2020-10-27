@@ -38,4 +38,14 @@ export class UserService {
     const userSession = this.authService.getUser();
     return this.httpClient.get(this.prefix + '/' + userSession.id + '/notifications/' + id, {headers: this.authService.getheaders().headers});
   }
+
+  getCurriculum(){
+    const userSession = this.authService.getUser();
+    return this.httpClient.get(this.prefix + '/' + userSession.id + '/curriculum', {headers: this.authService.getheaders().headers});
+  }
+
+  addCurriculum(data) {
+    const userSession = this.authService.getUser();
+    return this.httpClient.post(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
+  }
 }

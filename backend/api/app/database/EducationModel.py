@@ -9,7 +9,5 @@ class Education(db.Model, BaseModelMixin):
 
     curriculum_id = db.Column(db.Integer, db.ForeignKey('curriculum.id'), nullable=False)
     
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
     def __init__(self, name):
         self.name = name
