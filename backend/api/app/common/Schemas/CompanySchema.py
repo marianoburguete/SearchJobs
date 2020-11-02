@@ -12,3 +12,8 @@ class CompanySchema(ma.Schema):
     logo = fields.String()
     jobs = fields.Nested('JobSchema', many=True)
     ratings = fields.Nested('RatingSchema', many=True)
+
+class CompanyGetAllSchema(ma.Schema):
+    page = fields.Integer(required=True)
+    per_page = fields.Integer(required=True)
+    # faltan cosas por aca

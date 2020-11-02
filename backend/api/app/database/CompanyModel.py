@@ -14,3 +14,7 @@ class Company(db.Model, BaseModelMixin):
     @classmethod
     def get_by_name(cls, name):
         return cls.query.filter(Company.name==name).first()
+
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.query.filter(Company.id==id).first()
