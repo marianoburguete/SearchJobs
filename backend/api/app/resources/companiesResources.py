@@ -27,7 +27,7 @@ api = Api(companies_bp)
 
 class CompaniesGetAllRA(Resource):
     def post(self):
-        data = CompanyGetAllSchema().load(request.get_json())
+        data = request.get_json()
         pagResult = Company.get_pag(data)
         return makePagResponse(pagResult, CompanyGetAllResponseSchema())
 

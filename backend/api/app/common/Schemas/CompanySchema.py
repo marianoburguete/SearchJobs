@@ -18,12 +18,12 @@ class CompanyGetAllResponseSchema(ma.Schema):
     name = fields.String()
     info = fields.String()
     logo = fields.String()
-    jobs = fields.Nested('CompanyJobsGetAllSchema', many=True)
+    #jobs = fields.Nested('CompanyJobsGetAllSchema', many=True)
     ratings = fields.Nested('CompanyRatingsGetAllSchema', many=True)
 
 class CompanyGetAllSchema(ma.Schema):
-    page = fields.Integer(required=True)
-    per_page = fields.Integer(required=True)
+    page = fields.Integer()
+    per_page = fields.Integer()
     # name = fields.String()
     # info = fields.String()
     # logo = fields.String()
