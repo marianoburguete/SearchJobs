@@ -24,9 +24,9 @@ class CompanyGetAllResponseSchema(ma.Schema):
 class CompanyGetAllSchema(ma.Schema):
     page = fields.Integer(required=True)
     per_page = fields.Integer(required=True)
-    name = fields.String()
-    info = fields.String()
-    logo = fields.String()
+    # name = fields.String()
+    # info = fields.String()
+    # logo = fields.String()
 
 class CompanyJobsGetAllSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
