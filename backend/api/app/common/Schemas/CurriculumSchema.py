@@ -16,6 +16,7 @@ class CurriculumSchema(ma.Schema):
     workexperience = fields.Nested('WorkExperienceSchema', many=True, allow_none=True)
     languages = fields.Nested('LanguageSchema', many=True, allow_none=True)
     user = fields.Nested('CurriculumUserSchema', allow_none=True)
+    categories = fields.Nested('CategoriesUserSchema', many=True, allow_none=True)
 
 class EducationSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
@@ -38,3 +39,10 @@ class LanguageSchema(ma.Schema):
 class CurriculumUserSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
     email = fields.String()
+
+class CategoriesUserSchema(ma.Schema):
+    category = fields.Nested('CategoryUserSchema', allow_none=True)
+    
+class CategoryUserSchema(ma.Schema):
+    id = fields.Integer()
+    name = fields.String()

@@ -8,6 +8,7 @@ from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
 from ..database.CategoryModel import Category
 from ..database.SubcategoryModel import Subcategory
+from ..database.SearchModel import Search
 
 from ..common.error_handling import ObjectNotFound, BadRequest
 from ..common.token_helper import validateToken
@@ -41,7 +42,8 @@ class JobsSearchR(Resource):
         if data is None:
             raise BadRequest('No se encontraron los filtros.')
         pagResult = Job.get_pag(data)
-        
+        s = Search(data['search'], None)
+        s.save()
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
 

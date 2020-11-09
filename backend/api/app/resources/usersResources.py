@@ -10,6 +10,7 @@ from ..database.EducationModel import Education
 from ..database.LanguageModel import Language
 from ..database.WorkExperienceModel import WorkExperience
 from ..database.NotificationModel import Notification
+from ..database.CategoryModel import Category
 
 from ..common.error_handling import ObjectNotFound, Forbidden, BadRequest
 
@@ -66,6 +67,7 @@ class UserCurriculumR(Resource):
             u = User.get_by_id(id)
             if u is not None:
                 if u.curriculum != []:
+                    print(u.curriculum[0].categories[0].category.name)
                     res = {
                     'msg': 'Ok',
                     'results': CurriculumSchema().dump(u.curriculum[0])
@@ -111,6 +113,10 @@ class UserCurriculumR(Resource):
                         for lan in data['languages']:
                             l = Language(lan['name'])
                             c.languages.append(l)
+                    if 'categories' in data and data['categories'] is not None:
+                        for cat in data['categories']:
+                            category = Category.get_by_id(cat['category']['id'])
+                            c.categories.append(category)
                     u.curriculum.append(c)
                     u.save()
                     res = {
@@ -173,11 +179,44 @@ class UserCurriculumR(Resource):
         raise Forbidden('No tienes permisos para realizar esta accion.')
 
 
+class UserSalaryR(Resource):
+    def get(self, id):
+        user_id = validateToken(request, 'cliente')
+        if user_id == id:
+            u = User.get_by_id(id)
+            if u.curriculum[0] is not None:
+                resList = []
+                for c in u.curriculum[0].categories:
+                    obj = {'name': c.category.name, 'estimation': 0}
+                    cat = Category.get_by_id(c.category.id)
+                    jobs = cat.subcategories[0].jobs
+                    total = 0
+                    count = 0
+                    for j in jobs:
+                        if j.salary is not None:
+                            total = total + j.salary
+                            count = count + 1
+                    if count > 0:
+                        obj['estimation'] = total / count
+                    else:
+                        obj['estimation'] = 'Desconocido'
+                    resList.append(obj)
+                res = {
+                    'msg': 'Ok',
+                    'results': resList
+                }
+                return make_response(jsonify(res), 200)
+            raise ObjectNotFound('No existe un curriculum asociado a este usuario.')
+        raise Forbidden('No tienes permisos para realizar esta accion.')
+
+
 api.add_resource(UserGetNotificationsR, '/api/users/<int:id>/notifications')
 api.add_resource(UserNotificationUpdateR,
                  '/api/users/<int:id>/notifications/<int:nId>')
 api.add_resource(UserCurriculumR,
                  '/api/users/<int:id>/curriculum')
+api.add_resource(UserSalaryR,
+                 '/api/users/<int:id>/salary')
 
 
 # ADMIN ENDPOINTS
