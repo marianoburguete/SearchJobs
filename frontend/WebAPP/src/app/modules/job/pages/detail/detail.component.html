@@ -1,74 +1,98 @@
 <app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
-<div class="container min-vh-100">
-    <div class="row mt-5">
-        <div class="col-md-9">
-            <div class="row border border-dark">
-                <div class="col-md-3">
-                    <img src="{{jobDetails.company.logo}}" class="img-fluid">
-                </div>
-                <div class="col-md-9">
-                    <span class="jobName">{{jobDetails.title}}</span>
-                    <br>
-                    <span class="pubDate">{{jobDetails.created_at | dayOrDays}}</span>
-                    <br>
-                    <span class="desc">{{jobDetails.description}}</span>
-                </div>
-            </div>
-            <div class="row border border-dark mt-3">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span>Requisitos</span>
-                        </div>
+<header class="bg-primary">
+    <br>
+    <div class="container ">
+    <!-- min-vh-100 -->
+        <div class="row mt-5">
+    
+    
+            <div class="col-md-9">
+                <div class="p-4">
+    
+                <div class="row border rounded">
+                    
+                    <div class="col-md-3" id="services_block">
+                        <br>
+                        <img src="{{jobDetails.company.logo | imageReplacement}}" class="img-fluid">
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <li *ngFor="let item of jobDetails.requirements">
-                                    {{item.key}}: {{item.value}}
-                                </li>
-                            </ul>
+                    <div class="col-md-9" id="services_block">
+                        <br><br>
+                        <span class="jobName; text-uppercase; font-weight-bold; h4">{{jobDetails.title}}</span>
+                        <br>
+                        <span class="pubDate; blockquote-footer">{{jobDetails.created_at | dayOrDays}}</span>
+                        <br>
+                        <span class="h6">Descripción:</span>
+                        <br>
+                        <span class="desc">{{jobDetails.description}}</span>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="row border rounded  mt-3 " id="services_block">
+                    <div class="col-md-12 ">
+                        <div class="row">
+                            <div class="col-md-12 border">
+                                <span class="h6">Requisitos</span>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    <li *ngFor="let item of jobDetails.requirements">
+                                        {{item.key}}: {{item.value}}
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 border border-dark">
-            <div class="row">
-                <div class="col-12">
-                    Jornada : {{jobDetails.workday | workdayFormatPipe}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    Salario : {{jobDetails.salary | salaryFormatPipe}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    Ubicación : {{jobDetails.location | localizationFormatPipe}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    Contrato : {{jobDetails.contract_type | contractFormatPipe}}
-                </div>
-            </div>
-            <div class="row mt-4 d-flex justify-content-center">
-                <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
-                    <div class="col-md-12 text-center">
-                        <button class="btn btn-primary" (click)="application()">Postularse</button>
+            <div class="col-md-3 border rounded" id="services_block">
+                <br><br>
+                <div class="row">
+                    <div class="col-12">
+                        Jornada : {{jobDetails.workday | workdayFormatPipe}}
                     </div>
-                </ng-container>
-                <ng-template #elseTemplate>
-                    <ng-container *ngIf="userApplication; else elseTemplate2">
-                        Ya te postulaste.
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Salario : {{jobDetails.salary | salaryFormatPipe}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Ubicación : {{jobDetails.location | localizationFormatPipe}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Contrato : {{jobDetails.contract_type | contractFormatPipe}}
+                    </div>
+                </div>
+                <div class="row mt-4 d-flex justify-content-center">
+                    <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary" (click)="application()">Postularse</button>
+                        </div>
                     </ng-container>
-                    <ng-template #elseTemplate2>
-                        Inicia sesion para postularte!
+                    <ng-template #elseTemplate>
+                        <ng-container *ngIf="userApplication; else elseTemplate2">
+                            Ya te postulaste.
+                        </ng-container>
+                        <ng-template #elseTemplate2>
+                            <div class="p-3 mb-2 bg-success text-white">Inicia sesion para postularte!</div>
+                        </ng-template>
                     </ng-template>
-                </ng-template>
+                </div>
             </div>
+    
         </div>
+    <br><br>
     </div>
-</div>
+</header>
+<section id="about">
+    <div style="height: 250px; background-color: rgba(255, 255, 255, 0.1);">
+      </div>
+</section>
