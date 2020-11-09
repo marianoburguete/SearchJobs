@@ -19,7 +19,7 @@ class CompanyGetAllResponseSchema(ma.Schema):
     info = fields.String()
     logo = fields.String()
     #jobs = fields.Nested('CompanyJobsGetAllSchema', many=True)
-    ratings = fields.Nested('CompanyRatingsGetAllSchema', many=True)
+    #ratings = fields.Nested('CompanyRatingsGetAllSchema', many=True)
 
 class CompanyGetAllSchema(ma.Schema):
     page = fields.Integer()

@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 })
 export class CompanyService {
 
-  prefix = environment.URLAPI + 'company';
+  prefix = environment.URLAPI + 'companies';
 
   constructor(
     private httpClient: HttpClient,
@@ -24,14 +24,6 @@ export class CompanyService {
   
   get(data) {
     return this.httpClient.get(this.prefix + '/a/' + data.id, {headers: this.authService.getheaders().headers});
-  }
-
-  add(data) {
-    return this.httpClient.post(this.prefix + '/a', data, {headers: this.authService.getheaders().headers});
-  }
-
-  put(data) {
-    return this.httpClient.put(this.prefix + '/a/' + data.id, data, {headers: this.authService.getheaders().headers});
   }
 
 }

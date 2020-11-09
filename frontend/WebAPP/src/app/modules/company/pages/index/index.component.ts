@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { CompanyService } from 'src/app/core/services/http/company.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { companyDto } from 'src/app/core/models/companyDto';
 
 @Component({
   selector: 'app-index',
@@ -10,65 +12,60 @@ import { CompanyService } from 'src/app/core/services/http/company.service';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  lastResponse: any = {};
+  pageNumber = 1;
+  nextPageNumber = null;
+  previousPageNumber = null;
+  lastPageNumber = null;
+  totalResults = 0;
 
-  alert: AlertDTO = {
-    show: false,
-    msg: null,
-    errorCode: null
-  }
-  companiesList: any;
-  pageFilter = 1;
-  statusFilter: string = null;
-  messagesStatusFilter: boolean = null;
-
-  currentPage = 1;
-  nextPage: number = null;
-  previousPage: number = null;
-
-  constructor(private companyService: CompanyService, private spinnerService: SpinnerService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private _CompanyService: CompanyService,
+    private route: ActivatedRoute,
+    private spinnerService: SpinnerService
+  ) {}
 
   ngOnInit() {
-    this.spinnerService.callSpinner();
-    this.route.queryParamMap.subscribe((param) => {
-      let data: any = {
-        page: this.pageFilter,
-        per_page: 10,
-        status: 'created'
-      };
-
-      if (param.get('page') != null) {
-        this.pageFilter = Number(param.get('page'));
-        data.page = this.pageFilter;
+    this.route.queryParamMap.subscribe((params) => {
+      if (params.get('page') != null) {
+        this.pageNumber = Number(params.get('page'));
+        if (this.pageNumber < 1) {
+          this.pageNumber = 1;
+        }
       }
-
-      this.companyService.getAll(data).subscribe((res) => {
-        this.companiesList = res['results'];
-        this.currentPage = res['currentPage'];
-        this.previousPage = res['previousPage'];
-        this.nextPage = res['nextPage'];
-      },
-      (err) => {
-        this.alert.show = true;
-        this.alert.msg = err.msg;
-      }).add(() => this.spinnerService.stopSpinner());
-      
+      this.searchSubmit();
     });
   }
 
-  previousPageLink() {
-    let params:any = {
-      status: this.statusFilter,
-      page: this.previousPage
+  searchSubmit() {
+    this.spinnerService.callSpinner();
+    let data: companyDto;
+    data = {
+      page: this.pageNumber,
+      per_page: 10
     };
-    this.router.navigate(['/admin/entrevistas'], {queryParams: params});
+    this._CompanyService
+      .getAll(data)
+      .subscribe(
+        (res) => {
+          this.lastResponse = res;
+          this.makeQueryStrings(res);
+        },
+        (err) => {
+          console.log(err.body.msg);
+        }
+      )
+      .add(() => {
+        this.spinnerService.stopSpinner();
+      });
   }
-  
-  nextPageLink() {
-    let params:any = {
-      status: this.statusFilter,
-      page: this.nextPage
-    };
-    this.router.navigate(['/admin/entrevistas'], {queryParams: params});
+
+  makeQueryStrings(res) {
+    this.pageNumber = res.currentPage;
+    this.previousPageNumber = res.previousPage;
+    this.nextPageNumber = res.nextPage;
+    this.lastPageNumber = res.totalPages;
+    this.totalResults = res.totalResults;
   }
 
 }

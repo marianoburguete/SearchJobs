@@ -28,6 +28,8 @@ api = Api(companies_bp)
 class CompaniesGetAllRA(Resource):
     def post(self):
         data = request.get_json()
+        if data is None:
+            raise BadRequest('No se encontraron los filtros.')
         pagResult = Company.get_pag(data)
         return makePagResponse(pagResult, CompanyGetAllResponseSchema())
 
