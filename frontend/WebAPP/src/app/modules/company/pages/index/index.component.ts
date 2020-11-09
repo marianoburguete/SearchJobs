@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertDTO } from 'src/app/core/models/alertDto';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { CompanyService } from 'src/app/core/services/http/company.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { companyDto } from 'src/app/core/models/companyDto';
 
 @Component({
@@ -11,7 +9,7 @@ import { companyDto } from 'src/app/core/models/companyDto';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponente implements OnInit {
   lastResponse: any = {};
   pageNumber = 1;
   nextPageNumber = null;

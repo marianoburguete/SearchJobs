@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-2">
             <img
-              src="{{ company.logo | imageReplacement }}"
+              src="{{ company.logo | imageReplacementCompany }}"
               class="img-fluid"
             />
           </div>
@@ -15,9 +15,7 @@
                 company.name
               }}</a>
             </div>
-            <div class="row ml-1 py-2">
-              <span>{{ company.info | remoteString }}</span>
-            </div>
+            
           </div>
         </div>
       </div>
