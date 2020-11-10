@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { CompanyService } from 'src/app/core/services/http/company.service';
 import { companyDto } from 'src/app/core/models/companyDto';
@@ -9,8 +10,10 @@ import { companyDto } from 'src/app/core/models/companyDto';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponente implements OnInit {
+export class IndexComponent implements OnInit {
   lastResponse: any = {};
+  companiesRecomendationList: any[] = [];
+  searchForm: FormGroup;
   pageNumber = 1;
   nextPageNumber = null;
   previousPageNumber = null;
@@ -19,12 +22,18 @@ export class IndexComponente implements OnInit {
 
   constructor(
     private _CompanyService: CompanyService,
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private spinnerService: SpinnerService
   ) {}
 
   ngOnInit() {
+    this.searchForm = this.fb.group({
+      search: ['', Validators.required],
+    });
+
     this.route.queryParamMap.subscribe((params) => {
+      this.searchForm.setValue({ search: params.get('search') });
       if (params.get('page') != null) {
         this.pageNumber = Number(params.get('page'));
         if (this.pageNumber < 1) {
@@ -40,7 +49,8 @@ export class IndexComponente implements OnInit {
     let data: companyDto;
     data = {
       page: this.pageNumber,
-      per_page: 10
+      per_page: 10,
+      search: this.searchForm.controls['search'].value
     };
     this._CompanyService
       .getAll(data)
@@ -66,4 +76,24 @@ export class IndexComponente implements OnInit {
     this.totalResults = res.totalResults;
   }
 
+  searchTextRecomendations(event: Event) {
+    let data: companyDto = {
+      page: 1,
+      per_page: 5,
+      search: (event.target as HTMLInputElement).value,
+    };
+    if (data.search === null || data.search === '') {
+      this.companiesRecomendationList = [];
+    } else {
+      this._CompanyService.search(data).subscribe((res) => {
+        this.companiesRecomendationList = [];
+        this.companiesRecomendationList = res['results'];
+      });
+    }
+  }
+
+  setSearchText(event: Event) {
+    let txt: string = (event.target as Element).textContent;
+    this.searchForm.setValue({ search: txt });
+  }
 }

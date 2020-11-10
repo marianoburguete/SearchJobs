@@ -4,6 +4,7 @@ import {
 } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
+import { companyDto } from '../../models/companyDto';
 
 
 @Injectable({
@@ -24,6 +25,10 @@ export class CompanyService {
   
   get(data) {
     return this.httpClient.get(this.prefix + '/a/' + data.id, {headers: this.authService.getheaders().headers});
+  }
+
+  search(data:companyDto) {
+    return this.httpClient.post(this.prefix + '/search', data);
   }
 
 }
