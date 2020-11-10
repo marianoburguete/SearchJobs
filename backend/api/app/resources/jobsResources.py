@@ -8,6 +8,7 @@ from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
 from ..database.CategoryModel import Category
 from ..database.SubcategoryModel import Subcategory
+from ..database.SearchModel import Search
 
 from ..common.error_handling import ObjectNotFound, BadRequest
 from ..common.token_helper import validateToken
@@ -41,7 +42,8 @@ class JobsSearchR(Resource):
         if data is None:
             raise BadRequest('No se encontraron los filtros.')
         pagResult = Job.get_pag(data)
-        
+        s = Search(data['search'], None)
+        s.save()
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
 
@@ -189,17 +191,12 @@ class JobsMipleoRA(Resource):
                 j.salary = s
                 j.salary_max = s
             j.description = job['description']
-            j.save()
 
             category = ''
-
-            if job['category'] == 'Informática / Telecomunicaciones':
-                category = 'programacion/tecnologia'
-            elif job['category'] == 'Diseño / Decoración / Artes Gráficas':
+            if job['category'] == 'Diseño / Decoración / Artes Gráficas':
                 category = 'diseño/multimedia'
-            # la categoria de abajo la tiene mariano solo
-            # elif job['category'] == '':
-            #     category = 'redaccion/traduccion'
+            elif job['category'] == 'Informática / Telecomunicaciones':
+                category = 'programacion/tecnologia'
             elif job['category'] == 'Marketing / Publicidad / Producción Audiovisual':
                 category = 'marketing'
             elif job['category'] == 'Administración / Contabilidad / Finanzas':
@@ -253,6 +250,7 @@ class JobsMipleoRA(Resource):
                 c.save()
             else:
                 c = Company(job['company_name'])
+                c.save()
                 c.jobs.append(j)
                 c.save()
 

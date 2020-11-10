@@ -9,6 +9,7 @@ from app.resources.authResources import auth_bp
 from app.resources.jobsResources import jobs_bp
 from app.resources.interviewsResources import interviews_bp
 from app.resources.applicationsResources import applications_bp
+from app.resources.statsResources import stats_bp
 from app.resources.companiesResources import companies_bp
 from app.resources.RatingsResources import rating_bp
 from .ext import ma, migrate
@@ -29,6 +30,8 @@ from app.database.SubcategoryModel import Subcategory
 from app.database.LanguageModel import Language
 from app.database.WorkExperienceModel import WorkExperience
 from app.database.EducationModel import Education
+from app.database.SearchModel import Search
+from app.database.Curriculum_CategoryModel import Curriculum_Category
 
 def create_app(settings_module):
     app = Flask(__name__)
@@ -53,6 +56,7 @@ def create_app(settings_module):
     app.register_blueprint(jobs_bp)
     app.register_blueprint(interviews_bp)
     app.register_blueprint(applications_bp)
+    app.register_blueprint(stats_bp)
     app.register_blueprint(companies_bp)
     app.register_blueprint(rating_bp)
 

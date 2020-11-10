@@ -26,6 +26,8 @@ export class IndexComponent implements OnInit {
   lastPageNumber = null;
   totalResults = 0;
 
+  tempSearch = null;
+
   constructor(
     private _jobService: JobService,
     private fb: FormBuilder,
@@ -113,6 +115,7 @@ export class IndexComponent implements OnInit {
   }
 
   searchTextRecomendations(event: Event) {
+    this.tempSearch = (event.target as HTMLInputElement).value;
     let data: searchJobDto = {
       page: 1,
       per_page: 5,
