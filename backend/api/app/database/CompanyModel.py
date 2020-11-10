@@ -14,3 +14,16 @@ class Company(db.Model, BaseModelMixin):
     @classmethod
     def get_by_name(cls, name):
         return cls.query.filter(Company.name==name).first()
+
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.query.filter(Company.id==id).first()
+
+    @classmethod
+    def get_pag(cls, data):
+        filtro = cls.query
+
+        if 'page' in data and 'per_page' in data:
+            return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)
+        else:
+            return filtro.paginate(1, 10, False)

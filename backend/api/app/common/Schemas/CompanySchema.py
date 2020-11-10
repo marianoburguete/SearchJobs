@@ -12,3 +12,24 @@ class CompanySchema(ma.Schema):
     logo = fields.String()
     jobs = fields.Nested('JobSchema', many=True)
     ratings = fields.Nested('RatingSchema', many=True)
+
+class CompanyGetAllResponseSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
+    name = fields.String()
+    info = fields.String()
+    logo = fields.String()
+    #jobs = fields.Nested('CompanyJobsGetAllSchema', many=True)
+    #ratings = fields.Nested('CompanyRatingsGetAllSchema', many=True)
+
+class CompanyGetAllSchema(ma.Schema):
+    page = fields.Integer()
+    per_page = fields.Integer()
+    # name = fields.String()
+    # info = fields.String()
+    # logo = fields.String()
+
+class CompanyJobsGetAllSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
+
+class CompanyRatingsGetAllSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
