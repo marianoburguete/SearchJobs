@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
-import { cv, education, workexperience, language } from 'src/app/core/models/cv';
+import { cv, education, workexperience, language, category } from 'src/app/core/models/cv';
 import { UserService } from 'src/app/core/services/http/user.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
+import { CategoryService } from '../../../../core/services/http/category.service';
 
 @Component({
   selector: 'app-curriculum',
@@ -19,17 +20,20 @@ export class CurriculumComponent implements OnInit {
   };
 
   curriculumExists = true;
+  categoriesList:any = null;
 
   curriculum: cv = {
     education: [],
     workexperience: [],
-    languages: []
+    languages: [],
+    categories: []
   };
   avatarFile: File;
   url = null;
 
   constructor(
     private userService: UserService,
+    private categoryService: CategoryService,
     private spinnerService: SpinnerService,
     private route: ActivatedRoute,
     private router: Router
@@ -37,6 +41,9 @@ export class CurriculumComponent implements OnInit {
 
   ngOnInit() {
     this.spinnerService.callSpinner();
+    this.categoryService.getAll().subscribe(res => {
+      this.categoriesList = res['results'];
+    });
     this.userService.getCurriculum().subscribe(res => {
       this.curriculum = res['results'];
     },
@@ -108,10 +115,22 @@ export class CurriculumComponent implements OnInit {
   removeLanguages(index) {
     this.curriculum.languages.splice(index, 1);
   }
+  
+  addCategories() {
+    const e: category = {
+      name: null,
+      id: null
+    };
+    this.curriculum.categories.push(e);
+  }
+
+  removeCategories(index) {
+    this.curriculum.categories.splice(index, 1);
+  }
 
   submitCurriculum() {
     this.spinnerService.callSpinner();
-    
+    this.alert.show = false;
     if (this.curriculum.phone == null) {
       this.alert.msg = 'El teléfono es obligatorio.';
       this.alert.show = true;
@@ -142,14 +161,26 @@ export class CurriculumComponent implements OnInit {
     }
 
     if (this.alert.show === false) {
-      this.userService.addCurriculum(this.curriculum).subscribe(res => {
-        this.router.navigate(['usuario/cv']);
-      },
-      err => {
-        this.alert.show = true;
-        this.alert.msg = err.error.msg;
-        this.alert.errorCode = 'alert-danger';
-      }).add(() => this.spinnerService.stopSpinner());
+      if (this.curriculum.id == null) {
+        this.userService.addCurriculum(this.curriculum).subscribe(res => {
+          this.router.navigate(['usuario/cv']);
+        },
+        err => {
+          this.alert.show = true;
+          this.alert.msg = err.error.msg;
+          this.alert.errorCode = 'alert-danger';
+        }).add(() => this.spinnerService.stopSpinner());
+      }
+      else{
+        this.userService.updateCurriculum(this.curriculum).subscribe(res => {
+          this.router.navigate(['usuario/cv']);
+        },
+        err => {
+          this.alert.show = true;
+          this.alert.msg = err.error.msg;
+          this.alert.errorCode = 'alert-danger';
+        }).add(() => this.spinnerService.stopSpinner());
+      }
     }
     else {
       this.spinnerService.stopSpinner();

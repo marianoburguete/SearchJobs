@@ -10,6 +10,7 @@ export interface cv {
     education?: education[];
     workexperience?: workexperience[];
     languages?: language[];
+    categories?: category[];
 }
 
 export interface education {
@@ -28,4 +29,11 @@ export interface workexperience {
 
 export interface language {
     name?: string;
+}
+
+export interface category {
+    category?: {
+        id?: number;
+        name?: string;
+    };
 }

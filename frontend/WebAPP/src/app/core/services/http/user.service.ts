@@ -48,4 +48,9 @@ export class UserService {
     const userSession = this.authService.getUser();
     return this.httpClient.post(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
   }
+  
+  updateCurriculum(data) {
+    const userSession = this.authService.getUser();
+    return this.httpClient.put(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
+  }
 }

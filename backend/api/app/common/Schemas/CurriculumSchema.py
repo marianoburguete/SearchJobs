@@ -4,7 +4,7 @@ from app.ext import ma
 
 
 class CurriculumSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     name = fields.String(required=True)
     birth_date = fields.DateTime(required=True)
     phone = fields.String(required=True)
@@ -19,25 +19,25 @@ class CurriculumSchema(ma.Schema):
     categories = fields.Nested('CategoriesUserSchema', many=True, allow_none=True)
 
 class EducationSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     name = fields.String()
     place = fields.String()
     start_date =fields.DateTime()
     end_date = fields.DateTime(allow_none=True)
 
 class WorkExperienceSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     name = fields.String()
     ocupation = fields.String()
     start_date = fields.DateTime()
     end_date = fields.DateTime(allow_none=True)
 
 class LanguageSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     name = fields.String()
 
 class CurriculumUserSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     email = fields.String()
 
 class CategoriesUserSchema(ma.Schema):
