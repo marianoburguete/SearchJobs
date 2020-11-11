@@ -7,6 +7,7 @@ class Company(db.Model, BaseModelMixin):
     logo = db.Column(db.String)
     jobs = db.relationship('Job', backref='company', lazy=False, cascade='all, delete-orphan')
     ratings = db.relationship('Rating', backref='company', lazy=False)
+    commentaries = db.relationship('Commentary', backref='company', lazy=False)
     
     def __init__(self, name):
         self.name = name
@@ -24,8 +25,7 @@ class Company(db.Model, BaseModelMixin):
         filtro = cls.query
 
         if 'search' in data and data['search'] is not None:
-            filtro = filtro.filter(db.or_(Company.name.contains(data['search'].strip()),
-                                          Company.info.contains(data['search'].strip())))
+            filtro = filtro.filter(db.or_(Company.name.contains(data['search'].strip())))
 
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)

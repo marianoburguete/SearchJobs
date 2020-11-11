@@ -36,7 +36,6 @@ class CompanyRatingsGetAllSchema(ma.Schema):
 
 class CompanySearchResultsSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
-    title = fields.String()
-    location = fields.String()
-    created_at = fields.DateTime()
-    company = fields.Nested('JobSearchCompanyInfoSchema')
+    name = fields.String()
+    info = fields.String()
+    logo = fields.String()
