@@ -118,8 +118,10 @@ export class CurriculumComponent implements OnInit {
   
   addCategories() {
     const e: category = {
-      name: null,
-      id: null
+      category: {
+        name: null,
+        id: null
+      }
     };
     this.curriculum.categories.push(e);
   }
