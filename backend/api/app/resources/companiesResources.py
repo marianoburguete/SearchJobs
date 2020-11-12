@@ -57,7 +57,7 @@ class CompaniesSearchR(Resource):
 
 class CommentariesR(Resource):
     def post(self, id):
-        user_id = validateToken(request, ['cliente'])
+        user_id = validateToken(request, 'cliente')
         c = Company.get_by_id(id)
         if c is not None:
             u = User.get_by_id(user_id)

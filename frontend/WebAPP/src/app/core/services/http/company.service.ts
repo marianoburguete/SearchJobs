@@ -31,4 +31,7 @@ export class CompanyService {
     return this.httpClient.post(this.prefix + '/search', data);
   }
 
+  addMessage(data) {
+    return this.httpClient.post(this.prefix + '/' + data.id + '/commentary', data, {headers: this.authService.getheaders().headers});
+  }
 }

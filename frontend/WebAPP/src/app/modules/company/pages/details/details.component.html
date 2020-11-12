@@ -1,1 +1,52 @@
-<p>details works!</p>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row d-flex justify-content-center pb-2">
+        <p class="display-4">{{company.name}}</p>
+    </div>
+    <div class="row">
+        <div class="col-md-7 table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Descripcion</th>
+                        <td><a>{{company.info | noInfoDetailsString}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row" *ngFor="let job of company.jobs">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{job.title}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{job.location}}</h6>
+                      <!--<p class="card-text">{{job.description}}</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 messages-box">
+            <div class="messages">
+                <div class="row" *ngFor="let m of company.commentaries">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{m.created_by}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{m.created_at | date:"short"}}</h6>
+                          <p class="card-text">{{m.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row write-message-box mt-4">
+                <div class="col-11">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="newMessage"></textarea>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <span class="material-icons" style="color: skyblue;" (click)="addMessage()">
+                        Enviar
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
