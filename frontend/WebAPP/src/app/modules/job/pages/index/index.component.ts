@@ -5,6 +5,8 @@ import { searchJobDto } from '../../../../core/models/searchJobDto';
 import { element } from 'protractor';
 import { ActivatedRoute } from '@angular/router';
 import { SpinnerService } from '../../../../core/services/spinner.service';
+import { CategoryService } from '../../../../core/services/http/category.service';
+import { category } from '../../../../core/models/cv';
 
 @Component({
   selector: 'app-index',
@@ -20,6 +22,8 @@ export class IndexComponent implements OnInit {
   salaryFilter: string;
   locationFilter: string = null;
   remoteFilter: boolean = null;
+  categoryFilter: string = null;
+  categoriesList: any = [];
   pageNumber = 1;
   nextPageNumber = null;
   previousPageNumber = null;
@@ -30,6 +34,7 @@ export class IndexComponent implements OnInit {
 
   constructor(
     private _jobService: JobService,
+    private categoryService: CategoryService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private spinnerService: SpinnerService
@@ -39,13 +44,21 @@ export class IndexComponent implements OnInit {
     this.searchForm = this.fb.group({
       search: ['', Validators.required],
     });
-
+    this.categoryService.getAll().subscribe(res => {
+      this.categoriesList = res['results'];
+      this.categoriesList.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    });
     this.route.queryParamMap.subscribe((params) => {
       this.searchForm.setValue({ search: params.get('search') });
       if (params.get('jornada') != null) {
         this.workdayFilter = params.get('jornada');
       } else {
         this.workdayFilter = 'Cualquiera';
+      }
+      if (params.get('categoria') != null) {
+        this.categoryFilter = params.get('categoria');
+      } else {
+        this.categoryFilter = 'Cualquiera';
       }
       if (params.get('salarioMin') != null) {
         this.salaryFilter = params.get('salarioMin');
@@ -81,6 +94,7 @@ export class IndexComponent implements OnInit {
       per_page: 10,
       search: this.searchForm.controls['search'].value,
       workday: this.workdayFilter != 'Cualquiera' ? this.workdayFilter : null,
+      category: this.categoryFilter != 'Cualquiera' ? parseInt(this.categoryFilter) : null,
       minSalary: this.salaryFilter,
       location:
         this.remoteFilter === false

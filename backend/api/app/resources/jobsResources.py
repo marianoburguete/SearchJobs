@@ -2,6 +2,7 @@ from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema, JobsByTitleSchema
+from ..common.Schemas.UserSchema import UserByEmailSchema
 from ..database.JobModel import Job
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
@@ -9,6 +10,8 @@ from ..database.ApplicationModel import Application
 from ..database.CategoryModel import Category
 from ..database.SubcategoryModel import Subcategory
 from ..database.SearchModel import Search
+from ..database.CurriculumModel import Curriculum
+from ..database.UserModel import User
 
 from ..common.error_handling import ObjectNotFound, BadRequest
 from ..common.token_helper import validateToken
@@ -352,8 +355,19 @@ class JobsSearchByTitleRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+class JobRecommendedUsersRA(Resource):
+    def get(self, id):
+        user_id = validateToken(request, 'funcionario')
+        users = Curriculum.get_all_by_job_id(id)
+        res = {
+            'results': UserByEmailSchema().dump(users, many=True)
+        }
+        return make_response(jsonify(res), 200)
+
+
 api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
 api.add_resource(JobsSearchByTitleRA, '/api/jobs/a/searchbytitle')
 api.add_resource(JobsWorkanaRA, '/api/jobs/a/workana')
 api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
+api.add_resource(JobRecommendedUsersRA, '/api/jobs/a/<int:id>/recommendations')

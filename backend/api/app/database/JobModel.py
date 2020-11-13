@@ -38,6 +38,11 @@ class Job(db.Model, BaseModelMixin):
 
         if 'workday' in data and data['workday'] is not None:
             filtro = filtro.filter(Job.workday == data['workday'])
+        
+        if 'category' in data and data['category'] is not None:
+            categoryId = str(data['category'])
+            subcat = [row for row in db.engine.execute('select * from subcategory where subcategory.category_id = ' + categoryId)]
+            filtro = filtro.filter(Job.subcategory_id == subcat[0]['id'])
 
         if 'minSalary' in data and data['minSalary'] is not None:
             filtro = filtro.filter(Job.salary > int(data['minSalary']))

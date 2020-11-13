@@ -7,12 +7,11 @@ import { InterviewDetailComponent } from './pages/interview-detail/interview-det
 import { CurriculumComponent } from './pages/curriculum/curriculum.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SharedModule } from '../shared/shared.module';
-import { MessageStatusPipe } from '../../core/pipes/interview-pipe';
-import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
+import { CurriculumViewComponent } from './pages/curriculum-view/curriculum-view.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, InterviewDetailComponent, CurriculumComponent, NotificationsComponent],
+  declarations: [IndexComponent, InterviewDetailComponent, CurriculumComponent, NotificationsComponent, CurriculumViewComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
