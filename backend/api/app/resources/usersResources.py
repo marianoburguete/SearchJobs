@@ -98,7 +98,7 @@ class UserCurriculumR(Resource):
                         for edu in data['education']:
                             e = Education(edu['name'])
                             e.place = edu['place']
-                            e.strat_date = edu['start_date']
+                            e.start_date = edu['start_date']
                             if 'end_date' in edu and edu['end_date'] is not None:
                                 e.end_date = edu['end_date']
                             c.education.append(e)
@@ -157,7 +157,7 @@ class UserCurriculumR(Resource):
                         for edu in data['education']:
                             e = Education(edu['name'])
                             e.place = edu['place']
-                            e.strat_date = edu['start_date']
+                            e.start_date = edu['start_date']
                             if 'end_date' in edu and edu['end_date'] is not None:
                                 e.end_date = edu['end_date']
                             c.education.append(e)

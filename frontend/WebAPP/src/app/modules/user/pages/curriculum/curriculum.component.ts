@@ -46,6 +46,7 @@ export class CurriculumComponent implements OnInit {
     });
     this.userService.getCurriculum().subscribe(res => {
       this.curriculum = res['results'];
+      this.url = 'data:image/png;base64,' + this.curriculum.avatar;
     },
     err => {
       if (err.error.msg === 'No existe ningun curriculum asociado al usuario indicado.') {
@@ -74,6 +75,8 @@ export class CurriculumComponent implements OnInit {
     reader.readAsDataURL(this.avatarFile);
     reader.onload = (_event) => {
       this.url = reader.result;
+      console.log(this.url);
+      console.log(this.url.substring(23));
     };
   }
 
@@ -164,6 +167,9 @@ export class CurriculumComponent implements OnInit {
 
     if (this.alert.show === false) {
       if (this.curriculum.id == null) {
+        if (this.url !== null) {
+          this.curriculum.avatar = this.url.substring(this.url.indexOf(',')+1);
+        }
         this.userService.addCurriculum(this.curriculum).subscribe(res => {
           this.router.navigate(['usuario/cv']);
         },
@@ -173,7 +179,10 @@ export class CurriculumComponent implements OnInit {
           this.alert.errorCode = 'alert-danger';
         }).add(() => this.spinnerService.stopSpinner());
       }
-      else{
+      else{        
+        if (this.url !== null) {
+          this.curriculum.avatar = this.url.substring(this.url.indexOf(',')+1);
+        }
         this.userService.updateCurriculum(this.curriculum).subscribe(res => {
           this.router.navigate(['usuario/cv']);
         },

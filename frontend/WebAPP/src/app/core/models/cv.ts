@@ -11,6 +11,10 @@ export interface cv {
     workexperience?: workexperience[];
     languages?: language[];
     categories?: category[];
+    user?: {
+        id?: number;
+        email?: string;
+    }
 }
 
 export interface education {

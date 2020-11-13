@@ -34,10 +34,10 @@
       <div class="row d-flex justify-content-center py-2">
         <p class="display-4 loginText">Currículum</p>
       </div>
-      <fieldset class="border border-gray p-2 form-group">
-        <legend class="col-form-label text-center">
+      <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+        <div class="col-form-label text-center">
           <span class="text-primary">Campos obligatorios</span>
-        </legend>
+        </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="name">Nombre*</label>
@@ -87,45 +87,61 @@
             />
           </div>
         </div>
-      </fieldset>
-      <fieldset class="border border-gray p-2 form-group">
-        <legend class="col-form-label text-center">
+      </div>
+      <div class="border-bottom border-secondary mb-2"></div>
+      <div class="form-group">
+        <div class="col-form-label text-center">
           <span class="text-secondary">Campos opcionales</span>
-        </legend>
-        <div class="form-row d-flex align-items-center">
-          <div class="form-group col-md-9">
+        </div>
+        <div class="form-row mb-4" style="background-color: rgb(212, 216, 233);">
+          <div class="form-group col-md-12">
             <label for="description">Descripción</label>
             <textarea
               class="form-control"
               id="description"
               [(ngModel)]="curriculum.description"
+              style="min-height: 150px;"
             ></textarea>
           </div>
-          <div class="form-group col-md-3">
-            <img
-              src="{{ url }}"
-              class="img-fluid rounded-circle"
-              *ngIf="url != null"
-            />
-            <input
-              type="file"
-              class="custom-file-input"
-              id="avatar"
-              (change)="onFileChanged($event)"
-            />
-            <label class="custom-file-label" for="avatar">Imagen</label>
+        </div>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Imagén de perfil</span>
+        </div>
+        <div class="corder border-gray form-group">
+          <div class="form-row d-flex justify-content-center">
+            <div class="col-md-3 form-group">
+              <img
+                src="{{ url }}"
+                *ngIf="url != null"
+                height="200"
+                width="200"
+              />
+            </div>
+          </div>
+          <div class="form-row d-flex justify-content-center">
+            <div class="col-md-4 form-group">
+              <input
+                type="file"
+                class="form-control-file"
+                id="avatar"
+                (change)="onFileChanged($event)"
+              />
+              <label class="custom-file-label" for="avatar">Imagen</label>
+            </div>
           </div>
         </div>
-        <fieldset class="border border-gray p-2 form-group">
-          <legend class="col-form-label text-center">
-            <span class="text-secondary">Educación</span>
-          </legend>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Educación</span>
+        </div>
+        <div class="border border-gray form-group" style="background-color: rgb(212, 216, 233);">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.education; let i = index"
             >
               <div
-                class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
               >
                 <span class="material-icons text-danger" (click)="removeEducation(i)"> clear </span>
                 {{ i }}
@@ -166,26 +182,27 @@
                   [(ngModel)]="curriculum.education[i].end_date"
                 />
               </div>
-              <div class="col-md-12 border-bottom border-primary pb-3"></div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
             </ng-container>
           </div>
-          <span
-            class="d-flex justify-content-center addButton"
-            (click)="addEducation()"
-          >
-            <span class="material-icons text-primary"> add </span>
-          </span>
-        </fieldset>
-        <fieldset class="border border-gray p-2 form-group">
-          <legend class="col-form-label text-center">
-            <span class="text-secondary">Experiencia laboral</span>
-          </legend>
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addEducation()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Experiencia laboral</span>
+        </div>
+        <div class="mb-4 form-group" style="background-color: rgb(212, 216, 233);">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.workexperience; let i = index"
             >
               <div
-                class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
               >
                 <span class="material-icons text-danger" (click)="removeWorkexperience(i)"> clear </span>
                 {{ i }}
@@ -226,26 +243,26 @@
                   [(ngModel)]="curriculum.workexperience[i].end_date"
                 />
               </div>
-              <div class="col-md-12 border-bottom border-primary pb-3"></div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
             </ng-container>
           </div>
-          <span
-            class="d-flex justify-content-center addButton"
-            (click)="addWorkexperience()"
-          >
-            <span class="material-icons text-primary"> add </span>
-          </span>
-        </fieldset>
-        <fieldset class="border border-gray p-2 form-group">
-          <legend class="col-form-label text-center">
-            <span class="text-secondary">Idiomas</span>
-          </legend>
-          <div class="form-row">
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addWorkexperience()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Idiomas</span>
+        </div>
+        <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.languages; let i = index"
             >
               <div
-                class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
               >
                 <span class="material-icons text-danger" (click)="removeLanguages(i)"> clear </span>
                 {{ i }}
@@ -259,26 +276,26 @@
                   [(ngModel)]="curriculum.languages[i].name"
                 />
               </div>
-              <div class="col-md-12 border-bottom border-primary pb-3"></div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
             </ng-container>
           </div>
-          <span
-            class="d-flex justify-content-center addButton"
-            (click)="addLanguages()"
-          >
-            <span class="material-icons text-primary"> add </span>
-          </span>
-        </fieldset>
-        <fieldset class="border border-gray p-2 form-group">
-          <legend class="col-form-label text-center">
-            <span class="text-secondary">Categorias de interés</span>
-          </legend>
-          <div class="form-row">
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addLanguages()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Categorias de interés</span>
+        </div>
+        <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.categories; let i = index"
             >
               <div
-                class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
               >
                 <span class="material-icons text-danger" (click)="removeCategories(i)"> clear </span>
                 {{ i }}
@@ -296,18 +313,18 @@
                   </ng-container>
                 </select>
               </div>
-              <div class="col-md-12 border-bottom border-primary pb-3"></div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
             </ng-container>
           </div>
-          <span
-            class="d-flex justify-content-center addButton"
-            (click)="addCategories()"
-          >
-            <span class="material-icons text-primary"> add </span>
-          </span>
-        </fieldset>
-      </fieldset>
-      <span class="d-flex justify-content-center">
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addCategories()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+      </div>
+      <span class="d-flex justify-content-center mb-3">
         <button
           type="submit"
           class="btn btn-primary"
