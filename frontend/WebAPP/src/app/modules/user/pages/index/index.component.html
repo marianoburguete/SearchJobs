@@ -3,17 +3,15 @@
   [msg]="alert.msg"
   (click)="alert.show = false"
 ></app-message-alert>
-
-
 <div class="container">
   <div class="main-body">
   
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="main-breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          <ol class="breadcrumb bg-primary text-white">
+            <li class="breadcrumb-item"><a class="text-white" href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a class="text-white" href="javascript:void(0)">Usuario</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Perfil de Usuario</li>
           </ol>
         </nav>
         <!-- /Breadcrumb -->
@@ -23,13 +21,16 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+
+                  <img src="data:image/png;base64,{{curriculum.avatar}}" onerror="this.onerror=null; this.src='https://bootdey.com/img/Content/avatar/avatar7.png'" alt="Admin" class="rounded-circle" width="150">
+                  <!-- https://bootdey.com/img/Content/avatar/avatar7.png -->
+                
                   <div class="mt-3">
-                    <h4>John Doe</h4>
-                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                    <button class="btn btn-primary">Follow</button>
-                    <button class="btn btn-outline-primary">Message</button>
+                    <h4>{{curriculum.name}}</h4>
+                    <div class="job" *ngFor="let item of curriculum.workexperience"><p class="text-secondary mb-1">{{item.ocupation}}</p></div>
+                    <p class="text-muted font-size-sm">{{curriculum.country}}</p>
+                    <!-- <button class="btn btn-primary">Follow</button>
+                    <button class="btn btn-outline-primary">Message</button> -->
                   </div>
                 </div>
               </div>
@@ -45,14 +46,6 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <a  routerLink="/usuario/cv/editar">Editar CV</a>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
-                  <span class="text-secondary">bootdey</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
-                  <span class="text-secondary">bootdey</span>
-                </li>
               </ul>
             </div>
           </div>
@@ -61,10 +54,10 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Full Name</h6>
+                    <h6 class="mb-0">Nombre</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    Kenneth Valdez
+                    {{curriculum.name}}
                   </div>
                 </div>
                 <hr>
@@ -73,34 +66,34 @@
                     <h6 class="mb-0">Email</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    fip@jukmuh.al
+                    {{curriculum.user.email}}
                   </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Phone</h6>
+                    <h6 class="mb-0">Cel/Tel</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    (239) 816-9029
+                    {{curriculum.phone}}
                   </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Mobile</h6>
+                    <h6 class="mb-0">Fecha de Nacimiento</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    (320) 380-4539
+                    {{curriculum.birth_date | date: 'shortDate'}}
                   </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Address</h6>
+                    <h6 class="mb-0">Dirección</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    Bay Area, San Francisco, CA
+                    {{curriculum.address}} - {{curriculum.country}}
                   </div>
                 </div>
               </div>
