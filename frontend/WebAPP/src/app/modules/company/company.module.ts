@@ -9,6 +9,7 @@ import { ImageReplacementCompany } from 'src/app/core/pipes/image-replacement-co
 import { NoInfoPipe } from 'src/app/core/pipes/no-info-pipe';
 import { NoInfoDetailsPipe } from 'src/app/core/pipes/no-info-details-pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [IndexComponent, DetailsComponent, ImageReplacementCompany, NoInfoPipe, NoInfoDetailsPipe],
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CompanyRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
   ]
 })
 export class CompanyModule { }

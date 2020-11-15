@@ -1,0 +1,13 @@
+.iFields {
+    font-size: 1.5rem;
+  }
+  
+  .messages-box {
+    .material-icons:hover {
+      cursor: pointer;
+    }
+    .messages {
+      overflow-y: scroll;
+      height: 50vh;
+    }
+  }

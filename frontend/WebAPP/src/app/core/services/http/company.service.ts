@@ -27,8 +27,12 @@ export class CompanyService {
     return this.httpClient.get(this.prefix + '/a/' + data.id, {headers: this.authService.getheaders().headers});
   }
 
+  details(company_id) {
+    return this.httpClient.get(this.prefix + '/a/' + company_id);
+  }
+
   search(data:companyDto) {
-    return this.httpClient.post(this.prefix + '/search', data);
+    return this.httpClient.post(this.prefix + '/search', data, {headers: this.authService.getheaders().headers});
   }
 
   addMessage(data) {

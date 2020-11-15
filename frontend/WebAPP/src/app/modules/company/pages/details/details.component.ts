@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { CompanyService } from 'src/app/core/services/http/company.service';
+import { JobService } from 'src/app/core/services/http/job.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 
 @Component({
@@ -21,6 +22,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private companyService: CompanyService,
+    //private jobService = JobService,
     private spinnerService: SpinnerService,
     private route: ActivatedRoute,
     private router: Router
@@ -28,14 +30,12 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.spinnerService.callSpinner();
-    this.route.paramMap.subscribe((params) => {
-      this.companyService
-        .get({ id: params.get('id') })
-        .subscribe((res) => {
-          this.company = res['results'];
-        })
-        .add(() => this.spinnerService.stopSpinner());
+    this.route.queryParamMap.subscribe((params) => {
+      this.companyService.details(params.get('id')).subscribe((res) => {
+        this.company = res['results'];
+      }).add(() => {this.spinnerService.stopSpinner()});
     });
+    
   }
 
   addMessage() {
