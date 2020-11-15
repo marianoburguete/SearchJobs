@@ -266,13 +266,13 @@ class JobsWorkanaRA(Resource):
         for job in data:
             j = Job(job['url'], job['title'])
             j.location = 'remote'
-            if job['workday'] == 'Tiempo completo': 
+            if 'workday' in job and job['workday'] == 'Tiempo completo': 
                 j.workday = 'FullTime'
-            elif job['workday'] == 'A tiempo parcial':
+            elif 'workday' in job and job['workday'] == 'A tiempo parcial':
                 j.workday = 'PartTime'
             else:
                 j.workday = 'notspecified'
-            if job['contract_type'] == 'Fecha de entrega: No definido':
+            if 'contract_type' in job and job['contract_type'] == 'Fecha de entrega: No definido':
                 j.contract_type = 'undefined'
             else: 
                 j.contract_type = 'defined'

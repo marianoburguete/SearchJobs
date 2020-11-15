@@ -101,98 +101,107 @@
       </button>
     </div>
     <div class="col-md-10">
-      <div class="job-card" *ngFor="let job of lastResponse.results">
-        <div class="row">
-          <div class="col-md-2">
-            <img
-              src="{{ job.company.logo | imageReplacement }}"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-10">
-            <div class="row ml-1 mt-1">
-              <a [routerLink]="['detalles']" [queryParams]="{ id: job.id }">{{
-                job.title
-              }}</a>
+      <ng-container *ngIf="lastResponse.results.length >= 1; else elseTemplate">
+        <div class="job-card" *ngFor="let job of lastResponse.results">
+          <div class="row">
+            <div class="col-md-2">
+              <img
+                src="{{ job.company.logo | imageReplacement }}"
+                class="img-fluid"
+              />
             </div>
-            <div class="row ml-1 py-2">
-              <span>{{ job.company.name }}</span>
-            </div>
-            <div class="row ml-1 pb-2">
-              <span>{{ job.location | remoteString }}</span>
-            </div>
-            <div class="row ml-1 pt-2">
-              <span>{{ job.created_at | dayOrDays }}</span>
+            <div class="col-md-10">
+              <div class="row ml-1 mt-1">
+                <a [routerLink]="['detalles']" [queryParams]="{ id: job.id }">{{
+                  job.title
+                }}</a>
+              </div>
+              <div class="row ml-1 py-2">
+                <span>{{ job.company.name }}</span>
+              </div>
+              <div class="row ml-1 pb-2">
+                <span>{{ job.location | remoteString }}</span>
+              </div>
+              <div class="row ml-1 pt-2">
+                <span>{{ job.created_at | dayOrDays }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <nav aria-label="..." class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <a
-              class="page-link"
-              [routerLink]="['/trabajo']"
-              [queryParams]="{
-                page: 1,
-                search: searchForm.controls['search'].value,
-                jornada: workdayFilter,
-                remote: remoteFilter,
-                categoria: categoryFilter
-              }"
-              >Primera</a
-            >
-          </li>
-          <li class="page-item">
-            <a
-              class="page-link"
-              [routerLink]="['/trabajo']"
-              [queryParams]="{
-                page: previousPageNumber,
-                search: searchForm.controls['search'].value,
-                jornada: workdayFilter,
-                remote: remoteFilter,
-                categoria: categoryFilter
-              }"
-              >Anterior</a
-            >
-          </li>
-          <li class="page-item active" aria-current="page">
-            <span class="page-link">
-              {{ pageNumber }}
-              <span class="sr-only">(current)</span>
-            </span>
-          </li>
-          <li class="page-item">
-            <a
-              class="page-link"
-              [routerLink]="['/trabajo']"
-              [queryParams]="{
-                page: nextPageNumber,
-                search: searchForm.controls['search'].value,
-                jornada: workdayFilter,
-                remote: remoteFilter,
-                categoria: categoryFilter
-              }"
-              >Siguiente</a
-            >
-          </li>
-          <li class="page-item">
-            <a
-              class="page-link"
-              [routerLink]="['/trabajo']"
-              [queryParams]="{
-                page: lastPageNumber,
-                search: searchForm.controls['search'].value,
-                jornada: workdayFilter,
-                remote: remoteFilter,
-                categoria: categoryFilter
-              }"
-              >Ultima</a
-            >
-          </li>
-        </ul>
-      </nav>
+        <nav aria-label="..." class="d-flex justify-content-center">
+          <ul class="pagination">
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/trabajo']"
+                [queryParams]="{
+                  page: 1,
+                  search: searchForm.controls['search'].value,
+                  jornada: workdayFilter,
+                  remote: remoteFilter,
+                  categoria: categoryFilter
+                }"
+                >Primera</a
+              >
+            </li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/trabajo']"
+                [queryParams]="{
+                  page: previousPageNumber,
+                  search: searchForm.controls['search'].value,
+                  jornada: workdayFilter,
+                  remote: remoteFilter,
+                  categoria: categoryFilter
+                }"
+                >Anterior</a
+              >
+            </li>
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ pageNumber }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/trabajo']"
+                [queryParams]="{
+                  page: nextPageNumber,
+                  search: searchForm.controls['search'].value,
+                  jornada: workdayFilter,
+                  remote: remoteFilter,
+                  categoria: categoryFilter
+                }"
+                >Siguiente</a
+              >
+            </li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/trabajo']"
+                [queryParams]="{
+                  page: lastPageNumber,
+                  search: searchForm.controls['search'].value,
+                  jornada: workdayFilter,
+                  remote: remoteFilter,
+                  categoria: categoryFilter
+                }"
+                >Ultima</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="text-center">
+          <p class="display-4 my-5" style="font-size: 200%; font-weight: 400;">
+            No hay resultados coincidentes con la búsqueda.
+          </p>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

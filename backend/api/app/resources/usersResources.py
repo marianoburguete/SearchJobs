@@ -68,7 +68,6 @@ class UserCurriculumR(Resource):
             u = User.get_by_id(id)
             if u is not None:
                 if u.curriculum != []:
-                    print(u.curriculum[0].categories[0].category.name)
                     res = {
                     'msg': 'Ok',
                     'results': CurriculumSchema().dump(u.curriculum[0])
@@ -277,7 +276,24 @@ class UsersSearchByEmailRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+class UsersRecommendedRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        data = request.get_json()
+        users = None
+        if 'jobId' in data and data['jobId'] is not None:
+            users = Curriculum.get_all_by_job_id(data['jobId'])
+        elif 'filters' in data and data['filters'] is not None:
+            users = Curriculum.get_all_recommended_users_by_filters(data)
+        else:
+            raise BadRequest('No se indicaron campos necesarios para realizar la operación.')
+        res = {
+            'results': UserByEmailSchema().dump(users, many=True)
+        }
+        return make_response(jsonify(res), 200)
+
 
 api.add_resource(UserByIdRA, '/api/users/a/<int:id>')
 api.add_resource(UserByEmailRA, '/api/users/a/email')
 api.add_resource(UsersSearchByEmailRA, '/api/users/a/searchbyemail')
+api.add_resource(UsersRecommendedRA, '/api/users/a/recommended')
