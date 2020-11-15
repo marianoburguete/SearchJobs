@@ -1,11 +1,49 @@
-<div class="container">
-    <div class="row">
-        <a [routerLink]="[ 'postulaciones']">Ver postulaciones</a>
-    </div>
-    <div class="row">
-        <a [routerLink]="[ 'usuario', 1]">Usuario detalles</a>
-    </div>
-    <div class="row">
-        <a [routerLink]="[ 'entrevistas']">Entrevistas</a>
-    </div>
+<div style="background-color: rgb(136, 136, 136);">
+<div class="container min-vh-100" >
+    <div class="main-body row justify-content-center h-100">
+        <blockquote class="blockquote text-center">
+            <div class="p-3 mb-2 bg-primary text-white rounded-circle "><h1 class="display-1"><em>Bienvenido Admin!</em></h1></div>
+            
+          </blockquote>
+    <div class="main-body row justify-content-center h-100">
+        
+            <div class="col-sm-6 align-self-center">
+              <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Ver postulaciones</h1>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a [routerLink]="[ 'postulaciones']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 align-self-center">
+              <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Detalles de Usurio</h1>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a [routerLink]="[ 'usuario', 1]" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Entrevistas</h1>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a [routerLink]="[ 'entrevistas']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Buscar Candidatos</h1>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a [routerLink]="[ 'buscador']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+</div>
+</div>
+</div>
 </div>
