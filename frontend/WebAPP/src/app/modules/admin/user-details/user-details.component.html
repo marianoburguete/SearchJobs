@@ -1,2 +1,113 @@
-<p>user-details works!</p>
-ID ::: {{userId}}
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+  [errorCode]="alert.errorCode"
+></app-message-alert>
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+                    <h1>{{curriculum.name}}</h1>
+                    <h2 class="infoContact">{{curriculum.user.email}}</h2>
+                    <h2 class="infoContact">{{curriculum.phone}}</h2>
+                    <h2 class="infoContact">{{curriculum.birth_date | date: 'shortDate'}}</h2>
+                    <h2 class="infoContact">{{curriculum.address}}</h2>
+                    <h2 class="infoContact">{{curriculum.country}}</h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="contact-info">
+						<img src="data:image/png;base64,{{curriculum.avatar}}" width="200" height="200">
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Descripción</h2>
+						</div>
+						<div class="yui-u">
+							<p class="enlarge">
+                                {{curriculum.description}}
+                            </p>
+						</div>
+                    </div><!--// .yui-gf -->
+                    
+
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Experiencia laboral</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<div class="job" *ngFor="let item of curriculum.workexperience">
+								<h2>{{item.name}}</h2>
+								<h3>{{item.ocupation}}</h3>
+								<h4>{{item.start_date | date: 'yyyy'}}-{{item.end_date | date: 'yyyy'}}</h4>
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Educación</h2>
+						</div>
+						<div class="yui-u">
+                            <div class="job" *ngFor="let item of curriculum.education">
+                                <h2>{{item.place}}</h2>
+                                <h3>{{item.name}}</h3>
+                                <h4>{{item.start_date | date: 'yyyy'}}-{{item.end_date | date: 'yyyy'}}</h4>
+                            </div>
+						</div>
+					</div><!--// .yui-gf -->
+                    
+                    
+                    <div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Categorías de interés</h2>
+						</div>
+						<div class="yui-u">
+                            <ul class="talent" *ngFor="let item of curriculum.categories">
+								<li>{{item.category.name | categoriesNames}}</li>
+							</ul>
+						</div>
+					</div><!--// .yui-gf -->
+                    
+                    
+                    <div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Idiomas</h2>
+						</div>
+						<div class="yui-u">
+                            <ul class="talent" *ngFor="let item of curriculum.languages">
+								<li>{{item.name}}</li>
+							</ul>
+						</div>
+					</div><!--// .yui-gf -->
+
+
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+			<p>{{curriculum.name}} &mdash; <a href="mailto:{{curriculum.user.email}}">{{curriculum.user.email}}</a> &mdash; {{curriculum.phone}}</p>
+		</div><!--// footer -->
+
+	</div><!-- // inner -->
+
+
+</div><!--// doc -->

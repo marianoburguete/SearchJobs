@@ -11,10 +11,11 @@ import { InterviewsIndexComponent } from './interviews-index/interviews-index.co
 import { InterviewsCreateComponent } from './interviews-create/interviews-create.component';
 import { InterviewsDetailsComponent } from './interviews-details/interviews-details.component';
 import { InterviewStatusPipe, MessageStatusPipe } from '../../core/pipes/interview-pipe';
+import { UserRecommendationsComponent } from './user-recommendations/user-recommendations.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, ApplicationsIndexComponent, UserDetailsComponent, InterviewsIndexComponent, InterviewsCreateComponent, InterviewsDetailsComponent],
+  declarations: [IndexComponent, ApplicationsIndexComponent, UserDetailsComponent, InterviewsIndexComponent, InterviewsCreateComponent, InterviewsDetailsComponent, UserRecommendationsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

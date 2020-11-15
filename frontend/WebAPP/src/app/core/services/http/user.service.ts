@@ -43,6 +43,10 @@ export class UserService {
     const userSession = this.authService.getUser();
     return this.httpClient.get(this.prefix + '/' + userSession.id + '/curriculum', {headers: this.authService.getheaders().headers});
   }
+  
+  getCurriculumAdmin(id){
+    return this.httpClient.get(this.prefix + '/' + id + '/curriculum', {headers: this.authService.getheaders().headers});
+  }
 
   addCurriculum(data) {
     const userSession = this.authService.getUser();
@@ -52,5 +56,10 @@ export class UserService {
   updateCurriculum(data) {
     const userSession = this.authService.getUser();
     return this.httpClient.put(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
+  }
+
+  recommendedUsers(data) {
+    const userSession = this.authService.getUser();
+    return this.httpClient.post(this.prefix + '/a/recommended', data,{headers: this.authService.getheaders().headers})
   }
 }

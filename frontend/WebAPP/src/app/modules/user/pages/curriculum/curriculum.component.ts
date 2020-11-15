@@ -122,7 +122,7 @@ export class CurriculumComponent implements OnInit {
   addCategories() {
     const e: category = {
       category: {
-        name: null,
+        name: 'algo',
         id: null
       }
     };
