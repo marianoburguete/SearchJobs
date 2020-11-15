@@ -32,11 +32,11 @@
   >
     <div class="container min-vh-100">
       <div class="row d-flex justify-content-center py-2">
-        <p class="display-4 loginText">Currículum</p>
+        <p class="display-4 loginText text-primary"><em><strong>Currículum</strong></em></p>
       </div>
-      <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+      <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
         <div class="col-form-label text-center">
-          <span class="text-primary">Campos obligatorios</span>
+          <span class="text-white">Campos obligatorios*</span>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -93,8 +93,9 @@
         <div class="col-form-label text-center">
           <span class="text-secondary">Campos opcionales</span>
         </div>
-        <div class="form-row mb-4" style="background-color: rgb(212, 216, 233);">
+        <div class="form-row mb-5 bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
           <div class="form-group col-md-12">
+            <br>
             <label for="description">Descripción</label>
             <textarea
               class="form-control"
@@ -118,7 +119,7 @@
                 width="200"
               />
             </div>
-          </div>
+          </div><br>
           <div class="form-row d-flex justify-content-center">
             <div class="col-md-4 form-group">
               <input
@@ -131,11 +132,12 @@
             </div>
           </div>
         </div>
+        <br>
         <div class="border-bottom border-secondary mb-2"></div>
         <div class="col-form-label text-center">
           <span class="text-secondary">Educación</span>
         </div>
-        <div class="border border-gray form-group" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.education; let i = index"
@@ -193,10 +195,11 @@
           <span class="material-icons text-primary"> add </span>
         </span>
         <div class="border-bottom border-secondary mb-2"></div>
+        <br>
         <div class="col-form-label text-center">
           <span class="text-secondary">Experiencia laboral</span>
         </div>
-        <div class="mb-4 form-group" style="background-color: rgb(212, 216, 233);">
+        <div class="mb-4 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.workexperience; let i = index"
@@ -253,10 +256,11 @@
         >
           <span class="material-icons text-primary"> add </span>
         </span>
+        <div class="border-bottom border-secondary mb-2"></div>
         <div class="col-form-label text-center">
           <span class="text-secondary">Idiomas</span>
         </div>
-        <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
           <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.languages; let i = index"
@@ -286,10 +290,12 @@
         >
           <span class="material-icons text-primary"> add </span>
         </span>
+        <br>
+        <div class="border-bottom border-secondary mb-2"></div>
         <div class="col-form-label text-center">
           <span class="text-secondary">Categorias de interés</span>
         </div>
-        <div class="border border-gray p-2 form-group" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
           <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.categories; let i = index"
