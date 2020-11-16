@@ -91,5 +91,13 @@ export class DetailsComponent implements OnInit {
     this.lastPageNumber = res.totalPages;
     this.totalResults = res.totalResults;
   }
-
+/*
+  messageWho(id):string {
+    if (id === this.interview.user.id) {
+      return this.interview.user.email;
+    } else {
+      return 'Administrador';
+    }
+  }
+*/
 }
