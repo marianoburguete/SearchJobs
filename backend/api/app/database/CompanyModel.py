@@ -7,7 +7,6 @@ class Company(db.Model, BaseModelMixin):
     logo = db.Column(db.String)
     jobs = db.relationship('Job', backref='company', lazy=False, cascade='all, delete-orphan')
     ratings = db.relationship('Rating', backref='company', lazy=False)
-    commentaries = db.relationship('Commentary', backref='company', lazy=False)
     
     def __init__(self, name):
         self.name = name

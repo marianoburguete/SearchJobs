@@ -8,14 +8,6 @@
     </div>
     <div class="row">
         <div class="col-md-7 table-responsive">
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <th>Descripcion</th>
-                        <td><a>{{ company.info | noInfoDetailsString }}</a></td>
-                    </tr>
-                </tbody>
-            </table>
             <h3>Trabajos publicados</h3>
             <div class="job-card" *ngFor="let job of jobs">
                 <div class="row">
@@ -81,6 +73,7 @@
                 </ul>
             </nav>
         </div>
+        <!--
         <div class="col-md-5 messages-box">
             <div class="messages">
                 <div class="row" *ngFor="let m of company.commentaries">
@@ -101,6 +94,35 @@
                 </div>
                 <div class="col-1">
                     <span class="material-icons" style="color: skyblue;" (click)="addMessage()">
+                        Enviar
+                    </span>
+                </div>
+            </div>
+        </div>
+        -->
+        <h3>Calificaciones</h3>
+        <div class="col-md-5 messages-box">
+            <div class="ratings">
+                <div class="row" *ngFor="let r of company.ratings">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{r.user_id}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{r.created_at | date:"short"}}</h6>
+                          <p class="card-text">Calificacion: {{r.score}}</p>
+                          <p class="card-text">{{r.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row write-message-box mt-4">
+                <div class="col-11">
+                    <div class="form-group">
+                        <input type="number" max=5 min=0 [(ngModel)]="rating">
+                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje"></textarea>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <span class="material-icons" style="color: skyblue;" (click)="addRating()">
                         Enviar
                     </span>
                 </div>

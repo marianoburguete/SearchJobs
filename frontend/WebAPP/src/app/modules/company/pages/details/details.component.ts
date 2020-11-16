@@ -26,7 +26,8 @@ export class DetailsComponent implements OnInit {
 
   company: any = null;
   jobs: any = null;
-  newMessage: any = null;
+  mensaje: any = null;
+  rating : any = null;
 
   constructor(
     private companyService: CompanyService,
@@ -37,18 +38,18 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     let id = null;
-    //this.spinnerService.callSpinner();
-
+    let pagina = null;
+    this.spinnerService.callSpinner();
     this.route.queryParamMap.subscribe((params) => {
       id = params.get('id');
+      pagina = params.get('page');
       this.companyService.details(id).subscribe((res) => {
         this.company = res['results'];
       })
     });
-    
     let data: searchJobDto;
     data = {
-      page: this.pageNumber,
+      page: pagina,
       per_page: 3,
       company_id: id
     };
@@ -58,23 +59,23 @@ export class DetailsComponent implements OnInit {
         this.makeQueryStrings(res);
       }).add(() => {this.spinnerService.stopSpinner()});
     });
-    
-   
   }
 
-  addMessage() {
-    if (this.newMessage != null && this.newMessage !== '') {
+  addRating() {
+    if (this.mensaje != null && this.mensaje !== '' && this.rating != null && this.rating !== '') {
       this.spinnerService.callSpinner();
       const data  = {
         id: this.company.id,
-        text: this.newMessage
+        description: this.mensaje,
+        score: this.rating
       };
-      this.companyService.addMessage(data).subscribe(res => {
+      this.companyService.addRating(data).subscribe(res => {
         this.alert.errorCode = 'alert-primary';
         this.alert.show = true;
-        this.alert.msg = 'Mensaje enviado';
-        this.company.commentaries = res['results'];
-        this.newMessage = null;
+        this.alert.msg = 'Rating enviado';
+        this.company.ratings = res['results'];
+        this.mensaje = null;
+        this.rating = null;
       }, err => {
         this.alert.errorCode = 'alert-danger';
           this.alert.show = true;

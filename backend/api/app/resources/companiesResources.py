@@ -3,17 +3,17 @@ from flask_restful import Api, Resource
 from marshmallow import ValidationError
 
 from ..common.Schemas.CompanySchema import CompanySchema, CompanyGetAllResponseSchema, CompanyGetAllSchema, CompanySearchResultsSchema
-from ..common.Schemas.CommentarySchema import CommentarySchema
+from ..common.Schemas.RatingSchema import RatingSchema
 from ..database.JobModel import Job
 from ..database.UserModel import User
 from ..database.InterviewModel import Interview
 from ..database.MessageModel import Message
-from ..database.CommentaryModel import Commentary
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
 from ..database.NotificationModel import Notification
 from ..database.SearchModel import Search
+from ..database.RatingModel import Rating
 
 from ..common.error_handling import ObjectNotFound, BadRequest, Forbidden
 from ..common.token_helper import validateToken
@@ -55,24 +55,30 @@ class CompaniesSearchR(Resource):
         s.save()
         return makePagResponse(pagResult, CompanySearchResultsSchema())
 
-class CommentariesR(Resource):
+class RatingR(Resource):
     def post(self, id):
         user_id = validateToken(request, 'cliente')
         c = Company.get_by_id(id)
         if c is not None:
             u = User.get_by_id(user_id)
             if u is not None:
-                c.commentaries.append(Commentary(user_id, request.get_json()['text']))
-                c.save()
-                res = {
-                    'msg': 'Ok',
-                    'results': CommentarySchema().dump(c.commentaries, many=True)
-                }
-                return make_response(jsonify(res), 201)
+                rVerif = Rating.get_by_user_id_company(user_id, id)
+                if rVerif is None:
+                    r = Rating(request.get_json()['description'], request.get_json()['score'], user_id, id) 
+                    c.ratings.append(r)
+                    c.save()
+                    res = {
+                        'msg': 'Ok',
+                        'results': RatingSchema().dump(c.ratings, many=True)
+                    }
+                    return make_response(jsonify(res), 201) 
+                raise BadRequest('Solo puedes calificar una vez a la empresa')
             raise Forbidden('No tienes permisos para realizar esta accion.')
         raise ObjectNotFound('No existe la empresa para el Id dado.')
 
+
 api.add_resource(CompaniesGetAllRA, '/api/companies/a/getall')
-api.add_resource(CompanyRA, '/api/companies/a/<int:id>')
 api.add_resource(CompaniesSearchR, '/api/companies/search')
-api.add_resource(CommentariesR, '/api/companies/<int:id>/commentary')
+
+api.add_resource(CompanyRA, '/api/companies/a/<int:id>')
+api.add_resource(RatingR, '/api/companies/<int:id>/rating')
