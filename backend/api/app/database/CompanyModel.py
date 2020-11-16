@@ -23,6 +23,9 @@ class Company(db.Model, BaseModelMixin):
     def get_pag(cls, data):
         filtro = cls.query
 
+        if 'search' in data and data['search'] is not None:
+            filtro = filtro.filter(db.or_(Company.name.contains(data['search'].strip())))
+
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)
         else:

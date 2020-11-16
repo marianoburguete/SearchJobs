@@ -1,1 +1,133 @@
-<p>details works!</p>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
+<div class="container min-vh-100">
+    <div class="row d-flex justify-content-center pb-2">
+        <img
+            src="{{ company.logo | imageReplacementCompany }}"
+            class="img-fluid"
+        />
+    </div>
+    <div class="row">
+        <div class="col-md-7 table-responsive">
+            <h3>Trabajos publicados</h3>
+            <div class="job-card" *ngFor="let job of jobs">
+                <div class="row">
+                    <div class="card-body">
+                      <h5 class="card-title">{{job.title}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{job.location}}</h6>
+                      
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="..." class="d-flex justify-content-center">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: 1
+                      }"
+                      >Primera</a
+                    >
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: previousPageNumber
+                      }"
+                      >Anterior</a
+                    >
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                      {{ pageNumber }}
+                      <span class="sr-only">(current)</span>
+                    </span>
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: nextPageNumber
+                      }"
+                      >Siguiente</a
+                    >
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: lastPageNumber
+                      }"
+                      >Ultima</a
+                    >
+                  </li>
+                </ul>
+            </nav>
+        </div>
+        <!--
+        <div class="col-md-5 messages-box">
+            <div class="messages">
+                <div class="row" *ngFor="let m of company.commentaries">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{m.created_by}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{m.created_at | date:"short"}}</h6>
+                          <p class="card-text">{{m.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row write-message-box mt-4">
+                <div class="col-11">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="newMessage"></textarea>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <span class="material-icons" style="color: skyblue;" (click)="addMessage()">
+                        Enviar
+                    </span>
+                </div>
+            </div>
+        </div>
+        -->
+        <h3>Calificaciones</h3>
+        <div class="col-md-5 messages-box">
+            <div class="ratings">
+                <div class="row" *ngFor="let r of company.ratings">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{r.user_id}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{r.created_at | date:"short"}}</h6>
+                          <p class="card-text">Calificacion: {{r.score}}</p>
+                          <p class="card-text">{{r.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Añade tu calificacion</h3>
+            <div class="row write-message-box mt-4">
+                <div class="col-11">
+                    <div class="form-group">
+                        <input type="number" max=5 min=0 [(ngModel)]="rating">
+                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje"></textarea>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <span class="material-icons" style="color: skyblue;" (click)="addRating()">
+                        Enviar
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

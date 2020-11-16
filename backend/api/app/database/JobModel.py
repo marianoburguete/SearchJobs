@@ -59,6 +59,18 @@ class Job(db.Model, BaseModelMixin):
             return filtro.paginate(data['page'], data['per_page'], False, 40)
         else:
             return filtro.paginate(1, 10, False)
+
+    @classmethod
+    def get_pag_company(cls, data):
+        filtro = cls.query
+
+        if 'company_id' in data and data['company_id'] is not None:
+            filtro = filtro.filter(Job.company_id == data['company_id'])
+
+        if 'page' in data and 'per_page' in data:
+            return filtro.paginate(data['page'], data['per_page'], False, 40)
+        else:
+            return filtro.paginate(1, 10, False)
     
     @classmethod
     def search_by_title(cls, title):

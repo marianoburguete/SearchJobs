@@ -22,6 +22,10 @@ export class JobService {
     return this.httpClient.post(this.prefix + '/search', data);
   }
 
+  byCompany(data:searchJobDto) {
+    return this.httpClient.post(this.prefix + '/company', data);
+  }
+
   details(job_id) {
     return this.httpClient.get(this.prefix + '/' + job_id);
   }

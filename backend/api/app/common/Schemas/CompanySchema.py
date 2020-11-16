@@ -18,7 +18,6 @@ class CompanyGetAllResponseSchema(ma.Schema):
     name = fields.String()
     info = fields.String()
     logo = fields.String()
-    #jobs = fields.Nested('CompanyJobsGetAllSchema', many=True)
     #ratings = fields.Nested('CompanyRatingsGetAllSchema', many=True)
 
 class CompanyGetAllSchema(ma.Schema):
@@ -30,6 +29,15 @@ class CompanyGetAllSchema(ma.Schema):
 
 class CompanyJobsGetAllSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
+    title = fields.String()
+    location = fields.String()
+    description = fields.String()
 
 class CompanyRatingsGetAllSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
+
+class CompanySearchResultsSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
+    name = fields.String()
+    info = fields.String()
+    logo = fields.String()
