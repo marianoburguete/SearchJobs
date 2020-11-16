@@ -100,9 +100,13 @@ export class IndexComponent implements OnInit {
           }
         },
         (err) => {
-          this.alert.show = true;
-          this.alert.msg = err.error.msg;
-          this.alert.errorCode = 'alert-danger';
+          if (err.status === 404) {
+            this.router.navigate(['/usuario/cv/editar']);
+          } else {
+            this.alert.show = true;
+            this.alert.msg = err.error.msg;
+            this.alert.errorCode = 'alert-danger';
+          }
         }
       )
       .add(() => this.spinnerService.stopSpinner());
@@ -110,7 +114,7 @@ export class IndexComponent implements OnInit {
 
   onResizePerCategory(event) {
     if (innerWidth < 929) {
-      this.viewPerCategory = [innerWidth / 1.3, 1200];
+      this.viewPerCategory = [innerWidth / 1.3, 900];
     } else {
       this.viewPerCategory = [innerWidth / 1.3, 400];
     }

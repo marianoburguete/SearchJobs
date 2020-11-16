@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { cv } from 'src/app/core/models/cv';
 import { UserService } from '../../../core/services/http/user.service';
@@ -29,7 +29,8 @@ export class UserDetailsComponent implements OnInit {
   constructor(
     private userService: UserService,
     private spinnerService: SpinnerService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -40,9 +41,13 @@ export class UserDetailsComponent implements OnInit {
         this.curriculum = res['results'];
       },
       err => {
-        this.alert.show = true;
-        this.alert.msg = err.error.msg;
-        this.alert.errorCode = 'alert-danger';
+        if (err.status === 404) {
+          this.router.navigate(['/404']);
+        } else {
+          this.alert.show = true;
+          this.alert.msg = err.error.msg;
+          this.alert.errorCode = 'alert-danger';
+        }
       }).add(() => this.spinnerService.stopSpinner());
     });
   }

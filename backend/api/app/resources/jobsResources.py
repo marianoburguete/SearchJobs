@@ -1,5 +1,6 @@
 from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
+import json
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema, JobsByTitleSchema
 from ..common.Schemas.UserSchema import UserByEmailSchema
@@ -63,6 +64,8 @@ class JobsCompuTrabajoRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
         data = request.get_json()
+        if 'Scrapy' in request.headers:
+            data = json.loads(data)
         for job in data:
             j = Job(job['url'], job['title'])
             if job['workday'] == 'Desde Casa':
@@ -165,6 +168,8 @@ class JobsMipleoRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
         data = request.get_json()
+        if 'Scrapy' in request.headers:
+            data = json.loads(data)
         for job in data:
             j = Job(job['url'], job['title'])
             j.location = job['location']
@@ -263,73 +268,90 @@ class JobsWorkanaRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
         data = request.get_json()
+        if 'Scrapy' in request.headers:
+            data = json.loads(data)
+        activeJobs = []
         for job in data:
-            j = Job(job['url'], job['title'])
-            j.location = 'remote'
-            if 'workday' in job and job['workday'] == 'Tiempo completo': 
-                j.workday = 'FullTime'
-            elif 'workday' in job and job['workday'] == 'A tiempo parcial':
-                j.workday = 'PartTime'
-            else:
-                j.workday = 'notspecified'
-            if 'contract_type' in job and job['contract_type'] == 'Fecha de entrega: No definido':
-                j.contract_type = 'undefined'
-            else: 
-                j.contract_type = 'defined'
-            s = job['salary'].replace('.','')
-            salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
-            if 'Menos de' in job['salary']:
-                j.salary_max = salaryArray[0]
-            elif 'Más de' in job['salary']:
-                j.salary = salaryArray[0]
-            else:
-                j.salary = salaryArray[0]
-                j.salary_max = salaryArray[1]
-            j.description = job['description']
-            
-            category = ''
-            if job['category'] == 'Programación y Tecnología' or job['category'] == 'Programación Web' or job['category'] == 'Diseño Web' or job['category'] == 'Tiendas virtuales (ecommerce)' or job['category'] == 'Wordpress' or job['category'] == 'Programación de Apps. Android, iOS y otros' or job['category'] == 'Data Science' or job['category'] == 'Aplicaciones de escritorio':
-                category = 'programacion/tecnologia'
-            elif job['category'] == 'Diseño y Multimedia' or job['category'] == 'Diseño de Logo' or job['category'] == 'Diseño Web' or job['category'] == 'Banners' or job['category'] == 'Ilustraciones' or job['category'] == 'Crear o editar video' or job['category'] == 'Infografías' or job['category'] == 'Imágenes para redes sociales' or job['category'] == 'Diseño de App Móvil' or job['category'] == 'Imagen Corporativa' or job['category'] == 'Modelos 3D' or job['category'] == 'Landing Page' or job['category'] == 'Diseño de moda':
-                category = 'diseño/multimedia'
-            elif job['category'] == 'Redacción y Traducción' or job['category'] == 'Redacción de artículos' or job['category'] == 'Redacción para sitios web' or job['category'] == 'Revisión de textos' or job['category'] == 'Publicaciones para redes sociales' or job['category'] == 'Traducción' or job['category'] == 'Subtitulado':
-                category = 'redaccion/traduccion'
-            elif job['category'] == 'Marketing Digital y Ventas' or job['category'] == 'SEO' or job['category'] == 'Community Management' or job['category'] == 'Publicidad en Google, Facebook' or job['category'] == 'Email marketing' or job['category'] == 'Data analytics' or job['category'] == 'Televentas' or job['category'] == 'Comercial / Vendedor':
-                category = 'marketing'
-            elif job['category'] == 'Soporte Administrativo' or job['category'] == 'Asistente virtual' or job['category'] == 'Atención al cliente' or job['category'] == 'Data entry' or job['category'] == 'Investigación de mercado' or job['category'] == 'Televentas':
-                category = 'ventas'
-            elif job['category'] == 'Legal':
-                category = 'legal'
-            elif job['category'] == 'Finanzas y Negocios' or job['category'] == 'Revelamiento de datos' or job['category'] == 'Trabajar con un CRM' or job['category'] == 'Gestionar proyectos' or job['category'] == 'Hacer reclutamiento' or job['category'] == 'Planeamiento estratégico' or job['category'] == 'Tareas de Contabilidad':
-                category = 'administracion/finanzas'
-            elif job['category'] == 'Ingeniería y Arquitectura' or job['category'] == 'Diseño industrial' or job['category'] == 'Dibujos de CAD' or job['category'] == 'Modelador en 3D' or job['category'] == 'Diseño de interiores':
-                category = 'ingenieria/arquitectura'
-            else:
-                category = 'otros'
-            cat = Category.getByName(category)
-            if cat is None:
-                cat = Category(category)
-                cat.save()
-                subCategory = Subcategory('general' + category)
-                cat.subcategories.append(subCategory)
-                cat.save()
+            jobExists = Job.search_by_url(job['url'])
+            if jobExists is None:
+                j = Job(job['url'], job['title'])
+                j.location = 'remote'
+                if 'workday' in job and job['workday'] == 'Tiempo completo': 
+                    j.workday = 'FullTime'
+                elif 'workday' in job and job['workday'] == 'A tiempo parcial':
+                    j.workday = 'PartTime'
+                else:
+                    j.workday = 'notspecified'
+                if 'contract_type' in job and job['contract_type'] == 'Fecha de entrega: No definido':
+                    j.contract_type = 'undefined'
+                else: 
+                    j.contract_type = 'defined'
+                s = job['salary'].replace('.','')
+                salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
+                if 'Menos de' in job['salary']:
+                    j.salary_max = salaryArray[0]
+                elif 'Más de' in job['salary']:
+                    j.salary = salaryArray[0]
+                else:
+                    j.salary = salaryArray[0]
+                    j.salary_max = salaryArray[1]
+                j.description = job['description']
+                
+                category = ''
+                if job['category'] == 'Programación y Tecnología' or job['category'] == 'Programación Web' or job['category'] == 'Diseño Web' or job['category'] == 'Tiendas virtuales (ecommerce)' or job['category'] == 'Wordpress' or job['category'] == 'Programación de Apps. Android, iOS y otros' or job['category'] == 'Data Science' or job['category'] == 'Aplicaciones de escritorio':
+                    category = 'programacion/tecnologia'
+                elif job['category'] == 'Diseño y Multimedia' or job['category'] == 'Diseño de Logo' or job['category'] == 'Diseño Web' or job['category'] == 'Banners' or job['category'] == 'Ilustraciones' or job['category'] == 'Crear o editar video' or job['category'] == 'Infografías' or job['category'] == 'Imágenes para redes sociales' or job['category'] == 'Diseño de App Móvil' or job['category'] == 'Imagen Corporativa' or job['category'] == 'Modelos 3D' or job['category'] == 'Landing Page' or job['category'] == 'Diseño de moda':
+                    category = 'diseño/multimedia'
+                elif job['category'] == 'Redacción y Traducción' or job['category'] == 'Redacción de artículos' or job['category'] == 'Redacción para sitios web' or job['category'] == 'Revisión de textos' or job['category'] == 'Publicaciones para redes sociales' or job['category'] == 'Traducción' or job['category'] == 'Subtitulado':
+                    category = 'redaccion/traduccion'
+                elif job['category'] == 'Marketing Digital y Ventas' or job['category'] == 'SEO' or job['category'] == 'Community Management' or job['category'] == 'Publicidad en Google, Facebook' or job['category'] == 'Email marketing' or job['category'] == 'Data analytics' or job['category'] == 'Televentas' or job['category'] == 'Comercial / Vendedor':
+                    category = 'marketing'
+                elif job['category'] == 'Soporte Administrativo' or job['category'] == 'Asistente virtual' or job['category'] == 'Atención al cliente' or job['category'] == 'Data entry' or job['category'] == 'Investigación de mercado' or job['category'] == 'Televentas':
+                    category = 'ventas'
+                elif job['category'] == 'Legal':
+                    category = 'legal'
+                elif job['category'] == 'Finanzas y Negocios' or job['category'] == 'Revelamiento de datos' or job['category'] == 'Trabajar con un CRM' or job['category'] == 'Gestionar proyectos' or job['category'] == 'Hacer reclutamiento' or job['category'] == 'Planeamiento estratégico' or job['category'] == 'Tareas de Contabilidad':
+                    category = 'administracion/finanzas'
+                elif job['category'] == 'Ingeniería y Arquitectura' or job['category'] == 'Diseño industrial' or job['category'] == 'Dibujos de CAD' or job['category'] == 'Modelador en 3D' or job['category'] == 'Diseño de interiores':
+                    category = 'ingenieria/arquitectura'
+                else:
+                    category = 'otros'
+                cat = Category.getByName(category)
+                if cat is None:
+                    cat = Category(category)
+                    cat.save()
+                    subCategory = Subcategory('general' + category)
+                    cat.subcategories.append(subCategory)
+                    cat.save()
 
-            # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
-            j.subcategory_id = Subcategory.getByName('general' + category).id
+                # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
+                j.subcategory_id = Subcategory.getByName('general' + category).id
 
-            j.save()
-            if job['requirements'] is not None:
-                for requirement in job['requirements']:
-                    j.requirements.append(Requirement(requirement, requirement))
                 j.save()
-            c = Company.get_by_name(job['company_name'])
-            if c is not None:
-                c.jobs.append(j)
-                c.save()
+                if job['requirements'] is not None:
+                    for requirement in job['requirements']:
+                        j.requirements.append(Requirement(requirement, requirement))
+                    j.save()
+                c = Company.get_by_name(job['company_name'])
+                if c is not None:
+                    c.jobs.append(j)
+                    c.save()
+                else:
+                    c = Company(job['company_name'])
+                    c.jobs.append(j)
+                    c.save()
+                    
+                activeJobs.append(j.id)
             else:
-                c = Company(job['company_name'])
-                c.jobs.append(j)
-                c.save()
+                activeJobs.append(jobExists.id)
+
+        allJobs = Job.get_all_by_url('workana')
+        for job in allJobs:
+            if job.id in activeJobs:
+                pass
+            else:
+                job.active = False
+                job.save()
 
         return "Ok", 201
 

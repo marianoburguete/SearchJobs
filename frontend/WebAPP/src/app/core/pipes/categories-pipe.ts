@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({name: 'categoriesNames'})
+@Pipe({name: 'categoriesNames', pure: false})
 export class CategoriesNamesPipe implements PipeTransform {
   transform(value): string {
     switch (value) {
@@ -51,6 +51,12 @@ export class CategoriesNamesPipe implements PipeTransform {
         
         case 'legal':
             return 'Legal';
+        
+        case 'redaccion/traduccion':
+            return 'Redacción - Traducción';
+       
+        case 'educacion':
+            return 'Educación';
         
         default:
             return 'Otros';

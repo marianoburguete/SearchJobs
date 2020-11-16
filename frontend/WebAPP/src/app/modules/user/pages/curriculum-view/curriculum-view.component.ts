@@ -38,9 +38,13 @@ export class CurriculumViewComponent implements OnInit {
       this.curriculum = res['results'];
     },
     err => {
-      this.alert.show = true;
-      this.alert.msg = err.error.msg;
-      this.alert.errorCode = 'alert-danger';
+      if (err.status === 404) {
+        this.router.navigate(['/usuario/cv/editar']);
+      } else {
+        this.alert.show = true;
+        this.alert.msg = err.error.msg;
+        this.alert.errorCode = 'alert-danger';
+      }
     }).add(() => this.spinnerService.stopSpinner());
   }
 

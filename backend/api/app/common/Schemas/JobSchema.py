@@ -22,6 +22,7 @@ class JobSchema(ma.Schema):
     applications = fields.Nested('ApplicationSchema', many=True)
     interviews = fields.Nested('InterviewSchema', many=True)
     #subcategory = fields.Nested('Job_SubcategorySchema')
+    active = fields.Boolean()
 
 class JobDetailsSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
@@ -35,6 +36,8 @@ class JobDetailsSchema(ma.Schema):
     requirements = fields.Nested('RequirementSchema', many=True)
     #subcategory = fields.Nested('Job_SubcategorySchema')
     created_at = fields.DateTime()
+    active = fields.Boolean()
+
 
 class JobSearchResultsSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
@@ -42,6 +45,7 @@ class JobSearchResultsSchema(ma.Schema):
     location = fields.String()
     created_at = fields.DateTime()
     company = fields.Nested('JobSearchCompanyInfoSchema')
+    active = fields.Boolean()
 
 
 class JobSearchCompanyInfoSchema(ma.Schema):
