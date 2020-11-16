@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { CompanyService } from 'src/app/core/services/http/company.service';
 import { JobService } from 'src/app/core/services/http/job.service';
+import { searchJobDto } from '../../../../core/models/searchJobDto';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 
 @Component({
@@ -11,6 +12,12 @@ import { SpinnerService } from 'src/app/core/services/spinner.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
+  pageNumber = 1;
+  nextPageNumber = null;
+  previousPageNumber = null;
+  lastPageNumber = null;
+  totalResults = 0;
+
   alert: AlertDTO = {
     show: false,
     msg: null,
@@ -18,24 +25,41 @@ export class DetailsComponent implements OnInit {
   };
 
   company: any = null;
+  jobs: any = null;
   newMessage: any = null;
 
   constructor(
     private companyService: CompanyService,
-    //private jobService = JobService,
+    private jobService : JobService,
     private spinnerService: SpinnerService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.spinnerService.callSpinner();
+    let id = null;
+    //this.spinnerService.callSpinner();
+
     this.route.queryParamMap.subscribe((params) => {
-      this.companyService.details(params.get('id')).subscribe((res) => {
+      id = params.get('id');
+      this.companyService.details(id).subscribe((res) => {
         this.company = res['results'];
+      })
+    });
+    
+    let data: searchJobDto;
+    data = {
+      page: this.pageNumber,
+      per_page: 3,
+      company_id: id
+    };
+    this.route.queryParamMap.subscribe((params) =>{
+      this.jobService.byCompany(data).subscribe((res) => {
+        this.jobs = res['results'];
+        this.makeQueryStrings(res);
       }).add(() => {this.spinnerService.stopSpinner()});
     });
     
+   
   }
 
   addMessage() {
@@ -57,6 +81,14 @@ export class DetailsComponent implements OnInit {
           this.alert.msg = err.error.msg;
       }).add(() => this.spinnerService.stopSpinner());
     }
+  }
+
+  makeQueryStrings(res) {
+    this.pageNumber = res.currentPage;
+    this.previousPageNumber = res.previousPage;
+    this.nextPageNumber = res.nextPage;
+    this.lastPageNumber = res.totalPages;
+    this.totalResults = res.totalResults;
   }
 
 }

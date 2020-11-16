@@ -1,7 +1,10 @@
 <app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
 <div class="container min-vh-100">
     <div class="row d-flex justify-content-center pb-2">
-        <p class="display-4">{{company.name}}</p>
+        <img
+            src="{{ company.logo | imageReplacementCompany }}"
+            class="img-fluid"
+        />
     </div>
     <div class="row">
         <div class="col-md-7 table-responsive">
@@ -13,8 +16,9 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="row" *ngFor="let job of company.jobs">
-                <div class="card" style="width: 100%;">
+            <h3>Trabajos publicados</h3>
+            <div class="job-card" *ngFor="let job of jobs">
+                <div class="row">
                     <div class="card-body">
                       <h5 class="card-title">{{job.title}}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">{{job.location}}</h6>
@@ -22,6 +26,60 @@
                     </div>
                 </div>
             </div>
+            <nav aria-label="..." class="d-flex justify-content-center">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: 1
+                      }"
+                      >Primera</a
+                    >
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: previousPageNumber
+                      }"
+                      >Anterior</a
+                    >
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                      {{ pageNumber }}
+                      <span class="sr-only">(current)</span>
+                    </span>
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: nextPageNumber
+                      }"
+                      >Siguiente</a
+                    >
+                  </li>
+                  <li class="page-item">
+                    <a
+                      class="page-link"
+                      [routerLink]="['/empresa/detalles']"
+                      [queryParams]="{
+                        id: company.id,
+                        page: lastPageNumber
+                      }"
+                      >Ultima</a
+                    >
+                  </li>
+                </ul>
+            </nav>
         </div>
         <div class="col-md-5 messages-box">
             <div class="messages">

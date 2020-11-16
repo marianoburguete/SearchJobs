@@ -46,11 +46,17 @@ class JobsSearchR(Resource):
         s.save()
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
-
-
+class JobsCompany(Resource):
+    def post(self):
+        data = request.get_json()
+        if data is None:
+            raise BadRequest('No se encontraron los filtros.')
+        pagResult = Job.get_pag_company(data)
+        return makePagResponse(pagResult, JobSearchResultsSchema())
         
 api.add_resource(JobR, '/api/jobs/<int:id>')
 api.add_resource(JobsSearchR, '/api/jobs/search')
+api.add_resource(JobsCompany, '/api/jobs/company')
 
 
 # ADMIN ENDPOINTS
