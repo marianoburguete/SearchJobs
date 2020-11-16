@@ -25,6 +25,11 @@ export class InterviewService {
     return this.httpClient.post(this.prefix + '/a/getall', data, {headers: this.authService.getheaders().headers});
   }
   
+  getAllUser(data) {
+    data.user = this.authService.getUser().id;
+    return this.httpClient.post(this.prefix + '/user/' + this.authService.getUser().id, data, {headers: this.authService.getheaders().headers});
+  }
+  
   get(data) {
     return this.httpClient.get(this.prefix + '/a/' + data.id, {headers: this.authService.getheaders().headers});
   }

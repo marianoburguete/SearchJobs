@@ -8,14 +8,18 @@ import { CurriculumComponent } from './pages/curriculum/curriculum.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SharedModule } from '../shared/shared.module';
 import { CurriculumViewComponent } from './pages/curriculum-view/curriculum-view.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { InterviewsListComponent } from './interviews-list/interviews-list.component';
+import { ApplicationsListComponent } from './applications-list/applications-list.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, InterviewDetailComponent, CurriculumComponent, NotificationsComponent, CurriculumViewComponent],
+  declarations: [IndexComponent, InterviewDetailComponent, CurriculumComponent, NotificationsComponent, CurriculumViewComponent, InterviewsListComponent, ApplicationsListComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxChartsModule
   ]
 })
 export class UserModule { }

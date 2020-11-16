@@ -44,6 +44,26 @@ class IdInterviewR(Resource):
             raise Forbidden('No tienes permisos para acceder a esta entrevista.')
         raise ObjectNotFound('No existe la entrevista para el Id dado.')
 
+
+class GetAllByUserR(Resource):
+    def post(self, id):
+        user_id = validateToken(request, 'cliente')
+        if user_id == id:
+            data = InterviewGetAllSchema().load(request.get_json())
+            pagResult = Interview.get_pag(data)
+            return makePagResponse(pagResult, InterviewGetAllResponseSchema())
+        raise BadRequest('No tienes los permisos necesarios')
+
+
+# class GetScheduleUser(Resource):
+#     def get(self, id):
+#         user_id = validateToken(request, 'cliente')
+#         if user_id == id:
+#             pagResult = Interview.get_pag(data)
+#             return makePagResponse(pagResult, InterviewGetAllResponseSchema())
+#         raise BadRequest('No tienes los permisos necesarios')
+
+
 class MessagesR(Resource):
     def post(self, id):
         user_id = validateToken(request, ['funcionario', 'cliente'])
@@ -67,6 +87,7 @@ class MessagesR(Resource):
 
 api.add_resource(IdInterviewR, '/api/interviews/<int:id>')
 api.add_resource(MessagesR, '/api/interviews/<int:id>/message')
+api.add_resource(GetAllByUserR, '/api/interviews/user/<int:id>')
 
 # ADMIN ENDPOINTS
 

@@ -62,4 +62,9 @@ export class UserService {
     const userSession = this.authService.getUser();
     return this.httpClient.post(this.prefix + '/a/recommended', data,{headers: this.authService.getheaders().headers})
   }
+
+  estimateSalary() {
+    const userSession = this.authService.getUser();
+    return this.httpClient.get(this.prefix + '/' + userSession.id + '/salary', {headers: this.authService.getheaders().headers});
+  }
 }
