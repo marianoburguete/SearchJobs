@@ -2,14 +2,13 @@
     font-size: 1.5rem;
   }
   
-  .messages-box {
-    .material-icons:hover {
-      cursor: pointer;
-    }
-    .messages {
-      overflow-y: scroll;
-      height: 50vh;
-    }
+  .ratings {
+    border: 0.1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-color: rgb(182, 182, 182);
+    padding: 0.2rem;
+    margin-bottom: 0.7rem;
   }
 
   .job-card {
