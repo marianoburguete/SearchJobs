@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
   jobs: any = null;
   mensaje: any = null;
   rating : any = null;
+  id : any = null;
 
   constructor(
     private companyService: CompanyService,
@@ -37,13 +38,12 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let id = null;
     let pagina = null;
     this.spinnerService.callSpinner();
     this.route.queryParamMap.subscribe((params) => {
-      id = params.get('id');
+      this.id = params.get('id');
       pagina = params.get('page');
-      this.companyService.details(id).subscribe((res) => {
+      this.companyService.details(this.id).subscribe((res) => {
         this.company = res['results'];
       })
     });
@@ -51,7 +51,7 @@ export class DetailsComponent implements OnInit {
     data = {
       page: pagina,
       per_page: 3,
-      company_id: id
+      company_id: this.id
     };
     this.route.queryParamMap.subscribe((params) =>{
       this.jobService.byCompany(data).subscribe((res) => {
@@ -65,11 +65,10 @@ export class DetailsComponent implements OnInit {
     if (this.mensaje != null && this.mensaje !== '' && this.rating != null && this.rating !== '') {
       this.spinnerService.callSpinner();
       const data  = {
-        id: this.company.id,
         description: this.mensaje,
         score: this.rating
       };
-      this.companyService.addRating(data).subscribe(res => {
+      this.companyService.addRating(this.id, data).subscribe(res => {
         this.alert.errorCode = 'alert-primary';
         this.alert.show = true;
         this.alert.msg = 'Rating enviado';
