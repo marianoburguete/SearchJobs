@@ -35,7 +35,7 @@ export class CompanyService {
     return this.httpClient.post(this.prefix + '/search', data, {headers: this.authService.getheaders().headers});
   }
 
-  addRating(data) {
-    return this.httpClient.post(this.prefix + '/' + data.id + '/rating', data, {headers: this.authService.getheaders().headers});
+  addRating(id, data) {
+    return this.httpClient.post(this.prefix + '/' + id + '/rating', data, {headers: this.authService.getheaders().headers});
   }
 }
