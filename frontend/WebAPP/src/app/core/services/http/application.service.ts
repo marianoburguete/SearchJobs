@@ -24,6 +24,13 @@ export class ApplicationService {
       headers: this.authService.getheaders().headers,
     });
   }
+  
+  getAllUser(data) {
+    data.user = this.authService.getUser().id;
+    return this.httpClient.post(this.prefix + '/user/' + data.user, data, {
+      headers: this.authService.getheaders().headers,
+    });
+  }
 
   dismissApplication(data) {
     return this.httpClient.post(this.prefix + '/a/dismiss', data, {headers: this.authService.getheaders().headers});

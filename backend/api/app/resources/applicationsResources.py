@@ -54,8 +54,18 @@ class ApplicationR(Resource):
             raise BadRequest('El usuario ya se postulo para este trabajo.')
         raise ObjectNotFound('No existe un trabajo para el Id dado.')
 
+class ApplicationGetAllR(Resource):
+    def post(self, id):
+        user_id = validateToken(request, 'cliente')
+        if user_id == id:
+            data = ApplicationSearchParametersSchema().load(request.get_json())
+            pagResult = Application.get_pag(data)
+            return makePagResponse(pagResult, ApplicationListSchema())
+        raise BadRequest('No tienes acceso aqui.')
+
 
 api.add_resource(ApplicationR, '/api/application')
+api.add_resource(ApplicationGetAllR, '/api/applications/user/<int:id>')
 
 
 

@@ -43,4 +43,8 @@ export class JobService {
   searchJobByTitle(data) {
     return this.httpClient.post(this.prefix + '/a/searchbytitle', data, {headers: this.authService.getheaders().headers});
   }
+
+  userRecommendations(idJob) {
+    return this.httpClient.get(environment.URLAPI + '/a/' + idJob + '/recommendations', {headers: this.authService.getheaders().headers});
+  }
 }

@@ -13,5 +13,17 @@ def postulationsXInterviewsStats():
     return [row for row in res]
 
 def popularSearches():
-    res = db.engine.execute('select s.text, count(s.text) from search as s where s.created_at between (now() - interval ' + "'30 days'" + ') and now() group by s.text order by count(s.text) desc limit 10')
+    sqlQuery = 'select s.text, count(s.text) '
+    sqlQuery += 'from search as s '
+    sqlQuery += 'where s.created_at between (now() - interval ' + "'30 days'" + ') and now() '
+    sqlQuery += 'and s.text IS NOT NULL '
+    sqlQuery += 'and s.text != ' + "'' "
+    #TODO en PGADMIN lo hace bien, el problema es cuando se envia desde aca, solucionar
+    #sqlQuery += "and s.text not like ' %' "
+    sqlQuery += "group by s.text "
+    sqlQuery += "order by count(s.text) desc "
+    sqlQuery += "limit 10 "
+
+    res = db.engine.execute(sqlQuery)
+    #res = db.engine.execute('select s.text, count(s.text) from search as s where s.created_at between (now() - interval ' + "'30 days'" + ') and now() and s.text IS NOT NULL and s.text != ' + "''" + ' and s.text not like ' + "' %'" + ' group by s.text order by count(s.text) desc limit 10')
     return [row for row in res]

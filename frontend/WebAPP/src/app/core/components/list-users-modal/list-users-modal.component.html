@@ -17,7 +17,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="usersListModalLabel">Usuarios</h5>
+        <h5 class="modal-title" id="usersListModalLabel">Buscar usuarios</h5>
         <button
           type="button"
           class="close"
@@ -28,8 +28,14 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" name="searchText" (keyup) = "setSearchText($event)">
-        <button (click)="searchUser()">Ok</button>
+        <div class="row d-flex justify-content-center mb-2">
+          <div class="col-8">
+            <input class="form-control" type="text" name="searchText" (keyup) = "setSearchText($event)">
+          </div>
+          <div class="col-1">
+            <button class="btn btn-primary" (click)="searchUser()">Ok</button>
+          </div>
+        </div>
         <div class="row border border-bottom border-gray" *ngFor="let user of results; let i = index">
           <div class="col-9 overflow-auto">
             <a target="_blank" [routerLink]="[ '/admin/usuario', user.id ]">{{user.email}}</a>

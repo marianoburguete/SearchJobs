@@ -1,11 +1,40 @@
-<div class="container">
-    <div class="row">
-        <a [routerLink]="[ 'postulaciones']">Ver postulaciones</a>
-    </div>
-    <div class="row">
-        <a [routerLink]="[ 'usuario', 1]">Usuario detalles</a>
-    </div>
-    <div class="row">
-        <a [routerLink]="[ 'entrevistas']">Entrevistas</a>
-    </div>
+<div style="background-color: rgb(136, 136, 136);">
+<div class="container min-vh-100" >
+    <div class="main-body row justify-content-center h-100">
+        <blockquote class="blockquote text-center">
+            <div class="p-3 mb-2 bg-primary text-white rounded-circle "><h1 class="display-1"><em>Bienvenido Funcionario!</em></h1></div>
+            
+          </blockquote>
+    <div class="main-body row justify-content-center h-100">
+        
+            <div class="col-sm-6 align-self-center">
+              <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Ver postulaciones</h1>
+                  <p class="card-text">Aquí podrás ver una lista de Clientes que se postularon para un trabajo.</p>
+                  <a [routerLink]="[ 'postulaciones']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Entrevistas</h1>
+                  <p class="card-text">Aquí podrás dar de alta, modificar o dar de baja entrevistas con distintos usuarios de tipo Cliente.</p>
+                  <a [routerLink]="[ 'entrevistas']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Buscar Candidatos</h1>
+                  <p class="card-text">Aquí podrás ver una lista de posibles candidatos a determinado trabajo ingresando una serie de datos.</p>
+                  <a [routerLink]="[ 'buscador']" class="btn btn-light">Ver</a>
+                </div>
+              </div>
+            </div>
+</div>
+</div>
+</div>
 </div>

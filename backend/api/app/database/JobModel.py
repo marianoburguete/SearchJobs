@@ -22,6 +22,8 @@ class Job(db.Model, BaseModelMixin):
 
     subcategory_id = db.Column(db.Integer, db.ForeignKey('subcategory.id'))
 
+    active = db.Column(db.Boolean, default=True)
+
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __init__(self, url, title):
@@ -38,6 +40,11 @@ class Job(db.Model, BaseModelMixin):
 
         if 'workday' in data and data['workday'] is not None:
             filtro = filtro.filter(Job.workday == data['workday'])
+        
+        if 'category' in data and data['category'] is not None:
+            categoryId = str(data['category'])
+            subcat = [row for row in db.engine.execute('select * from subcategory where subcategory.category_id = ' + categoryId)]
+            filtro = filtro.filter(Job.subcategory_id == subcat[0]['id'])
 
         if 'minSalary' in data and data['minSalary'] is not None:
             filtro = filtro.filter(Job.salary > int(data['minSalary']))
@@ -69,3 +76,13 @@ class Job(db.Model, BaseModelMixin):
     def search_by_title(cls, title):
         filtro = cls.query.filter(Job.title.contains(title))
         return filtro.paginate(1, 5, False).items
+    
+    @classmethod
+    def search_by_url(cls, url):
+        filtro = cls.query.filter(Job.url == url).first()
+        return filtro
+    
+    @classmethod
+    def get_all_by_url(cls, url):
+        filtro = cls.query.filter(Job.url.contains(url))
+        return filtro

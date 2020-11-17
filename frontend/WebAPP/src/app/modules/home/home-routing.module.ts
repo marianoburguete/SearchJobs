@@ -6,6 +6,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CanActivateViaAuthGuard } from '../../core/guards/can-activate-via-auth.guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'acerca',
     component: AboutComponent
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
   }
 ];
 

@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { ListJobsModalComponent } from '../../core/components/list-jobs-modal/list-jobs-modal.component';
 import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/interview-pipe';
 import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
+import { CategoriesNamesPipe } from '../../core/pipes/categories-pipe';
 
 
 
@@ -31,7 +32,8 @@ import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
     ListJobsModalComponent,
     MessageStatusPipe,
     InterviewStatusPipe,
-    DayOrDaysPipe
+    DayOrDaysPipe,
+    CategoriesNamesPipe
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
     ListJobsModalComponent,
     MessageStatusPipe,
     InterviewStatusPipe,
-    DayOrDaysPipe
+    DayOrDaysPipe,
+    CategoriesNamesPipe
   ]
 })
 export class SharedModule { }

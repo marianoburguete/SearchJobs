@@ -1,261 +1,344 @@
-<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+  [errorCode]="alert.errorCode"
+></app-message-alert>
 <ng-container *ngIf="curriculumExists === false; else elseTemplate">
-    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="jumbotron text-center">
-            <span class="display-4">Aún no has subido tu currículum!</span>
-            <p class="lead mt-5">Si subes tu currículm podrás postularte a ofertas de trabajo y los funcionarios de la plataforma podrán ver tus datos y asignarte entrevistas!</p>
-            <p class="lead mt-5">
-                <a class="btn btn-primary btn-lg" role="button" (click)="curriculumExists = true">Sube tu currículum</a>
-            </p>
-        </div>
+  <div
+    class="container min-vh-100 d-flex justify-content-center align-items-center"
+  >
+    <div class="jumbotron text-center">
+      <span class="display-4">Aún no has subido tu currículum!</span>
+      <p class="lead mt-5">
+        Si subes tu currículm podrás postularte a ofertas de trabajo y los
+        funcionarios de la plataforma podrán ver tus datos y asignarte
+        entrevistas!
+      </p>
+      <p class="lead mt-5">
+        <a
+          class="btn btn-primary btn-lg"
+          role="button"
+          (click)="curriculumExists = true"
+          >Sube tu currículum</a
+        >
+      </p>
     </div>
+  </div>
 </ng-container>
 <ng-template #elseTemplate>
-    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="container min-vh-100">
-            <div class="row d-flex justify-content-center py-2">
-              <p class="display-4 loginText">Currículum</p>
+  <div
+    class="container min-vh-100 d-flex justify-content-center align-items-center"
+  >
+    <div class="container min-vh-100">
+      <div class="row d-flex justify-content-center py-2">
+        <p class="display-4 loginText text-primary"><em><strong>Currículum</strong></em></p>
+      </div>
+      <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="col-form-label text-center">
+          <span class="text-white">Campos obligatorios*</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Nombre*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="curriculum.name"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="birthDate">Fecha de nacimiento*</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="birthDate"
+              [(ngModel)]="curriculum.birth_date"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="phone">Teléfono*</label>
+            <input
+              type="number"
+              class="form-control"
+              id="phone"
+              [(ngModel)]="curriculum.phone"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="address">Dirección*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              [(ngModel)]="curriculum.address"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="country">País*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="country"
+              [(ngModel)]="curriculum.country"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="border-bottom border-secondary mb-2"></div>
+      <div class="form-group">
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Campos opcionales</span>
+        </div>
+        <div class="form-row mb-5 bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+          <div class="form-group col-md-12">
+            <br>
+            <label for="description">Descripción</label>
+            <textarea
+              class="form-control"
+              id="description"
+              [(ngModel)]="curriculum.description"
+              style="min-height: 150px;"
+            ></textarea>
+          </div>
+        </div>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Imagén de perfil</span>
+        </div>
+        <div class="corder border-gray form-group">
+          <div class="form-row d-flex justify-content-center">
+            <div class="col-md-3 form-group">
+              <img
+                src="{{ url }}"
+                *ngIf="url != null"
+                height="200"
+                width="200"
+              />
             </div>
-            <fieldset class="border border-gray p-2 form-group">
-              <legend class="col-form-label text-center">
-                <span class="text-primary">Campos obligatorios</span>
-              </legend>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nombre*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    [(ngModel)]="curriculum.name"
-                  />
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="birthDate">Fecha de nacimiento*</label>
-                  <input
-                    type="datetime-local"
-                    class="form-control"
-                    id="birthDate"
-                    [(ngModel)]="curriculum.birth_date"
-                  />
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="phone">Teléfono*</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="phone"
-                    [(ngModel)]="curriculum.phone"
-                  />
-                </div>
+          </div><br>
+          <div class="form-row d-flex justify-content-center">
+            <div class="col-md-4 form-group">
+              <input
+                type="file"
+                class="form-control-file"
+                id="avatar"
+                (change)="onFileChanged($event)"
+              />
+              <label class="custom-file-label" for="avatar">Imagen</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Educación</span>
+        </div>
+        <div class="border border-gray form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row">
+            <ng-container
+              *ngFor="let item of curriculum.education; let i = index"
+            >
+              <div
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
+              >
+                <span class="material-icons text-white" (click)="removeEducation(i)"> clear </span>
+                {{ i }}
               </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="address">Dirección*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    [(ngModel)]="curriculum.address"
-                  />
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="country">País*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="country"
-                    [(ngModel)]="curriculum.country"
-                  />
-                </div>
+              <div class="form-group col-md-6">
+                <label for="educationName{{ i }}">Nombre*</label>
+                <input
+                  type="text"
+                  id="educationName{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.education[i].name"
+                />
               </div>
-            </fieldset>
-            <fieldset class="border border-gray p-2 form-group">
-              <legend class="col-form-label text-center">
-                <span class="text-secondary">Campos opcionales</span>
-              </legend>
-              <div class="form-row d-flex align-items-center">
-                <div class="form-group col-md-9">
-                  <label for="description">Descripción</label>
-                  <textarea
-                    class="form-control"
-                    id="description"
-                    [(ngModel)]="curriculum.description"
-                  ></textarea>
-                </div>
-                <div class="form-group col-md-3">
-                  <img
-                    src="{{ url }}"
-                    class="img-fluid rounded-circle"
-                    *ngIf="url != null"
-                  />
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    id="avatar"
-                    (change)="onFileChanged($event)"
-                  />
-                  <label class="custom-file-label" for="avatar">Imagen</label>
-                </div>
+              <div class="form-group col-md-6">
+                <label for="educationPlace{{ i }}">Lugar*</label>
+                <input
+                  type="text"
+                  id="educationPlace{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.education[i].place"
+                />
               </div>
-              <fieldset class="border border-gray p-2 form-group">
-                <legend class="col-form-label text-center">
-                  <span class="text-secondary">Educación</span>
-                </legend>
-                <div class="form-row">
-                  <ng-container *ngFor="let item of curriculum.education; let i = index">
-                    <div
-                      class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
-                      (click)="removeEducation(i)"
-                    >
-                      <span class="material-icons text-danger"> clear </span>
-                      {{ i }}
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="educationName{{ i }}">Nombre*</label>
-                      <input
-                        type="text"
-                        id="educationName{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.education[i].name"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="educationPlace{{ i }}">Lugar*</label>
-                      <input
-                        type="text"
-                        id="educationPlace{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.education[i].place"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="educationStart{{ i }}">Inicio*</label>
-                      <input
-                        type="datetime-local"
-                        id="educationStart{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.education[i].start_date"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="educationEnd{{ i }}">Finalización</label>
-                      <input
-                        type="datetime-local"
-                        id="educationEnd{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.education[i].end_date"
-                      />
-                    </div>
-                    <div class="col-md-12 border-bottom border-primary pb-3"></div>
+              <div class="form-group col-md-6">
+                <label for="educationStart{{ i }}">Inicio*</label>
+                <input
+                  type="datetime-local"
+                  id="educationStart{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.education[i].start_date"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="educationEnd{{ i }}">Finalización</label>
+                <input
+                  type="datetime-local"
+                  id="educationEnd{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.education[i].end_date"
+                />
+              </div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
+            </ng-container>
+          </div>
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addEducation()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <div class="border-bottom border-secondary mt-2"></div>
+        <br>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Experiencia laboral</span>
+        </div>
+        <div class="mb-4 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row">
+            <ng-container
+              *ngFor="let item of curriculum.workexperience; let i = index"
+            >
+              <div
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
+              >
+                <span class="material-icons text-white" (click)="removeWorkexperience(i)"> clear </span>
+                {{ i }}
+              </div>
+              <div class="form-group col-md-6">
+                <label for="workexperienceName{{ i }}">Nombre*</label>
+                <input
+                  type="text"
+                  id="workexperienceName{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.workexperience[i].name"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="workexperiencePlace{{ i }}">Ocupación*</label>
+                <input
+                  type="text"
+                  id="workexperiencePlace{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.workexperience[i].ocupation"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="workexperienceStart{{ i }}">Inicio*</label>
+                <input
+                  type="datetime-local"
+                  id="workexperienceStart{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.workexperience[i].start_date"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="workexperienceEnd{{ i }}">Finalización</label>
+                <input
+                  type="datetime-local"
+                  id="workexperienceEnd{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.workexperience[i].end_date"
+                />
+              </div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
+            </ng-container>
+          </div>
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addWorkexperience()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <div class="border-bottom border-secondary mt-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Idiomas</span>
+        </div>
+        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row d-flex justify-content-center">
+            <ng-container
+              *ngFor="let item of curriculum.languages; let i = index"
+            >
+              <div
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
+              >
+                <span class="material-icons text-white" (click)="removeLanguages(i)"> clear </span>
+                {{ i }}
+              </div>
+              <div class="form-group col-md-6">
+                <label for="languagesName{{ i }}">Idioma*</label>
+                <input
+                  type="text"
+                  id="languagesName{{ i }}"
+                  class="form-control"
+                  [(ngModel)]="curriculum.languages[i].name"
+                />
+              </div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
+            </ng-container>
+          </div>
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addLanguages()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+        <br>
+        <div class="border-bottom border-secondary mb-2"></div>
+        <div class="col-form-label text-center">
+          <span class="text-secondary">Categorias de interés</span>
+        </div>
+        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+          <div class="form-row d-flex justify-content-center">
+            <ng-container
+              *ngFor="let item of curriculum.categories; let i = index"
+            >
+              <div
+                class="col-md-12 pt-3 d-flex justify-content-end removeButton"
+              >
+                <span class="material-icons text-white" (click)="removeCategories(i)"> clear </span>
+                {{ i }}
+              </div>
+              <div class="form-group col-md-6">
+                <label for="categoriesName{{ item.category.id }}">Categoría*</label>
+                <select id="categoriesName{{ item.category.id }}" class="form-control" [(ngModel)]="curriculum.categories[i].category.id">
+                  <ng-container *ngFor="let cat of categoriesList">
+                    <ng-container *ngIf="cat.id === item.category.id; else categorieFalse">
+                      <option value="{{cat.id}}" selected>{{ cat.name | categoriesNames}}</option>
+                    </ng-container>
+                    <ng-template #categorieFalse>
+                      <option value="{{cat.id}}">{{ cat.name | categoriesNames}}</option>
+                    </ng-template>
                   </ng-container>
-                </div>
-                <span
-                  class="d-flex justify-content-center addButton"
-                  (click)="addEducation()"
-                >
-                  <span class="material-icons text-primary"> add </span>
-                </span>
-              </fieldset>
-              <fieldset class="border border-gray p-2 form-group">
-                <legend class="col-form-label text-center">
-                  <span class="text-secondary">Experiencia laboral</span>
-                </legend>
-                <div class="form-row">
-                  <ng-container
-                    *ngFor="let item of curriculum.workexperience; let i = index"
-                  >
-                    <div
-                      class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
-                      (click)="removeWorkexperience(i)"
-                    >
-                      <span class="material-icons text-danger"> clear </span>
-                      {{ i }}
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="workexperienceName{{ i }}">Nombre*</label>
-                      <input
-                        type="text"
-                        id="workexperienceName{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.workexperience[i].name"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="workexperiencePlace{{ i }}">Ocupación*</label>
-                      <input
-                        type="text"
-                        id="workexperiencePlace{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.workexperience[i].ocupation"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="workexperienceStart{{ i }}">Inicio*</label>
-                      <input
-                        type="datetime-local"
-                        id="workexperienceStart{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.workexperience[i].start_date"
-                      />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="workexperienceEnd{{ i }}">Finalización</label>
-                      <input
-                        type="datetime-local"
-                        id="workexperienceEnd{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.workexperience[i].end_date"
-                      />
-                    </div>
-                    <div class="col-md-12 border-bottom border-primary pb-3"></div>
-                  </ng-container>
-                </div>
-                <span
-                  class="d-flex justify-content-center addButton"
-                  (click)="addWorkexperience()"
-                >
-                  <span class="material-icons text-primary"> add </span>
-                </span>
-              </fieldset>
-              <fieldset class="border border-gray p-2 form-group">
-                <legend class="col-form-label text-center">
-                  <span class="text-secondary">Idiomas</span>
-                </legend>
-                <div class="form-row">
-                  <ng-container *ngFor="let item of curriculum.languages; let i = index">
-                    <div
-                      class="col-md-12 border-top border-primary pt-3 d-flex justify-content-end removeButton"
-                      (click)="removeLanguages(i)"
-                    >
-                      <span class="material-icons text-danger"> clear </span>
-                      {{ i }}
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="languagesName{{ i }}">Idioma*</label>
-                      <input
-                        type="text"
-                        id="languagesName{{ i }}"
-                        class="form-control"
-                        [(ngModel)]="curriculum.languages[i].name"
-                      />
-                    </div>
-                    <div class="col-md-12 border-bottom border-primary pb-3"></div>
-                  </ng-container>
-                </div>
-                <span
-                  class="d-flex justify-content-center addButton"
-                  (click)="addLanguages()"
-                >
-                  <span class="material-icons text-primary"> add </span>
-                </span>
-              </fieldset>
-            </fieldset>
-            <span class="d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary" (click)="submitCurriculum()">
-                Enviar
-              </button>
-            </span>
-          </div>          
+                </select>
+              </div>
+              <div class="col-md-12 pb-3 text-center text-white"> ___________________________</div>
+            </ng-container>
+          </div>
+        </div>
+        <span
+          class="d-flex justify-content-center addButton"
+          (click)="addCategories()"
+        >
+          <span class="material-icons text-primary"> add </span>
+        </span>
+      </div>
+      <span class="d-flex justify-content-center mb-3">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="submitCurriculum()"
+        >
+          Enviar
+        </button>
+      </span>
     </div>
+  </div>
 </ng-template>

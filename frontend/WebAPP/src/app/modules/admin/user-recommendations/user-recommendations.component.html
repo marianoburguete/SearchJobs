@@ -1,0 +1,97 @@
+<app-message-alert
+  [show]="alert.show"
+  [msg]="alert.msg"
+  (click)="alert.show = false"
+  [errorCode]="alert.errorCode"
+></app-message-alert>
+<div class="container min-vh-100">
+  <div class="row d-flex justify-content-center pb-2">
+    <p class="display-4">Buscar candidatos</p>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-3">
+      <label for="categoryFilter">Categoría</label>
+      <select
+        class="form-control"
+        name="categoryFilter"
+        id="categoryFilter"
+        [(ngModel)]="categoryFilter"
+      >
+        <option value="Cualquiera">Cualquiera</option>
+        <option value="{{ item.id }}" *ngFor="let item of categoriesList">
+          {{ item.name | categoriesNames }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="languageFilter">Idioma</label>
+      <input
+        name="languageFilter"
+        class="form-control"
+        type="text"
+        [(ngModel)]="languageFilter"
+      />
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="minAgeFilter">Edad mínima</label>
+        <input
+          type="number"
+          name="minAgeFilter"
+          id="minAgeFilter"
+          class="form-control"
+          placeholder="Edad mínima"
+          aria-describedby="minAgeFilter"
+          [(ngModel)]="minAgeFilter"
+        />
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="maxAgeFilter">Edad máxima</label>
+        <input
+          type="number"
+          name="maxAgeFilter"
+          id="maxAgeFilter"
+          class="form-control"
+          placeholder="Edad máxima"
+          aria-describedby="maxAgeFilter"
+          [(ngModel)]="maxAgeFilter"
+        />
+      </div>
+    </div>
+    <div class="col-md-2 form-group">
+        <button class="btn btn-primary form-control" style="height: 100%;" (click)="searchUsers()">Aplicar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Curriculum
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of usersList">
+                    <td>
+                        {{item.email}}
+                    </td>
+                    <td>
+                        <a [routerLink]="[ '/admin/usuario', item.id ]">
+                            <button class="btn btn-primary">
+                                Ver
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

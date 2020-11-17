@@ -12,6 +12,7 @@ from app.resources.applicationsResources import applications_bp
 from app.resources.statsResources import stats_bp
 from app.resources.companiesResources import companies_bp
 from app.resources.RatingsResources import rating_bp
+from app.resources.categoriesResources import categories_bp
 from .ext import ma, migrate
 
 #MODELOS PARA REGISTRARLOS EN LA BASE
@@ -59,6 +60,7 @@ def create_app(settings_module):
     app.register_blueprint(stats_bp)
     app.register_blueprint(companies_bp)
     app.register_blueprint(rating_bp)
+    app.register_blueprint(categories_bp)
 
     # Registra manejadores de errores personalizados
     register_error_handlers(app)

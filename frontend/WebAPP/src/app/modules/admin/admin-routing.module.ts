@@ -7,6 +7,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { InterviewsIndexComponent } from './interviews-index/interviews-index.component';
 import { InterviewsCreateComponent } from './interviews-create/interviews-create.component';
 import { InterviewsDetailsComponent } from './interviews-details/interviews-details.component';
+import { UserRecommendationsComponent } from './user-recommendations/user-recommendations.component';
 
 const routes: Routes = [
   { 
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'entrevistas/:id',
     component: InterviewsDetailsComponent
+  },
+  {
+    path: 'buscador',
+    component: UserRecommendationsComponent
   },
 ];
 

@@ -11,6 +11,7 @@ from ..database.LanguageModel import Language
 from ..database.WorkExperienceModel import WorkExperience
 from ..database.NotificationModel import Notification
 from ..database.CategoryModel import Category
+from ..database.Curriculum_CategoryModel import Curriculum_Category
 
 from ..common.error_handling import ObjectNotFound, Forbidden, BadRequest
 
@@ -67,7 +68,6 @@ class UserCurriculumR(Resource):
             u = User.get_by_id(id)
             if u is not None:
                 if u.curriculum != []:
-                    print(u.curriculum[0].categories[0].category.name)
                     res = {
                     'msg': 'Ok',
                     'results': CurriculumSchema().dump(u.curriculum[0])
@@ -97,7 +97,7 @@ class UserCurriculumR(Resource):
                         for edu in data['education']:
                             e = Education(edu['name'])
                             e.place = edu['place']
-                            e.strat_date = edu['start_date']
+                            e.start_date = edu['start_date']
                             if 'end_date' in edu and edu['end_date'] is not None:
                                 e.end_date = edu['end_date']
                             c.education.append(e)
@@ -113,12 +113,19 @@ class UserCurriculumR(Resource):
                         for lan in data['languages']:
                             l = Language(lan['name'])
                             c.languages.append(l)
+                    ccList =  []
                     if 'categories' in data and data['categories'] is not None:
                         for cat in data['categories']:
                             category = Category.get_by_id(cat['category']['id'])
-                            c.categories.append(category)
+                            cc = Curriculum_Category()
+                            cc.category_id = cat['category']['id']
+                            cc.curriculum_id = 0
+                            ccList.append(cc)
                     u.curriculum.append(c)
                     u.save()
+                    for cc in ccList:
+                        cc.curriculum_id = u.curriculum[0].id
+                        cc.save()
                     res = {
                         'msg': 'Ok',
                         'results': CurriculumSchema().dump(c)
@@ -149,7 +156,7 @@ class UserCurriculumR(Resource):
                         for edu in data['education']:
                             e = Education(edu['name'])
                             e.place = edu['place']
-                            e.strat_date = edu['start_date']
+                            e.start_date = edu['start_date']
                             if 'end_date' in edu and edu['end_date'] is not None:
                                 e.end_date = edu['end_date']
                             c.education.append(e)
@@ -165,9 +172,20 @@ class UserCurriculumR(Resource):
                         for lan in data['languages']:
                             l = Language(lan['name'])
                             c.languages.append(l)
-                    u.curriculum[0].delete()
+                    ccList =  []
+                    if 'categories' in data and data['categories'] is not None:
+                        for cat in data['categories']:
+                            category = Category.get_by_id(cat['category']['id'])
+                            cc = Curriculum_Category()
+                            cc.category_id = cat['category']['id']
+                            cc.curriculum_id = 0
+                            ccList.append(cc)
+                    u.curriculum[0].user_id = None
                     u.curriculum.append(c)
                     u.save()
+                    for cc in ccList:
+                        cc.curriculum_id = u.curriculum[0].id
+                        cc.save()
                     res = {
                         'msg': 'Ok',
                         'results': CurriculumSchema().dump(c)
@@ -187,19 +205,27 @@ class UserSalaryR(Resource):
             if u.curriculum[0] is not None:
                 resList = []
                 for c in u.curriculum[0].categories:
-                    obj = {'name': c.category.name, 'estimation': 0}
+                    obj = {'name': c.category.name, 'estimation': 0, 'minimum': 0, 'maximum': 0}
                     cat = Category.get_by_id(c.category.id)
                     jobs = cat.subcategories[0].jobs
                     total = 0
                     count = 0
+                    minimum = 0
+                    maximum = 0
                     for j in jobs:
-                        if j.salary is not None:
+                        if j.salary is not None and j.salary != 111111:
+                            if minimum == 0 or j.salary < minimum:
+                                minimum = j.salary
+                            if j.salary > maximum:
+                                maximum = j.salary
                             total = total + j.salary
                             count = count + 1
                     if count > 0:
-                        obj['estimation'] = total / count
+                        obj['estimation'] = int(total / count)
                     else:
                         obj['estimation'] = 'Desconocido'
+                    obj['minimum'] = minimum
+                    obj['maximum'] = maximum
                     resList.append(obj)
                 res = {
                     'msg': 'Ok',
@@ -250,7 +276,24 @@ class UsersSearchByEmailRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+class UsersRecommendedRA(Resource):
+    def post(self):
+        user_id = validateToken(request, 'funcionario')
+        data = request.get_json()
+        users = None
+        if 'jobId' in data and data['jobId'] is not None:
+            users = Curriculum.get_all_by_job_id(data['jobId'])
+        elif 'filters' in data and data['filters'] is not None:
+            users = Curriculum.get_all_recommended_users_by_filters(data)
+        else:
+            raise BadRequest('No se indicaron campos necesarios para realizar la operación.')
+        res = {
+            'results': UserByEmailSchema().dump(users, many=True)
+        }
+        return make_response(jsonify(res), 200)
+
 
 api.add_resource(UserByIdRA, '/api/users/a/<int:id>')
 api.add_resource(UserByEmailRA, '/api/users/a/email')
 api.add_resource(UsersSearchByEmailRA, '/api/users/a/searchbyemail')
+api.add_resource(UsersRecommendedRA, '/api/users/a/recommended')
