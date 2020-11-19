@@ -36,6 +36,7 @@ class SignUpResource(Resource):
 class SignInResource(Resource):
     def post(self):
         data = request.get_json()
+        print(type(data))
         user_dict = user_schema.load(data)
         user = User.get_by_email(user_dict['email'])
         if user is not None and user.password_is_valid(user_dict['password']):

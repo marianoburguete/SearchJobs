@@ -3,15 +3,19 @@ import requests
 import json
 
 if __name__ == "__main__":
-    # os.system('scrapy crawl computrabajo')
-    # os.system('scrapy crawl mipleo')
-    #os.system('scrapy crawl workana')
-
-    j = open('items.json', 'r', encoding='utf-8')
-    jsonItem = json.load(j)
-    aaaa = json.dumps(jsonItem, ensure_ascii=False).encode('utf-8').decode()
-    h = {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjEyODg2MDUsImlhdCI6MTYwMzI4ODYwNSwic3ViIjozLCJyb2xlIjoiZnVuY2lvbmFyaW8ifQ.99yssqEyh0d7-XLfmiW31AfjT8QEbox0f4_wp7QT5LY',
-        'Scrapy': 'scrapy'
+    auth = {
+        'email': 'admin@email.com',
+        'password': 'password1'
     }
-    r = requests.post('http://localhost:5000/api/jobs/a/workana', json = aaaa, headers=h)
-    print(r.status_code)
+    token = requests.post('http://localhost:5000/api/auth/signin/', json=auth)
+    token = json.loads(token.text)
+    pages = ['computrabajo', 'mipleo', 'workana']
+    for page in pages:
+        os.system('scrapy crawl ' + page)
+        j = open('items.json', 'r', encoding='utf-8')
+        jsonItem = j.read().replace(',\n]', ']')
+        h = {'Authorization': 'Bearer ' + token['userSession']['access_token'],
+            'Scrapy': 'scrapy'
+        }
+        r = requests.post('http://localhost:5000/api/jobs/a/' + page, json = jsonItem, headers=h)
+        print(r.status_code, page)
