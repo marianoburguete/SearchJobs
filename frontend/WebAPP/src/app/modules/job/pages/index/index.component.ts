@@ -22,6 +22,7 @@ export class IndexComponent implements OnInit {
   salaryFilter: string;
   locationFilter: string = null;
   remoteFilter: boolean = null;
+  freelanceFilter: boolean = null;
   categoryFilter: string = null;
   categoriesList: any = [];
   pageNumber = 1;
@@ -76,6 +77,17 @@ export class IndexComponent implements OnInit {
       } else {
         this.remoteFilter = false;
       }
+      if (params.get('freelance') != null) {
+        if (params.get('freelance') === 'true') {
+          this.freelanceFilter = true;
+        }
+        else{
+          this.freelanceFilter = false;
+        }
+      }
+      else{
+        this.freelanceFilter = false;
+      }
       if (params.get('page') != null) {
         this.pageNumber = Number(params.get('page'));
         if (this.pageNumber < 1) {
@@ -102,6 +114,7 @@ export class IndexComponent implements OnInit {
             ? this.locationFilter
             : null
           : 'remote',
+      freelance: this.freelanceFilter,
     };
     this._jobService
       .search(data)

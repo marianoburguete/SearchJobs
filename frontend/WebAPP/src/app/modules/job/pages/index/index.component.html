@@ -85,6 +85,10 @@
         <label for="location">Ubicación</label>
         <input type="text" name="location" [(ngModel)]="locationFilter" class="ml-2 form-control" placeholder="Localidad">
       </div>
+      <div class="form-group pt-3">
+        <label for="freelance">Freelance</label>
+        <input name="freelance" type="checkbox" [(ngModel)]="freelanceFilter" class="ml-2">
+      </div>
       <button
         [routerLink]="['/trabajo']"
         [queryParams]="{
@@ -93,6 +97,7 @@
           jornada: workdayFilter,
           salarioMin: salaryFilter,
           remote: remoteFilter,
+          freelance : freelanceFilter,
           categoria: categoryFilter
         }"
         class="btn btn-secondary mt-4 text-center"

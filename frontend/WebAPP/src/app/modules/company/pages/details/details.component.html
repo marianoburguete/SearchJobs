@@ -26,9 +26,8 @@
                 <div class="ratings" *ngFor="let r of company.ratings">
                     <div style="width: 100%;">
                         <div class="card-body">
-                          <h5 class="card-title">{{r.user_id}}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">{{r.created_at | date:"short"}}</h6>
-                          <p class="card-text">Calificacion: {{r.score}}</p>
+                          <p class="card-text">Calificacion: {{r.score}}/5</p>
                           <p class="card-text">{{r.description}}</p>
                         </div>
                     </div>
