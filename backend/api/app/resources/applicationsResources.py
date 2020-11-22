@@ -42,7 +42,7 @@ class ApplicationR(Resource):
         user_id = validateToken(request, 'cliente')
         data = request.get_json()
         j = Job.get_by_id(data['job_id'])
-        if j is not None:
+        if j is not None and j.active == True:
             a = [a for a in j.applications if a.user_id == user_id]
             if a is None or a == []:
                 j.applications.append(Application(user_id))

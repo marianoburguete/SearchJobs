@@ -1,5 +1,6 @@
 <app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
 <div class="container min-vh-100">
+  <br>
     <div class="row d-flex justify-content-center pb-2">
         <img
             src="{{ company.logo | imageReplacementCompanyDetails }}"
@@ -9,7 +10,7 @@
     <div class="row">
         <div class="col-md-7 table-responsive">
           <h2>Trabajos publicados</h2>
-          <div class="jobs">
+          <div class="jobs scrollbar scrollbar-pink bordered-primary thin">
             <div class="job-card" *ngFor="let job of company.jobs">
               <div class="row">
                   <div class="card-body">

@@ -33,6 +33,8 @@ class Job(db.Model, BaseModelMixin):
     @classmethod
     def get_pag(cls, data):
         filtro = cls.query
+        
+        filtro = filtro.filter(Job.active == True)
 
         if 'search' in data and data['search'] is not None:
             filtro = filtro.filter(db.or_(Job.title.contains(data['search'].strip()),

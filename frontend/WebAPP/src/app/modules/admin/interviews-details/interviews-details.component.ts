@@ -22,6 +22,8 @@ export class InterviewsDetailsComponent implements OnInit {
 
   prueba: any = null;
 
+  interviewId: any;
+
   constructor(
     private interviewService: InterviewService,
     private spinnerService: SpinnerService,
@@ -32,6 +34,7 @@ export class InterviewsDetailsComponent implements OnInit {
   ngOnInit() {
     this.spinnerService.callSpinner();
     this.route.paramMap.subscribe((params) => {
+      this.interviewId = params.get('id');
       this.interviewService
         .get({ id: params.get('id') })
         .subscribe((res) => {
@@ -94,5 +97,23 @@ export class InterviewsDetailsComponent implements OnInit {
           this.alert.msg = err.error.msg;
       }).add(() => this.spinnerService.stopSpinner());
     }
+  }
+
+  getNewMessages() {
+    const data = {
+      id: this.interviewId,
+    };
+    this.interviewService
+      .get(data)
+      .subscribe(
+        (res) => {
+          this.interview.messages = res['results']['messages']
+        },
+        (err) => {
+          this.alert.errorCode = 'alert-danger';
+          this.alert.show = true;
+          this.alert.msg = err.error.msg;
+        }
+    );
   }
 }

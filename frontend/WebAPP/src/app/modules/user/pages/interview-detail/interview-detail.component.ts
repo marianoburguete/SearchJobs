@@ -22,6 +22,8 @@ export class InterviewDetailComponent implements OnInit {
   interview: any = null;
   newMessage: string = null;
 
+  interviewId: any;
+
   constructor(
     private authService: AuthService,
     private interviewService: InterviewService,
@@ -37,6 +39,7 @@ export class InterviewDetailComponent implements OnInit {
       const data = {
         id: params.get('id'),
       };
+      this.interviewId = params.get('id');
       this.interviewService
         .getInterviewForUser(data)
         .subscribe(
@@ -51,6 +54,7 @@ export class InterviewDetailComponent implements OnInit {
         )
         .add(() => this.spinnerService.stopSpinner());
     });
+    setInterval(() => {this.getNewMessages()}, 1000 * 10);
   }
 
   messageWho(id):string {
@@ -80,5 +84,23 @@ export class InterviewDetailComponent implements OnInit {
         this.alert.msg = err.error.msg;
       }).add(() => this.spinnerService.stopSpinner());
     }
+  }
+
+  getNewMessages() {
+    const data = {
+      id: this.interviewId,
+    };
+    this.interviewService
+      .getInterviewForUser(data)
+      .subscribe(
+        (res) => {
+          this.interview.messages = res['results']['messages']
+        },
+        (err) => {
+          this.alert.errorCode = 'alert-danger';
+          this.alert.show = true;
+          this.alert.msg = err.error.msg;
+        }
+    );
   }
 }

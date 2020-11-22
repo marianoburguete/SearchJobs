@@ -8,5 +8,6 @@ export interface JobDetails {
     description?: string,
     company?: any,
     requirements?: any,
-    created_at?: any
+    created_at?: any,
+    active?: boolean
 }
