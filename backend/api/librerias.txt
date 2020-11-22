@@ -7,7 +7,7 @@ marshmallow-sqlalchemy
 flask-bcrypt 
 PyJWT 
 psycopg2
-
+requests
 
 
 en la carpeta venv/Scripts/activate.bat hay variables adheridas

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { CompanyService } from 'src/app/core/services/http/company.service';
-import { JobService } from 'src/app/core/services/http/job.service';
+import { AuthService } from '../../../../core/services/http/auth.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 
 @Component({
@@ -25,8 +25,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private companyService: CompanyService,
-    private jobService : JobService,
     private spinnerService: SpinnerService,
+    public authService: AuthService,
     private route: ActivatedRoute
   ) {}
 
@@ -52,7 +52,7 @@ export class DetailsComponent implements OnInit {
       this.companyService.addRating(this.id, data).subscribe(res => {
         this.alert.errorCode = 'alert-primary';
         this.alert.show = true;
-        this.alert.msg = 'Rating enviado';
+        this.alert.msg = 'Calificacion enviada!';
         this.company.ratings = res['results'];
         this.mensaje = null;
         this.rating = null;
@@ -63,15 +63,4 @@ export class DetailsComponent implements OnInit {
       }).add(() => this.spinnerService.stopSpinner());
     }
   }
-
-/*
-  messageWho(id):string {
-    if (id === this.interview.user.id) {
-      return this.interview.user.email;
-    } else {
-      return 'Administrador';
-    }
-  }
-*/
-
 }

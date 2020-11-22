@@ -27,16 +27,17 @@
                 <div class="ratings" *ngFor="let r of company.ratings">
                     <div style="width: 100%;">
                         <div class="card-body">
-                          <h5 class="card-title">{{r.user_id}}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">{{r.created_at | date:"short"}}</h6>
-                          <p class="card-text">Calificacion: {{r.score}}</p>
+                          <p class="card-text">Calificacion: {{r.score}}/5</p>
                           <p class="card-text">{{r.description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row write-message-box mt-4">
-                <div class="col-11">
+            <ng-container *ngIf="authService.isLogged() && authService.getRole() == 'cliente';">
+              <div class="row write-message-box mt-4">
+                <div class="col-md-12 text-center">
+                  <div class="col-11">
                     <div class="form-group">
                         <h3>Añade tu calificacion</h3>
                         <div class="rate">
@@ -53,13 +54,15 @@
                         </div>
                         <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje"></textarea>
                     </div>
-                </div>
-                <div class="col-1">
+                  </div>
+                  <div class="col-1">
                     <span class="material-icons" style="color: skyblue;" (click)="addRating()">
                         send
                     </span>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </ng-container>
         </div>
     </div>
 </div>

@@ -57,6 +57,9 @@ class Job(db.Model, BaseModelMixin):
             else:
                 filtro = filtro.filter(func.lower(Job.location).contains(data['location'].strip().lower()))
 
+        if 'freelance' in data and data['freelance'] is not None and data['freelance'] is True:
+            filtro = filtro.filter(func.lower(Job.url).contains('workana'))
+
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(data['page'], data['per_page'], False, 40)
         else:
