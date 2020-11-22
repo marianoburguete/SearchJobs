@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { CompanyService } from 'src/app/core/services/http/company.service';
 import { JobService } from 'src/app/core/services/http/job.service';
-import { searchJobDto } from '../../../../core/models/searchJobDto';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 
 @Component({
@@ -12,12 +11,6 @@ import { SpinnerService } from 'src/app/core/services/spinner.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  pageNumber = 1;
-  nextPageNumber = null;
-  previousPageNumber = null;
-  lastPageNumber = null;
-  totalResults = 0;
-
   alert: AlertDTO = {
     show: false,
     msg: null,
@@ -45,18 +38,6 @@ export class DetailsComponent implements OnInit {
       pagina = params.get('page');
       this.companyService.details(this.id).subscribe((res) => {
         this.company = res['results'];
-      })
-    });
-    let data: searchJobDto;
-    data = {
-      page: pagina,
-      per_page: 3,
-      company_id: this.id
-    };
-    this.route.queryParamMap.subscribe((params) =>{
-      this.jobService.byCompany(data).subscribe((res) => {
-        this.jobs = res['results'];
-        this.makeQueryStrings(res);
       }).add(() => {this.spinnerService.stopSpinner()});
     });
   }
@@ -83,13 +64,6 @@ export class DetailsComponent implements OnInit {
     }
   }
 
-  makeQueryStrings(res) {
-    this.pageNumber = res.currentPage;
-    this.previousPageNumber = res.previousPage;
-    this.nextPageNumber = res.nextPage;
-    this.lastPageNumber = res.totalPages;
-    this.totalResults = res.totalResults;
-  }
 /*
   messageWho(id):string {
     if (id === this.interview.user.id) {
@@ -99,4 +73,5 @@ export class DetailsComponent implements OnInit {
     }
   }
 */
+
 }

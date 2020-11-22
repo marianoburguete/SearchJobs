@@ -1,16 +1,13 @@
 <app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
-<header class="bg-primary">
-    <br>
-    <div class="container ">
+
+<div class="container min-vh-100">
     <!-- min-vh-100 -->
-        <div class="row mt-5">
-    
-    
-            <div class="col-md-9">
-                <div class="p-4">
-    
+    <div class="row mt-5">
+        <div class="col-md-9">
+            <div class="p-4">
+
                 <div class="row border rounded">
-                    
+
                     <div class="col-md-3" id="services_block">
                         <br>
                         <img src="{{jobDetails.company.logo | imageReplacement}}" class="img-fluid">
@@ -30,9 +27,9 @@
                 <div class="row border rounded  mt-3 " id="services_block">
                     <div class="col-md-12 ">
                         <div class="row">
-                            <div class="col-md-12 border">
+                            <div class="col-md-12 border card-header">
                                 <span class="h6">Requisitos</span>
-                                
+
                             </div>
                         </div>
                         <br>
@@ -49,27 +46,26 @@
                 </div>
             </div>
         </div>
-            <div class="col-md-3 border rounded" id="services_block">
-                <br><br>
-                <div class="row">
-                    <div class="col-12">
-                        Jornada : {{jobDetails.workday | workdayFormatPipe}}
-                    </div>
+        <div class="col-md-3 border rounded" id="services_block">
+            <br><br>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Jornada : {{jobDetails.workday | workdayFormatPipe}}</h3>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        Salario : {{jobDetails.salary | salaryFormatPipe}}
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   <h3>Salario : {{jobDetails.salary | salaryFormatPipe}}</h3> 
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        Ubicación : {{jobDetails.location | localizationFormatPipe}}
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Ubicación : {{jobDetails.location | localizationFormatPipe}}</h3>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        Contrato : {{jobDetails.contract_type | contractFormatPipe}}
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Contrato : {{jobDetails.contract_type | contractFormatPipe}}</h3>
                 </div>
                 <div class="row mt-4 d-flex justify-content-center">
                     <ng-container *ngIf="!userApplication && authService.isLogged() && jobDetails.active; else elseTemplate">
@@ -90,14 +86,10 @@
                             </ng-template>
                         </ng-template>
                     </ng-template>
-                </div>
+                </ng-template>
             </div>
-    
         </div>
-    <br><br>
+
     </div>
-</header>
-<section id="about">
-    <div style="height: 250px; background-color: rgba(255, 255, 255, 0.1);">
-      </div>
-</section>
+    <br><br>
+</div>
