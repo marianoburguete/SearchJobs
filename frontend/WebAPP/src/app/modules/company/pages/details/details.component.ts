@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { CompanyService } from 'src/app/core/services/http/company.service';
+import { AuthService } from '../../../../core/services/http/auth.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 
 @Component({
@@ -25,6 +26,7 @@ export class DetailsComponent implements OnInit {
   constructor(
     private companyService: CompanyService,
     private spinnerService: SpinnerService,
+    public authService: AuthService,
     private route: ActivatedRoute
   ) {}
 

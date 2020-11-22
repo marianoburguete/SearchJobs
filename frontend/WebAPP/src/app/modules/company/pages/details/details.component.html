@@ -33,8 +33,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row write-message-box mt-4">
-                <div class="col-11">
+            <ng-container *ngIf="authService.isLogged() && authService.getRole() == 'cliente';">
+              <div class="row write-message-box mt-4">
+                <div class="col-md-12 text-center">
+                  <div class="col-11">
                     <div class="form-group">
                         <h3>Añade tu calificacion</h3>
                         <div class="rate">
@@ -51,13 +53,15 @@
                         </div>
                         <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje"></textarea>
                     </div>
-                </div>
-                <div class="col-1">
+                  </div>
+                  <div class="col-1">
                     <span class="material-icons" style="color: skyblue;" (click)="addRating()">
                         send
                     </span>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </ng-container>
         </div>
     </div>
 </div>

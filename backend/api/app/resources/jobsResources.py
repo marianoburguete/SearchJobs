@@ -306,6 +306,9 @@ class JobsWorkanaRA(Resource):
         if 'Scrapy' in request.headers:
             data = json.loads(data)
         activeJobs = []
+        response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
+        jsonResponse = response.json()
+        cotiz = jsonResponse["rates"]["USD"]["buy"]
         for job in data:
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
@@ -323,10 +326,6 @@ class JobsWorkanaRA(Resource):
                     j.contract_type = 'defined'
                 s = job['salary'].replace('.','')
                 salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
-
-                response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
-                jsonResponse = response.json()
-                cotiz = jsonResponse["rates"]["USD"]["buy"]
 
                 if 'Menos de' in job['salary']:
                     j.salary_max = salaryArray[0]*cotiz
