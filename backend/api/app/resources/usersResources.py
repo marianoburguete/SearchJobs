@@ -205,27 +205,46 @@ class UserSalaryR(Resource):
             if u.curriculum[0] is not None:
                 resList = []
                 for c in u.curriculum[0].categories:
-                    obj = {'name': c.category.name, 'estimation': 0, 'minimum': 0, 'maximum': 0}
+                    obj = {'name': c.category.name, 'estimation': 0, 'minimum': 0, 'maximum': 0, 'freelance': {'estimation': 0, 'minimum': 0, 'maximum': 0}}
                     cat = Category.get_by_id(c.category.id)
                     jobs = cat.subcategories[0].jobs
                     total = 0
                     count = 0
                     minimum = 0
                     maximum = 0
+                    totalF = 0
+                    countF = 0
+                    minimumF = 0
+                    maximumF = 0
                     for j in jobs:
-                        if j.salary is not None and j.salary != 111111:
-                            if minimum == 0 or j.salary < minimum:
-                                minimum = j.salary
-                            if j.salary > maximum:
-                                maximum = j.salary
-                            total = total + j.salary
-                            count = count + 1
+                        if 'workana' in j.url:
+                            if j.salary is not None and j.salary != 111111 and j.active == True:
+                                if minimumF == 0 or j.salary < minimumF:
+                                    minimumF = j.salary
+                                if j.salary > maximumF:
+                                    maximumF = j.salary
+                                totalF = totalF + j.salary
+                                countF = countF + 1
+                        else:
+                            if j.salary is not None and j.salary != 111111 and j.active == True:
+                                if minimum == 0 or j.salary < minimum:
+                                    minimum = j.salary
+                                if j.salary > maximum:
+                                    maximum = j.salary
+                                total = total + j.salary
+                                count = count + 1    
                     if count > 0:
                         obj['estimation'] = int(total / count)
                     else:
                         obj['estimation'] = 'Desconocido'
+                    if countF > 0:
+                        obj['freelance']['estimation'] = int(totalF / countF)
+                    else:
+                        obj['freelance']['estimation'] = 'Desconocido'
                     obj['minimum'] = minimum
                     obj['maximum'] = maximum
+                    obj['freelance']['minimum'] = minimumF
+                    obj['freelance']['maximum'] = maximumF
                     resList.append(obj)
                 res = {
                     'msg': 'Ok',

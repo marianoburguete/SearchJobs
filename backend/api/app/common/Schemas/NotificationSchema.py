@@ -9,3 +9,4 @@ class NotificationSchema(ma.Schema):
     description = fields.String()
     user_id = fields.Integer()
     created_at = fields.DateTime()
+    interview_id = fields.Integer()

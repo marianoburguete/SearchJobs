@@ -8,13 +8,15 @@ class Notification(db.Model, BaseModelMixin):
     title = db.Column(db.String)
     description = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    interview_id = db.Column(db.Integer, db.ForeignKey('job.id'), nullable=False)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    def __init__(self, user_id, title, description):
+    def __init__(self, user_id, title, description, interview_id):
         self.user_id = user_id
         self.title = title
         self.description = description
+        self.interview_id = interview_id
 
     @classmethod
     def get_pag(cls, data, id):

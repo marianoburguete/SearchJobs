@@ -4,7 +4,7 @@
         <p class="display-4">Notificaciones</p>
     </div>
     <div class="row d-flex justify-content-center" *ngFor="let n of notificationsList">
-        <div class="col-md-8 border border-primary my-2 py-1 notification-card">
+        <div class="col-md-8 border border-primary my-2 py-1 notification-card" routerLink="/usuario/entrevistas/{{n.interview_id}}">
             <div class="row">
                 <div class="col-8">
                     <span class="title">

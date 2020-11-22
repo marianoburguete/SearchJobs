@@ -74,7 +74,7 @@ class MessagesR(Resource):
                 i.messages.append(Message(user_id, request.get_json()['text']))
                 i.save()
                 if u.role == 'funcionario':
-                    n = Notification(i.to_user, 'Nuevo mensaje', 'Tienes un nuevo mensaje en la entrevisa para el trabajo ' + i.job.title)
+                    n = Notification(i.to_user, 'Nuevo mensaje', 'Tienes un nuevo mensaje en la entrevisa para el trabajo ' + i.job.title, i.id)
                     n.save()
                 res = {
                     'msg': 'Ok',
@@ -111,7 +111,7 @@ class InterviewsRA(Resource):
                     i = Interview(user_id, u.id, j.id)
                     i.messages.append(Message(user_id, data['text']))
                     i.save()
-                    n = Notification(u.id, 'Solicitud de entrevista', 'Tienes una nueva solicitud de entrevista para el trabajo ' + j.title)
+                    n = Notification(u.id, 'Solicitud de entrevista', 'Tienes una nueva solicitud de entrevista para el trabajo ' + j.title, i.id)
                     n.save()
                     res = {
                     'msg': 'Entrevista creada.',

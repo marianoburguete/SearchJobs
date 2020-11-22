@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="row mt-4 d-flex justify-content-center">
-                    <ng-container *ngIf="!userApplication && authService.isLogged(); else elseTemplate">
+                    <ng-container *ngIf="!userApplication && authService.isLogged() && jobDetails.active; else elseTemplate">
                         <div class="col-md-12 text-center">
                             <button class="btn btn-primary" (click)="application()">Postularse</button>
                         </div>
@@ -82,7 +82,12 @@
                             Ya te postulaste.
                         </ng-container>
                         <ng-template #elseTemplate2>
-                            <div class="p-3 mb-2 bg-success text-white">Inicia sesion para postularte!</div>
+                            <ng-container *ngIf="!jobDetails.active; else elseTemplate3">
+                                <div class="p-3 mb-2 bg-warning">Este trabajo ya no esta activo.</div>
+                            </ng-container>
+                            <ng-template #elseTemplate3>
+                                <div class="p-3 mb-2 bg-success text-white">Inicia sesion para postularte!</div>
+                            </ng-template>
                         </ng-template>
                     </ng-template>
                 </div>
