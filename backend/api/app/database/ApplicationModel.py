@@ -31,3 +31,10 @@ class Application(db.Model, BaseModelMixin):
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)
         else:
             return filtro.paginate(1, 10, False)
+    
+    @classmethod
+    def get_by_user_and_job(cls, user_id, job_id):
+        filtro = cls.query
+        filtro = filtro.filter(cls.user_id == user_id)
+        filtro = filtro.filter(cls.job_id == job_id)
+        return filtro.first()
