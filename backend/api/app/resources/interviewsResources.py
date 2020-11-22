@@ -113,6 +113,10 @@ class InterviewsRA(Resource):
                     i.save()
                     n = Notification(u.id, 'Solicitud de entrevista', 'Tienes una nueva solicitud de entrevista para el trabajo ' + j.title, i.id)
                     n.save()
+                    a = Application.get_by_user_and_job(u.id, j.id)
+                    if a is not None:
+                        a.status = 'finished'
+                        a.save()
                     res = {
                     'msg': 'Entrevista creada.',
                     'result': InterviewSchema().dump(i)
