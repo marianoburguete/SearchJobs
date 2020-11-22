@@ -1,6 +1,7 @@
 from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
 import json
+import requests
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema, JobsByTitleSchema
 from ..common.Schemas.UserSchema import UserByEmailSchema
@@ -322,15 +323,20 @@ class JobsWorkanaRA(Resource):
                     j.contract_type = 'defined'
                 s = job['salary'].replace('.','')
                 salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
+
+                response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
+                jsonResponse = response.json()
+                cotiz = jsonResponse["rates"]["USD"]["buy"]
+
                 if 'Menos de' in job['salary']:
-                    j.salary_max = salaryArray[0]
+                    j.salary_max = salaryArray[0]*cotiz
                 elif 'Más de' in job['salary']:
-                    j.salary = salaryArray[0]
+                    j.salary = salaryArray[0]*cotiz
                 else:
-                    j.salary = salaryArray[0]
-                    j.salary_max = salaryArray[1]
-                j.description = job['description']
+                    j.salary = salaryArray[0]*cotiz
+                    j.salary_max = salaryArray[1]*cotiz
                 
+                j.description = job['description']
                 category = ''
                 if job['category'] == 'Programación y Tecnología' or job['category'] == 'Programación Web' or job['category'] == 'Diseño Web' or job['category'] == 'Tiendas virtuales (ecommerce)' or job['category'] == 'Wordpress' or job['category'] == 'Programación de Apps. Android, iOS y otros' or job['category'] == 'Data Science' or job['category'] == 'Aplicaciones de escritorio':
                     category = 'programacion/tecnologia'
