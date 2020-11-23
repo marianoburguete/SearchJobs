@@ -27,3 +27,48 @@ def popularSearches():
     res = db.engine.execute(sqlQuery)
     #res = db.engine.execute('select s.text, count(s.text) from search as s where s.created_at between (now() - interval ' + "'30 days'" + ') and now() and s.text IS NOT NULL and s.text != ' + "''" + ' and s.text not like ' + "' %'" + ' group by s.text order by count(s.text) desc limit 10')
     return [row for row in res]
+
+def median(category_id):
+    sqlQuery = "select j.salary as mediana " 
+    sqlQuery += "from job as j " 
+    sqlQuery += "where j.salary <> 111111 " 
+    sqlQuery += "and j.active = true " 
+    sqlQuery += "and j.subcategory_id = " + str(category_id) + " " 
+    sqlQuery += "and j.url like '%computrabajo%' " 
+    sqlQuery += "or j.url like '%mipleo%' " 
+    sqlQuery += "order by j.salary " 
+    sqlQuery += "limit 1 " 
+    sqlQuery += "offset ((" 
+    sqlQuery += "select count(j.salary) " 
+    sqlQuery += "from job as j " 
+    sqlQuery += "where j.active = true "
+    sqlQuery += "and j.salary <> 111111 " 
+    sqlQuery += "and j.salary is not null " 
+    sqlQuery += "and j.subcategory_id = " + str(category_id) + " " 
+    sqlQuery += "and j.url like '%computrabajo%' " 
+    sqlQuery += "or j.url like '%mipleo%'" 
+    sqlQuery += ") / 2)" 
+    print(sqlQuery)
+    res = db.session.execute(sqlQuery)
+    return [row for row in res]
+
+def medianFreelance(category_id):
+    sqlQuery = "select j.salary as mediana " 
+    sqlQuery += "from job as j " 
+    sqlQuery += "where j.salary <> 111111 " 
+    sqlQuery += "and j.active = true " 
+    sqlQuery += "and j.subcategory_id = " + str(category_id) + " " 
+    sqlQuery += "and j.url like '%workana%' " 
+    sqlQuery += "order by j.salary " 
+    sqlQuery += "limit 1 " 
+    sqlQuery += "offset ((" 
+    sqlQuery += "select count(j.salary) " 
+    sqlQuery += "from job as j " 
+    sqlQuery += "where j.active = true "
+    sqlQuery += "and j.salary <> 111111 " 
+    sqlQuery += "and j.salary is not null " 
+    sqlQuery += "and j.subcategory_id = " + str(category_id) + " " 
+    sqlQuery += "and j.url like '%workana%'" 
+    sqlQuery += ") / 2)" 
+    res = db.session.execute(sqlQuery)
+    return [row for row in res]

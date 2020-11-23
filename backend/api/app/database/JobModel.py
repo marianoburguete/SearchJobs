@@ -84,7 +84,8 @@ class Job(db.Model, BaseModelMixin):
     
     @classmethod
     def search_by_url(cls, url):
-        filtro = cls.query.filter(Job.url == url).first()
+        filtro = cls.query.filter(Job.url == url)
+        filtro = filtro.filter(Job.active == True).first()
         return filtro
     
     @classmethod
