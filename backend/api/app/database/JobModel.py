@@ -91,3 +91,8 @@ class Job(db.Model, BaseModelMixin):
     def get_all_by_url(cls, url):
         filtro = cls.query.filter(Job.url.contains(url))
         return filtro
+    
+    @classmethod
+    def get_id(cls):
+        filtro = db.engine.execute("select setval('job_id_seq', (select max(id) from job));")
+        return [row for row in filtro]
