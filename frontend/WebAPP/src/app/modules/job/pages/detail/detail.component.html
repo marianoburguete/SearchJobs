@@ -67,9 +67,9 @@
                 <div class="col-12">
                     <h3>Contrato : {{jobDetails.contract_type | contractFormatPipe}}</h3>
                 </div>
-                <div class="row mt-4 d-flex justify-content-center">
+                <div class="row mt-4 text-center">
                     <ng-container *ngIf="!userApplication && authService.isLogged() && jobDetails.active; else elseTemplate">
-                        <div class="col-md-12 text-center">
+                        <div class="col-md-12">
                             <button class="btn btn-primary" (click)="application()">Postularse</button>
                         </div>
                     </ng-container>
