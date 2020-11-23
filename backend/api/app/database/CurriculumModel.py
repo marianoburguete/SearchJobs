@@ -38,7 +38,7 @@ class Curriculum(db.Model, BaseModelMixin):
         if 'category' in data['filters'] and data['filters']['category'] is not None:
             sqlQueryString += ' and cc.curriculum_id = c.id and u.id = c.user_id and cat.id = ' + str(data['filters']['category']) + ' and cc.category_id = cat.id'
         
-        if 'language' in data['filters'] and data['filters']['language'] is not None:
+        if 'language' in data['filters'] and data['filters']['language'] is not None and data['filters']['language'][0] != '' and data['filters']['language'][0] != ' ':
             sqlQueryString += " and l.name = '" + data['filters']['language'] + "' and l.curriculum_id = c.id"
         
         if 'ageRange' in data['filters'] and data['filters']['ageRange'] is not None:

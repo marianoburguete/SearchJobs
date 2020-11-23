@@ -120,12 +120,39 @@
                     <li>
                       <small> Promedio: {{item.estimation}}</small>
                     </li>
-                    <li>
+                    <!-- <li>
                       <small> Máximo: {{item.maximum}}</small>
                     </li>
                     <li>
                       <small> Mínimo: {{item.minimum}}</small>
+                    </li> -->
+                    <hr>
+                  </ul>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 mb-3">
+            <div class="jobs scrollbar scrollbar-pink bordered-primary thin">
+              <div class="job-card">
+                <h4 class="d-flex align-items-center mb-3"><i
+                    class="material-icons text-info mr-2">attach_money</i>Salarios para tus categorías - Freelance</h4>
+                <hr>
+                <ng-container *ngFor="let item of salaryEstimate">
+                  <p>
+                    <small>{{item.name | categoriesNames}}</small>
+                  </p>
+                  <ul class="list" style="list-style: none;">
+                    <li>
+                      <small> Promedio: {{item.freelance.estimation}}</small>
                     </li>
+                    <!-- <li>
+                      <small> Máximo: {{item.freelance.maximum}}</small>
+                    </li>
+                    <li>
+                      <small> Mínimo: {{item.freelance.minimum}}</small>
+                    </li> -->
                     <hr>
                   </ul>
                 </ng-container>
@@ -134,7 +161,7 @@
           </div>
 
 
-          <div class="col-sm-6 mb-3">
+          <!-- <div class="col-sm-6 mb-3">
             <div class="jobs scrollbar scrollbar-pink bordered-primary thin">
 
 
@@ -157,7 +184,7 @@
 
               
             </div>
-          </div>
+          </div> -->
 
         </div>
 
