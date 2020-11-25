@@ -48,7 +48,7 @@
             </ng-container>
             <ng-template #elseTemplate>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="authService.user.role === 'cliente'">
                         <a [routerLink]="['/usuario/notificaciones']">
                             <span style="color: red;">{{notificationsCount}}</span>
                             <span class="material-icons">
