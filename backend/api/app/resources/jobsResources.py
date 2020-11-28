@@ -78,6 +78,7 @@ class JobsCompuTrabajoRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
+                j.id = j.get_id()[0]['setval']+1
                 if job['workday'] == 'Desde Casa':
                     j.location = 'remote'
                     j.workday = 'notspecified'
@@ -168,6 +169,7 @@ class JobsCompuTrabajoRA(Resource):
                     c.save()
                 else:
                     c = Company(job['company_name'])
+                    c.id = Company.get_id()[0]['setval']+1
                     c.logo = job['company_logo']
                     c.jobs.append(j)
                     c.save()
@@ -196,6 +198,7 @@ class JobsMipleoRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
+                j.id = j.get_id()[0]['setval']+1
                 j.location = job['location']
                 if job['workday'] == 'Tiempo Completo':
                     j.workday = 'FullTime'
@@ -282,6 +285,7 @@ class JobsMipleoRA(Resource):
                     c.save()
                 else:
                     c = Company(job['company_name'])
+                    c.id = Company.get_id()[0]['setval']+1
                     c.save()
                     c.jobs.append(j)
                     c.save()
@@ -313,6 +317,7 @@ class JobsWorkanaRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
+                j.id = j.get_id()[0]['setval']+1
                 j.location = 'remote'
                 if 'workday' in job and job['workday'] == 'Tiempo completo': 
                     j.workday = 'FullTime'
@@ -377,6 +382,7 @@ class JobsWorkanaRA(Resource):
                     c.save()
                 else:
                     c = Company(job['company_name'])
+                    c.id = Company.get_id()[0]['setval']+1
                     c.jobs.append(j)
                     c.save()
                     
@@ -409,7 +415,7 @@ class JobRA(Resource):
 
 class JobsSearchByTitleRA(Resource):
     def post(self):
-        user_id = validateToken(request, 'funcionario')
+        user_id = validateToken(request, ['funcionario', 'cliente'])
         j = Job.search_by_title(request.get_json()['title'])
         res = {
             'jobs': JobsByTitleSchema().dump(j, many=True)

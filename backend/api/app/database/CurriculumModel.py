@@ -33,12 +33,12 @@ class Curriculum(db.Model, BaseModelMixin):
     
     @classmethod
     def get_all_recommended_users_by_filters(cls, data):
-        sqlQueryString = 'select distinct u.* from "user" as u, job as j, curriculum as c, category as cat, subcategory as sc, curriculum__category as cc, language as l where u."role" = ' + "'cliente' and c.user_id = u.id"
+        sqlQueryString = 'select distinct u.* from "user" as u, curriculum as c, category as cat, curriculum__category as cc, language as l where u."role" = ' + "'cliente' and c.user_id = u.id"
 
         if 'category' in data['filters'] and data['filters']['category'] is not None:
             sqlQueryString += ' and cc.curriculum_id = c.id and u.id = c.user_id and cat.id = ' + str(data['filters']['category']) + ' and cc.category_id = cat.id'
         
-        if 'language' in data['filters'] and data['filters']['language'] is not None:
+        if 'language' in data['filters'] and data['filters']['language'] is not None and data['filters']['language'][0] != '' and data['filters']['language'][0] != ' ':
             sqlQueryString += " and l.name = '" + data['filters']['language'] + "' and l.curriculum_id = c.id"
         
         if 'ageRange' in data['filters'] and data['filters']['ageRange'] is not None:
@@ -48,5 +48,6 @@ class Curriculum(db.Model, BaseModelMixin):
                 sqlQueryString += " and DATE_PART('year', now()::date) - DATE_PART('year', c.birth_date::date) >= " + str(data['filters']['ageRange']['minAge'])
 
         sqlQueryString += ';'
+        print(sqlQueryString)
         res = db.engine.execute(sqlQueryString)
         return [row for row in res]

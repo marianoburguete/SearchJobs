@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
 
   getNotifications() {
     this.sessionUser = this.authService.getUser();
-    if (this.sessionUser != null) {
+    if (this.sessionUser != null && this.sessionUser.role === 'cliente') {
       this.userService.getNotificationsCount().subscribe(res => {
         this.notificationsCount = res['results']['count'];
       });

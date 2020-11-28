@@ -7,6 +7,7 @@ from ..database.JobModel import Job
 from ..database.CompanyModel import Company
 from ..database.RequirementModel import Requirement
 from ..database.ApplicationModel import Application
+from ..database.CurriculumModel import Curriculum
 
 from ..common.error_handling import ObjectNotFound, BadRequest
 from ..common.token_helper import validateToken
@@ -43,15 +44,17 @@ class ApplicationR(Resource):
         data = request.get_json()
         j = Job.get_by_id(data['job_id'])
         if j is not None and j.active == True:
-            a = [a for a in j.applications if a.user_id == user_id]
-            if a is None or a == []:
-                j.applications.append(Application(user_id))
-                j.save()
-                res = {
-                'msg': 'Postulacion creada.'
-                }
-                return make_response(jsonify(res), 201)
-            raise BadRequest('El usuario ya se postulo para este trabajo.')
+            if Curriculum.get_by_user_id(user_id) is not None:
+                a = [a for a in j.applications if a.user_id == user_id]
+                if a is None or a == []:
+                    j.applications.append(Application(user_id))
+                    j.save()
+                    res = {
+                    'msg': 'Postulacion creada.'
+                    }
+                    return make_response(jsonify(res), 201)
+                raise BadRequest('El usuario ya se postulo para este trabajo.')
+            raise BadRequest('Debes subir un curriculum para poder postularte.')
         raise ObjectNotFound('No existe un trabajo para el Id dado.')
 
 class ApplicationGetAllR(Resource):

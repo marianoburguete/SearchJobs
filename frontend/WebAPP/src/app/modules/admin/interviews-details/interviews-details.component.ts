@@ -42,6 +42,7 @@ export class InterviewsDetailsComponent implements OnInit {
         })
         .add(() => this.spinnerService.stopSpinner());
     });
+    setInterval(() => {this.getNewMessages()}, 1000 * 10);
   }
 
   pruebaPrint() {

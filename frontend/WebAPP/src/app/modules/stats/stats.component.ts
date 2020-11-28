@@ -107,6 +107,7 @@ export class StatsComponent implements OnInit {
           }
         );
       });
+      console.log(this.popularSearches);
     },
     err => {
       this.alert.show = true;

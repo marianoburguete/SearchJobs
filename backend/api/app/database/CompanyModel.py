@@ -30,3 +30,8 @@ class Company(db.Model, BaseModelMixin):
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)
         else:
             return filtro.paginate(1, 10, False)
+
+    @classmethod
+    def get_id(cls):
+        filtro = db.engine.execute("select setval('company_id_seq', (select max(id) from company));")
+        return [row for row in filtro]

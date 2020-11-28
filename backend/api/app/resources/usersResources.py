@@ -12,6 +12,7 @@ from ..database.WorkExperienceModel import WorkExperience
 from ..database.NotificationModel import Notification
 from ..database.CategoryModel import Category
 from ..database.Curriculum_CategoryModel import Curriculum_Category
+from ..database.StatsQuery import median, medianFreelance
 
 from ..common.error_handling import ObjectNotFound, Forbidden, BadRequest
 
@@ -205,7 +206,7 @@ class UserSalaryR(Resource):
             if u.curriculum[0] is not None:
                 resList = []
                 for c in u.curriculum[0].categories:
-                    obj = {'name': c.category.name, 'estimation': 0, 'minimum': 0, 'maximum': 0, 'freelance': {'estimation': 0, 'minimum': 0, 'maximum': 0}}
+                    obj = {'name': c.category.name, 'estimation': 0, 'median': 0, 'minimum': 0, 'maximum': 0, 'freelance': {'estimation': 0, 'median': 0, 'minimum': 0, 'maximum': 0}}
                     cat = Category.get_by_id(c.category.id)
                     jobs = cat.subcategories[0].jobs
                     total = 0
@@ -218,7 +219,7 @@ class UserSalaryR(Resource):
                     maximumF = 0
                     for j in jobs:
                         if 'workana' in j.url:
-                            if j.salary is not None and j.salary != 111111 and j.active == True:
+                            if j.salary is not None and j.salary < 100000 and j.active == True:
                                 if minimumF == 0 or j.salary < minimumF:
                                     minimumF = j.salary
                                 if j.salary > maximumF:
@@ -226,7 +227,7 @@ class UserSalaryR(Resource):
                                 totalF = totalF + j.salary
                                 countF = countF + 1
                         else:
-                            if j.salary is not None and j.salary != 111111 and j.active == True:
+                            if j.salary is not None and j.salary < 100000 and j.active == True:
                                 if minimum == 0 or j.salary < minimum:
                                     minimum = j.salary
                                 if j.salary > maximum:
@@ -245,6 +246,12 @@ class UserSalaryR(Resource):
                     obj['maximum'] = maximum
                     obj['freelance']['minimum'] = minimumF
                     obj['freelance']['maximum'] = maximumF
+                    # m = median(c.category.id)[0]['mediana']
+                    # mF = medianFreelance(c.category.id)
+                    # if m is not None:
+                    #     obj['median'] = m
+                    # if 'mediana' in mF and mF is not None:
+                    #     obj['freelance']['median'] = mF['mediana']
                     resList.append(obj)
                 res = {
                     'msg': 'Ok',

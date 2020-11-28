@@ -1,8 +1,10 @@
 import os
 import requests
 import json
+from datetime import datetime
 
 if __name__ == "__main__":
+    start_time = datetime.now()
     auth = {
         'email': 'admin@email.com',
         'password': 'password1'
@@ -19,3 +21,5 @@ if __name__ == "__main__":
         }
         r = requests.post('http://localhost:5000/api/jobs/a/' + page, json = jsonItem, headers=h)
         print(r.status_code, page)
+    end_time = datetime.now()
+    print(end_time - start_time)
