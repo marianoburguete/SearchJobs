@@ -110,10 +110,12 @@
         <div class="job-card" *ngFor="let job of lastResponse.results">
           <div class="row">
             <div class="col-md-2">
-              <img
-                src="{{ job.company.logo | imageReplacement }}"
-                class="img-fluid"
-              />
+              <div ng-if="!job.company; else withCompany">
+                <img src="{{imageReplacement}}" class="img-fluid">
+              </div>
+              <ng-template #withCompany>
+                <img src="{{job.company.logo | imageReplacement}}" class="img-fluid">
+              </ng-template>
             </div>
             <div class="col-md-10">
               <div class="row ml-1 mt-1">
