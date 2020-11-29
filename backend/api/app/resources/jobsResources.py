@@ -388,7 +388,6 @@ class JobsWorkanaRA(Resource):
                     cat.subcategories.append(subCategory)
                     cat.save()
 
-                # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
                 j.subcategory_id = Subcategory.getByName('general' + category).id
 
                 j.save()
@@ -396,6 +395,20 @@ class JobsWorkanaRA(Resource):
                     for requirement in job['requirements']:
                         j.requirements.append(Requirement(requirement, requirement))
                     j.save()
+
+                c = Company.get_by_name('Workana')
+                if c is not None:
+                    c.jobs.append(j)
+                    c.save()
+                else:
+                    c = Company('Workana')
+                    last_idc = Company.get_id()[0]['setval']
+                    if last_idc is not None:
+                        c.id = Company.get_id()[0]['setval']+1
+                    else:
+                        c.id = 1
+                    c.jobs.append(j)
+                    c.save()
                     
                 activeJobs.append(j.id)
             else:

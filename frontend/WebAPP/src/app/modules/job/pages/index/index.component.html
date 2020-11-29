@@ -110,12 +110,10 @@
         <div class="job-card" *ngFor="let job of lastResponse.results">
           <div class="row">
             <div class="col-md-2">
-              <div ng-if="!job.company; else withCompany">
-                <img src="{{imageReplacement}}" class="img-fluid">
-              </div>
-              <ng-template #withCompany>
-                <img src="{{job.company.logo | imageReplacement}}" class="img-fluid">
-              </ng-template>
+              <img
+                src="{{ job.company.logo | imageReplacement }}"
+                class="img-fluid"
+              />
             </div>
             <div class="col-md-10">
               <div class="row ml-1 mt-1">
@@ -127,7 +125,9 @@
                 <span>{{ job.company.name }}</span>
               </div>
               <div class="row ml-1 pb-2">
+                <ng-container *ngIf="job.location != 'remote';">
                 <span>{{ job.location | remoteString }}</span>
+              </ng-container>
               </div>
               <div class="row ml-1 pt-2">
                 <span>{{ job.created_at | dayOrDays }}</span>
