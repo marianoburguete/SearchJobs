@@ -125,7 +125,9 @@
                 <span>{{ job.company.name }}</span>
               </div>
               <div class="row ml-1 pb-2">
+                <ng-container *ngIf="job.location != 'remote';">
                 <span>{{ job.location | remoteString }}</span>
+              </ng-container>
               </div>
               <div class="row ml-1 pt-2">
                 <span>{{ job.created_at | dayOrDays }}</span>
