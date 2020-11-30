@@ -97,3 +97,9 @@ class Job(db.Model, BaseModelMixin):
     def get_id(cls):
         filtro = db.engine.execute("select setval('job_id_seq', (select max(id) from job));")
         return [row for row in filtro]
+
+    @classmethod
+    def search_by_id(cls, id):
+        filtro = cls.query.filter(Job.id == id)
+        filtro = filtro.filter(Job.active == True).first()
+        return filtro
