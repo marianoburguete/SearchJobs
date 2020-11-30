@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SalaryFormatPipe implements PipeTransform {
   transform(value): string {
     if (value != null) {
-      return value + 'UYU';
+      return value;
     } else {
       return 'No especificado';
     }

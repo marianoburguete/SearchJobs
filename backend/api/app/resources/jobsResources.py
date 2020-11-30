@@ -78,7 +78,11 @@ class JobsCompuTrabajoRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
-                j.id = j.get_id()[0]['setval']+1
+                last_id = j.get_id()[0]['setval']
+                if last_id is not None:
+                    j.id = j.get_id()[0]['setval']+1
+                else:
+                    j.id = 1
                 if job['workday'] == 'Desde Casa':
                     j.location = 'remote'
                     j.workday = 'notspecified'
@@ -169,7 +173,11 @@ class JobsCompuTrabajoRA(Resource):
                     c.save()
                 else:
                     c = Company(job['company_name'])
-                    c.id = Company.get_id()[0]['setval']+1
+                    last_idc = Company.get_id()[0]['setval']
+                    if last_idc is not None:
+                        c.id = Company.get_id()[0]['setval']+1
+                    else:
+                        c.id = 1
                     c.logo = job['company_logo']
                     c.jobs.append(j)
                     c.save()
@@ -198,7 +206,11 @@ class JobsMipleoRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
-                j.id = j.get_id()[0]['setval']+1
+                last_id = j.get_id()[0]['setval']
+                if last_id is not None:
+                    j.id = j.get_id()[0]['setval']+1
+                else:
+                    j.id = 1
                 j.location = job['location']
                 if job['workday'] == 'Tiempo Completo':
                     j.workday = 'FullTime'
@@ -285,7 +297,11 @@ class JobsMipleoRA(Resource):
                     c.save()
                 else:
                     c = Company(job['company_name'])
-                    c.id = Company.get_id()[0]['setval']+1
+                    last_idc = Company.get_id()[0]['setval']
+                    if last_idc is not None:
+                        c.id = Company.get_id()[0]['setval']+1
+                    else:
+                        c.id = 1
                     c.save()
                     c.jobs.append(j)
                     c.save()
@@ -317,7 +333,11 @@ class JobsWorkanaRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 j = Job(job['url'], job['title'])
-                j.id = j.get_id()[0]['setval']+1
+                last_id = j.get_id()[0]['setval']
+                if last_id is not None:
+                    j.id = j.get_id()[0]['setval']+1
+                else:
+                    j.id = 1
                 j.location = 'remote'
                 if 'workday' in job and job['workday'] == 'Tiempo completo': 
                     j.workday = 'FullTime'
@@ -368,7 +388,6 @@ class JobsWorkanaRA(Resource):
                     cat.subcategories.append(subCategory)
                     cat.save()
 
-                # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
                 j.subcategory_id = Subcategory.getByName('general' + category).id
 
                 j.save()
@@ -376,13 +395,18 @@ class JobsWorkanaRA(Resource):
                     for requirement in job['requirements']:
                         j.requirements.append(Requirement(requirement, requirement))
                     j.save()
-                c = Company.get_by_name(job['company_name'])
+
+                c = Company.get_by_name('Workana')
                 if c is not None:
                     c.jobs.append(j)
                     c.save()
                 else:
-                    c = Company(job['company_name'])
-                    c.id = Company.get_id()[0]['setval']+1
+                    c = Company('Workana')
+                    last_idc = Company.get_id()[0]['setval']
+                    if last_idc is not None:
+                        c.id = Company.get_id()[0]['setval']+1
+                    else:
+                        c.id = 1
                     c.jobs.append(j)
                     c.save()
                     
@@ -431,6 +455,21 @@ class JobRecommendedUsersRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+class JobSalaryUSD(Resource):
+    def get(self, id):
+        j = Job.search_by_id(id)
+        if j is not None:
+            if j.salary is not None:
+                response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
+                jsonResponse = response.json()
+                cotiz = jsonResponse["rates"]["USD"]["buy"]
+                res = {
+                    'result': round(j.salary/cotiz,0)  
+                }
+                return make_response(jsonify(res), 200)
+            return make_response(jsonify(0), 200)
+        raise ObjectNotFound('No existe un trabajo para el Id dado.')
+
 
 api.add_resource(JobsCompuTrabajoRA, '/api/jobs/a/computrabajo')
 api.add_resource(JobRA, '/api/jobs/a/<int:id>')
@@ -438,3 +477,4 @@ api.add_resource(JobsSearchByTitleRA, '/api/jobs/a/searchbytitle')
 api.add_resource(JobsWorkanaRA, '/api/jobs/a/workana')
 api.add_resource(JobsMipleoRA, '/api/jobs/a/mipleo')
 api.add_resource(JobRecommendedUsersRA, '/api/jobs/a/<int:id>/recommendations')
+api.add_resource(JobSalaryUSD, '/api/jobs/salaryusd/a/<int:id>')
