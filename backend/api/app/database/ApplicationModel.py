@@ -25,7 +25,10 @@ class Application(db.Model, BaseModelMixin):
         if 'job' in data:
             filtro = filtro.filter(cls.job_id == data['job'])
 
-        filtro = filtro.order_by(cls.created_at.desc())
+        if 'order' in data and data['order'] == 'asc':
+            filtro = filtro.order_by(cls.created_at.asc())
+        else:
+            filtro = filtro.order_by(cls.created_at.desc())
 
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)

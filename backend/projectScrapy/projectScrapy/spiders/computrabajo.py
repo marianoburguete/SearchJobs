@@ -29,21 +29,21 @@ class ComputrabajoSpider(CrawlSpider):
         it['url'] = response.request.url
         it['title'] = response.xpath('normalize-space(//h1/text())').get()
         it['location'] = response.xpath(
-            'normalize-space(//section[@class="box box_r"]//li[h3[contains(text(), "Localización")]]//p/text())').get()
+            'normalize-space(//section[@class="boxWhite fl w_100 ocultar_mvl p30"]//li[2])').get()
         it['workday'] = response.xpath(
-            'normalize-space(//section[@class="box box_r"]//li[h3[contains(text(), "Jornada")]]//p/text())').get()
+            'normalize-space(//section[@class="boxWhite fl w_100 ocultar_mvl p30"]//li[p[contains(text(), "Jornada")]])').get().replace('Jornada ', '')
         it['contract_type'] = response.xpath(
-            'normalize-space(//section[@class="box box_r"]//li[h3[contains(text(), "Tipo de contrato")]]//p/text())').get()
+            'normalize-space(//section[@class="boxWhite fl w_100 ocultar_mvl p30"]//li[p[contains(text(), "Tipo de contrato")]])').get().replace('Tipo de contrato ', '')
         it['salary'] = response.xpath(
-            'normalize-space(//section[@class="box box_r"]//li[h3[contains(text(), "Salario")]]//p/text())').get()
+            'normalize-space(//section[@class="boxWhite fl w_100 ocultar_mvl p30"]//li[p[contains(text(), "Salario")]])').get().replace('Salario ', '')
         it['description'] = response.xpath(
-            'normalize-space(//div[@class="cm-12 box_i bWord"]//li[2])').get()
+            'normalize-space(//ul[@class="p0 m0"]//li[2])').get()
         requirements = []
-        for li in response.xpath('//div[@class="cm-12 box_i bWord"]//li/text()').getall():
+        for li in response.xpath('//ul[@class="p0 m0"]//li/text()').getall():
             if 'Edad:' in li or 'Educación Mínima:' in li or 'Edad:' in li or 'Disponibilidad de Viajar:' in li or 'Disponibilidad de Cambio de Residencia:' in li:
                 requirements.append(li)
         it['requirements'] = requirements.copy()
-        it['company_name'] = response.xpath('//*[@id="MainContainer"]/article/section[1]/div[1]/div/h2/text()').get()
-        it['company_logo'] = response.xpath('//div[@class="cm-3 detalle_logoempresa"]/img/@src').get()
+        it['company_name'] = response.xpath('//*[@id="MainContainer"]//article[1]//a[@id="urlverofertas"]/text()').get()
+        it['company_logo'] = response.xpath('//div[@class="logo_empresa ocultar_mvl"]/img/@src').get()
         it['category'] = response.xpath('//ol//li[3]//text()').get()
         yield it

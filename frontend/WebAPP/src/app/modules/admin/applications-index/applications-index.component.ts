@@ -24,6 +24,7 @@ export class ApplicationsIndexComponent implements OnInit {
   userEmail: string = null;
   jobTitle: string = null;
   statusFilter: string = null;
+  orderFilter = 'desc';
 
   currentPage = 1;
   nextPage: number = null;
@@ -37,7 +38,8 @@ export class ApplicationsIndexComponent implements OnInit {
       let data: any = {
         page: this.pageFilter,
         per_page: 10,
-        status: 'created'
+        status: 'created',
+        order: this.orderFilter
       };
 
       if (param.get('page') != null) {
@@ -50,6 +52,10 @@ export class ApplicationsIndexComponent implements OnInit {
       }
       else{
         this.statusFilter = 'created';
+      }
+      if (param.get('order') != null) {
+        this.orderFilter = param.get('order');
+        data.order = this.orderFilter;
       }
       if(param.get('user') != null){
         this.userFilter = Number(param.get('user'));
@@ -98,7 +104,8 @@ export class ApplicationsIndexComponent implements OnInit {
 
   filter() {
     let params:any = {
-      status: this.statusFilter
+      status: this.statusFilter,
+      order: this.orderFilter
     };
     if (this.userFilter != null) {
       params.user = this.userFilter;
@@ -112,6 +119,7 @@ export class ApplicationsIndexComponent implements OnInit {
   previousPageLink() {
     let params:any = {
       status: this.statusFilter,
+      order: this.orderFilter,
       page: this.previousPage
     };
     if (this.userFilter != null) {
@@ -126,6 +134,7 @@ export class ApplicationsIndexComponent implements OnInit {
   nextPageLink() {
     let params:any = {
       status: this.statusFilter,
+      order: this.orderFilter,
       page: this.nextPage
     };
     if (this.userFilter != null) {

@@ -24,6 +24,8 @@ export class InterviewsDetailsComponent implements OnInit {
 
   interviewId: any;
 
+  changeDate = false;
+
   constructor(
     private interviewService: InterviewService,
     private spinnerService: SpinnerService,
@@ -32,6 +34,7 @@ export class InterviewsDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log('Change date status: ', this.changeDate);
     this.spinnerService.callSpinner();
     this.route.paramMap.subscribe((params) => {
       this.interviewId = params.get('id');
@@ -116,5 +119,9 @@ export class InterviewsDetailsComponent implements OnInit {
           this.alert.msg = err.error.msg;
         }
     );
+  }
+
+  changeDateF() {
+    this.changeDate = true;
   }
 }

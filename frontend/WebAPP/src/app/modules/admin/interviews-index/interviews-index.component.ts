@@ -24,6 +24,7 @@ export class InterviewsIndexComponent implements OnInit {
   jobTitle: string = null;
   statusFilter: string = null;
   messagesStatusFilter: boolean = null;
+  orderFilter = 'desc';
 
   currentPage = 1;
   nextPage: number = null;
@@ -37,7 +38,8 @@ export class InterviewsIndexComponent implements OnInit {
       let data: any = {
         page: this.pageFilter,
         per_page: 10,
-        status: 'created'
+        status: 'created',
+        order: this.orderFilter
       };
 
       if (param.get('page') != null) {
@@ -50,6 +52,10 @@ export class InterviewsIndexComponent implements OnInit {
       }
       else{
         this.statusFilter = 'created';
+      }
+      if (param.get('order') != null) {
+        this.orderFilter = param.get('order');
+        data.order = this.orderFilter;
       }
       if(param.get('user') != null){
         this.userFilter = Number(param.get('user'));
@@ -90,7 +96,8 @@ export class InterviewsIndexComponent implements OnInit {
 
   filter() {
     let params:any = {
-      status: this.statusFilter
+      status: this.statusFilter,
+      order: this.orderFilter
     };
     if (this.userFilter != null) {
       params.user = this.userFilter;
@@ -107,6 +114,7 @@ export class InterviewsIndexComponent implements OnInit {
   previousPageLink() {
     let params:any = {
       status: this.statusFilter,
+      order: this.orderFilter,
       page: this.previousPage
     };
     if (this.userFilter != null) {
@@ -121,6 +129,7 @@ export class InterviewsIndexComponent implements OnInit {
   nextPageLink() {
     let params:any = {
       status: this.statusFilter,
+      order: this.orderFilter,
       page: this.nextPage
     };
     if (this.userFilter != null) {
