@@ -29,15 +29,16 @@ class MipleoSpider(CrawlSpider):
         it['url'] = response.request.url
         it['title'] = response.xpath('normalize-space(//h1/text())').get()
         it['location'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[4]/b/text())').get()
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Localidad")]/b/text())').get()
         it['workday'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[6]/b/text())').get()
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Jornada")]/b/text())').get()
         it['contract_type'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[7]/b/text())').get()
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Tipo de Contrato")]/b/text())').get()
         it['salary'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[1]/b/text())').get()
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Salario")]/b/text())').get()
         it['description'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/div[2]/p/text())').get()
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/div[2]/p/)').get()
+        #a description si queda muy largo, agregarle: text() al final del xpath
         requirements = []
         for ul in response.xpath('//*[@id="content"]/div[3]/div[2]/ul//li//text()').getall():
             if 'Idiomas:' in ul:
@@ -52,6 +53,6 @@ class MipleoSpider(CrawlSpider):
             if 'Educación Mínima:' in ul:
                 requirements.append(response.xpath('normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Educación Mínima:")])').get())           
         it['requirements'] = requirements.copy()
-        it['company_name'] = response.xpath('//*[@id="content"]/div[4]/div[1]/span/text()').get()
-        it['category'] = response.xpath('normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[2]/b/text())').get()
+        it['company_name'] = response.xpath('//*[@id="content"]/div[4]/div[1]/span[1]/text()').get()
+        it['category'] = response.xpath('normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Categoría")]/b/text())').get()
         yield it
