@@ -37,8 +37,7 @@ class MipleoSpider(CrawlSpider):
         it['salary'] = response.xpath(
             'normalize-space(//*[@id="content"]/div[3]/div[2]/ul/li[contains(text(), "Salario")]/b/text())').get()
         it['description'] = response.xpath(
-            'normalize-space(//*[@id="content"]/div[3]/div[2]/div[2]/p/)').get()
-        #a description si queda muy largo, agregarle: text() al final del xpath
+            'normalize-space(//*[@id="content"]/div[3]/div[2]/div[2]/p/text())').get()
         requirements = []
         for ul in response.xpath('//*[@id="content"]/div[3]/div[2]/ul//li//text()').getall():
             if 'Idiomas:' in ul:
