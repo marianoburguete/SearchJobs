@@ -51,7 +51,8 @@ export class DetailComponent implements OnInit {
       this.userApplication = true;
     }, (err) => {
       this.alert.show = true;
-      this.alert.msg = err.msg;
+      this.alert.errorCode = 'alert-danger';
+      this.alert.msg = err.error.msg;
     });
   }
 }

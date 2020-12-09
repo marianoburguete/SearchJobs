@@ -1,7 +1,7 @@
 export interface cv {
     id?: number;
     name?: string;
-    birth_date?: Date;
+    birth_date?: string;
     phone?: string;
     country?: string;
     address?: string;
@@ -20,15 +20,15 @@ export interface cv {
 export interface education {
     name?: string;
     place?: string;
-    start_date?: Date;
-    end_date?: Date;
+    start_date?: string;
+    end_date?: string;
 }
 
 export interface workexperience {
     name?: string;
     ocupation?: string;
-    start_date?: Date;
-    end_date?: Date;
+    start_date?: string;
+    end_date?: string;
 }
 
 export interface language {
