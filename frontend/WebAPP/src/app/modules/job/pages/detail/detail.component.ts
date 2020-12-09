@@ -14,6 +14,7 @@ import { SpinnerService } from '../../../../core/services/spinner.service';
 export class DetailComponent implements OnInit {
 
   jobDetails:JobDetails;
+  salaryUsd:number;
   userApplication = false;
   alert: AlertDTO = {
     show: false,
@@ -37,6 +38,9 @@ export class DetailComponent implements OnInit {
         this.jobDetails = res['results'];
         this.jobService.applicationExists(params.get('id')).subscribe((res) => {
           this.userApplication = res['results'];
+        });
+        this.jobService.salaryUsd(params.get('id')).subscribe((res) => {
+          this.salaryUsd = res['result'];
         }).add(() => {this.spinnerService.stopSpinner()});
       });
     });
@@ -47,7 +51,8 @@ export class DetailComponent implements OnInit {
       this.userApplication = true;
     }, (err) => {
       this.alert.show = true;
-      this.alert.msg = err.msg;
+      this.alert.errorCode = 'alert-danger';
+      this.alert.msg = err.error.msg;
     });
   }
 }

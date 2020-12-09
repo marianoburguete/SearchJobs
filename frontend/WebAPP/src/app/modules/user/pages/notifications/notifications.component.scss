@@ -7,7 +7,13 @@
 
 .notification-card {
     border-radius: 1rem;
-    :hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.selectedNotification:hover {
+    .notification-card {
         cursor: pointer;
+        background-color: skyblue;
+        color: rgb(70, 70, 70);
     }
 }

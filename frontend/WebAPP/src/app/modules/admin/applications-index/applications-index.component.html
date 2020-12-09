@@ -48,6 +48,17 @@
           </div>
         </div>
       </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="form-inline">
+            <label for="staus">Orden</label>
+            <select class="form-control ml-2" name="status" [(ngModel)]="orderFilter">
+              <option value="asc">Más antiguos</option>
+              <option value="desc">Más recientes</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div class="row text-center mt-4">
         <div class="col-12">
           <button type="button" class="btn btn-secondary" (click)="filter()">Aplicar</button>
@@ -65,16 +76,16 @@
             <th scope="col">Entrevista</th>
             <th scope="col">Descartar</th>
           </thead>
-          <tbody>
-            <tr *ngFor="let item of applicationsList">
-              <td>{{ item.created_at | date}}</td>
-              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
-              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]"><span class="material-icons">visibility</span></a></td>
-              <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
-              <td>
+          <tbody class="rowSelected">
+            <tr *ngFor="let item of applicationsList" >
+              <td class="tdSelected">{{ item.created_at | date}}</td>
+              <td class="tdSelected"><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
+              <td class="tdSelected"><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]"><span class="material-icons">visibility</span></a></td>
+              <td class="tdSelected"><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
+              <td class="tdSelected">
                 <a [routerLink]="['/admin/entrevistas/crear']" [queryParams]="{user: item.user.id, job: item.job.id}"><span class="material-icons" style="color: green"> add </span></a>
               </td>
-              <td>
+              <td class="tdSelected">
                 <a class="dismissApplication" (click)="dismissApplication(item.id)"><span class="material-icons" style="color: red"> clear </span></a>
               </td>
             </tr>

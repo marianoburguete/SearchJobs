@@ -50,17 +50,19 @@ export class UserService {
 
   addCurriculum(data) {
     const userSession = this.authService.getUser();
-    return this.httpClient.post(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
+    data.birth_date = data.birth_date.toISOString();
+    data.birth_date = data.birth_date.slice(0, -1);
+    return this.httpClient.post(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers});
   }
   
   updateCurriculum(data) {
     const userSession = this.authService.getUser();
-    return this.httpClient.put(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers})
+    return this.httpClient.put(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers});
   }
 
   recommendedUsers(data) {
     const userSession = this.authService.getUser();
-    return this.httpClient.post(this.prefix + '/a/recommended', data,{headers: this.authService.getheaders().headers})
+    return this.httpClient.post(this.prefix + '/a/recommended', data,{headers: this.authService.getheaders().headers});
   }
 
   estimateSalary() {

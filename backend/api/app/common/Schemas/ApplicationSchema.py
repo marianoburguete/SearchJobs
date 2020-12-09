@@ -33,3 +33,4 @@ class ApplicationSearchParametersSchema(ma.Schema):
     status = fields.String(required=True)
     user = fields.Integer()
     job = fields.Integer()
+    order = fields.String()

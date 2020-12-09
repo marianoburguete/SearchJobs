@@ -86,17 +86,23 @@ export class StatsComponent implements OnInit {
         series: []
       };
       this.results['applicationsXInterviews'].forEach(x => {
-        a.series.push({
-          value: x.applications,
+        if (x.day !== null) {
+          a.series.push({
+          value: x.applications === 0 ? 0.0001 : x.applications,
           name: x.day
         });
-        i.series.push({
-          value: x.interviews,
-          name: x.day
-        });
+        }
+        if (x.day !== null) {
+          i.series.push({
+            value: x.interviews === 0 ? 0.0001 : x.interviews,
+            name: x.day
+          });
+        }
       });
       this.applicationsXInterviews.push(a);
       this.applicationsXInterviews.push(i);
+
+      console.log(JSON.stringify(this.applicationsXInterviews));
 
       this.popularSearches = [];
       this.results['popularSearches'].forEach(x => {

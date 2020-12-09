@@ -5,6 +5,7 @@ import { cv, education, workexperience, language, category } from 'src/app/core/
 import { UserService } from 'src/app/core/services/http/user.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { CategoryService } from '../../../../core/services/http/category.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-curriculum',
@@ -36,7 +37,8 @@ export class CurriculumComponent implements OnInit {
     private categoryService: CategoryService,
     private spinnerService: SpinnerService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit() {
@@ -46,6 +48,15 @@ export class CurriculumComponent implements OnInit {
     });
     this.userService.getCurriculum().subscribe(res => {
       this.curriculum = res['results'];
+      this.curriculum.birth_date = this.datetimeToDate(this.curriculum.birth_date);
+      this.curriculum.education.forEach(x => {
+        x.start_date = this.datetimeToDate(x.start_date);
+        x.end_date = this.datetimeToDate(x.end_date);
+      });
+      this.curriculum.workexperience.forEach(x => {
+        x.start_date = this.datetimeToDate(x.start_date);
+        x.end_date = this.datetimeToDate(x.end_date);
+      });
       this.url = 'data:image/png;base64,' + this.curriculum.avatar;
     },
     err => {
@@ -66,7 +77,7 @@ export class CurriculumComponent implements OnInit {
 
     if (mimeType.match(/image\/*/) == null) {
       this.alert.show = true;
-      this.alert.msg = 'Only images are supported';
+      this.alert.msg = 'Solo se soportan imagenes.';
       this.alert.errorCode = 'alert-danger';
       return;
     }
@@ -170,6 +181,28 @@ export class CurriculumComponent implements OnInit {
         if (this.url !== null) {
           this.curriculum.avatar = this.url.substring(this.url.indexOf(',')+1);
         }
+        // Convertimos las fechas de tipo DATE a DATETIME porque la API las pide
+        this.curriculum.birth_date = this.dateToDatetime(this.curriculum.birth_date).toISOString().slice(0, -1);
+        this.curriculum.education.forEach(x => {
+          if (x.start_date !== null) {
+            let t = this.dateToDatetime(x.start_date);
+            x.start_date = t.toISOString().slice(0, -1);
+          }
+          if (x.end_date !== null) {
+            let t = this.dateToDatetime(x.end_date);
+            x.end_date = t.toISOString().slice(0, -1);
+          }
+        });
+        this.curriculum.workexperience.forEach(x => {
+          if (x.start_date !== null) {
+            let t = this.dateToDatetime(x.start_date);
+            x.start_date = t.toISOString().slice(0, -1);
+          }
+          if (x.end_date !== null) {
+            let t = this.dateToDatetime(x.end_date);
+            x.end_date = t.toISOString().slice(0, -1);
+          }
+        });
         this.userService.addCurriculum(this.curriculum).subscribe(res => {
           this.router.navigate(['usuario/cv']);
         },
@@ -183,6 +216,27 @@ export class CurriculumComponent implements OnInit {
         if (this.url !== null) {
           this.curriculum.avatar = this.url.substring(this.url.indexOf(',')+1);
         }
+        this.curriculum.birth_date = this.dateToDatetime(this.curriculum.birth_date).toISOString().slice(0, -1);
+        this.curriculum.education.forEach(x => {
+          if (x.start_date !== null) {
+            let t = this.dateToDatetime(x.start_date);
+            x.start_date = t.toISOString().slice(0, -1);
+          }
+          if (x.end_date !== null) {
+            let t = this.dateToDatetime(x.end_date);
+            x.end_date = t.toISOString().slice(0, -1);
+          }
+        });
+        this.curriculum.workexperience.forEach(x => {
+          if (x.start_date !== null) {
+            let t = this.dateToDatetime(x.start_date);
+            x.start_date = t.toISOString().slice(0, -1);
+          }
+          if (x.end_date !== null) {
+            let t = this.dateToDatetime(x.end_date);
+            x.end_date = t.toISOString().slice(0, -1);
+          }
+        });
         this.userService.updateCurriculum(this.curriculum).subscribe(res => {
           this.router.navigate(['usuario/cv']);
         },
@@ -196,6 +250,17 @@ export class CurriculumComponent implements OnInit {
     else {
       this.spinnerService.stopSpinner();
     }
+  }
+
+  dateToDatetime(x) {
+    let a = new Date(x);
+    console.log(a.toISOString());
+    return a;
+  }
+  
+  datetimeToDate(x) {
+    let a = this.datePipe.transform(x, 'yyyy-MM-dd');
+    return a;
   }
 
 }

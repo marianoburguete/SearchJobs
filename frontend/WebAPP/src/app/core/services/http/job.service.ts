@@ -47,4 +47,8 @@ export class JobService {
   userRecommendations(idJob) {
     return this.httpClient.get(environment.URLAPI + '/a/' + idJob + '/recommendations', {headers: this.authService.getheaders().headers});
   }
+
+  salaryUsd(id){
+    return this.httpClient.get(this.prefix + '/salaryusd/a/' + id);
+  }
 }

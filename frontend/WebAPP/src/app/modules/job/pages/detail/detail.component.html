@@ -1,4 +1,4 @@
-<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false"></app-message-alert>
+<app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
 
 <div class="container min-vh-100">
     <!-- min-vh-100 -->
@@ -10,7 +10,12 @@
 
                     <div class="col-md-3" id="services_block">
                         <br>
-                        <img src="{{jobDetails.company.logo | imageReplacement}}" class="img-fluid">
+                        <ng-container *ngIf="jobDetails.company.logo !== null; else elseTemplateImage">
+                            <img src="{{jobDetails.company.logo}}" class="img-fluid">
+                        </ng-container>
+                        <ng-template #elseTemplateImage>
+                            <img src="../../../../../assets/images/company-placeholder.png" class="img-fluid">
+                        </ng-template>
                     </div>
                     <div class="col-md-9" id="services_block">
                         <br><br>
@@ -35,8 +40,8 @@
                         <br>
                         <div class="row">
                             <div class="col-md-12">
-                                <ul>
-                                    <li *ngFor="let item of jobDetails.requirements">
+                                <ul style="list-style: none; font-size: 1.1rem;">
+                                    <li *ngFor="let item of jobDetails.requirements" class="pb-2">
                                         {{item.key}}: {{item.value}}
                                     </li>
                                 </ul>
@@ -55,7 +60,12 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                   <h3>Salario : {{jobDetails.salary | salaryFormatPipe}}</h3> 
+                   <h3>Salario (UYU) : {{jobDetails.salary | salaryFormatPipe}}</h3> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   <h3>Salario (USD) : {{salaryUsd | salaryFormatPipe}}</h3> 
                 </div>
             </div>
             <div class="row">
@@ -69,7 +79,7 @@
                 </div>
             </div>
                     <div class="row mt-4 d-flex justify-content-center">
-                        <ng-container *ngIf="!userApplication && authService.isLogged() && jobDetails.active; else elseTemplate">
+                        <ng-container *ngIf="!userApplication && authService.isLogged() && jobDetails.active && authService.getRole() !== 'funcionario'; else elseTemplate">
                             <div class="col-md-12 text-center">
                                 <button class="btn btn-primary" (click)="application()">Postularse</button>
                             </div>
@@ -83,7 +93,7 @@
                                     <div class="p-3 mb-2 bg-warning">Este trabajo ya no esta activo.</div>
                                 </ng-container>
                                 <ng-template #elseTemplate3>
-                                    <div class="p-3 mb-2 bg-success text-white">Inicia sesion para postularte!</div>
+                                    <div class="p-3 mb-2 bg-success text-white" *ngIf="authService.getRole() !== 'funcionario'">Inicia sesion para postularte!</div>
                                 </ng-template>
                             </ng-template>
                         </ng-template>

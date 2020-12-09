@@ -9,3 +9,12 @@
         cursor: pointer;
     }
 }
+
+.sectionCu {
+    background-color: rgb(117, 119, 131);
+}
+
+.selectedItem:hover {
+    background-color: rgba($color: #eeeeee, $alpha: 1.0);
+    border-radius: 0.5rem;
+}

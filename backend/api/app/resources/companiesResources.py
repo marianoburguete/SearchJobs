@@ -62,17 +62,24 @@ class RatingR(Resource):
         if c is not None:
             u = User.get_by_id(user_id)
             if u is not None:
-                rVerif = Rating.get_by_user_id_company(user_id, id)
-                if rVerif is None:
-                    r = Rating(request.get_json()['description'], request.get_json()['score'], user_id, id) 
-                    c.ratings.append(r)
-                    c.save()
-                    res = {
-                        'msg': 'Ok',
-                        'results': RatingSchema().dump(c.ratings, many=True)
-                    }
-                    return make_response(jsonify(res), 201) 
-                raise BadRequest('Solo puedes calificar una vez a la empresa')
+                canComment = False
+                for i in u.interviews:
+                    if i.job.company_id == id:
+                        canComment = True
+                        break
+                if canComment:
+                    rVerif = Rating.get_by_user_id_company(user_id, id)
+                    if rVerif is None:
+                        r = Rating(request.get_json()['description'], request.get_json()['score'], user_id, id) 
+                        c.ratings.append(r)
+                        c.save()
+                        res = {
+                            'msg': 'Ok',
+                            'results': RatingSchema().dump(c.ratings, many=True)
+                        }
+                        return make_response(jsonify(res), 201) 
+                    raise BadRequest('Solo puedes calificar una vez a la empresa')
+                raise BadRequest('No has sido entrevistado por esta empresa, no estas habilitado para comentar.')
             raise Forbidden('No tienes permisos para realizar esta accion.')
         raise ObjectNotFound('No existe la empresa para el Id dado.')
 
