@@ -2,6 +2,7 @@ from flask import request, Blueprint, jsonify, make_response
 from flask_restful import Api, Resource
 import json
 import requests
+from langdetect import detect
 
 from ..common.Schemas.JobSchema import JobSchema, JobSearchResultsSchema, JobDetailsSchema, JobsByTitleSchema
 from ..common.Schemas.UserSchema import UserByEmailSchema
@@ -77,111 +78,114 @@ class JobsCompuTrabajoRA(Resource):
         for job in data:
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
-                j = Job(job['url'], job['title'])
-                last_id = j.get_id()[0]['setval']
-                if last_id is not None:
-                    j.id = j.get_id()[0]['setval']+1
-                else:
-                    j.id = 1
-                if job['workday'] == 'Desde Casa':
-                    j.location = 'remote'
-                    j.workday = 'notspecified'
-                else:
-                    j.location = job['location']
-                    if job['workday'] == 'Tiempo Completo':
-                        j.workday = 'fulltime'
-                    elif job['workday'] == 'Medio Tiempo':
-                        j.workday = 'parttime'
+                if detect(job['description']) == 'es':
+                    j = Job(job['url'], job['title'])
+                    last_id = j.get_id()[0]['setval']
+                    if last_id is not None:
+                        j.id = j.get_id()[0]['setval']+1
                     else:
+                        j.id = 1
+                    if job['workday'] == 'Desde Casa':
+                        j.location = 'remote'
                         j.workday = 'notspecified'
-                if job['contract_type'] == 'Contrato por tiempo indefinido':
-                    j.contract_type = 'undefined'
-                elif job['contract_type'] == 'Contrato por tiempo determinado':
-                    j.contract_type = 'defined'
-                else:
-                    j.contract_type = 'other'
-                if job['salary'] == 'A convenir' or job['salary'] is None or job['salary'] == '':
-                    j.salary = None
-                    j.salary_max = None
-                else:
-                    s = int(job['salary'].split()[1].replace(',00', '').replace('.',''))
-                    j.salary = s
-                    j.salary_max = s
-                j.description = job['description']
-
-                category = ''
-
-                if job['category'] == 'Informática / Telecomunicaciones':
-                    category = 'programacion/tecnologia'
-                elif job['category'] == 'Diseño / Artes gráficas':
-                    category = 'diseño/multimedia'
-                # la categoria de abajo la tiene mariano solo
-                # elif job['category'] == '':
-                #     category = 'redaccion/traduccion'
-                elif job['category'] == 'Mercadotécnia / Publicidad / Comunicación':
-                    category = 'marketing'
-                elif job['category'] == 'Contabilidad / Finanzas' or job['category'] == 'Administración / Oficina':
-                    category = 'administracion/finanzas'
-                elif job['category'] == 'Legal / Asesoría':
-                    category = 'legal'
-                elif job['category'] == 'Ingeniería':
-                    category = 'ingenieria/arquitectura'
-                elif job['category'] == 'Producción / Operarios / Manufactura' or job['category'] == 'Mantenimiento y Reparaciones Técnicas':
-                    category = 'produccion/operarios'
-                elif job['category'] == 'Recursos Humanos':
-                    category = 'recursosHumanos'
-                elif job['category'] == 'Hostelería / Turismo':
-                    category = 'hosteleria/turismo'
-                elif job['category'] == 'Ventas' or job['category'] == 'CallCenter / Telemercadeo' or job['category'] == 'Atención a clientes':
-                    category = 'ventas'
-                elif job['category'] == 'Compras / Comercio Exterior':
-                    category = 'compras/comercioExterior'
-                elif job['category'] == 'Servicios Generales, Aseo y Seguridad ':
-                    category = 'serviciosGenerales'
-                elif job['category'] == 'Medicina / Salud':
-                    category = 'medicina/salud'
-                elif job['category'] == 'Almacén / Logística / Transporte':
-                    category = 'almacenamiento/logistica'
-                elif job['category'] == 'Construccion y obra':
-                    category = 'construccion/obras'
-                # No tengo ninguno con educacion, asi que no se como es la etiqueta
-                # elif job['category'] == '':
-                #     category = 'educacion'
-                elif job['category'] == 'Investigación y Calidad':
-                    category = 'investigacion/calidad'
-                else:
-                    category = 'otros'
-                
-                cat = Category.getByName(category)
-                if cat is None:
-                    cat = Category(category)
-                    cat.save()
-                    subCategory = Subcategory('general' + category)
-                    cat.subcategories.append(subCategory)
-                    cat.save()
-
-                # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
-                j.subcategory_id = Subcategory.getByName('general' + category).id
-
-                for requirement in job['requirements']:
-                    r = requirement.split(':')
-                    j.requirements.append(Requirement(r[0], r[1]))
-
-                c = Company.get_by_name(job['company_name'])
-                if c is not None:
-                    c.jobs.append(j)
-                    c.save()
-                else:
-                    c = Company(job['company_name'])
-                    last_idc = Company.get_id()[0]['setval']
-                    if last_idc is not None:
-                        c.id = Company.get_id()[0]['setval']+1
                     else:
-                        c.id = 1
-                    c.logo = job['company_logo']
-                    c.jobs.append(j)
-                    c.save()
-                activeJobs.append(j.id)
+                        j.location = job['location']
+                        if job['workday'] == 'Tiempo Completo':
+                            j.workday = 'fulltime'
+                        elif job['workday'] == 'Medio Tiempo':
+                            j.workday = 'parttime'
+                        else:
+                            j.workday = 'notspecified'
+                    if job['contract_type'] == 'Contrato por tiempo indefinido':
+                        j.contract_type = 'undefined'
+                    elif job['contract_type'] == 'Contrato por tiempo determinado':
+                        j.contract_type = 'defined'
+                    else:
+                        j.contract_type = 'other'
+                    if job['salary'] == 'A convenir' or job['salary'] is None or job['salary'] == '':
+                        j.salary = None
+                        j.salary_max = None
+                    else:
+                        s = int(job['salary'].split()[1].replace(',00', '').replace('.',''))
+                        j.salary = s
+                        j.salary_max = s
+                    j.description = job['description']
+
+                    category = ''
+
+                    if job['category'] == 'Informática / Telecomunicaciones':
+                        category = 'programacion/tecnologia'
+                    elif job['category'] == 'Diseño / Artes gráficas':
+                        category = 'diseño/multimedia'
+                    # la categoria de abajo la tiene mariano solo
+                    # elif job['category'] == '':
+                    #     category = 'redaccion/traduccion'
+                    elif job['category'] == 'Mercadotécnia / Publicidad / Comunicación':
+                        category = 'marketing'
+                    elif job['category'] == 'Contabilidad / Finanzas' or job['category'] == 'Administración / Oficina':
+                        category = 'administracion/finanzas'
+                    elif job['category'] == 'Legal / Asesoría':
+                        category = 'legal'
+                    elif job['category'] == 'Ingeniería':
+                        category = 'ingenieria/arquitectura'
+                    elif job['category'] == 'Producción / Operarios / Manufactura' or job['category'] == 'Mantenimiento y Reparaciones Técnicas':
+                        category = 'produccion/operarios'
+                    elif job['category'] == 'Recursos Humanos':
+                        category = 'recursosHumanos'
+                    elif job['category'] == 'Hostelería / Turismo':
+                        category = 'hosteleria/turismo'
+                    elif job['category'] == 'Ventas' or job['category'] == 'CallCenter / Telemercadeo' or job['category'] == 'Atención a clientes':
+                        category = 'ventas'
+                    elif job['category'] == 'Compras / Comercio Exterior':
+                        category = 'compras/comercioExterior'
+                    elif job['category'] == 'Servicios Generales, Aseo y Seguridad ':
+                        category = 'serviciosGenerales'
+                    elif job['category'] == 'Medicina / Salud':
+                        category = 'medicina/salud'
+                    elif job['category'] == 'Almacén / Logística / Transporte':
+                        category = 'almacenamiento/logistica'
+                    elif job['category'] == 'Construccion y obra':
+                        category = 'construccion/obras'
+                    # No tengo ninguno con educacion, asi que no se como es la etiqueta
+                    # elif job['category'] == '':
+                    #     category = 'educacion'
+                    elif job['category'] == 'Investigación y Calidad':
+                        category = 'investigacion/calidad'
+                    else:
+                        category = 'otros'
+                    
+                    cat = Category.getByName(category)
+                    if cat is None:
+                        cat = Category(category)
+                        cat.save()
+                        subCategory = Subcategory('general' + category)
+                        cat.subcategories.append(subCategory)
+                        cat.save()
+
+                    # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
+                    j.subcategory_id = Subcategory.getByName('general' + category).id
+
+                    for requirement in job['requirements']:
+                        r = requirement.split(':')
+                        j.requirements.append(Requirement(r[0], r[1]))
+
+                    if job['company_name'] is None:
+                        job['company_name'] = 'Workana'
+                    c = Company.get_by_name(job['company_name'])
+                    if c is not None:
+                        c.jobs.append(j)
+                        c.save()
+                    else:
+                        c = Company(job['company_name'])
+                        last_idc = Company.get_id()[0]['setval']
+                        if last_idc is not None:
+                            c.id = Company.get_id()[0]['setval']+1
+                        else:
+                            c.id = 1
+                        c.logo = job['company_logo']
+                        c.jobs.append(j)
+                        c.save()
+                    activeJobs.append(j.id)
             else:
                 activeJobs.append(jobExists.id)
         

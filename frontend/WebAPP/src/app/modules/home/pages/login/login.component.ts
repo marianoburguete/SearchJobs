@@ -76,6 +76,7 @@ export class LoginComponent implements OnInit {
           (err) => {
             console.log(err.body.msg);
             this.alert.msg = err.body.msg;
+            this.alert.errorCode = 'alert-danger';
             this.alert.show = true;
           }
         )

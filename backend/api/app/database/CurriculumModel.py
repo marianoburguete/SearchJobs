@@ -33,21 +33,24 @@ class Curriculum(db.Model, BaseModelMixin):
     
     @classmethod
     def get_all_recommended_users_by_filters(cls, data):
-        sqlQueryString = 'select distinct u.* from "user" as u, curriculum as c, category as cat, curriculum__category as cc, language as l where u."role" = ' + "'cliente' and c.user_id = u.id"
-
+        sqlQueryStringBeforeWhere = 'select distinct u.* from "user" as u, curriculum as c, category as cat'
+        sqlQueryStringAfterWhere = ' where u."role" = ' + "'cliente' and c.user_id = u.id"
+        
         if 'category' in data['filters'] and data['filters']['category'] is not None:
-            sqlQueryString += ' and cc.curriculum_id = c.id and u.id = c.user_id and cat.id = ' + str(data['filters']['category']) + ' and cc.category_id = cat.id'
+            sqlQueryStringBeforeWhere += ', curriculum__category as cc'
+            sqlQueryStringAfterWhere += ' and cc.curriculum_id = c.id and u.id = c.user_id and cat.id = ' + str(data['filters']['category']) + ' and cc.category_id = cat.id'
         
         if 'language' in data['filters'] and data['filters']['language'] is not None and data['filters']['language'][0] != '' and data['filters']['language'][0] != ' ':
-            sqlQueryString += " and l.name = '" + data['filters']['language'] + "' and l.curriculum_id = c.id"
+            sqlQueryStringBeforeWhere += ', language as l'
+            sqlQueryStringAfterWhere += " and l.name = '" + data['filters']['language'] + "' and l.curriculum_id = c.id"
         
         if 'ageRange' in data['filters'] and data['filters']['ageRange'] is not None:
             if 'maxAge' in data['filters']['ageRange'] and data['filters']['ageRange']['maxAge']:
-                sqlQueryString += " and DATE_PART('year', now()::date) - DATE_PART('year', c.birth_date::date) <= " + str(data['filters']['ageRange']['maxAge'])
+                sqlQueryStringAfterWhere += " and DATE_PART('year', now()::date) - DATE_PART('year', c.birth_date::date) <= " + str(data['filters']['ageRange']['maxAge'])
             if 'minAge' in data['filters']['ageRange'] and data['filters']['ageRange']['minAge']:
-                sqlQueryString += " and DATE_PART('year', now()::date) - DATE_PART('year', c.birth_date::date) >= " + str(data['filters']['ageRange']['minAge'])
+                sqlQueryStringAfterWhere += " and DATE_PART('year', now()::date) - DATE_PART('year', c.birth_date::date) >= " + str(data['filters']['ageRange']['minAge'])
 
-        sqlQueryString += ';'
+        sqlQueryString = sqlQueryStringBeforeWhere + sqlQueryStringAfterWhere + ';'
         print(sqlQueryString)
         res = db.engine.execute(sqlQueryString)
         return [row for row in res]
