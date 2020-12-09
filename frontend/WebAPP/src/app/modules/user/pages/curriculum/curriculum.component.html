@@ -32,9 +32,9 @@
   >
     <div class="container min-vh-100">
       <div class="row d-flex justify-content-center py-2">
-        <p class="display-4 loginText text-primary"><em><strong>Currículum</strong></em></p>
+        <p class="display-4 loginText">Currículum</p>
       </div>
-      <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+      <div class="border border-gray p-2 form-group text-white rounded sectionCu">
         <div class="col-form-label text-center">
           <span class="text-white">Campos obligatorios*</span>
         </div>
@@ -93,7 +93,7 @@
         <div class="col-form-label text-center">
           <span class="text-secondary">Campos opcionales</span>
         </div>
-        <div class="form-row mb-5 bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="form-row mb-5 text-white rounded sectionCu">
           <div class="form-group col-md-12">
             <br>
             <label for="description">Descripción</label>
@@ -135,9 +135,9 @@
         <br>
         <div class="border-bottom border-secondary mb-2"></div>
         <div class="col-form-label text-center">
-          <span class="text-secondary">Educación</span>
+          <span class="h5" style="color: rgb(253, 55, 82);font-size: 1.2rem;">Educación</span>
         </div>
-        <div class="border border-gray form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray form-group text-white rounded" style="background-color: rgb(253, 55, 82);">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.education; let i = index"
@@ -192,14 +192,14 @@
           class="d-flex justify-content-center addButton"
           (click)="addEducation()"
         >
-          <span class="material-icons text-primary"> add </span>
+          <span class="badge badge-pill badge-success" style="font-size: 1.2rem; background-color: rgb(253, 55, 82);">Añadir más</span>
         </span>
         <div class="border-bottom border-secondary mt-2"></div>
         <br>
         <div class="col-form-label text-center">
-          <span class="text-secondary">Experiencia laboral</span>
+          <span class="h5 text-success" style="font-size: 1.2rem;">Experiencia laboral</span>
         </div>
-        <div class="mb-4 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="mb-4 form-group text-white rounded bg-success">
           <div class="form-row">
             <ng-container
               *ngFor="let item of curriculum.workexperience; let i = index"
@@ -254,13 +254,13 @@
           class="d-flex justify-content-center addButton"
           (click)="addWorkexperience()"
         >
-          <span class="material-icons text-primary"> add </span>
+          <span class="badge badge-pill badge-success" style="font-size: 1.2rem;">Añadir más</span>
         </span>
         <div class="border-bottom border-secondary mt-2"></div>
         <div class="col-form-label text-center">
-          <span class="text-secondary">Idiomas</span>
+          <span class="h5" style="color: rgb(0, 94, 131);font-size: 1.2rem;">Idiomas</span>
         </div>
-        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray p-2 form-group text-white rounded" style="background-color: rgb(0, 94, 131);">
           <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.languages; let i = index"
@@ -288,14 +288,14 @@
           class="d-flex justify-content-center addButton"
           (click)="addLanguages()"
         >
-          <span class="material-icons text-primary"> add </span>
+          <span class="badge badge-pill badge-success" style="font-size: 1.2rem;background-color: rgb(0, 94, 131);">Añadir más</span>
         </span>
         <br>
         <div class="border-bottom border-secondary mb-2"></div>
         <div class="col-form-label text-center">
-          <span class="text-secondary">Categorias de interés</span>
+          <span class="h5" style="color: rgb(174, 0, 255);font-size: 1.2rem;">Categorias de interés</span>
         </div>
-        <div class="border border-gray p-2 form-group bg-primary text-white rounded" style="background-color: rgb(212, 216, 233);">
+        <div class="border border-gray p-2 form-group text-white rounded" style="background-color: rgb(174, 0, 255);">
           <div class="form-row d-flex justify-content-center">
             <ng-container
               *ngFor="let item of curriculum.categories; let i = index"
@@ -327,7 +327,8 @@
           class="d-flex justify-content-center addButton"
           (click)="addCategories()"
         >
-          <span class="material-icons text-primary"> add </span>
+          <!-- <span class="material-icons text-primary"> add </span> -->
+          <span class="badge badge-pill badge-success" style="font-size: 1.2rem;background-color: rgb(174, 0, 255);">Añadir más</span>
         </span>
       </div>
       <span class="d-flex justify-content-center mb-3">

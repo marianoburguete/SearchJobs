@@ -48,16 +48,18 @@
             </ng-container>
             <ng-template #elseTemplate>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" *ngIf="authService.user.role === 'cliente'">
-                        <a [routerLink]="['/usuario/notificaciones']">
-                            <span style="color: red;">{{notificationsCount}}</span>
-                            <span class="material-icons">
-                                notifications
+                    <li class="nav-item notificationsIcon d-flex align-items-center" *ngIf="authService.user.role === 'cliente'">
+                        <a [routerLink]="['/usuario/notificaciones']" class="mr-3" style="text-decoration: none;">
+                            <span class="badge badge-pill badge-warning notificationsText">
+                                <span class="hideTextNotification">Tienes </span>{{notificationsCount}} <span class="hideTextNotification">notificaciones </span>
+                                <span class="material-icons">
+                                    notifications_none
+                                    </span>
                             </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-primary" (click)="logout()">Desconectar</button>
+                        <button type="button" class="btn btn-secondary logoutBtn" (click)="logout()"><img src="../../../../assets/icons/logout.svg" width="20">  <span class="hideLogoutText"> Desconectar</span></button>
                     </li>
                 </ul>
             </ng-template>

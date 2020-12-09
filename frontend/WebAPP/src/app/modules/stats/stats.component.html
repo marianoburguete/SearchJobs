@@ -11,8 +11,20 @@
       </ngx-charts-pie-grid>
     </div>
   </div>
-  <div class="row d-flex justify-content-center applicationsXInterviews">
-    <p class="display-4 pt-3 text-white">Postulaciones vs Entrevistas</p>
+  <div class="row d-flex justify-content-center popularSearches applicationsXInterviews">
+    <p class="display-4 pt-3 text-white">Búsquedas populares en los últimos 30 días</p>
+    <div class="col-12 d-flex justify-content-center">
+      <ngx-charts-number-card
+      (window:resize) = "onResizePerCategory($event)"
+      [view]="viewPerCategory"
+      [results]="popularSearches"
+      [scheme]="colorSchemeCategories"
+      >
+      </ngx-charts-number-card>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center ">
+    <p class="display-4 pt-3">Postulaciones vs Entrevistas</p>
     <div class="col-12 d-flex justify-content-center">
       <ngx-charts-line-chart
       (window:resize) = "onResizePerCategory($event)"
@@ -29,18 +41,6 @@
       [results]="applicationsXInterviews"
       >
       </ngx-charts-line-chart>
-    </div>
-  </div>
-  <div class="row d-flex justify-content-center popularSearches">
-    <p class="display-4 pt-3 ">Búsquedas populares en los últimos 30 días</p>
-    <div class="col-12 d-flex justify-content-center">
-      <ngx-charts-number-card
-      (window:resize) = "onResizePerCategory($event)"
-      [view]="viewPerCategory"
-      [results]="popularSearches"
-      [scheme]="colorSchemeCategories"
-      >
-      </ngx-charts-number-card>
     </div>
   </div>
 </div>

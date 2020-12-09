@@ -9,3 +9,30 @@ hr {
 // .nav-link { 
 //     color: yellow; 
 // } 
+
+.logoutBtn:hover {
+    background-color: rgba(255, 153, 0, 0.822);
+    .hideLogoutText {
+        display: inline;
+    }
+}
+
+.notificationsText {
+    font-size: 1rem;
+}
+
+.notificationsText:hover {
+    display: block;
+    .hideTextNotification {
+        display: inline;
+    }
+    text-decoration: none;
+}
+
+.hideTextNotification {
+    display: none;
+}
+
+.hideLogoutText {
+    display: none;
+}

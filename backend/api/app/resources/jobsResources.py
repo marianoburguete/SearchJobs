@@ -100,7 +100,7 @@ class JobsCompuTrabajoRA(Resource):
                     j.contract_type = 'defined'
                 else:
                     j.contract_type = 'other'
-                if job['salary'] == 'A convenir':
+                if job['salary'] == 'A convenir' or job['salary'] is None or job['salary'] == '':
                     j.salary = None
                     j.salary_max = None
                 else:

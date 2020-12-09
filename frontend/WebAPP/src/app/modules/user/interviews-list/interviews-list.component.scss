@@ -115,3 +115,13 @@
     
     .thin::-webkit-scrollbar {
     width: 5px; }
+
+    .rowSelected {
+        :hover {
+            background-color: rgb(138, 138, 138);
+            color: white;
+            a { 
+                color: white;
+            }
+        }
+    }

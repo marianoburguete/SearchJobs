@@ -5,3 +5,13 @@
 .page-link:hover {
     cursor: pointer;
 }
+
+.rowSelected {
+    :hover {
+        background-color: rgb(138, 138, 138);
+        color: white;
+        a { 
+            color: white;
+        }
+    }
+}

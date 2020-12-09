@@ -28,7 +28,15 @@
                     </tr>
                     <tr>
                         <th>Fecha</th>
-                        <td><input type="datetime-local" [(ngModel)]="interview.date_interview"></td>
+                        <td>
+                           <ng-container *ngIf="changeDate == false; else changeDateT">
+                                {{interview.date_interview | date:"short"}} <a class="d-flex float-right puntero" style="cursor: pointer;" (click)="changeDateF()">Cambiar fecha</a>
+                           </ng-container>
+                           <ng-template #changeDateT>
+                                <input type="datetime-local" [(ngModel)]="interview.date_interview">
+                           </ng-template>
+                        </td>
+                        
                     </tr>
                     <tr>
                         <th>Anotaciones</th>

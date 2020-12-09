@@ -56,3 +56,5 @@ class InterviewGetAllSchema(ma.Schema):
     user = fields.Integer()
     job = fields.Integer()
     unread = fields.Boolean()
+    order = fields.String()
+    orderByInterviewDate = fields.String()
