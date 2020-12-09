@@ -52,6 +52,7 @@ class JobsSearchR(Resource):
         s.save()
         return makePagResponse(pagResult, JobSearchResultsSchema())
 
+
 class JobsCompany(Resource):
     def post(self):
         data = request.get_json()
@@ -59,7 +60,8 @@ class JobsCompany(Resource):
             raise BadRequest('No se encontraron los filtros.')
         pagResult = Job.get_pag_company(data)
         return makePagResponse(pagResult, JobSearchResultsSchema())
-        
+
+
 api.add_resource(JobR, '/api/jobs/<int:id>')
 api.add_resource(JobsSearchR, '/api/jobs/search')
 api.add_resource(JobsCompany, '/api/jobs/company')
@@ -106,7 +108,8 @@ class JobsCompuTrabajoRA(Resource):
                         j.salary = None
                         j.salary_max = None
                     else:
-                        s = int(job['salary'].split()[1].replace(',00', '').replace('.',''))
+                        s = int(job['salary'].split()[1].replace(
+                            ',00', '').replace('.', ''))
                         j.salary = s
                         j.salary_max = s
                     j.description = job['description']
@@ -153,7 +156,7 @@ class JobsCompuTrabajoRA(Resource):
                         category = 'investigacion/calidad'
                     else:
                         category = 'otros'
-                    
+
                     cat = Category.getByName(category)
                     if cat is None:
                         cat = Category(category)
@@ -163,7 +166,8 @@ class JobsCompuTrabajoRA(Resource):
                         cat.save()
 
                     # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
-                    j.subcategory_id = Subcategory.getByName('general' + category).id
+                    j.subcategory_id = Subcategory.getByName(
+                        'general' + category).id
 
                     for requirement in job['requirements']:
                         r = requirement.split(':')
@@ -188,7 +192,7 @@ class JobsCompuTrabajoRA(Resource):
                     activeJobs.append(j.id)
             else:
                 activeJobs.append(jobExists.id)
-        
+
         allJobs = Job.get_all_by_url('computrabajo')
         for job in allJobs:
             if job.id in activeJobs:
@@ -198,6 +202,7 @@ class JobsCompuTrabajoRA(Resource):
                 job.save()
 
         return "Ok", 201
+
 
 class JobsMipleoRA(Resource):
     def post(self):
@@ -209,6 +214,7 @@ class JobsMipleoRA(Resource):
         for job in data:
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
+                if detect(job['description']) == 'es':
                 j = Job(job['url'], job['title'])
                 last_id = j.get_id()[0]['setval']
                 if last_id is not None:
@@ -238,7 +244,8 @@ class JobsMipleoRA(Resource):
                     j.salary = None
                     j.salary_max = None
                 else:
-                    s = job['salary'].split()[1].replace(',00', '').replace('.','')
+                    s = job['salary'].split()[1].replace(
+                        ',00', '').replace('.', '')
                     j.salary = s
                     j.salary_max = s
                 j.description = job['description']
@@ -278,7 +285,7 @@ class JobsMipleoRA(Resource):
                     category = 'investigacion/calidad'
                 else:
                     category = 'otros'
-                
+
                 cat = Category.getByName(category)
                 if cat is None:
                     cat = Category(category)
@@ -288,7 +295,8 @@ class JobsMipleoRA(Resource):
                     cat.save()
 
                 # aca iria todo el chorrete de if para la subcategoria, por ahora lo metemos en general
-                j.subcategory_id = Subcategory.getByName('general' + category).id
+                j.subcategory_id = Subcategory.getByName(
+                    'general' + category).id
 
                 if job['requirements'] is not None:
                     for requirement in job['requirements']:
@@ -312,7 +320,7 @@ class JobsMipleoRA(Resource):
                 activeJobs.append(j.id)
             else:
                 activeJobs.append(jobExists.id)
-        
+
         allJobs = Job.get_all_by_url('mipleo')
         for job in allJobs:
             if job.id in activeJobs:
@@ -323,6 +331,7 @@ class JobsMipleoRA(Resource):
 
         return "Ok", 201
 
+
 class JobsWorkanaRA(Resource):
     def post(self):
         user_id = validateToken(request, 'funcionario')
@@ -330,7 +339,8 @@ class JobsWorkanaRA(Resource):
         if 'Scrapy' in request.headers:
             data = json.loads(data)
         activeJobs = []
-        response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
+        response = requests.get(
+            "https://cotizaciones-brou.herokuapp.com/api/currency/latest")
         jsonResponse = response.json()
         cotiz = jsonResponse["rates"]["USD"]["buy"]
         for job in data:
@@ -343,7 +353,7 @@ class JobsWorkanaRA(Resource):
                 else:
                     j.id = 1
                 j.location = 'remote'
-                if 'workday' in job and job['workday'] == 'Tiempo completo': 
+                if 'workday' in job and job['workday'] == 'Tiempo completo':
                     j.workday = 'FullTime'
                 elif 'workday' in job and job['workday'] == 'A tiempo parcial':
                     j.workday = 'PartTime'
@@ -351,9 +361,9 @@ class JobsWorkanaRA(Resource):
                     j.workday = 'notspecified'
                 if 'contract_type' in job and job['contract_type'] == 'Fecha de entrega: No definido':
                     j.contract_type = 'undefined'
-                else: 
+                else:
                     j.contract_type = 'defined'
-                s = job['salary'].replace('.','')
+                s = job['salary'].replace('.', '')
                 salaryArray = [int(s) for s in re.findall(r'-?\d+\.?\d*', s)]
 
                 if 'Menos de' in job['salary']:
@@ -363,7 +373,7 @@ class JobsWorkanaRA(Resource):
                 else:
                     j.salary = salaryArray[0]*cotiz
                     j.salary_max = salaryArray[1]*cotiz
-                
+
                 j.description = job['description']
                 category = ''
                 if job['category'] == 'Programación y Tecnología' or job['category'] == 'Programación Web' or job['category'] == 'Diseño Web' or job['category'] == 'Tiendas virtuales (ecommerce)' or job['category'] == 'Wordpress' or job['category'] == 'Programación de Apps. Android, iOS y otros' or job['category'] == 'Data Science' or job['category'] == 'Aplicaciones de escritorio':
@@ -392,12 +402,14 @@ class JobsWorkanaRA(Resource):
                     cat.subcategories.append(subCategory)
                     cat.save()
 
-                j.subcategory_id = Subcategory.getByName('general' + category).id
+                j.subcategory_id = Subcategory.getByName(
+                    'general' + category).id
 
                 j.save()
                 if job['requirements'] is not None:
                     for requirement in job['requirements']:
-                        j.requirements.append(Requirement(requirement, requirement))
+                        j.requirements.append(
+                            Requirement(requirement, requirement))
                     j.save()
 
                 c = Company.get_by_name('Workana')
@@ -413,7 +425,7 @@ class JobsWorkanaRA(Resource):
                         c.id = 1
                     c.jobs.append(j)
                     c.save()
-                    
+
                 activeJobs.append(j.id)
             else:
                 activeJobs.append(jobExists.id)
@@ -438,8 +450,9 @@ class JobRA(Resource):
                 'msg': 'Ok',
                 'results': JobSchema().dump(j)
             }
-            return make_response(jsonify(res), 200)  
+            return make_response(jsonify(res), 200)
         raise ObjectNotFound('No existe un trabajo para el Id dado.')
+
 
 class JobsSearchByTitleRA(Resource):
     def post(self):
@@ -450,6 +463,7 @@ class JobsSearchByTitleRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+
 class JobRecommendedUsersRA(Resource):
     def get(self, id):
         user_id = validateToken(request, 'funcionario')
@@ -459,16 +473,18 @@ class JobRecommendedUsersRA(Resource):
         }
         return make_response(jsonify(res), 200)
 
+
 class JobSalaryUSD(Resource):
     def get(self, id):
         j = Job.search_by_id(id)
         if j is not None:
             if j.salary is not None:
-                response = requests.get("https://cotizaciones-brou.herokuapp.com/api/currency/latest")
+                response = requests.get(
+                    "https://cotizaciones-brou.herokuapp.com/api/currency/latest")
                 jsonResponse = response.json()
                 cotiz = jsonResponse["rates"]["USD"]["buy"]
                 res = {
-                    'result': round(j.salary/cotiz,0)  
+                    'result': round(j.salary/cotiz, 0)
                 }
                 return make_response(jsonify(res), 200)
             return make_response(jsonify(0), 200)
