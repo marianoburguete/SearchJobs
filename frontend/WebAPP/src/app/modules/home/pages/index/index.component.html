@@ -1,6 +1,11 @@
 <header class=" portada">
     <div class="container text-center">
-        <h1>Bienvenidos</h1><br><h1>a SearchJobs!</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <img src="../../../../../assets/images/logo_render.png" class="img-fluid">
+            </div>
+        </div>
+        <!-- <h1>Bienvenidos</h1><br><h1>a SearchJobs!</h1> -->
         <br><br>
         <p class="lead">Te ayudamos a encontrar un trabajo mejor</p>
         <p class="lead">Haz que tu currículum sea visible para miles de empresas</p>
@@ -8,12 +13,12 @@
         <form [formGroup]="searchForm">
             <div class="row">
                 <div class="col-lg-10 col-md-10">
-                    <input class="form-control" type="text" placeholder="Comienza con tu Busqueda!"
+                    <input (ngModel)="searchIndex" class="form-control" type="text" placeholder="Comienza con tu Busqueda!"
                         (keyup)="searchTextRecomendations($event)" aria-label="Search">
                 </div>
                 <div class="col-md-2">
                     <button [routerLink]="['/trabajo']" [queryParams]="{
-        search: searchForm.controls['search'].value,
+        search: searchIndex,
         page: 1
       }" class="btn btn-success" style="width: 100%">
                         Buscar
