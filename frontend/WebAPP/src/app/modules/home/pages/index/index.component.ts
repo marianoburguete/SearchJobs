@@ -25,6 +25,7 @@ export class IndexComponent implements OnInit {
   previousPageNumber = null;
   lastPageNumber = null;
   totalResults = 0;
+  searchIndex = '';
 
   constructor(
     private _jobService: JobService,

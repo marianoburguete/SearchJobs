@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
-                <img src="../../../../../assets/images/logo_proyecto_sin_fondo.png" class="img-fluid">
+                <img src="../../../../../assets/images/logo_render.png" class="img-fluid">
             </div>
         </div>
         <!-- <h1>Bienvenidos</h1><br><h1>a SearchJobs!</h1> -->
@@ -13,12 +13,12 @@
         <form [formGroup]="searchForm">
             <div class="row">
                 <div class="col-lg-10 col-md-10">
-                    <input class="form-control" type="text" placeholder="Comienza con tu Busqueda!"
+                    <input (ngModel)="searchIndex" class="form-control" type="text" placeholder="Comienza con tu Busqueda!"
                         (keyup)="searchTextRecomendations($event)" aria-label="Search">
                 </div>
                 <div class="col-md-2">
                     <button [routerLink]="['/trabajo']" [queryParams]="{
-        search: searchForm.controls['search'].value,
+        search: searchIndex,
         page: 1
       }" class="btn btn-success" style="width: 100%">
                         Buscar
