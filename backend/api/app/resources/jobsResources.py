@@ -215,40 +215,44 @@ class JobsMipleoRA(Resource):
             jobExists = Job.search_by_url(job['url'])
             if jobExists is None:
                 if detect(job['description']) == 'es':
-                    j = Job(job['url'], job['title'])
-                    last_id = j.get_id()[0]['setval']
-                    if last_id is not None:
-                        j.id = j.get_id()[0]['setval']+1
-                    else:
-                        j.id = 1
-                    j.location = job['location']
-                    if job['workday'] == 'Tiempo Completo':
-                        j.workday = 'FullTime'
-                    elif job['workday'] == 'Medio Tiempo':
-                        j.workday = 'ParTime'
-                    elif job['workday'] == 'Por Horas':
-                        j.workday = 'ParTime'
-                    elif job['workday'] == 'Tiempo parcial':
-                        j.workday = 'ParTime'
-                    elif job['workday'] == 'A convenir':
-                        j.workday = 'NotSpecified'
-                    if job['contract_type'] == 'Contrato por tiempo indefinido':
-                        j.contract_type = 'undefined'
-                    elif job['contract_type'] == 'Contrato por tiempo determinado':
-                        j.contract_type = 'defined'
-                    elif job['contract_type'] == 'Contrato a Plazo Indeterminado':
-                        j.contract_type = 'undefined'
-                    else:
-                        j.contract_type = 'other'
-                    if job['salary'] == 'A convenir':
-                        j.salary = None
-                        j.salary_max = None
-                    else:
-                        s = job['salary'].split()[1].replace(
-                            ',00', '').replace('.', '')
-                        j.salary = s
-                        j.salary_max = s
-                    j.description = job['description']
+                j = Job(job['url'], job['title'])
+                last_id = j.get_id()[0]['setval']
+                if last_id is not None:
+                    j.id = j.get_id()[0]['setval']+1
+                else:
+                    j.id = 1
+                j.location = job['location']
+                if job['workday'] == 'Tiempo Completo':
+                    j.workday = 'FullTime'
+                elif job['workday'] == 'Medio Tiempo':
+                    j.workday = 'ParTime'
+                elif job['workday'] == 'Por Horas':
+                    j.workday = 'ParTime'
+                elif job['workday'] == 'Tiempo parcial':
+                    j.workday = 'ParTime'
+                elif job['workday'] == 'A convenir':
+                    j.workday = 'NotSpecified'
+                elif job['workday'] == '':
+                    j.workday = 'NotSpecified'    
+                if job['contract_type'] == 'Contrato por tiempo indefinido':
+                    j.contract_type = 'undefined'
+                elif job['contract_type'] == 'Contrato por tiempo determinado':
+                    j.contract_type = 'defined'
+                elif job['contract_type'] == '':
+                    j.contract_type = 'undefined'
+                elif job['contract_type'] == 'Contrato a Plazo Indeterminado':
+                    j.contract_type = 'undefined'
+                else:
+                    j.contract_type = 'other'
+                if job['salary'] == 'A convenir' or job['salary'] is None or job['salary'] == '':
+                    j.salary = None
+                    j.salary_max = None
+                else:
+                    s = job['salary'].split()[1].replace(
+                        ',00', '').replace('.', '')
+                    j.salary = s
+                    j.salary_max = s
+                j.description = job['description']
 
                     category = ''
                     if job['category'] == 'Diseño / Decoración / Artes Gráficas':
