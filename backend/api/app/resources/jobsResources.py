@@ -232,15 +232,19 @@ class JobsMipleoRA(Resource):
                     j.workday = 'ParTime'
                 elif job['workday'] == 'A convenir':
                     j.workday = 'NotSpecified'
+                elif job['workday'] == '':
+                    j.workday = 'NotSpecified'    
                 if job['contract_type'] == 'Contrato por tiempo indefinido':
                     j.contract_type = 'undefined'
                 elif job['contract_type'] == 'Contrato por tiempo determinado':
                     j.contract_type = 'defined'
+                elif job['contract_type'] == '':
+                    j.contract_type = 'undefined'
                 elif job['contract_type'] == 'Contrato a Plazo Indeterminado':
                     j.contract_type = 'undefined'
                 else:
                     j.contract_type = 'other'
-                if job['salary'] == 'A convenir':
+                if job['salary'] == 'A convenir' or job['salary'] is None or job['salary'] == '':
                     j.salary = None
                     j.salary_max = None
                 else:
