@@ -22,6 +22,7 @@ import { ListJobsModalComponent } from '../../core/components/list-jobs-modal/li
 import { MessageStatusPipe, InterviewStatusPipe } from '../../core/pipes/interview-pipe';
 import { DayOrDaysPipe } from '../../core/pipes/day-or-days-pipe';
 import { CategoriesNamesPipe } from '../../core/pipes/categories-pipe';
+import { ChatMessageClassPipe } from '../../core/pipes/chat-message-class-pipe';
 
 
 
@@ -33,7 +34,8 @@ import { CategoriesNamesPipe } from '../../core/pipes/categories-pipe';
     MessageStatusPipe,
     InterviewStatusPipe,
     DayOrDaysPipe,
-    CategoriesNamesPipe
+    CategoriesNamesPipe,
+    ChatMessageClassPipe
   ],
   imports: [
     CommonModule,
@@ -58,7 +60,8 @@ import { CategoriesNamesPipe } from '../../core/pipes/categories-pipe';
     MessageStatusPipe,
     InterviewStatusPipe,
     DayOrDaysPipe,
-    CategoriesNamesPipe
+    CategoriesNamesPipe,
+    ChatMessageClassPipe
   ]
 })
 export class SharedModule { }

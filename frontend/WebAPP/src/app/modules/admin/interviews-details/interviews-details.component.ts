@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertDTO } from 'src/app/core/models/alertDto';
 import { InterviewService } from 'src/app/core/services/http/interview.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
+import { AuthService } from '../../../core/services/http/auth.service';
 
 @Component({
   selector: 'app-interviews-details',
@@ -30,7 +31,8 @@ export class InterviewsDetailsComponent implements OnInit {
     private interviewService: InterviewService,
     private spinnerService: SpinnerService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService : AuthService
   ) {}
 
   ngOnInit() {
@@ -78,7 +80,7 @@ export class InterviewsDetailsComponent implements OnInit {
     if (id === this.interview.user.id) {
       return this.interview.user.email;
     } else {
-      return 'Administrador';
+      return 'Yo';
     }
   }
 

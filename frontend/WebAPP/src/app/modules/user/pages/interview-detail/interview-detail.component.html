@@ -29,23 +29,36 @@
         <div class="col-md-5 messages-box">
             <div class="messages scrollbar-pink bordered-primary thin">
                 <div class="row" *ngFor="let m of interview.messages">
-                    <div class="card" style="width: 100%;">
-                        <div class="card-body">
-                          <h5 class="card-title">{{messageWho(m.created_by)}}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">{{m.created_at | date:"short"}} - {{m.status | messageStatusPipe}}</h6>
-                          <p class="card-text">{{m.text}}</p>
-                        </div>
+                    <div class="col-12">
+                        <ng-container *ngIf="authService.getUser().id == m.created_by; else elseTemplate">
+                            <div class="card chatBox" style="width: 100%;font-size: 1rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"short"}}</span></h5>
+                                  <hr>
+                                  <p class="card-text">{{m.text}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <div class="card chatBox1" style="width: 100%;font-size: 1rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title -flex" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"short"}}</span></h5>
+                                  <hr>
+                                  <p class="card-text">{{m.text}}</p>
+                                </div>
+                            </div>
+                        </ng-template>
                     </div>
                 </div>
             </div>
-            <div class="row write-message-box mt-4">
+            <div class="row write-message-box mt-4 d-flex align-items-center">
                 <div class="col-11">
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="newMessage"></textarea>
+                        <textarea class="form-control newMessage" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="newMessage"></textarea>
                     </div>
                 </div>
                 <div class="col-1">
-                    <span class="material-icons" style="color: skyblue;" (click)="addMessage()">
+                    <span class="material-icons sendIcon" style="color: skyblue;" (click)="addMessage()">
                         send
                     </span>
                 </div>

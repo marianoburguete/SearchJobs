@@ -38,13 +38,25 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-12">
                                 <ul style="list-style: none; font-size: 1.1rem;">
                                     <li *ngFor="let item of jobDetails.requirements" class="pb-2">
                                         {{item.key}}: {{item.value}}
                                     </li>
                                 </ul>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tbody>
+                                        <tr *ngFor="let item of jobDetails.requirements">
+                                            <th *ngIf="item.key != item.value" class="requirementKey">{{item.key}}</th>
+                                            <td class="requirementValue">{{item.value}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -54,28 +66,46 @@
         <div class="col-md-3 border rounded" id="services_block">
             <br><br>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 d-flex align-item-center">
+                    <span class="material-icons">
+                        access_time
+                    </span>
                     <h3>Jornada : {{jobDetails.workday | workdayFormatPipe}}</h3>
                 </div>
             </div>
+            <hr>
             <div class="row">
-                <div class="col-12">
-                   <h3>Salario (UYU) : {{jobDetails.salary | salaryFormatPipe}}</h3> 
+                <div class="col-12 d-flex align-item-center">
+                    <span class="material-icons">
+                        attach_money
+                    </span>
+                   <h3>Salario</h3> 
+                </div>
+                <div class="col-12 text-center">
+                    <h3><img src="../../../../../assets/icons/uruguay.svg" class="img-fluid" width="25px"> {{jobDetails.salary | salaryFormatPipe}}</h3>
+                </div>
+                <div class="col-12 text-center">
+                    <h3><img src="../../../../../assets/icons/united-states-of-america.svg" class="img-fluid" width="25px">  {{salaryUsd | salaryFormatPipe}}</h3> 
+                 </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 d-flex align-item-center">
+                    <span class="material-icons">
+                        location_on
+                    </span>
+                    <h3>
+                    Ubicación : {{jobDetails.location | localizationFormatPipe}}</h3>
                 </div>
             </div>
+            <hr>
             <div class="row">
-                <div class="col-12">
-                   <h3>Salario (USD) : {{salaryUsd | salaryFormatPipe}}</h3> 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h3>Ubicación : {{jobDetails.location | localizationFormatPipe}}</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h3>Contrato : {{jobDetails.contract_type | contractFormatPipe}}</h3>
+                <div class="col-12 d-flex align-item-center">
+                    <span class="material-icons">
+                        description
+                    </span>
+                    <h3>
+                    Contrato : {{jobDetails.contract_type | contractFormatPipe}}</h3>
                 </div>
             </div>
                     <div class="row mt-4 d-flex justify-content-center">
