@@ -23,6 +23,8 @@ class Company(db.Model, BaseModelMixin):
     def get_pag(cls, data):
         filtro = cls.query
 
+        filtro = filtro.filter(db.or_(~Company.name.contains('Workana')))
+
         if 'search' in data and data['search'] is not None:
             filtro = filtro.filter(db.or_(Company.name.contains(data['search'].strip())))
 

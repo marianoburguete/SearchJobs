@@ -36,3 +36,16 @@ hr {
 .hideLogoutText {
     display: none;
 }
+
+.sectionsNavbar {
+    li:hover {
+        background-color: #677079;
+        border-radius: 1rem;
+        a {
+            color: rgb(255, 255, 255);
+        }
+    }
+    a {
+        color: rgb(201, 201, 201);
+    }
+}

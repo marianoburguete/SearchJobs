@@ -59,7 +59,7 @@ export class InterviewDetailComponent implements OnInit {
 
   messageWho(id):string {
     if (id === this.userSession.id) {
-      return this.userSession.email;
+      return 'Yo';
     } else {
       return 'Administrador';
     }
