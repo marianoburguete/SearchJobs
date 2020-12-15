@@ -50,8 +50,8 @@ export class UserService {
 
   addCurriculum(data) {
     const userSession = this.authService.getUser();
-    data.birth_date = data.birth_date.toISOString();
-    data.birth_date = data.birth_date.slice(0, -1);
+    // data.birth_date = data.birth_date.toISOString();
+    // data.birth_date = data.birth_date.slice(0, -1);
     return this.httpClient.post(this.prefix + '/' + userSession.id + '/curriculum', data,{headers: this.authService.getheaders().headers});
   }
   
