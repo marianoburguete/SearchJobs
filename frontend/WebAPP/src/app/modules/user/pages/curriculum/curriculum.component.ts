@@ -147,33 +147,38 @@ export class CurriculumComponent implements OnInit {
   submitCurriculum() {
     this.spinnerService.callSpinner();
     this.alert.show = false;
-    if (this.curriculum.phone == null) {
+    if (this.curriculum.phone == null || this.curriculum.phone.length < 1) {
       this.alert.msg = 'El teléfono es obligatorio.';
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
+      this.spinnerService.stopSpinner();
     }
     else {
       this.curriculum.phone = this.curriculum.phone.toString();
     }
-    if (this.curriculum.name == null) {
+    if (this.curriculum.name == null || this.curriculum.name.length < 1) {
       this.alert.msg = 'El nomrbe es obligatorio.';
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
+      this.spinnerService.stopSpinner();
     }
-    if (this.curriculum.birth_date == null) {
+    if (this.curriculum.birth_date == null || this.curriculum.birth_date.length < 1) {
       this.alert.msg = 'la fecha de nacimiento es obligatoria.';
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
+      this.spinnerService.stopSpinner();
     }
-    if (this.curriculum.address == null) {
+    if (this.curriculum.address == null || this.curriculum.address.length < 1) {
       this.alert.msg = 'La dirección es obligatoria.';
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
+      this.spinnerService.stopSpinner();
     }
-    if (this.curriculum.country == null) {
+    if (this.curriculum.country == null || this.curriculum.country.length < 1) {
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
       this.alert.msg = 'El país es obligatorio.';
+      this.spinnerService.stopSpinner();
     }
 
     if (this.alert.show === false) {

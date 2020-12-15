@@ -57,7 +57,7 @@
                         <ng-container *ngIf="authService.getUser().id == m.created_by; else elseTemplate">
                             <div class="card chatBox" style="width: 100%;font-size: 1rem;">
                                 <div class="card-body">
-                                  <h5 class="card-title" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"short"}}</span></h5>
+                                  <h5 class="card-title" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"d/M/yy, h:mm"}}</span></h5>
                                   <hr>
                                   <p class="card-text">{{m.text}}</p>
                                 </div>
@@ -66,7 +66,7 @@
                         <ng-template #elseTemplate>
                             <div class="card chatBox1" style="width: 100%;font-size: 1rem;">
                                 <div class="card-body">
-                                  <h5 class="card-title -flex" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"short"}}</span></h5>
+                                  <h5 class="card-title -flex" style="font-size: 1rem;">{{messageWho(m.created_by)}} <span class="float-right">{{m.created_at | date:"d/M/yy, h:mm"}}</span></h5>
                                   <hr>
                                   <p class="card-text">{{m.text}}</p>
                                 </div>

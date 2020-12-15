@@ -40,7 +40,7 @@ class Curriculum(db.Model, BaseModelMixin):
             sqlQueryStringBeforeWhere += ', curriculum__category as cc'
             sqlQueryStringAfterWhere += ' and cc.curriculum_id = c.id and u.id = c.user_id and cat.id = ' + str(data['filters']['category']) + ' and cc.category_id = cat.id'
         
-        if 'language' in data['filters'] and data['filters']['language'] is not None and data['filters']['language'][0] != '' and data['filters']['language'][0] != ' ':
+        if 'language' in data['filters'] and data['filters']['language'] is not None and len(data['filters']['language']) > 0 and data['filters']['language'][0] != ' ':
             sqlQueryStringBeforeWhere += ', language as l'
             sqlQueryStringAfterWhere += " and l.name = '" + data['filters']['language'] + "' and l.curriculum_id = c.id"
         
