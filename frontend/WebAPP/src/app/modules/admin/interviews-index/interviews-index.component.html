@@ -40,8 +40,8 @@
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-12">
-          <div class="form-inline">
+        <div class="col-md-6">
+          <div class="">
             <label for="staus">Estado</label>
             <select class="form-control ml-2" name="status" [(ngModel)]="statusFilter">
               <option value="created">En negociación</option>
@@ -53,10 +53,23 @@
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col-12">
-          <div class="form-inline">
+        <div class="col-md-6">
+          <div class="">
             <label for="staus">Orden</label>
             <select class="form-control ml-2" name="status" [(ngModel)]="orderFilter">
+              <option value="any">Cualquiera</option>
+              <option value="asc">Más antiguos</option>
+              <option value="desc">Más recientes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="">
+            <label for="staus">Fecha de entrevista</label>
+            <select class="form-control ml-2" name="status" [(ngModel)]="orderDateInterviewFilter">
+              <option value="any">Cualquiera</option>
               <option value="asc">Más antiguos</option>
               <option value="desc">Más recientes</option>
             </select>

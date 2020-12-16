@@ -44,15 +44,16 @@ class Interview(db.Model, BaseModelMixin):
             if data['unread']:
                 filtro = filtro.filter(Message.status == 'unread').filter(Message.created_by != Interview.created_by).join(Interview.messages)
 
-        if 'order' in data and data['order'] == 'asc':
-            filtro = filtro.order_by(cls.created_at.asc())
-        else:
-            filtro = filtro.order_by(cls.created_at.desc())
-        
-        if 'orderByInterviewDate' in data and data['orderByInterviewDate'] == 'asc':
-            filtro = filtro.order_by(cls.date_interview.asc())
-        else:
-            filtro = filtro.order_by(cls.date_interview.desc())
+        if 'order' in data and data['order'] is not None and data['order'] != 'any':
+            if data['order'] == 'asc':
+                filtro = filtro.order_by(cls.created_at.asc())
+            elif data['order'] == 'desc':
+                filtro = filtro.order_by(cls.created_at.desc())
+        elif 'orderByInterviewDate' in data and data['orderByInterviewDate'] is not None and data['orderByInterviewDate'] != 'any':
+            if data['orderByInterviewDate'] == 'asc':
+                filtro = filtro.order_by(cls.date_interview.asc())
+            elif data['orderByInterviewDate'] == 'desc':
+                filtro = filtro.order_by(cls.date_interview.desc())
 
         if 'page' in data and 'per_page' in data:
             return filtro.paginate(int(data['page']), int(data['per_page']), False, 40)

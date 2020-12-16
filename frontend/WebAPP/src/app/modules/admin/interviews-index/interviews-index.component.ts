@@ -24,7 +24,8 @@ export class InterviewsIndexComponent implements OnInit {
   jobTitle: string = null;
   statusFilter: string = null;
   messagesStatusFilter: boolean = null;
-  orderFilter = 'desc';
+  orderFilter = 'any';
+  orderDateInterviewFilter = 'any';
 
   currentPage = 1;
   nextPage: number = null;
@@ -39,7 +40,8 @@ export class InterviewsIndexComponent implements OnInit {
         page: this.pageFilter,
         per_page: 10,
         status: 'created',
-        order: this.orderFilter
+        order: this.orderFilter,
+        orderByInterviewDate: this.orderDateInterviewFilter
       };
 
       if (param.get('page') != null) {
@@ -56,6 +58,15 @@ export class InterviewsIndexComponent implements OnInit {
       if (param.get('order') != null) {
         this.orderFilter = param.get('order');
         data.order = this.orderFilter;
+      }
+      else {
+        if (param.get('orderInterviewDate') != null) {
+          this.orderDateInterviewFilter = param.get('orderInterviewDate');
+          data.orderInterviewDate = this.orderDateInterviewFilter;
+        }
+      }
+      if (data.order === 'any' && data.orderInterviewDate === 'any') {
+        data.order = 'desc'
       }
       if(param.get('user') != null){
         this.userFilter = Number(param.get('user'));
@@ -97,7 +108,8 @@ export class InterviewsIndexComponent implements OnInit {
   filter() {
     let params:any = {
       status: this.statusFilter,
-      order: this.orderFilter
+      order: this.orderFilter,
+      orderByInterviewDate: this.orderDateInterviewFilter
     };
     if (this.userFilter != null) {
       params.user = this.userFilter;

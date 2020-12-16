@@ -7,12 +7,30 @@ from datetime import timedelta
 
 apiUrl = 'http://localhost:5000/api/'
 
-auth = {
-    'email': 'admin@email.com',
-    'password': 'password1'
-}
 
 if __name__ == "__main__":
+    auth = {
+        'email': '',
+        'password': ''
+    }
+
+    minutes = 120
+
+    while True:
+        print('Ingrese los datos de una cuenta tipo administrador')
+        print('Email: ')
+        auth['email'] = input()
+        print('Contraseña: ')
+        auth['password'] = input()
+        token = requests.post(apiUrl + 'auth/signin/', json=auth)
+        if token.status_code == 200:
+            break;
+        else:
+            print('Los datos ingresados no son válidos, vuelva a intentarlo')
+
+    print('Ingrese cada cuantos minutos quiere que se corra el script')
+    minutes = input()
+
     while True:
         start_time = datetime.now()
         token = requests.post(apiUrl + 'auth/signin/', json=auth)
@@ -35,4 +53,4 @@ if __name__ == "__main__":
         end_time = datetime.now()
         print('Escaneadas todas las paginas, tiempo transcurrido desde el inicio:',end_time - start_time)
         print('Se volvera a ejecutar un rastreo de datos el ', datetime.now() + timedelta(days=1))
-        time.sleep(60 * 60 * 12)
+        time.sleep(60 * minutes)

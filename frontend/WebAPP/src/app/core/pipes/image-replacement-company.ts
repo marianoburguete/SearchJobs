@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ImageReplacementCompany implements PipeTransform {
   transform(value: string): string {
     if (value == null) {
-        return 'https://via.placeholder.com/150x150';
+        return 'http://localhost:4200/assets/images/company-placeholder.png';
     } else {
         return value;
     }

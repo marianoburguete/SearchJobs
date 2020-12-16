@@ -1,7 +1,7 @@
 <app-message-alert [show]="alert.show" [msg]="alert.msg" (click)="alert.show = false" [errorCode]="alert.errorCode"></app-message-alert>
 <div class="container min-vh-100">
   <div class="p-4">
-    <div class="row border rounded">
+    <div class="row d=flex justify-content-center align-items-center">
       <div class="col-md-3" id="services_block">
           <br>
           <ng-container *ngIf="company.logo !== null; else elseTemplateImage">
@@ -11,15 +11,9 @@
               <img src="../../../../../assets/images/company-placeholder.png" class="img-fluid">
           </ng-template>
       </div>
-      <div class="col-md-9" id="services_block">
+      <div class="col-md-5" id="services_block">
           <br><br>
-          <span class="jobName; text-uppercase; font-weight-bold; h4">{{company.name}}</span>
-          <br><br>
-          <span class="h6">Descripción:</span>
-          <ng-container *ngIf="company.info !== null;">
-            <br>
-            <span class="desc">{{company.info}}</span>
-          </ng-container>
+          <span class="jobName; text-uppercase; font-weight-bold; display-4" >{{company.name}}</span>
           <br><br>
       </div>
     </div>
@@ -54,29 +48,35 @@
             </div>
             <ng-container *ngIf="authService.isLogged() && authService.getRole() == 'cliente';">
               <div class="row write-message-box mt-4">
-                <div class="col-md-12 text-center">
-                  <div class="col-11">
-                    <div class="form-group">
-                        <h3>Añade tu calificacion</h3>
-                        <div class="rate">
-                          <input type="radio" id="star5" name="rate" value="5" [(ngModel)]="rating"/>
-                          <label for="star5">5 stars</label>
-                          <input type="radio" id="star4" name="rate" value="4" [(ngModel)]="rating"/>
-                          <label for="star4">4 stars</label>
-                          <input type="radio" id="star3" name="rate" value="3" [(ngModel)]="rating"/>
-                          <label for="star3">3 stars</label>
-                          <input type="radio" id="star2" name="rate" value="2" [(ngModel)]="rating"/>
-                          <label for="star2">2 stars</label>
-                          <input type="radio" id="star1" name="rate" value="1" [(ngModel)]="rating"/>
-                          <label for="star1">1 star</label>
-                        </div>
-                        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje"></textarea>
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                      <h3>Añade tu calificacion</h3>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                      <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" [(ngModel)]="rating"/>
+                        <label for="star5">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" [(ngModel)]="rating"/>
+                        <label for="star4">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" [(ngModel)]="rating"/>
+                        <label for="star3">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" [(ngModel)]="rating"/>
+                        <label for="star2">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" [(ngModel)]="rating"/>
+                        <label for="star1">1 star</label>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-1">
-                    <span class="material-icons" style="color: skyblue;" (click)="addRating()">
-                        send
-                    </span>
+                  <div class="row d-flex align-items-center">
+                    <div class="col-10">
+                      <textarea class="form-control messageBox" id="exampleFormControlTextarea2" rows="3" [(ngModel)]="mensaje" placeholder="Deja un comentario"></textarea>
+                    </div>
+                    <div class="col-2">
+                      <span class="material-icons sendIcon" style="color: skyblue;" (click)="addRating()">
+                          send
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

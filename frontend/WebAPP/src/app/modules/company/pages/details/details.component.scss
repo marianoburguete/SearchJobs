@@ -3,10 +3,23 @@
   }
 
   div#services_block {
-    background-color: #ffffff;
-    border-left:3px solid white;
-    border-right:3px solid white;
+    // background-color: #ffffff;
+    // border-left:3px solid white;
+    // border-right:3px solid white;
    }
+
+   img {
+       max-width: 150px;
+       max-height: 150px;
+   }
+
+   .messageBox {
+        border-radius: 1rem;
+   }
+
+   .sendIcon:hover {
+        cursor: pointer;
+    }
   
   .ratings {
     border: 0.1rem;
