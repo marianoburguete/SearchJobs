@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.getNotifications();
-    setInterval(() => {this.getNotifications()}, 1000 * 15);
+    setInterval(() => {this.getNotifications()}, 1000 * 7);
   }
 
   logout() {
