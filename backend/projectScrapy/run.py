@@ -30,7 +30,6 @@ if __name__ == "__main__":
 
     print('Ingrese cada cuantos minutos quiere que se corra el script')
     minutes = int(input())
-    print(type(minutes))
 
     while True:
         start_time = datetime.now()
