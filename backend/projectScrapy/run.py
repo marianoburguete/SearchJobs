@@ -29,7 +29,8 @@ if __name__ == "__main__":
             print('Los datos ingresados no son válidos, vuelva a intentarlo')
 
     print('Ingrese cada cuantos minutos quiere que se corra el script')
-    minutes = input()
+    minutes = int(input())
+    print(type(minutes))
 
     while True:
         start_time = datetime.now()
