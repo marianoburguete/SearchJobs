@@ -26,6 +26,8 @@ export class ApplicationsIndexComponent implements OnInit {
   statusFilter: string = null;
   orderFilter = 'desc';
 
+  statusFilterTemp: string = null;
+
   currentPage = 1;
   nextPage: number = null;
   previousPage: number = null;
@@ -49,6 +51,7 @@ export class ApplicationsIndexComponent implements OnInit {
       if (param.get('status') != null) {
         this.statusFilter = param.get('status');
         data.status = this.statusFilter;
+        this.statusFilterTemp = this.statusFilter;
       }
       else{
         this.statusFilter = 'created';
@@ -105,7 +108,8 @@ export class ApplicationsIndexComponent implements OnInit {
   filter() {
     let params:any = {
       status: this.statusFilter,
-      order: this.orderFilter
+      order: this.orderFilter,
+      page: 1
     };
     if (this.userFilter != null) {
       params.user = this.userFilter;

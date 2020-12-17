@@ -96,18 +96,22 @@
         <table class="table">
           <thead>
             <th scope="col">Fecha</th>
+            <th scope="col" *ngIf="statusFilterTemp == 'confirmed'">Fecha de Entrevista</th>
             <th scope="col">Usuario</th>
             <th scope="col">Ver Usuario</th>
             <th scope="col">Trabajo</th>
-            <th scope="col">Ver</th>
+            <th scope="col">Ver Trabajo</th>
+            <th scope="col">Ver Entrevista</th>
           </thead>
           <tbody class="rowSelected">
             <tr *ngFor="let item of interviewsList">
               <td>{{ item.created_at | date}}</td>
-              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]">{{item.user.email}}</a></td>
-              <td><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]"><span class="material-icons">visibility</span></a></td>
-              <td><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}">{{item.job.title}}</a></td>
-              <td>
+              <td *ngIf="statusFilterTemp == 'confirmed'">{{ item.date_interview | date}}</td>
+              <td>{{item.user.email}}</td>
+              <td class="text-center"><a target="_blank" [routerLink]="[ '/admin/usuario', item.user.id ]"><span class="material-icons">person</span></a></td>
+              <td>{{item.job.title}}</td>
+              <td class="text-center"><a target="_blank" [routerLink]="[ '/trabajo/detalles']" [queryParams]="{id: item.job.id}"><span class="material-icons">work</span></a></td>
+              <td class="text-center">
                 <a [routerLink]="['/admin/entrevistas', item.id]"><span class="material-icons" style="color: green"> remove_red_eye </span></a>
               </td>
             </tr>
