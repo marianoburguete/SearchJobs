@@ -168,4 +168,11 @@ export class IndexComponent implements OnInit {
     let now: any = new Date();
     return Math.floor((now - da) / (1000 * 60 * 60 * 24));
   }
+
+  jobCompany(j) {
+    if (j == 'Workana') {
+      return null;
+    }
+    return j;
+  }
 }

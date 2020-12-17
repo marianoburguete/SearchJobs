@@ -26,6 +26,7 @@ class JobSchema(ma.Schema):
 
 class JobDetailsSchema(ma.Schema):
     id = fields.Integer(dump_only=True)
+    url = fields.String()
     title = fields.String()
     location = fields.String()
     workday = fields.String()

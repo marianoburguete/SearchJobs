@@ -6,6 +6,7 @@ import { UserService } from 'src/app/core/services/http/user.service';
 import { SpinnerService } from 'src/app/core/services/spinner.service';
 import { CategoryService } from '../../../../core/services/http/category.service';
 import { DatePipe } from '@angular/common';
+import { count } from 'console';
 
 @Component({
   selector: 'app-curriculum',
@@ -77,7 +78,7 @@ export class CurriculumComponent implements OnInit {
 
     if (mimeType.match(/image\/*/) == null) {
       this.alert.show = true;
-      this.alert.msg = 'Solo se soportan imagenes.';
+      this.alert.msg = 'Solo se soportan imágenes.';
       this.alert.errorCode = 'alert-danger';
       return;
     }
@@ -145,6 +146,7 @@ export class CurriculumComponent implements OnInit {
   }
 
   submitCurriculum() {
+    console.log(new Date((new Date().getTime() - new Date(this.curriculum.birth_date).getTime())));
     this.spinnerService.callSpinner();
     this.alert.show = false;
     if (this.curriculum.phone == null || this.curriculum.phone.length < 1) {
@@ -163,10 +165,27 @@ export class CurriculumComponent implements OnInit {
       this.spinnerService.stopSpinner();
     }
     if (this.curriculum.birth_date == null || this.curriculum.birth_date.length < 1) {
-      this.alert.msg = 'la fecha de nacimiento es obligatoria.';
+      this.alert.msg = 'La fecha de nacimiento es obligatoria.';
       this.alert.show = true;
       this.alert.errorCode = 'alert-danger';
       this.spinnerService.stopSpinner();
+    }
+    else if (!this.dateGreaterThanToday(this.curriculum.birth_date)) {
+      this.alert.msg = 'La fecha debe ser menor a la actual.';
+      this.alert.show = true;
+      this.alert.errorCode = 'alert-danger';
+      this.spinnerService.stopSpinner();
+    }
+    else {
+      let today = new Date();
+      let birthdayDate = new Date(this.curriculum.birth_date);
+      today.setUTCFullYear((today.getUTCFullYear() - birthdayDate.getUTCFullYear()));
+      if (today.getUTCFullYear() < 18) {
+        this.alert.msg = 'Debes ser mayor de dieciocho años para poder subir tu curriculum';
+        this.alert.show = true;
+        this.alert.errorCode = 'alert-danger';
+        this.spinnerService.stopSpinner();
+      }
     }
     if (this.curriculum.address == null || this.curriculum.address.length < 1) {
       this.alert.msg = 'La dirección es obligatoria.';
@@ -179,6 +198,65 @@ export class CurriculumComponent implements OnInit {
       this.alert.errorCode = 'alert-danger';
       this.alert.msg = 'El país es obligatorio.';
       this.spinnerService.stopSpinner();
+    }
+
+    this.curriculum.education.forEach(x => {
+      if (x.start_date == null) {
+        this.alert.show = true;
+        this.alert.errorCode = 'alert-danger';
+        this.alert.msg = 'Las fechas de inicio no pueden estar vacías';
+        this.spinnerService.stopSpinner();
+      }
+      else if (!this.dateGreaterThanToday(x.start_date)){
+        this.alert.msg = 'La fecha debe ser menor a la actual.';
+        this.alert.show = true;
+        this.alert.errorCode = 'alert-danger';
+        this.spinnerService.stopSpinner();
+      }
+      else if (x.end_date !== null){
+        if (new Date(x.start_date).getTime() > new Date(x.end_date).getTime()) {
+          this.alert.show = true;
+          this.alert.errorCode = 'alert-danger';
+          this.alert.msg = 'Las fechas de finalización no pueden ser menores a las de inicio';
+          this.spinnerService.stopSpinner();
+        }
+      }
+    });
+    
+    this.curriculum.workexperience.forEach(x => {
+      if (x.start_date == null) {
+        this.alert.show = true;
+        this.alert.errorCode = 'alert-danger';
+        this.alert.msg = 'Las fechas de inicio no pueden estar vacía';
+        this.spinnerService.stopSpinner();
+      }
+      else if (x.end_date !== null){
+        if (new Date(x.start_date).getTime() > new Date(x.end_date).getTime()) {
+          this.alert.show = true;
+          this.alert.errorCode = 'alert-danger';
+          this.alert.msg = 'Las fechas de finalización no pueden ser menores a las de inicio';
+          this.spinnerService.stopSpinner();
+        }
+      }
+    });
+
+    if (this.curriculum.categories.length < 1) {
+      this.alert.show = true;
+      this.alert.errorCode = 'alert-danger';
+      this.alert.msg = 'Debes seleccionar al menos una categoría de interés';
+      this.spinnerService.stopSpinner();
+    }
+    else {
+      this.curriculum.categories.sort(x => x.category.id);
+      for (let i = 0; i < this.curriculum.categories.length-1; i++) {
+        const element = this.curriculum.categories[i];
+          if (element.category.id == this.curriculum.categories[i+1].category.id) {
+            this.alert.show = true;
+            this.alert.errorCode = 'alert-danger';
+            this.alert.msg = 'No se deben repetir categorías de interés';
+            this.spinnerService.stopSpinner();
+          }
+      }
     }
 
     if (this.alert.show === false) {
@@ -266,6 +344,14 @@ export class CurriculumComponent implements OnInit {
   datetimeToDate(x) {
     let a = this.datePipe.transform(x, 'yyyy-MM-dd');
     return a;
+  }
+
+  dateGreaterThanToday(x) {
+    let a = new Date(x);
+    if (a.getTime() > new Date().getTime()) {
+      return false;
+    }
+    return true;
   }
 
 }

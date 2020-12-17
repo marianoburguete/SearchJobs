@@ -1,5 +1,6 @@
 export interface JobDetails {
     id?: number,
+    url?: string,
     title?: string,
     location?: string,
     workday?: string,

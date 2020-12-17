@@ -65,6 +65,13 @@
         </div>
         <div class="col-md-3 border rounded" id="services_block">
             <br><br>
+            <div class="row" *ngIf="jobDetails.url.includes('workana')">
+                <div class="col-12 d-flex align-item-center justify-content-center">
+                    <h3 style="color: red;">Freelance</h3>
+                </div>
+                <hr>
+            </div>
+            
             <div class="row">
                 <div class="col-12 d-flex align-item-center">
                     <span class="material-icons">
